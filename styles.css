@@ -1,0 +1,58 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.summary-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  background: var(--bs-body-bg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.15s ease;
+}
+
+.summary-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.summary-card .card-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.summary-card .card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0.15rem 0 0.4rem 0;
+}
+
+.summary-card .card-desc {
+  font-size: 0.92rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.status-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.status-pill.open {
+  background: #fdecea;
+  color: #b3261e;
+}
+
+.status-pill.resolved {
+  background: #e6f4ea;
+  color: #1e7e34;
+}
