@@ -317,199 +317,199 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="metric-grid">
 <div class="metric-card">
-<p><span class="metric-value">18</span><span class="metric-label">isu terbuka</span></p>
+<p><span class="metric-value">18</span><span class="metric-label">isu terdaftar</span></p>
+</div>
+<div class="metric-card metric-alert">
+<p><span class="metric-value">12</span><span class="metric-label">masih terbuka</span></p>
 </div>
 <div class="metric-card metric-critical">
-<p><span class="metric-value">10</span><span class="metric-label">kritis</span></p>
-</div>
-<div class="metric-card metric-high">
-<p><span class="metric-value">7</span><span class="metric-label">tinggi</span></p>
+<p><span class="metric-value">5</span><span class="metric-label">kritis terbuka</span></p>
 </div>
 <div class="metric-card">
-<p><span class="metric-value">1</span><span class="metric-label">sedang</span></p>
+<p><span class="metric-value">6</span><span class="metric-label">selesai</span></p>
 </div>
 </div>
-<p>Register ini memisahkan temuan telaah dari keputusan. Semua butir masih berstatus terbuka; formulasi draf tidak boleh dibaca sebagai penyelesaian sepihak. <a href="data/isu_terbuka.csv" class="btn btn-primary">Unduh register CSV</a></p>
+<p>Register ini memisahkan temuan, keputusan, dan isu yang masih terbuka. Empat butir telah diselesaikan berdasarkan keputusan metodologis terbaru; butir lain tetap tidak boleh dianggap selesai tanpa keputusan tertulis. <a href="data/isu_terbuka.csv" class="btn btn-primary">Unduh register CSV</a></p>
 <section id="daftar-isu" class="level2">
 <h2 class="anchored" data-anchor-id="daftar-isu">Daftar Isu</h2>
-<div id="m-01" class="issue-card severity-kritis">
+<div id="m-01" class="issue-card severity-kritis status-selesai">
 <div class="issue-head">
-<p><span class="issue-id">M-01</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-01</span><span class="severity-badge kritis">Kritis</span><span class="status-badge selesai">Selesai</span></p>
 </div>
 <section id="persamaan-11" class="level3">
 <h3 class="anchored" data-anchor-id="persamaan-11">Persamaan 11</h3>
 <p><strong>Temuan.</strong> Pembilang pada PDF tertulis y_max - y_max sehingga selalu nol.</p>
-<p><strong>Tindak lanjut.</strong> Validasi dengan tim metodologi; dugaan matematis y_max - y_min tidak boleh diberlakukan tanpa persetujuan.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Koreksi ditetapkan: pembilang yang benar adalah y_max - y_min. Formula penyetaraan ditulis f(x)=y_min+(x-x_min)(y_max-y_min)/(x_max-x_min).</p>
 </section>
 </div>
-<div id="m-02" class="issue-card severity-kritis">
+<div id="m-02" class="issue-card severity-kritis status-selesai">
 <div class="issue-head">
-<p><span class="issue-id">M-02</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-02</span><span class="severity-badge kritis">Kritis</span><span class="status-badge selesai">Selesai</span></p>
 </div>
 <section id="persamaan-2-3" class="level3">
 <h3 class="anchored" data-anchor-id="persamaan-2-3">Persamaan 2-3</h3>
 <p><strong>Temuan.</strong> Simbol A_L dan A_U dipakai tetapi bagian ‘dimana’ hanya mendefinisikan I_L dan I_U.</p>
-<p><strong>Tindak lanjut.</strong> Tambahkan definisi eksplisit dan uji ulang kalibrasi midpoint/spread.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Definisi ditetapkan: A_L=ln(1/I_L-1) dan A_U=ln(1/I_U-1). Uji ulang tujuh kelompok parameter menghasilkan spread/midpoint yang sama dengan workbook dan galat target maksimum 5,55E-17.</p>
 </section>
 </div>
-<div id="m-03" class="issue-card severity-kritis">
+<div id="m-03" class="issue-card severity-kritis status-selesai">
 <div class="issue-head">
-<p><span class="issue-id">M-03</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-03</span><span class="severity-badge kritis">Kritis</span><span class="status-badge selesai">Selesai</span></p>
 </div>
-<section id="persamaan-4-dan-data-kosong" class="level3">
-<h3 class="anchored" data-anchor-id="persamaan-4-dan-data-kosong">Persamaan 4 dan data kosong</h3>
-<p><strong>Temuan.</strong> Notasi menunjukkan jumlah indeks tunggal; arti n dan penanganan bahaya tidak berlaku/missing belum operasional. Dalam workbook, sel kosong dapat diperlakukan seperti nol oleh IF(x=0,0,…) dan IFERROR yang menghasilkan teks kosong.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan daftar bahaya, cakupan n, kode status data, serta aturan terpisah untuk nol sah, tidak berlaku, tidak tersedia, dan gagal validasi.</p>
+<section id="persamaan-4-dan-status-data" class="level3">
+<h3 class="anchored" data-anchor-id="persamaan-4-dan-status-data">Persamaan 4 dan status data</h3>
+<p><strong>Temuan.</strong> Jumlah bahaya pada agregasi ditetapkan 11. Perlakuan nilai juga harus membedakan nol sah, tidak berlaku, tidak tersedia, dan gagal validasi.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Tetapkan n=11 dengan daftar bahaya nasional pada M-04. Nol sah diperhitungkan sebagai nol; tidak berlaku dicatat terpisah; tidak tersedia dan gagal validasi menghentikan publikasi keluaran terkait sampai diperbaiki.</p>
 </section>
 </div>
-<div id="m-04" class="issue-card severity-tinggi">
+<div id="m-04" class="issue-card severity-tinggi status-selesai">
 <div class="issue-head">
-<p><span class="issue-id">M-04</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-04</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge selesai">Selesai</span></p>
 </div>
 <section id="taksonomi-bahaya" class="level3">
 <h3 class="anchored" data-anchor-id="taksonomi-bahaya">Taksonomi bahaya</h3>
-<p><strong>Temuan.</strong> Tabel parameter menyebut 10/11 jenis, sedangkan Tabel 2 menggabungkan Tanah Longsor/Likuefaksi.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan daftar nasional final dan pemetaan setiap bahaya ke parameter/bobot.</p>
+<p><strong>Temuan.</strong> Laporan pada bagian tertentu menggabungkan Tanah Longsor/Likuefaksi, sedangkan workbook memisahkannya.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Daftar nasional ditetapkan 11 jenis: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami.</p>
 </section>
 </div>
-<div id="m-05" class="issue-card severity-kritis">
+<div id="m-05" class="issue-card severity-kritis status-selesai">
 <div class="issue-head">
-<p><span class="issue-id">M-05</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-05</span><span class="severity-badge kritis">Kritis</span><span class="status-badge selesai">Selesai</span></p>
 </div>
 <section id="urutan-dan-label-variabel" class="level3">
 <h3 class="anchored" data-anchor-id="urutan-dan-label-variabel">Urutan dan label variabel</h3>
-<p><strong>Temuan.</strong> HM/VM telah ditransformasi, kemudian RP_raw kembali ditransformasi dengan parameter MULTI; definisi nilai sebelum/sesudah transformasi perlu dipertegas. Label workbook seperti R=V* serta HV_MULTI belum cukup membedakan kerentanan, nilai mentah, dan indeks hasil transformasi.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan kamus variabel HM_raw, VM_raw, RP_raw, RP_idx, C, RA, dan RR; buat diagram alir serta contoh hitung uji.</p>
+<p><strong>Temuan.</strong> Narasi laporan dan implementasi workbook menggunakan urutan transformasi Risiko Potensial yang berbeda.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Urutan normatif ditetapkan mengikuti laporan: HM_raw dan VM_raw masing-masing ditransformasi menjadi HM dan VM dengan parameter MULTI, kemudian RP=sqrt(HM*VM). RP tidak ditransformasi kembali dan label antara dari implementasi workbook lama tidak digunakan pada keluaran normatif.</p>
 </section>
 </div>
-<div id="m-06" class="issue-card severity-kritis">
+<div id="m-06" class="issue-card severity-kritis status-selesai">
 <div class="issue-head">
-<p><span class="issue-id">M-06</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-06</span><span class="severity-badge kritis">Kritis</span><span class="status-badge selesai">Selesai</span></p>
 </div>
 <section id="rr-saat-c0" class="level3">
 <h3 class="anchored" data-anchor-id="rr-saat-c0">RR saat C=0</h3>
-<p><strong>Temuan.</strong> RR = log2(RP/C)+1 tidak terdefinisi untuk C=0 dan sangat sensitif saat C mendekati nol. Workbook belum memiliki guard; data saat telaah belum memicu galat karena C minimum sekitar 0,1667.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan aturan minimum C/epsilon atau status khusus, beserta implikasi klasifikasi.</p>
+<p><strong>Temuan.</strong> RR = log2(RP/C)+1 tidak terdefinisi untuk C=0.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Domain IKD ditetapkan 0,20 sampai 1,00. Transformasi kapasitas menghasilkan C minimum 1/6 atau 0,166667 (ditampilkan 0,17), sehingga C=0 tidak mungkin pada input yang sah. IKD di bawah 0,20 dinyatakan gagal validasi dan tidak dihitung.</p>
 </section>
 </div>
-<div id="m-07" class="issue-card severity-tinggi">
+<div id="m-07" class="issue-card severity-tinggi status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-07</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-07</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="rentang-rr" class="level3">
 <h3 class="anchored" data-anchor-id="rentang-rr">Rentang RR</h3>
 <p><strong>Temuan.</strong> Klaim bahwa konstanta memastikan nilai non-negatif tidak selalu benar ketika RP/C &lt; 0,5.</p>
-<p><strong>Tindak lanjut.</strong> Uji domain aktual; putuskan apakah RR dibatasi, dibiarkan, atau diberi aturan khusus.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Uji domain aktual; putuskan apakah RR dibatasi, dibiarkan, atau diberi aturan khusus.</p>
 </section>
 </div>
-<div id="m-08" class="issue-card severity-kritis">
+<div id="m-08" class="issue-card severity-kritis status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-08</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-08</span><span class="severity-badge kritis">Kritis</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="klasifikasi-rpcra" class="level3">
 <h3 class="anchored" data-anchor-id="klasifikasi-rpcra">Klasifikasi RP/C/RA</h3>
 <p><strong>Temuan.</strong> Batas kelas selain RR belum dinyatakan lengkap dalam bagian metode laporan. Workbook memakai 0,333 dan 0,666 untuk kalibrasi/kelas RA, sedangkan transformasi kapasitas memakai pecahan eksak 1/3 dan 2/3.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan tabel kelas nasional, presisi normatif, aturan nilai batas, pembulatan, warna, dan kasus uji di sekitar ambang.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Tetapkan tabel kelas nasional, presisi normatif, aturan nilai batas, pembulatan, warna, dan kasus uji di sekitar ambang.</p>
 </section>
 </div>
-<div id="m-09" class="issue-card severity-tinggi">
+<div id="m-09" class="issue-card severity-tinggi status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-09</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-09</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="penyetaraan" class="level3">
 <h3 class="anchored" data-anchor-id="penyetaraan">Penyetaraan</h3>
 <p><strong>Temuan.</strong> Nilai x_max kelas risiko tinggi ditetapkan asumtif, tetapi angka dan tata kelolanya belum normatif.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan nilai, dasar, versi, dan periode berlaku selama masa transisi.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Tetapkan nilai, dasar, versi, dan periode berlaku selama masa transisi.</p>
 </section>
 </div>
-<div id="m-10" class="issue-card severity-kritis">
+<div id="m-10" class="issue-card severity-kritis status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-10</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-10</span><span class="severity-badge kritis">Kritis</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="status-ra" class="level3">
 <h3 class="anchored" data-anchor-id="status-ra">Status RA</h3>
 <p><strong>Temuan.</strong> Laporan menyebut RA sebagai IRBI Baru namun juga sebagai indikator komplementer; outline merekomendasikan RA sebagai keluaran utama.</p>
-<p><strong>Tindak lanjut.</strong> Diperlukan keputusan kebijakan/regulatif tentang indikator utama dan indikator diagnostik.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Diperlukan keputusan kebijakan/regulatif tentang indikator utama dan indikator diagnostik.</p>
 </section>
 </div>
-<div id="m-11" class="issue-card severity-tinggi">
+<div id="m-11" class="issue-card severity-tinggi status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-11</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-11</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="data-antarwaktu" class="level3">
 <h3 class="anchored" data-anchor-id="data-antarwaktu">Data antarwaktu</h3>
 <p><strong>Temuan.</strong> H/V diperbarui berkala, IKD tahunan; perubahan RA dapat berasal dari versi data yang berbeda.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan baseline, cut-off, restatement, dan aturan seri waktu.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Tetapkan baseline, cut-off, restatement, dan aturan seri waktu.</p>
 </section>
 </div>
-<div id="m-12" class="issue-card severity-tinggi">
+<div id="m-12" class="issue-card severity-tinggi status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-12</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-12</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="landasan-hukum" class="level3">
 <h3 class="anchored" data-anchor-id="landasan-hukum">Landasan hukum</h3>
 <p><strong>Temuan.</strong> Verifikasi awal menemukan OTK BNPB tahun 2025 dan perubahan Perpres BNPB yang belum tercermin lengkap pada laporan sumber.</p>
-<p><strong>Tindak lanjut.</strong> Unit hukum mengonfirmasi keberlakuan, pencabutan/penggantian, nomenklatur, serta dasar kewenangan sebelum penetapan Juknis.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Unit hukum mengonfirmasi keberlakuan, pencabutan/penggantian, nomenklatur, serta dasar kewenangan sebelum penetapan Juknis.</p>
 </section>
 </div>
-<div id="m-13" class="issue-card severity-kritis">
+<div id="m-13" class="issue-card severity-kritis status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-13</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-13</span><span class="severity-badge kritis">Kritis</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="identitas-waktu-dan-skenario-workbook" class="level3">
 <h3 class="anchored" data-anchor-id="identitas-waktu-dan-skenario-workbook">Identitas waktu dan skenario workbook</h3>
 <p><strong>Temuan.</strong> FUZZY_INDEX_V2021 menggunakan bahaya dan kerentanan versi 2021 tetapi kapasitas 2025; FUZZY_INDEX_V2025 mempertahankan bahaya 2021 dan kapasitas 2025 lalu mengganti kerentanan menjadi versi 2025. Perbandingan keduanya bukan seri waktu IRBI 2021-2025.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan tahun/versi setiap komponen, nama resmi skenario, aturan baseline, dan label keluaran yang tidak menimbulkan interpretasi sebagai tren tahunan.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Tetapkan tahun/versi setiap komponen, nama resmi skenario, aturan baseline, dan label keluaran yang tidak menimbulkan interpretasi sebagai tren tahunan.</p>
 </section>
 </div>
-<div id="m-14" class="issue-card severity-kritis">
+<div id="m-14" class="issue-card severity-kritis status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-14</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-14</span><span class="severity-badge kritis">Kritis</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="satuan-dan-skala-input" class="level3">
 <h3 class="anchored" data-anchor-id="satuan-dan-skala-input">Satuan dan skala input</h3>
 <p><strong>Temuan.</strong> Walaupun header kedua sumber memakai satuan yang sama, median rasio nilai V2025 terhadap HV2021 sekitar 1.283 kali untuk kerugian fisik, 1.480 kali untuk kerugian ekonomi, dan 0,018 kali untuk kerusakan lingkungan. Transformasi V2025 menjadi sangat jenuh pada kerugian fisik/ekonomi.</p>
-<p><strong>Tindak lanjut.</strong> Audit satuan, tahun harga, metode estimasi, resolusi spasial, dan agregasi; susun kamus data; lalu lakukan kalibrasi serta uji sensitivitas ulang sebelum parameter ditetapkan.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Audit satuan, tahun harga, metode estimasi, resolusi spasial, dan agregasi; susun kamus data; lalu lakukan kalibrasi serta uji sensitivitas ulang sebelum parameter ditetapkan.</p>
 </section>
 </div>
-<div id="m-15" class="issue-card severity-kritis">
+<div id="m-15" class="issue-card severity-kritis status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-15</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-15</span><span class="severity-badge kritis">Kritis</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="penggabungan-data-wilayah" class="level3">
 <h3 class="anchored" data-anchor-id="penggabungan-data-wilayah">Penggabungan data wilayah</h3>
 <p><strong>Temuan.</strong> Sebagian referensi memakai pencarian berdasarkan ID, tetapi data kerentanan banyak dipanggil dengan referensi baris langsung. Urutan tiga tabel saat ini sama untuk 514 wilayah, namun penyortiran atau penambahan baris terpisah dapat memasangkan wilayah yang salah tanpa galat formula.</p>
-<p><strong>Tindak lanjut.</strong> Gunakan penggabungan berbasis kunci wilayah unik; validasi keunikan, kelengkapan, cakupan, tahun kode, dan rekonsiliasi nama sebelum perhitungan.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Gunakan penggabungan berbasis kunci wilayah unik; validasi keunikan, kelengkapan, cakupan, tahun kode, dan rekonsiliasi nama sebelum perhitungan.</p>
 </section>
 </div>
-<div id="m-16" class="issue-card severity-tinggi">
+<div id="m-16" class="issue-card severity-tinggi status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-16</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-16</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="sumber-kapasitas-ganda" class="level3">
 <h3 class="anchored" data-anchor-id="sumber-kapasitas-ganda">Sumber kapasitas ganda</h3>
 <p><strong>Temuan.</strong> IKD dan C tersedia pada RAW_IKD2025 serta disalin ke RAW_HV2021. Skenario V2021 dan V2025 mengambil kapasitas dari salinan yang berbeda meskipun nilainya saat ini identik.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan satu tabel induk IKD/kapasitas, hapus ketergantungan pada salinan, dan tambahkan kontrol rekonsiliasi versi.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Tetapkan satu tabel induk IKD/kapasitas, hapus ketergantungan pada salinan, dan tambahkan kontrol rekonsiliasi versi.</p>
 </section>
 </div>
-<div id="m-17" class="issue-card severity-sedang">
+<div id="m-17" class="issue-card severity-sedang status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-17</span><span class="severity-badge sedang">Sedang</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-17</span><span class="severity-badge sedang">Sedang</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="nomenklatur-kelas-rr" class="level3">
 <h3 class="anchored" data-anchor-id="nomenklatur-kelas-rr">Nomenklatur kelas RR</h3>
 <p><strong>Temuan.</strong> Laporan menggunakan kategori Ketimpangan Ringan untuk RR &gt;1,00 sampai &lt;=1,50, sedangkan workbook menghasilkan KETIMPANGAN RENDAH pada rentang yang sama.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan nomenklatur resmi dan selaraskan Juknis, template hitung, tabel, peta, dashboard, serta metadata keluaran.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Tetapkan nomenklatur resmi dan selaraskan Juknis, template hitung, tabel, peta, dashboard, serta metadata keluaran.</p>
 </section>
 </div>
-<div id="m-18" class="issue-card severity-tinggi">
+<div id="m-18" class="issue-card severity-tinggi status-terbuka">
 <div class="issue-head">
-<p><span class="issue-id">M-18</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span></p>
+<p><span class="issue-id">M-18</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge terbuka">Terbuka</span></p>
 </div>
 <section id="validasi-domain-input" class="level3">
 <h3 class="anchored" data-anchor-id="validasi-domain-input">Validasi domain input</h3>
-<p><strong>Temuan.</strong> Workbook belum menolak atau memberi status khusus untuk indikator negatif, IKD di luar 0-1, maupun hasil transformasi di luar domain yang ditetapkan. Data saat telaah tidak memicu kondisi tersebut.</p>
-<p><strong>Tindak lanjut.</strong> Tetapkan domain setiap variabel, aturan penolakan atau koreksi, pesan galat, dan kasus uji batas sebelum perhitungan nasional.</p>
+<p><strong>Temuan.</strong> Workbook belum menolak atau memberi status khusus untuk indikator negatif, IKD di luar domain 0,20-1,00, maupun hasil transformasi di luar domain yang ditetapkan. Data saat telaah tidak memicu kondisi tersebut.</p>
+<p><strong>Keputusan / tindak lanjut.</strong> Lengkapi domain variabel selain IKD, aturan penolakan atau koreksi, pesan galat, dan kasus uji batas sebelum perhitungan nasional.</p>
 </section>
 </div>
 

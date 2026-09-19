@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -473,7 +502,9 @@ Figure&nbsp;1: Siklus penyelenggaraan dari penetapan spesifikasi hingga evaluasi
 </section>
 <section id="penyetaraan-skala" class="level2">
 <h2 class="anchored" data-anchor-id="penyetaraan-skala">7.5 Penyetaraan Skala</h2>
-<p>Penyetaraan belum dapat dijalankan sebagai prosedur normatif. Persamaan 11 pada laporan memiliki pembilang yang secara literal menjadi nol; arah variabel dan nilai <code>x_max</code> kelas tinggi juga belum lengkap. Rumus dugaan matematis tidak boleh diberlakukan sebelum <a href="./register-isu.html">M-01 dan M-09</a> diselesaikan.</p>
+<p>Persamaan 11 dikoreksi menjadi:</p>
+<p><span class="math display">\[f(x)=y_{min}+(x-x_{min})\left(\frac{y_{max}-y_{min}}{x_{max}-x_{min}}\right)\]</span></p>
+<p>Koreksi pembilang <code>y_max-y_min</code> menutup M-01. Penyetaraan belum dapat dijalankan sebagai prosedur normatif karena arah variabel dan nilai <code>x_max</code> kelas tinggi masih harus ditetapkan melalui <a href="./register-isu.html#m-09">M-09</a>.</p>
 <p>Jika kelak disahkan, nilai hasil penyetaraan harus diberi label <strong>nilai transisi</strong>, disimpan bersama nilai asli kedua metode, serta dilengkapi versi rumus, parameter, dan kelas.</p>
 </section>
 <section id="kesiapan-implementasi-penuh" class="level2">

@@ -321,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
 <img src="assets/figures/gambar_4_1_alur_metode.png" class="figure-panel img-fluid figure-img" alt="Diagram alir metode perhitungan IRBI">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lampiran-alur-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Alur perhitungan dari validasi data sampai publikasi, termasuk titik keputusan urutan transformasi.
+Figure&nbsp;1: Alur normatif: HM dan VM ditransformasi terpisah sebelum membentuk RP; IKD minimum 0,20 menjaga C tetap positif.
 </figcaption>
 </figure>
 </div>
@@ -331,22 +331,22 @@ Figure&nbsp;1: Alur perhitungan dari validasi data sampai publikasi, termasuk ti
 <li>Validasi sumber, satuan, periode, kode wilayah, dan status data.</li>
 <li>Hitung dan simpan indeks bahaya tunggal serta komponen kerentanan per bahaya.</li>
 <li>Agregasikan H dan V sesuai daftar bahaya yang disahkan.</li>
-<li>Bentuk RP menggunakan urutan transformasi yang ditetapkan; selama M-05 terbuka, hasil diberi label <strong>reproduksi workbook</strong> atau <strong>skenario laporan</strong>.</li>
+<li>Transformasikan <code>HM_raw</code> dan <code>VM_raw</code> masing-masing menjadi HM dan VM dengan parameter MULTI, lalu hitung <code>RP=sqrt(HM*VM)</code> tanpa transformasi ulang.</li>
 <li>Transformasikan satu sumber IKD menjadi C.</li>
-<li>Hitung RA dan RR setelah memeriksa domain, termasuk kondisi <code>C=0</code>.</li>
+<li>Tolak IKD di luar 0,20-1,00; domain ini menghasilkan C minimum 1/6 sehingga <code>C=0</code> tidak mungkin.</li>
 <li>Simpan hasil antara, jalankan QA/QC, validasi, persetujuan, dan publikasi.</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Urutan transformasi RP belum boleh disederhanakan menjadi satu diagram normatif sampai M-05 diputuskan.</p>
+<p>Urutan transformasi di atas merupakan keputusan normatif M-05. Domain IKD dan C minimum merupakan keputusan M-06.</p>
 </div>
 </div>
 

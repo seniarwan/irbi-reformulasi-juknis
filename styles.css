@@ -83,6 +83,7 @@ thead { background: rgba(15,111,115,.09); }
 .issue-card { border: 1px solid var(--irbi-border); border-left: 5px solid var(--irbi-gold); border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0; background: var(--bs-body-bg); box-shadow: 0 5px 18px rgba(18,59,74,.05); }
 .issue-card.severity-kritis { border-left-color: var(--irbi-red); }
 .issue-card.severity-sedang { border-left-color: var(--irbi-aqua); }
+.issue-card.status-selesai { border-left-color: #2f8f68; background: linear-gradient(135deg, rgba(47,143,104,.06), var(--bs-body-bg)); }
 .issue-card h3 { margin: .55rem 0 .65rem; }
 .issue-head { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
 .issue-id { font-weight: 800; color: var(--irbi-ink); margin-right: .2rem; }
@@ -91,6 +92,7 @@ thead { background: rgba(15,111,115,.09); }
 .severity-badge.tinggi { color: #81530f; background: #fff0d2; }
 .severity-badge.sedang { color: #12686b; background: #ddf3f1; }
 .status-badge { color: #4f6167; background: #edf1f2; }
+.status-badge.selesai { color: #1f684c; background: #dff3e9; }
 
 .callout { border-radius: 12px; }
 .sidebar nav[role=doc-toc] ul > li > a.active { border-left-color: var(--irbi-teal); color: var(--irbi-teal) !important; }

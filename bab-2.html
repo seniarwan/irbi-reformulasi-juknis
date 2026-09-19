@@ -378,8 +378,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="komponen-pembentuk" class="level2">
 <h2 class="anchored" data-anchor-id="komponen-pembentuk">2.3 Komponen Pembentuk</h2>
-<p>Komponen bahaya terdiri atas indeks bahaya tunggal untuk jenis bahaya yang ditetapkan secara nasional. Workbook menggunakan 11 kolom bahaya, yaitu banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi sehingga menyebut 10 jenis. Daftar nasional final harus diputuskan melalui M-04.</p>
-<p>Kerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Kapasitas direpresentasikan melalui IKD yang ditransformasikan menjadi C pada skala 0-1.</p>
+<p>Komponen bahaya terdiri atas 11 indeks bahaya tunggal yang ditetapkan secara nasional, yaitu banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tanah longsor dan likuefaksi dihitung sebagai dua jenis bahaya yang terpisah. Keputusan ini menutup M-03 dan M-04.</p>
+<p>Kerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Kapasitas direpresentasikan melalui IKD dengan domain sah 0,20-1,00 yang ditransformasikan menjadi C pada rentang 1/6-1.</p>
 </section>
 <section id="risiko-potensial" class="level2">
 <h2 class="anchored" data-anchor-id="risiko-potensial">2.4 Risiko Potensial</h2>
@@ -401,7 +401,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="hubungan-antarindikator">2.8 Hubungan Antarindikator</h2>
 <p>Alur konseptual yang dipertahankan adalah:</p>
 <p><code>Data H -&gt; agregasi bahaya -&gt; RP</code><br> <code>Data V -&gt; transformasi dan pembobotan -&gt; RP</code><br> <code>IKD -&gt; C</code><br> <code>RP + C -&gt; RA dan RR</code></p>
-<p>Urutan transformasi pada bagian agregasi dan RP masih harus diputuskan melalui M-05 karena narasi laporan dan implementasi workbook tidak sepenuhnya sama.</p>
+<p>Urutan transformasi mengikuti laporan. Agregat mentah bahaya (<code>HM_raw</code>) dan kerentanan (<code>VM_raw</code>) masing-masing ditransformasi dengan parameter MULTI menjadi HM dan VM. Risiko Potensial kemudian dihitung sebagai <code>RP=sqrt(HM*VM)</code> tanpa transformasi ulang. Keputusan ini menutup M-05.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/figures/gambar_2_1_arsitektur_irbi.png" class="img-fluid figure-img"></p>

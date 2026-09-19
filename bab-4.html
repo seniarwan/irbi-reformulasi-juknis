@@ -310,8 +310,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#keluaran-dan-pemeriksaan-1" id="toc-keluaran-dan-pemeriksaan-1" class="nav-link" data-scroll-target="#keluaran-dan-pemeriksaan-1">4.4.5 Keluaran dan Pemeriksaan</a></li>
   <li><a href="#pengertian" id="toc-pengertian" class="nav-link" data-scroll-target="#pengertian">4.5.1 Pengertian</a></li>
   <li><a href="#formula-dasar" id="toc-formula-dasar" class="nav-link" data-scroll-target="#formula-dasar">4.5.2 Formula Dasar</a></li>
-  <li><a href="#dua-urutan-yang-ditemukan" id="toc-dua-urutan-yang-ditemukan" class="nav-link" data-scroll-target="#dua-urutan-yang-ditemukan">4.5.3 Dua Urutan yang Ditemukan</a></li>
-  <li><a href="#contoh-reproduksi-workbook" id="toc-contoh-reproduksi-workbook" class="nav-link" data-scroll-target="#contoh-reproduksi-workbook">4.5.4 Contoh Reproduksi Workbook</a></li>
+  <li><a href="#urutan-normatif" id="toc-urutan-normatif" class="nav-link" data-scroll-target="#urutan-normatif">4.5.3 Urutan Normatif</a></li>
+  <li><a href="#contoh-perhitungan-normatif" id="toc-contoh-perhitungan-normatif" class="nav-link" data-scroll-target="#contoh-perhitungan-normatif">4.5.4 Contoh Perhitungan Normatif</a></li>
   <li><a href="#klasifikasi" id="toc-klasifikasi" class="nav-link" data-scroll-target="#klasifikasi">4.5.5 Klasifikasi</a></li>
   <li><a href="#input-dan-sumber-induk" id="toc-input-dan-sumber-induk" class="nav-link" data-scroll-target="#input-dan-sumber-induk">4.6.1 Input dan Sumber Induk</a></li>
   <li><a href="#transformasi-linier-bertahap" id="toc-transformasi-linier-bertahap" class="nav-link" data-scroll-target="#transformasi-linier-bertahap">4.6.2 Transformasi Linier Bertahap</a></li>
@@ -384,7 +384,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="kalibrasi-parameter" class="level3">
 <h3 class="anchored" data-anchor-id="kalibrasi-parameter">4.2.3 Kalibrasi Parameter</h3>
-<p>Parameter diturunkan dari batas bawah <code>x_L</code>, batas atas <code>x_U</code>, dan target indeks 0,333 serta 0,666. Simbol perantara pada Persamaan 2-3 dalam laporan belum konsisten dan harus diselesaikan melalui M-02. Sampai keputusan tersebut ditetapkan, parameter hasil kalibrasi digunakan sebagai tabel terkendali dan tidak dihitung ulang oleh pengguna.</p>
+<p>Parameter diturunkan dari batas bawah <code>x_L</code>, batas atas <code>x_U</code>, dan target indeks <code>I_L=0,333</code> serta <code>I_U=0,666</code>. Simbol perantara didefinisikan sebagai:</p>
+<p><code>A_L = ln(1/I_L - 1) = ln((1-I_L)/I_L)</code><br> <code>A_U = ln(1/I_U - 1) = ln((1-I_U)/I_U)</code></p>
+<p>Selanjutnya:</p>
+<p><code>s = (A_L - A_U) / ln(x_U/x_L)</code><br> <code>m = x_L * exp(A_L/s) = x_U * exp(A_U/s)</code></p>
+<p>Dengan target tersebut diperoleh <code>A_L=0,694647555935180</code> dan <code>A_U=-0,690148677563689</code>. Uji ulang independen terhadap tujuh kelompok parameter menghasilkan nilai spread dan midpoint yang sama dengan nilai tersimpan pada workbook. Substitusi kembali <code>x_L</code> dan <code>x_U</code> menghasilkan indeks 0,333 dan 0,666 dengan galat maksimum <code>5,55E-17</code>. M-02 dinyatakan selesai.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 13%">
@@ -464,6 +468,79 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>Angka pada tabel disimpan dengan presisi penuh dalam perangkat hitung. Pembulatan hanya dilakukan untuk penyajian.</p>
+<section id="hasil-uji-ulang-kalibrasi" class="level4">
+<h4 class="anchored" data-anchor-id="hasil-uji-ulang-kalibrasi">Hasil Uji Ulang Kalibrasi</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kelompok parameter</th>
+<th style="text-align: right;">Spread hasil uji</th>
+<th style="text-align: right;">Midpoint hasil uji</th>
+<th style="text-align: right;">I(x_L)</th>
+<th style="text-align: right;">I(x_U)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Penduduk terpapar</td>
+<td style="text-align: right;">1,997838658711</td>
+<td style="text-align: right;">707,903386800809</td>
+<td style="text-align: right;">0,333000</td>
+<td style="text-align: right;">0,666000</td>
+</tr>
+<tr class="even">
+<td>Kerugian fisik</td>
+<td style="text-align: right;">3,415327745364</td>
+<td style="text-align: right;">1,715772508072</td>
+<td style="text-align: right;">0,333000</td>
+<td style="text-align: right;">0,666000</td>
+</tr>
+<tr class="odd">
+<td>Kerugian ekonomi</td>
+<td style="text-align: right;">1,791016999282</td>
+<td style="text-align: right;">0,221071503529</td>
+<td style="text-align: right;">0,333000</td>
+<td style="text-align: right;">0,666000</td>
+</tr>
+<tr class="even">
+<td>Lingkungan 70–205</td>
+<td style="text-align: right;">1,288764300479</td>
+<td style="text-align: right;">120,000754930905</td>
+<td style="text-align: right;">0,333000</td>
+<td style="text-align: right;">0,666000</td>
+</tr>
+<tr class="odd">
+<td>Lingkungan 65–185</td>
+<td style="text-align: right;">1,323936772896</td>
+<td style="text-align: right;">109,845035110657</td>
+<td style="text-align: right;">0,333000</td>
+<td style="text-align: right;">0,666000</td>
+</tr>
+<tr class="even">
+<td>Lingkungan tsunami</td>
+<td style="text-align: right;">1,141607904099</td>
+<td style="text-align: right;">101,070158900684</td>
+<td style="text-align: right;">0,333000</td>
+<td style="text-align: right;">0,666000</td>
+</tr>
+<tr class="odd">
+<td>Multi, 11 bahaya</td>
+<td style="text-align: right;">1,997838658711</td>
+<td style="text-align: right;">5,186100211703</td>
+<td style="text-align: right;">0,333000</td>
+<td style="text-align: right;">0,666000</td>
+</tr>
+</tbody>
+</table>
+<p>Seluruh spread dan midpoint hasil uji identik dengan nilai tersimpan pada sheet <code>RULES</code> workbook. Galat maksimum terhadap target indeks adalah <code>5,55E-17</code>, yaitu pada tingkat pembulatan mesin.</p>
+</section>
 </section>
 <section id="contoh-transformasi" class="level3">
 <h3 class="anchored" data-anchor-id="contoh-transformasi">4.2.4 Contoh Transformasi</h3>
@@ -472,7 +549,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="aturan-domain-dan-galat" class="level3">
 <h3 class="anchored" data-anchor-id="aturan-domain-dan-galat">4.2.5 Aturan Domain dan Galat</h3>
-<p>Nilai negatif, IKD di luar 0-1, parameter kosong, atau satuan yang tidak terkonfirmasi dihentikan sebelum perhitungan. Nol sah dipertahankan sebagai nol. Tidak berlaku dan tidak tersedia menggunakan status berbeda. Pesan galat disimpan dan dilaporkan; galat tidak diganti dengan teks kosong tanpa jejak. ## 4.3 Indeks Multi-Bahaya</p>
+<p>Nilai negatif, IKD di luar 0,20-1,00, parameter kosong, atau satuan yang tidak terkonfirmasi dihentikan sebelum perhitungan. Nol sah dipertahankan sebagai nol. Tidak berlaku dan tidak tersedia menggunakan status berbeda. Pesan galat disimpan dan dilaporkan; galat tidak diganti dengan teks kosong tanpa jejak. ## 4.3 Indeks Multi-Bahaya</p>
 </section>
 <section id="bahaya-tunggal" class="level3">
 <h3 class="anchored" data-anchor-id="bahaya-tunggal">4.3.1 Bahaya Tunggal</h3>
@@ -480,7 +557,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="daftar-bahaya" class="level3">
 <h3 class="anchored" data-anchor-id="daftar-bahaya">4.3.2 Daftar Bahaya</h3>
-<p>Implementasi workbook menggunakan 11 jenis bahaya. Tabel bobot dalam laporan menggabungkan tanah longsor dan likuefaksi sehingga menghasilkan 10 kelompok. Sebelum penetapan nasional, M-04 harus menghasilkan daftar final dan pemetaan setiap jenis bahaya ke parameter serta bobotnya.</p>
+<p>Daftar nasional menggunakan 11 jenis bahaya: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tanah longsor dan likuefaksi dihitung secara terpisah. Dengan keputusan ini, jumlah komponen agregasi adalah <code>n=11</code> dan M-03 serta M-04 dinyatakan selesai.</p>
 </section>
 <section id="agregasi" class="level3">
 <h3 class="anchored" data-anchor-id="agregasi">4.3.3 Agregasi</h3>
@@ -489,7 +566,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="transformasi-multi-bahaya" class="level3">
 <h3 class="anchored" data-anchor-id="transformasi-multi-bahaya">4.3.4 Transformasi Multi-Bahaya</h3>
-<p>Laporan mengarahkan nilai agregat bahaya ditransformasikan dengan parameter MULTI. Workbook tidak menyimpan hasil transformasi HM sebagai variabel tersendiri, melainkan menggunakan jumlah mentah pada tahap pembentukan <code>RP_raw</code>. Perbedaan ini dicatat sebagai bagian M-05 dan tidak diselesaikan secara sepihak dalam draf ini.</p>
+<p>Nilai agregat bahaya <code>HM_raw</code> ditransformasikan dengan fungsi fuzzy dan parameter MULTI menjadi HM pada skala 0-1:</p>
+<p><code>HM = fuzzy(HM_raw; m_MULTI, s_MULTI)</code></p>
+<p>HM disimpan sebagai hasil antara dan digunakan langsung dalam pembentukan RP. Urutan ini mengikuti laporan dan merupakan keputusan normatif M-05.</p>
 </section>
 <section id="keluaran-dan-pemeriksaan" class="level3">
 <h3 class="anchored" data-anchor-id="keluaran-dan-pemeriksaan">4.3.5 Keluaran dan Pemeriksaan</h3>
@@ -602,7 +681,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="agregasi-multi-kerentanan" class="level3">
 <h3 class="anchored" data-anchor-id="agregasi-multi-kerentanan">4.4.4 Agregasi Multi-Kerentanan</h3>
-<p>Kerentanan seluruh bahaya dijumlahkan. Untuk Kabupaten Aceh Selatan, workbook menghasilkan agregat kerentanan 9,171104. Laporan mengarahkan transformasi agregat menggunakan parameter MULTI, sedangkan workbook meneruskannya sebagai nilai mentah ke pembentukan <code>RP_raw</code>. Perbedaan urutan ini diselesaikan melalui M-05.</p>
+<p>Kerentanan seluruh bahaya dijumlahkan menjadi <code>VM_raw</code>, kemudian ditransformasikan dengan fungsi fuzzy dan parameter MULTI menjadi VM pada skala 0-1:</p>
+<p><code>VM = fuzzy(VM_raw; m_MULTI, s_MULTI)</code></p>
+<p>Untuk Kabupaten Aceh Selatan, <code>VM_raw=9,171104</code> menghasilkan <code>VM=0,757481146511</code>. VM disimpan sebagai hasil antara dan digunakan langsung dalam pembentukan RP.</p>
 </section>
 <section id="keluaran-dan-pemeriksaan-1" class="level3">
 <h3 class="anchored" data-anchor-id="keluaran-dan-pemeriksaan-1">4.4.5 Keluaran dan Pemeriksaan</h3>
@@ -614,20 +695,26 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="formula-dasar" class="level3">
 <h3 class="anchored" data-anchor-id="formula-dasar">4.5.2 Formula Dasar</h3>
-<p><code>RP_raw = (HM * VM)^(1/2)</code></p>
-<p>Laporan kemudian menyatakan RP ditransformasikan ke skala 0-1 dengan fungsi fuzzy dan parameter MULTI.</p>
+<p><code>RP = (HM * VM)^(1/2)</code></p>
+<p>HM dan VM telah berada pada skala 0-1. RP tidak ditransformasi kembali.</p>
 </section>
-<section id="dua-urutan-yang-ditemukan" class="level3">
-<h3 class="anchored" data-anchor-id="dua-urutan-yang-ditemukan">4.5.3 Dua Urutan yang Ditemukan</h3>
-<p><strong>Narasi laporan:</strong> agregasi bahaya dan kerentanan masing-masing ditransformasikan menjadi HM dan VM; keduanya digabung menjadi RP; hasil RP kembali diarahkan untuk ditransformasikan.</p>
-<p><strong>Implementasi workbook:</strong> jumlah bahaya dan jumlah kerentanan langsung digabungkan menjadi <code>RP_raw</code>, kemudian hanya <code>RP_raw</code> yang ditransformasikan menjadi <code>RP_idx</code>.</p>
-<p>Kedua urutan tidak boleh dianggap setara hanya karena contoh Aceh Selatan menghasilkan angka yang berdekatan. Urutan normatif, nama variabel, dan banyaknya transformasi harus ditetapkan melalui keputusan M-05.</p>
+<section id="urutan-normatif" class="level3">
+<h3 class="anchored" data-anchor-id="urutan-normatif">4.5.3 Urutan Normatif</h3>
+<p>Urutan normatif mengikuti laporan:</p>
+<ol type="1">
+<li><code>HM_raw = sum(H_i)</code>;</li>
+<li><code>VM_raw = sum(V_i)</code>;</li>
+<li><code>HM = fuzzy(HM_raw; parameter MULTI)</code>;</li>
+<li><code>VM = fuzzy(VM_raw; parameter MULTI)</code>; dan</li>
+<li><code>RP = sqrt(HM * VM)</code>.</li>
+</ol>
+<p>Implementasi workbook yang menggabungkan <code>HM_raw</code> dan <code>VM_raw</code> sebelum transformasi dipertahankan hanya sebagai catatan rekonsiliasi versi lama dan tidak digunakan untuk keluaran normatif. M-05 dinyatakan selesai.</p>
 </section>
-<section id="contoh-reproduksi-workbook" class="level3">
-<h3 class="anchored" data-anchor-id="contoh-reproduksi-workbook">4.5.4 Contoh Reproduksi Workbook</h3>
+<section id="contoh-perhitungan-normatif" class="level3">
+<h3 class="anchored" data-anchor-id="contoh-perhitungan-normatif">4.5.4 Contoh Perhitungan Normatif</h3>
 <p>Untuk Kabupaten Aceh Selatan:</p>
-<p><code>HM_raw = 8,998</code><br> <code>VM_raw = 9,171104</code><br> <code>RP_raw = sqrt(8,998 * 9,171104) = 9,084140</code><br> <code>RP_idx = fuzzy(9,084140; m=5,186100; s=1,997839) = 0,753967</code></p>
-<p>Contoh ini diberi label <strong>implementasi workbook</strong>, bukan keputusan metode final.</p>
+<p><code>HM_raw = 8,998</code><br> <code>VM_raw = 9,171104</code><br> <code>HM = fuzzy(8,998; m=5,186100211703; s=1,997838658711) = 0,750419279362</code><br> <code>VM = fuzzy(9,171104; m=5,186100211703; s=1,997838658711) = 0,757481146511</code><br> <code>RP = sqrt(0,750419279362 * 0,757481146511) = 0,753941944778</code></p>
+<p>Angka dihitung dengan presisi penuh. Pembulatan hanya dilakukan untuk penyajian.</p>
 </section>
 <section id="klasifikasi" class="level3">
 <h3 class="anchored" data-anchor-id="klasifikasi">4.5.5 Klasifikasi</h3>
@@ -639,14 +726,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="transformasi-linier-bertahap" class="level3">
 <h3 class="anchored" data-anchor-id="transformasi-linier-bertahap">4.6.2 Transformasi Linier Bertahap</h3>
-<p>Jika <code>IKD &lt;= 0,4</code>:<br> <code>C = ((1/3)/0,4) * IKD</code></p>
+<p>Jika <code>0,20 &lt;= IKD &lt;= 0,4</code>:<br> <code>C = ((1/3)/0,4) * IKD</code></p>
 <p>Jika <code>0,4 &lt; IKD &lt;= 0,8</code>:<br> <code>C = 1/3 + ((1/3)/0,4) * (IKD - 0,4)</code></p>
 <p>Jika <code>0,8 &lt; IKD &lt;= 1</code>:<br> <code>C = 2/3 + ((1/3)/0,2) * (IKD - 0,8)</code></p>
-<p>Fungsi tersebut kontinu pada 0,4 dan 0,8 serta memetakan IKD 0, 0,4, 0,8, dan 1 masing-masing menjadi C 0, 1/3, 2/3, dan 1.</p>
+<p>Fungsi tersebut kontinu pada 0,4 dan 0,8. Dalam domain input yang sah, IKD 0,20, 0,4, 0,8, dan 1 masing-masing dipetakan menjadi C 1/6, 1/3, 2/3, dan 1. Dengan demikian C minimum adalah 0,166666666667 atau 0,17 setelah pembulatan penyajian.</p>
 </section>
 <section id="validasi-domain" class="level3">
 <h3 class="anchored" data-anchor-id="validasi-domain">4.6.3 Validasi Domain</h3>
-<p>IKD kosong, negatif, atau lebih besar dari 1 tidak dihitung dan diberi status gagal validasi. Draf ini tidak menerapkan pemotongan otomatis ke rentang 0-1 karena tindakan tersebut dapat menyembunyikan kesalahan sumber.</p>
+<p>IKD kosong, lebih kecil dari 0,20, atau lebih besar dari 1 tidak dihitung dan diberi status gagal validasi. Nilai tidak dipotong otomatis ke batas domain karena tindakan tersebut dapat menyembunyikan kesalahan sumber. Pemeriksaan workbook mengonfirmasi IKD 2025 minimum 0,20 dan C minimum 0,166666666667 pada 514 kabupaten/kota.</p>
 </section>
 <section id="contoh" class="level3">
 <h3 class="anchored" data-anchor-id="contoh">4.6.4 Contoh</h3>
@@ -665,8 +752,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="contoh-1" class="level3">
 <h3 class="anchored" data-anchor-id="contoh-1">4.7.3 Contoh</h3>
-<p>Untuk Kabupaten Aceh Selatan berdasarkan implementasi workbook:</p>
-<p><code>RP = 0,753967</code><br> <code>C = 0,175000</code><br> <code>RA = sqrt(0,753967 * (1 - 0,175)) = 0,788684</code></p>
+<p>Untuk Kabupaten Aceh Selatan berdasarkan urutan normatif M-05:</p>
+<p><code>RP = 0,753941944778</code><br> <code>C = 0,175000</code><br> <code>RA = sqrt(0,753941944778 * (1 - 0,175)) = 0,788671100296</code></p>
 <p>Workbook mengklasifikasikan nilai tersebut sebagai <strong>Tinggi</strong> dengan batas <code>RA &gt; 0,666</code>. Ambang 0,333 dan 0,666 serta aturan pembulatannya masih memerlukan penetapan melalui M-08.</p>
 </section>
 <section id="status-keluaran" class="level3">
@@ -684,7 +771,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="kondisi-khusus" class="level3">
 <h3 class="anchored" data-anchor-id="kondisi-khusus">4.8.2 Kondisi Khusus</h3>
-<p>Formula tidak terdefinisi untuk <code>C=0</code>. Nilai C yang sangat kecil dapat menghasilkan RR ekstrem. Konstanta <code>+1</code> tidak selalu menjamin RR non-negatif. Aturan minimum C, RP=0, nilai negatif, dan data kosong harus diputuskan melalui M-06, M-07, dan M-18.</p>
+<p>Domain IKD minimum 0,20 menghasilkan C minimum 1/6 atau 0,166666666667, sehingga <code>C=0</code> tidak mungkin pada input yang sah dan RR selalu memiliki penyebut positif. IKD di bawah 0,20 dihentikan sebagai gagal validasi. M-06 dinyatakan selesai. Kondisi <code>RP=0</code>, kemungkinan RR negatif, nilai input negatif, dan data kosong tetap mengikuti keputusan M-07 dan M-18.</p>
 </section>
 <section id="klasifikasi-1" class="level3">
 <h3 class="anchored" data-anchor-id="klasifikasi-1">4.8.3 Klasifikasi</h3>
@@ -734,7 +821,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="contoh-2" class="level3">
 <h3 class="anchored" data-anchor-id="contoh-2">4.8.4 Contoh</h3>
 <p>Untuk Kabupaten Aceh Selatan:</p>
-<p><code>RR = log2(0,753967 / 0,175) + 1 = 3,107147</code></p>
+<p><code>RR = log2(0,753941944778 / 0,175) + 1 = 3,107098514956</code></p>
 <p>Nilai tersebut masuk kategori Kritis. Interpretasi ini menunjukkan ketimpangan relatif dan tidak menggantikan pembacaan RP, C, serta RA.</p>
 </section>
 <section id="penggunaan" class="level3">

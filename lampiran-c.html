@@ -350,11 +350,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="persamaan-inti">Persamaan Inti</h2>
 <p>Transformasi fuzzy sigmoid:</p>
 <p><span class="math display">\[I(x)=\frac{1}{1+\left(\frac{x}{m}\right)^{-s}}\]</span></p>
-<p>Reproduksi Risiko Potensial pada workbook:</p>
-<p><span class="math display">\[RP_{raw}=\sqrt{HM_{raw}\times VM_{raw}},\qquad RP_{idx}=I(RP_{raw})\]</span></p>
+<p>Urutan normatif Risiko Potensial:</p>
+<p><span class="math display">\[HM=I(HM_{raw}),\qquad VM=I(VM_{raw}),\qquad RP=\sqrt{HM\times VM}\]</span></p>
 <p>Risiko Aktual dan Rasio Risiko:</p>
-<p><span class="math display">\[RA=\sqrt{RP_{idx}(1-C)}\]</span></p>
-<p><span class="math display">\[RR=\log_2\left(\frac{RP_{idx}}{C}\right)+1\]</span></p>
+<p><span class="math display">\[RA=\sqrt{RP(1-C)}\]</span></p>
+<p><span class="math display">\[RR=\log_2\left(\frac{RP}{C}\right)+1\]</span></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -365,7 +365,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Persamaan di atas mereproduksi workbook. Urutan RP normatif menunggu M-05; RR untuk <code>C=0</code> menunggu M-06. Persamaan 11 untuk penyetaraan belum dapat diberlakukan karena M-01 dan M-09.</p>
+<p>HM dan VM ditransformasi terlebih dahulu dengan parameter MULTI, kemudian digabung menjadi RP tanpa transformasi ulang. Domain IKD 0,20-1,00 menghasilkan C minimum 1/6, sehingga penyebut RR selalu positif untuk input yang sah. M-05 dan M-06 dinyatakan selesai.</p>
 </div>
 </div>
 </section>
@@ -449,7 +449,10 @@ Important
 </tr>
 </tbody>
 </table>
-<p>Parameter disimpan dengan presisi penuh pada perangkat hitung. Simbol perantara kalibrasi pada Persamaan 2–3 perlu diselesaikan melalui M-02.</p>
+<p>Parameter disimpan dengan presisi penuh pada perangkat hitung. Untuk <code>I_L=0,333</code> dan <code>I_U=0,666</code>, simbol perantara dan parameter didefinisikan sebagai:</p>
+<p><span class="math display">\[A_L=\ln\left(\frac{1}{I_L}-1\right),\qquad A_U=\ln\left(\frac{1}{I_U}-1\right)\]</span></p>
+<p><span class="math display">\[s=\frac{A_L-A_U}{\ln(x_U/x_L)},\qquad m=x_L\exp(A_L/s)=x_U\exp(A_U/s)\]</span></p>
+<p>Nilainya adalah <code>A_L=0,694647555935180</code> dan <code>A_U=-0,690148677563689</code>. Uji ulang independen terhadap tujuh kelompok parameter menghasilkan spread dan midpoint yang sama dengan workbook. Substitusi batas bawah dan batas atas menghasilkan kembali indeks 0,333 dan 0,666 dengan galat maksimum <code>5,55E-17</code>. M-02 dinyatakan selesai.</p>
 </section>
 <section id="bobot-kerentanan" class="level2">
 <h2 class="anchored" data-anchor-id="bobot-kerentanan">Bobot Kerentanan</h2>

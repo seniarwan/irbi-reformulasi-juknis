@@ -320,7 +320,7 @@ window.Quarto = {
   <ul>
   <li><a href="#identitas-skenario" id="toc-identitas-skenario" class="nav-link active" data-scroll-target="#identitas-skenario">Identitas Skenario</a></li>
   <li><a href="#contoh-kerentanan-banjir" id="toc-contoh-kerentanan-banjir" class="nav-link" data-scroll-target="#contoh-kerentanan-banjir">Contoh Kerentanan Banjir</a></li>
-  <li><a href="#agregasi-dan-keluaran" id="toc-agregasi-dan-keluaran" class="nav-link" data-scroll-target="#agregasi-dan-keluaran">Agregasi dan Keluaran</a></li>
+  <li><a href="#agregasi-transformasi-dan-keluaran" id="toc-agregasi-transformasi-dan-keluaran" class="nav-link" data-scroll-target="#agregasi-transformasi-dan-keluaran">Agregasi, Transformasi, dan Keluaran</a></li>
   </ul>
 </nav>
     </div>
@@ -330,7 +330,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran Operasional</a></li><li class="breadcrumb-item"><a href="./lampiran-e.html">Lampiran E. Contoh Perhitungan</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Lampiran E. Contoh Perhitungan</h1>
-<p class="subtitle lead">Reproduksi workbook — Kabupaten Aceh Selatan</p>
+<p class="subtitle lead">Contoh metode normatif — Kabupaten Aceh Selatan</p>
 </div>
 
 
@@ -350,10 +350,6 @@ window.Quarto = {
 <section id="identitas-skenario" class="level2">
 <h2 class="anchored" data-anchor-id="identitas-skenario">Identitas Skenario</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Elemen</th>
@@ -383,7 +379,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Status</td>
-<td>reproduksi implementasi workbook, bukan seri waktu 2021–2025</td>
+<td>contoh metode normatif; bukan seri waktu 2021–2025</td>
 </tr>
 </tbody>
 </table>
@@ -424,13 +420,13 @@ window.Quarto = {
 <p><span class="math display">\[V_{banjir}=0{,}4(0{,}999973)+0{,}25(1)+0{,}25(1)+0{,}1(0{,}631952)=0{,}963184\]</span></p>
 <p>Saturasi komponen fisik dan ekonomi adalah sinyal audit satuan dan kalibrasi, bukan bukti bahwa nilai input telah valid.</p>
 </section>
-<section id="agregasi-dan-keluaran" class="level2">
-<h2 class="anchored" data-anchor-id="agregasi-dan-keluaran">Agregasi dan Keluaran</h2>
+<section id="agregasi-transformasi-dan-keluaran" class="level2">
+<h2 class="anchored" data-anchor-id="agregasi-transformasi-dan-keluaran">Agregasi, Transformasi, dan Keluaran</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Variabel</th>
-<th style="text-align: right;">Nilai workbook</th>
+<th style="text-align: right;">Nilai metode normatif</th>
 </tr>
 </thead>
 <tbody>
@@ -443,47 +439,52 @@ window.Quarto = {
 <td style="text-align: right;">9,171104</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(RP_{raw}\)</span></td>
-<td style="text-align: right;">9,084140</td>
+<td>HM</td>
+<td style="text-align: right;">0,750419279362</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(RP_{idx}\)</span></td>
-<td style="text-align: right;">0,753967</td>
+<td>VM</td>
+<td style="text-align: right;">0,757481146511</td>
 </tr>
 <tr class="odd">
+<td>RP</td>
+<td style="text-align: right;">0,753941944778</td>
+</tr>
+<tr class="even">
 <td>IKD</td>
 <td style="text-align: right;">0,210000</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>C</td>
 <td style="text-align: right;">0,175000</td>
 </tr>
-<tr class="odd">
-<td>RA</td>
-<td style="text-align: right;">0,788684</td>
-</tr>
 <tr class="even">
+<td>RA</td>
+<td style="text-align: right;">0,788671100296</td>
+</tr>
+<tr class="odd">
 <td>RR</td>
-<td style="text-align: right;">3,107147</td>
+<td style="text-align: right;">3,107098514956</td>
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[RP_{raw}=\sqrt{8{,}998\times9{,}171104}=9{,}084140\]</span></p>
-<p><span class="math display">\[RP_{idx}=I(9{,}084140;m=5{,}186100;s=1{,}997839)=0{,}753967\]</span></p>
+<p><span class="math display">\[HM=I(8{,}998)=0{,}750419279362\]</span></p>
+<p><span class="math display">\[VM=I(9{,}171104)=0{,}757481146511\]</span></p>
+<p><span class="math display">\[RP=\sqrt{0{,}750419279362\times0{,}757481146511}=0{,}753941944778\]</span></p>
 <p><span class="math display">\[C=\frac{1/3}{0{,}4}\times0{,}21=0{,}175000\]</span></p>
-<p><span class="math display">\[RA=\sqrt{0{,}753967(1-0{,}175000)}=0{,}788684\]</span></p>
-<p><span class="math display">\[RR=\log_2(0{,}753967/0{,}175000)+1=3{,}107147\]</span></p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<p><span class="math display">\[RA=\sqrt{0{,}753941944778(1-0{,}175000)}=0{,}788671100296\]</span></p>
+<p><span class="math display">\[RR=\log_2(0{,}753941944778/0{,}175000)+1=3{,}107098514956\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Kesesuaian angka membuktikan bahwa formula workbook dapat direproduksi. Hal itu tidak sekaligus mengesahkan satuan input, urutan metode, klasifikasi, atau status kebijakan keluaran.</p>
+<p>IKD minimum 0,20 menghasilkan C minimum 0,166666666667 atau 0,17 setelah pembulatan. Dengan demikian <code>C=0</code> tidak mungkin pada input yang memenuhi domain.</p>
 </div>
 </div>
 

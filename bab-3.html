@@ -386,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>Kapasitas</td>
 <td>IKD kabupaten/kota</td>
-<td>0-1</td>
+<td>0,20-1,00</td>
 </tr>
 </tbody>
 </table>
@@ -412,11 +412,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="status-kelengkapan-data" class="level2">
 <h2 class="anchored" data-anchor-id="status-kelengkapan-data">3.7 Status Kelengkapan Data</h2>
-<p>Setiap nilai mempunyai satu status: <strong>tersedia</strong>, <strong>nol sah</strong>, <strong>tidak berlaku</strong>, <strong>tidak tersedia</strong>, atau <strong>gagal validasi</strong>. Status tersebut tidak boleh saling dipertukarkan. Nilai kosong tidak otomatis diubah menjadi nol dan <code>IFERROR</code> tidak digunakan untuk menyembunyikan kegagalan yang tidak dipahami.</p>
+<p>Setiap nilai mempunyai satu status: <strong>tersedia</strong>, <strong>nol sah</strong>, <strong>tidak berlaku</strong>, <strong>tidak tersedia</strong>, atau <strong>gagal validasi</strong>. Status tersebut tidak boleh saling dipertukarkan. Nol sah diperhitungkan sebagai nol. Tidak berlaku dicatat tersendiri dan hanya berkontribusi nol pada penjumlahan setelah status keberlakuannya dikonfirmasi. Tidak tersedia dan gagal validasi menghentikan publikasi keluaran terkait sampai data diperbaiki atau diberi disposisi tertulis. Nilai kosong tidak otomatis diubah menjadi nol dan <code>IFERROR</code> tidak digunakan untuk menyembunyikan kegagalan yang tidak dipahami.</p>
 </section>
 <section id="validasi-input" class="level2">
 <h2 class="anchored" data-anchor-id="validasi-input">3.8 Validasi Input</h2>
-<p>Validasi minimum meliputi tipe data, satuan, domain, nilai negatif, duplikasi, kode wilayah, kelengkapan bahaya, outlier, metadata, dan kesesuaian tahun. IKD harus berada pada rentang 0-1. Setiap koreksi dicatat bersama nilai awal, alasan, pelaksana, tanggal, dan persetujuannya.</p>
+<p>Validasi minimum meliputi tipe data, satuan, domain, nilai negatif, duplikasi, kode wilayah, kelengkapan bahaya, outlier, metadata, dan kesesuaian tahun. IKD harus berada pada rentang 0,20-1,00. Nilai di bawah 0,20 atau di atas 1,00 berstatus gagal validasi dan tidak dipotong otomatis ke batas domain. Setiap koreksi dicatat bersama nilai awal, alasan, pelaksana, tanggal, dan persetujuannya.</p>
 </section>
 <section id="pemutakhiran-dan-versi" class="level2">
 <h2 class="anchored" data-anchor-id="pemutakhiran-dan-versi">3.9 Pemutakhiran dan Versi</h2>
