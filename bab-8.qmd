@@ -25,7 +25,7 @@ Perubahan tidak dilakukan langsung pada versi yang telah dirilis. Setiap usulan 
 
 Prioritas sebelum penetapan nasional adalah:
 
-1. menyelesaikan sepuluh isu kritis pada [Register Isu](register-isu.qmd);
+1. menyelesaikan lima isu kritis yang masih terbuka pada [Register Isu](register-isu.qmd);
 2. mengesahkan kamus variabel, daftar bahaya, sumber data, satuan, dan identitas skenario;
 3. menguji formula dan perangkat secara independen pada seluruh wilayah;
 4. menetapkan klasifikasi, presisi, pembulatan, nomenklatur, dan warna;

@@ -22,6 +22,6 @@ title: "Lampiran B. Data, Kamus Data, dan Daftar Bahaya"
 | `UNAVAILABLE` | data belum tersedia | menghentikan atau memberi status keluaran tidak lengkap |
 | `VALIDATION_FAIL` | data gagal domain/satuan/kunci | tidak dihitung sebelum diperbaiki |
 
-## Daftar Bahaya dalam Workbook
+## Daftar Bahaya Nasional
 
-Workbook memuat **11 kolom**: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tabel laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi menjadi **10 kelompok**. Daftar nasional dan pemetaan bobot final menunggu keputusan M-04.
+Daftar nasional ditetapkan sebanyak **11 jenis bahaya**: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tanah longsor dan likuefaksi dihitung secara terpisah. Jumlah komponen agregasi adalah `n=11`; M-03 dan M-04 dinyatakan selesai.

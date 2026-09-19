@@ -18,7 +18,7 @@ title: "Lampiran F. Templat Perhitungan dan Struktur Basis Data"
 | Skenario | `versi_h`, `versi_v`, `versi_ikd`, `versi_metode` |
 | Input | `h_<bahaya>`, `v_penduduk_<bahaya>`, `ikd` |
 | Status | `status_h_<bahaya>`, `status_v_<bahaya>`, `status_validasi` |
-| Hasil antara | `hm_raw`, `vm_raw`, `rp_raw`, `rp_idx`, `c` |
+| Hasil antara | `hm_raw`, `vm_raw`, `hm`, `vm`, `rp`, `c` |
 | Keluaran | `ra`, `rr`, kelas yang disahkan, catatan |
 
 ## Kontrol Penggabungan

@@ -8,18 +8,18 @@ Transformasi fuzzy sigmoid:
 
 $$I(x)=\frac{1}{1+\left(\frac{x}{m}\right)^{-s}}$$
 
-Reproduksi Risiko Potensial pada workbook:
+Urutan normatif Risiko Potensial:
 
-$$RP_{raw}=\sqrt{HM_{raw}\times VM_{raw}},\qquad RP_{idx}=I(RP_{raw})$$
+$$HM=I(HM_{raw}),\qquad VM=I(VM_{raw}),\qquad RP=\sqrt{HM\times VM}$$
 
 Risiko Aktual dan Rasio Risiko:
 
-$$RA=\sqrt{RP_{idx}(1-C)}$$
+$$RA=\sqrt{RP(1-C)}$$
 
-$$RR=\log_2\left(\frac{RP_{idx}}{C}\right)+1$$
+$$RR=\log_2\left(\frac{RP}{C}\right)+1$$
 
 ::: {.callout-important}
-Persamaan di atas mereproduksi workbook. Urutan RP normatif menunggu M-05; RR untuk `C=0` menunggu M-06. Persamaan 11 untuk penyetaraan belum dapat diberlakukan karena M-01 dan M-09.
+HM dan VM ditransformasi terlebih dahulu dengan parameter MULTI, kemudian digabung menjadi RP tanpa transformasi ulang. Domain IKD 0,20-1,00 menghasilkan C minimum 1/6, sehingga penyebut RR selalu positif untuk input yang sah. M-05 dan M-06 dinyatakan selesai.
 :::
 
 ## Parameter Transformasi yang Terekam
@@ -34,7 +34,13 @@ Persamaan di atas mereproduksi workbook. Urutan RP normatif menunggu M-05; RR un
 | Lingkungan | tsunami | 55 | 185 | 1,142 | 101,070 |
 | Multi | 11 bahaya workbook | 3,663 | 7,326 | 1,998 | 5,186 |
 
-Parameter disimpan dengan presisi penuh pada perangkat hitung. Simbol perantara kalibrasi pada Persamaan 2–3 perlu diselesaikan melalui M-02.
+Parameter disimpan dengan presisi penuh pada perangkat hitung. Untuk `I_L=0,333` dan `I_U=0,666`, simbol perantara dan parameter didefinisikan sebagai:
+
+$$A_L=\ln\left(\frac{1}{I_L}-1\right),\qquad A_U=\ln\left(\frac{1}{I_U}-1\right)$$
+
+$$s=\frac{A_L-A_U}{\ln(x_U/x_L)},\qquad m=x_L\exp(A_L/s)=x_U\exp(A_U/s)$$
+
+Nilainya adalah `A_L=0,694647555935180` dan `A_U=-0,690148677563689`. Uji ulang independen terhadap tujuh kelompok parameter menghasilkan spread dan midpoint yang sama dengan workbook. Substitusi batas bawah dan batas atas menghasilkan kembali indeks 0,333 dan 0,666 dengan galat maksimum `5,55E-17`. M-02 dinyatakan selesai.
 
 ## Bobot Kerentanan
 

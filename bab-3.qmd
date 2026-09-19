@@ -29,7 +29,7 @@ Unit dasar perhitungan adalah kabupaten/kota. Setiap rekaman wajib memiliki satu
 | Kerugian fisik | Nilai kerugian fisik per bahaya | Rp miliar dan tahun harga yang ditetapkan |
 | Kerugian ekonomi | Nilai kerugian ekonomi per bahaya | Rp miliar dan tahun harga yang ditetapkan |
 | Kerusakan lingkungan | Luas kerusakan per bahaya | hektare |
-| Kapasitas | IKD kabupaten/kota | 0-1 |
+| Kapasitas | IKD kabupaten/kota | 0,20-1,00 |
 
 ## 3.3 Identitas Waktu dan Skenario
 
@@ -60,12 +60,12 @@ Referensi baris langsung seperti `RAW_V2025!H3` tidak digunakan dalam template n
 ## 3.7 Status Kelengkapan Data
 
 
-Setiap nilai mempunyai satu status: **tersedia**, **nol sah**, **tidak berlaku**, **tidak tersedia**, atau **gagal validasi**. Status tersebut tidak boleh saling dipertukarkan. Nilai kosong tidak otomatis diubah menjadi nol dan `IFERROR` tidak digunakan untuk menyembunyikan kegagalan yang tidak dipahami.
+Setiap nilai mempunyai satu status: **tersedia**, **nol sah**, **tidak berlaku**, **tidak tersedia**, atau **gagal validasi**. Status tersebut tidak boleh saling dipertukarkan. Nol sah diperhitungkan sebagai nol. Tidak berlaku dicatat tersendiri dan hanya berkontribusi nol pada penjumlahan setelah status keberlakuannya dikonfirmasi. Tidak tersedia dan gagal validasi menghentikan publikasi keluaran terkait sampai data diperbaiki atau diberi disposisi tertulis. Nilai kosong tidak otomatis diubah menjadi nol dan `IFERROR` tidak digunakan untuk menyembunyikan kegagalan yang tidak dipahami.
 
 ## 3.8 Validasi Input
 
 
-Validasi minimum meliputi tipe data, satuan, domain, nilai negatif, duplikasi, kode wilayah, kelengkapan bahaya, outlier, metadata, dan kesesuaian tahun. IKD harus berada pada rentang 0-1. Setiap koreksi dicatat bersama nilai awal, alasan, pelaksana, tanggal, dan persetujuannya.
+Validasi minimum meliputi tipe data, satuan, domain, nilai negatif, duplikasi, kode wilayah, kelengkapan bahaya, outlier, metadata, dan kesesuaian tahun. IKD harus berada pada rentang 0,20-1,00. Nilai di bawah 0,20 atau di atas 1,00 berstatus gagal validasi dan tidak dipotong otomatis ke batas domain. Setiap koreksi dicatat bersama nilai awal, alasan, pelaksana, tanggal, dan persetujuannya.
 
 ## 3.9 Pemutakhiran dan Versi
 

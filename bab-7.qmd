@@ -57,7 +57,11 @@ Alternatif ini adalah **opsi kebijakan**, bukan tahapan otomatis. Otoritas yang 
 
 ## 7.5 Penyetaraan Skala
 
-Penyetaraan belum dapat dijalankan sebagai prosedur normatif. Persamaan 11 pada laporan memiliki pembilang yang secara literal menjadi nol; arah variabel dan nilai `x_max` kelas tinggi juga belum lengkap. Rumus dugaan matematis tidak boleh diberlakukan sebelum [M-01 dan M-09](register-isu.qmd) diselesaikan.
+Persamaan 11 dikoreksi menjadi:
+
+$$f(x)=y_{min}+(x-x_{min})\left(\frac{y_{max}-y_{min}}{x_{max}-x_{min}}\right)$$
+
+Koreksi pembilang `y_max-y_min` menutup M-01. Penyetaraan belum dapat dijalankan sebagai prosedur normatif karena arah variabel dan nilai `x_max` kelas tinggi masih harus ditetapkan melalui [M-09](register-isu.qmd#m-09).
 
 Jika kelak disahkan, nilai hasil penyetaraan harus diberi label **nilai transisi**, disimpan bersama nilai asli kedua metode, serta dilengkapi versi rumus, parameter, dan kelas.
 

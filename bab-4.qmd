@@ -34,7 +34,17 @@ Transformasi menyetarakan indikator yang memiliki satuan berbeda ke skala 0-1 da
 ### 4.2.3 Kalibrasi Parameter
 
 
-Parameter diturunkan dari batas bawah `x_L`, batas atas `x_U`, dan target indeks 0,333 serta 0,666. Simbol perantara pada Persamaan 2-3 dalam laporan belum konsisten dan harus diselesaikan melalui M-02. Sampai keputusan tersebut ditetapkan, parameter hasil kalibrasi digunakan sebagai tabel terkendali dan tidak dihitung ulang oleh pengguna.
+Parameter diturunkan dari batas bawah `x_L`, batas atas `x_U`, dan target indeks `I_L=0,333` serta `I_U=0,666`. Simbol perantara didefinisikan sebagai:
+
+`A_L = ln(1/I_L - 1) = ln((1-I_L)/I_L)`<br>
+`A_U = ln(1/I_U - 1) = ln((1-I_U)/I_U)`
+
+Selanjutnya:
+
+`s = (A_L - A_U) / ln(x_U/x_L)`<br>
+`m = x_L * exp(A_L/s) = x_U * exp(A_U/s)`
+
+Dengan target tersebut diperoleh `A_L=0,694647555935180` dan `A_U=-0,690148677563689`. Uji ulang independen terhadap tujuh kelompok parameter menghasilkan nilai spread dan midpoint yang sama dengan nilai tersimpan pada workbook. Substitusi kembali `x_L` dan `x_U` menghasilkan indeks 0,333 dan 0,666 dengan galat maksimum `5,55E-17`. M-02 dinyatakan selesai.
 
 | Komponen | Jenis bahaya | x_L | x_U | s | m |
 |---|---|---:|---:|---:|---:|
@@ -48,6 +58,20 @@ Parameter diturunkan dari batas bawah `x_L`, batas atas `x_U`, dan target indeks
 
 Angka pada tabel disimpan dengan presisi penuh dalam perangkat hitung. Pembulatan hanya dilakukan untuk penyajian.
 
+#### Hasil Uji Ulang Kalibrasi
+
+| Kelompok parameter | Spread hasil uji | Midpoint hasil uji | I(x_L) | I(x_U) |
+|---|---:|---:|---:|---:|
+| Penduduk terpapar | 1,997838658711 | 707,903386800809 | 0,333000 | 0,666000 |
+| Kerugian fisik | 3,415327745364 | 1,715772508072 | 0,333000 | 0,666000 |
+| Kerugian ekonomi | 1,791016999282 | 0,221071503529 | 0,333000 | 0,666000 |
+| Lingkungan 70–205 | 1,288764300479 | 120,000754930905 | 0,333000 | 0,666000 |
+| Lingkungan 65–185 | 1,323936772896 | 109,845035110657 | 0,333000 | 0,666000 |
+| Lingkungan tsunami | 1,141607904099 | 101,070158900684 | 0,333000 | 0,666000 |
+| Multi, 11 bahaya | 1,997838658711 | 5,186100211703 | 0,333000 | 0,666000 |
+
+Seluruh spread dan midpoint hasil uji identik dengan nilai tersimpan pada sheet `RULES` workbook. Galat maksimum terhadap target indeks adalah `5,55E-17`, yaitu pada tingkat pembulatan mesin.
+
 ### 4.2.4 Contoh Transformasi
 
 
@@ -58,7 +82,7 @@ Contoh tersebut juga memperlihatkan pentingnya pemeriksaan satuan. Nilai kerugia
 ### 4.2.5 Aturan Domain dan Galat
 
 
-Nilai negatif, IKD di luar 0-1, parameter kosong, atau satuan yang tidak terkonfirmasi dihentikan sebelum perhitungan. Nol sah dipertahankan sebagai nol. Tidak berlaku dan tidak tersedia menggunakan status berbeda. Pesan galat disimpan dan dilaporkan; galat tidak diganti dengan teks kosong tanpa jejak.
+Nilai negatif, IKD di luar 0,20-1,00, parameter kosong, atau satuan yang tidak terkonfirmasi dihentikan sebelum perhitungan. Nol sah dipertahankan sebagai nol. Tidak berlaku dan tidak tersedia menggunakan status berbeda. Pesan galat disimpan dan dilaporkan; galat tidak diganti dengan teks kosong tanpa jejak.
 ## 4.3 Indeks Multi-Bahaya
 
 ### 4.3.1 Bahaya Tunggal
@@ -69,7 +93,7 @@ Setiap jenis bahaya dihitung dan disimpan terpisah pada skala 0-1. Nilai nol, ti
 ### 4.3.2 Daftar Bahaya
 
 
-Implementasi workbook menggunakan 11 jenis bahaya. Tabel bobot dalam laporan menggabungkan tanah longsor dan likuefaksi sehingga menghasilkan 10 kelompok. Sebelum penetapan nasional, M-04 harus menghasilkan daftar final dan pemetaan setiap jenis bahaya ke parameter serta bobotnya.
+Daftar nasional menggunakan 11 jenis bahaya: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tanah longsor dan likuefaksi dihitung secara terpisah. Dengan keputusan ini, jumlah komponen agregasi adalah `n=11` dan M-03 serta M-04 dinyatakan selesai.
 
 ### 4.3.3 Agregasi
 
@@ -81,7 +105,11 @@ Untuk Kabupaten Aceh Selatan, jumlah indeks bahaya tunggal dalam workbook adalah
 ### 4.3.4 Transformasi Multi-Bahaya
 
 
-Laporan mengarahkan nilai agregat bahaya ditransformasikan dengan parameter MULTI. Workbook tidak menyimpan hasil transformasi HM sebagai variabel tersendiri, melainkan menggunakan jumlah mentah pada tahap pembentukan `RP_raw`. Perbedaan ini dicatat sebagai bagian M-05 dan tidak diselesaikan secara sepihak dalam draf ini.
+Nilai agregat bahaya `HM_raw` ditransformasikan dengan fungsi fuzzy dan parameter MULTI menjadi HM pada skala 0-1:
+
+`HM = fuzzy(HM_raw; m_MULTI, s_MULTI)`
+
+HM disimpan sebagai hasil antara dan digunakan langsung dalam pembentukan RP. Urutan ini mengikuti laporan dan merupakan keputusan normatif M-05.
 
 ### 4.3.5 Keluaran dan Pemeriksaan
 
@@ -127,7 +155,11 @@ Nilai tersebut merupakan contoh reproduksi workbook. Penggunaan operasional teta
 ### 4.4.4 Agregasi Multi-Kerentanan
 
 
-Kerentanan seluruh bahaya dijumlahkan. Untuk Kabupaten Aceh Selatan, workbook menghasilkan agregat kerentanan 9,171104. Laporan mengarahkan transformasi agregat menggunakan parameter MULTI, sedangkan workbook meneruskannya sebagai nilai mentah ke pembentukan `RP_raw`. Perbedaan urutan ini diselesaikan melalui M-05.
+Kerentanan seluruh bahaya dijumlahkan menjadi `VM_raw`, kemudian ditransformasikan dengan fungsi fuzzy dan parameter MULTI menjadi VM pada skala 0-1:
+
+`VM = fuzzy(VM_raw; m_MULTI, s_MULTI)`
+
+Untuk Kabupaten Aceh Selatan, `VM_raw=9,171104` menghasilkan `VM=0,757481146511`. VM disimpan sebagai hasil antara dan digunakan langsung dalam pembentukan RP.
 
 ### 4.4.5 Keluaran dan Pemeriksaan
 
@@ -143,30 +175,35 @@ RP menggambarkan tekanan risiko struktural sebelum kapasitas diperhitungkan. RP 
 ### 4.5.2 Formula Dasar
 
 
-`RP_raw = (HM * VM)^(1/2)`
+`RP = (HM * VM)^(1/2)`
 
-Laporan kemudian menyatakan RP ditransformasikan ke skala 0-1 dengan fungsi fuzzy dan parameter MULTI.
+HM dan VM telah berada pada skala 0-1. RP tidak ditransformasi kembali.
 
-### 4.5.3 Dua Urutan yang Ditemukan
+### 4.5.3 Urutan Normatif
 
 
-**Narasi laporan:** agregasi bahaya dan kerentanan masing-masing ditransformasikan menjadi HM dan VM; keduanya digabung menjadi RP; hasil RP kembali diarahkan untuk ditransformasikan.
+Urutan normatif mengikuti laporan:
 
-**Implementasi workbook:** jumlah bahaya dan jumlah kerentanan langsung digabungkan menjadi `RP_raw`, kemudian hanya `RP_raw` yang ditransformasikan menjadi `RP_idx`.
+1. `HM_raw = sum(H_i)`;
+2. `VM_raw = sum(V_i)`;
+3. `HM = fuzzy(HM_raw; parameter MULTI)`;
+4. `VM = fuzzy(VM_raw; parameter MULTI)`; dan
+5. `RP = sqrt(HM * VM)`.
 
-Kedua urutan tidak boleh dianggap setara hanya karena contoh Aceh Selatan menghasilkan angka yang berdekatan. Urutan normatif, nama variabel, dan banyaknya transformasi harus ditetapkan melalui keputusan M-05.
+Implementasi workbook yang menggabungkan `HM_raw` dan `VM_raw` sebelum transformasi dipertahankan hanya sebagai catatan rekonsiliasi versi lama dan tidak digunakan untuk keluaran normatif. M-05 dinyatakan selesai.
 
-### 4.5.4 Contoh Reproduksi Workbook
+### 4.5.4 Contoh Perhitungan Normatif
 
 
 Untuk Kabupaten Aceh Selatan:
 
 `HM_raw = 8,998`<br>
 `VM_raw = 9,171104`<br>
-`RP_raw = sqrt(8,998 * 9,171104) = 9,084140`<br>
-`RP_idx = fuzzy(9,084140; m=5,186100; s=1,997839) = 0,753967`
+`HM = fuzzy(8,998; m=5,186100211703; s=1,997838658711) = 0,750419279362`<br>
+`VM = fuzzy(9,171104; m=5,186100211703; s=1,997838658711) = 0,757481146511`<br>
+`RP = sqrt(0,750419279362 * 0,757481146511) = 0,753941944778`
 
-Contoh ini diberi label **implementasi workbook**, bukan keputusan metode final.
+Angka dihitung dengan presisi penuh. Pembulatan hanya dilakukan untuk penyajian.
 
 ### 4.5.5 Klasifikasi
 
@@ -182,7 +219,7 @@ Input adalah IKD kabupaten/kota yang telah disahkan untuk periode perhitungan. H
 ### 4.6.2 Transformasi Linier Bertahap
 
 
-Jika `IKD <= 0,4`:<br>
+Jika `0,20 <= IKD <= 0,4`:<br>
 `C = ((1/3)/0,4) * IKD`
 
 Jika `0,4 < IKD <= 0,8`:<br>
@@ -191,12 +228,12 @@ Jika `0,4 < IKD <= 0,8`:<br>
 Jika `0,8 < IKD <= 1`:<br>
 `C = 2/3 + ((1/3)/0,2) * (IKD - 0,8)`
 
-Fungsi tersebut kontinu pada 0,4 dan 0,8 serta memetakan IKD 0, 0,4, 0,8, dan 1 masing-masing menjadi C 0, 1/3, 2/3, dan 1.
+Fungsi tersebut kontinu pada 0,4 dan 0,8. Dalam domain input yang sah, IKD 0,20, 0,4, 0,8, dan 1 masing-masing dipetakan menjadi C 1/6, 1/3, 2/3, dan 1. Dengan demikian C minimum adalah 0,166666666667 atau 0,17 setelah pembulatan penyajian.
 
 ### 4.6.3 Validasi Domain
 
 
-IKD kosong, negatif, atau lebih besar dari 1 tidak dihitung dan diberi status gagal validasi. Draf ini tidak menerapkan pemotongan otomatis ke rentang 0-1 karena tindakan tersebut dapat menyembunyikan kesalahan sumber.
+IKD kosong, lebih kecil dari 0,20, atau lebih besar dari 1 tidak dihitung dan diberi status gagal validasi. Nilai tidak dipotong otomatis ke batas domain karena tindakan tersebut dapat menyembunyikan kesalahan sumber. Pemeriksaan workbook mengonfirmasi IKD 2025 minimum 0,20 dan C minimum 0,166666666667 pada 514 kabupaten/kota.
 
 ### 4.6.4 Contoh
 
@@ -223,11 +260,11 @@ Formula hanya dihitung apabila RP dan C sah serta berada pada domain yang diteta
 ### 4.7.3 Contoh
 
 
-Untuk Kabupaten Aceh Selatan berdasarkan implementasi workbook:
+Untuk Kabupaten Aceh Selatan berdasarkan urutan normatif M-05:
 
-`RP = 0,753967`<br>
+`RP = 0,753941944778`<br>
 `C = 0,175000`<br>
-`RA = sqrt(0,753967 * (1 - 0,175)) = 0,788684`
+`RA = sqrt(0,753941944778 * (1 - 0,175)) = 0,788671100296`
 
 Workbook mengklasifikasikan nilai tersebut sebagai **Tinggi** dengan batas `RA > 0,666`. Ambang 0,333 dan 0,666 serta aturan pembulatannya masih memerlukan penetapan melalui M-08.
 
@@ -252,7 +289,7 @@ RR = 1 menunjukkan RP sama dengan C. RR di atas 1 menunjukkan RP relatif lebih b
 ### 4.8.2 Kondisi Khusus
 
 
-Formula tidak terdefinisi untuk `C=0`. Nilai C yang sangat kecil dapat menghasilkan RR ekstrem. Konstanta `+1` tidak selalu menjamin RR non-negatif. Aturan minimum C, RP=0, nilai negatif, dan data kosong harus diputuskan melalui M-06, M-07, dan M-18.
+Domain IKD minimum 0,20 menghasilkan C minimum 1/6 atau 0,166666666667, sehingga `C=0` tidak mungkin pada input yang sah dan RR selalu memiliki penyebut positif. IKD di bawah 0,20 dihentikan sebagai gagal validasi. M-06 dinyatakan selesai. Kondisi `RP=0`, kemungkinan RR negatif, nilai input negatif, dan data kosong tetap mengikuti keputusan M-07 dan M-18.
 
 ### 4.8.3 Klasifikasi
 
@@ -272,7 +309,7 @@ Istilah **Ketimpangan Ringan** mengikuti laporan. Workbook memakai **Ketimpangan
 
 Untuk Kabupaten Aceh Selatan:
 
-`RR = log2(0,753967 / 0,175) + 1 = 3,107147`
+`RR = log2(0,753941944778 / 0,175) + 1 = 3,107098514956`
 
 Nilai tersebut masuk kategori Kritis. Interpretasi ini menunjukkan ketimpangan relatif dan tidak menggantikan pembacaan RP, C, serta RA.
 

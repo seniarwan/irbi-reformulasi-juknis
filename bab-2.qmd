@@ -32,9 +32,9 @@ Reformulasi IRBI memisahkan tekanan struktural yang dibentuk oleh bahaya dan ker
 ## 2.3 Komponen Pembentuk
 
 
-Komponen bahaya terdiri atas indeks bahaya tunggal untuk jenis bahaya yang ditetapkan secara nasional. Workbook menggunakan 11 kolom bahaya, yaitu banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi sehingga menyebut 10 jenis. Daftar nasional final harus diputuskan melalui M-04.
+Komponen bahaya terdiri atas 11 indeks bahaya tunggal yang ditetapkan secara nasional, yaitu banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tanah longsor dan likuefaksi dihitung sebagai dua jenis bahaya yang terpisah. Keputusan ini menutup M-03 dan M-04.
 
-Kerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Kapasitas direpresentasikan melalui IKD yang ditransformasikan menjadi C pada skala 0-1.
+Kerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Kapasitas direpresentasikan melalui IKD dengan domain sah 0,20-1,00 yang ditransformasikan menjadi C pada rentang 1/6-1.
 
 ## 2.4 Risiko Potensial
 
@@ -66,7 +66,7 @@ Alur konseptual yang dipertahankan adalah:
 `IKD -> C`<br>
 `RP + C -> RA dan RR`
 
-Urutan transformasi pada bagian agregasi dan RP masih harus diputuskan melalui M-05 karena narasi laporan dan implementasi workbook tidak sepenuhnya sama.
+Urutan transformasi mengikuti laporan. Agregat mentah bahaya (`HM_raw`) dan kerentanan (`VM_raw`) masing-masing ditransformasi dengan parameter MULTI menjadi HM dan VM. Risiko Potensial kemudian dihitung sebagai `RP=sqrt(HM*VM)` tanpa transformasi ulang. Keputusan ini menutup M-05.
 
 ![Gambar 2.1. Arsitektur konseptual indikator IRBI: H dan V membentuk RP; C memoderasi RA dan dibandingkan dengan RP melalui RR.](assets/figures/gambar_2_1_arsitektur_irbi.png)
 

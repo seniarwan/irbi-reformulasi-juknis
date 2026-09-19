@@ -2,18 +2,18 @@
 title: "Lampiran A. Diagram Alir Perhitungan IRBI"
 ---
 
-![Alur perhitungan dari validasi data sampai publikasi, termasuk titik keputusan urutan transformasi.](assets/figures/gambar_4_1_alur_metode.png){#fig-lampiran-alur fig-alt="Diagram alir metode perhitungan IRBI" .figure-panel}
+![Alur normatif: HM dan VM ditransformasi terpisah sebelum membentuk RP; IKD minimum 0,20 menjaga C tetap positif.](assets/figures/gambar_4_1_alur_metode.png){#fig-lampiran-alur fig-alt="Diagram alir metode perhitungan IRBI" .figure-panel}
 
 ## Alur Operasional
 
 1. Validasi sumber, satuan, periode, kode wilayah, dan status data.
 2. Hitung dan simpan indeks bahaya tunggal serta komponen kerentanan per bahaya.
 3. Agregasikan H dan V sesuai daftar bahaya yang disahkan.
-4. Bentuk RP menggunakan urutan transformasi yang ditetapkan; selama M-05 terbuka, hasil diberi label **reproduksi workbook** atau **skenario laporan**.
+4. Transformasikan `HM_raw` dan `VM_raw` masing-masing menjadi HM dan VM dengan parameter MULTI, lalu hitung `RP=sqrt(HM*VM)` tanpa transformasi ulang.
 5. Transformasikan satu sumber IKD menjadi C.
-6. Hitung RA dan RR setelah memeriksa domain, termasuk kondisi `C=0`.
+6. Tolak IKD di luar 0,20-1,00; domain ini menghasilkan C minimum 1/6 sehingga `C=0` tidak mungkin.
 7. Simpan hasil antara, jalankan QA/QC, validasi, persetujuan, dan publikasi.
 
-::: {.callout-warning}
-Urutan transformasi RP belum boleh disederhanakan menjadi satu diagram normatif sampai M-05 diputuskan.
+::: {.callout-note}
+Urutan transformasi di atas merupakan keputusan normatif M-05. Domain IKD dan C minimum merupakan keputusan M-06.
 :::

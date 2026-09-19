@@ -38,7 +38,7 @@ Versi parameter fuzzy dan tabel bobot dikunci. Setiap bobot per bahaya harus ber
 ### 5.1.5 Pemeriksaan Hasil Antara
 
 
-Indeks komponen, V per bahaya, agregat H, agregat V, `RP_raw`, `RP_idx`, IKD, C, RA, dan RR disimpan. Setiap tahap diuji terhadap contoh acuan dan diperiksa rentangnya. Penamaan variabel mengikuti kamus yang telah ditetapkan.
+Indeks komponen, V per bahaya, `HM_raw`, `VM_raw`, HM, VM, RP, IKD, C, RA, dan RR disimpan. Setiap tahap diuji terhadap contoh acuan dan diperiksa rentangnya. Penamaan variabel mengikuti urutan normatif M-05.
 
 ### 5.1.6 Pemeriksaan Formula
 

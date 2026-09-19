@@ -32,15 +32,15 @@ Dashboard ini menyatukan naskah delapan bab, perangkat operasional, contoh repro
 <span class="metric-label">ilustrasi konsep dan alur</span>
 :::
 ::: {.metric-card .metric-alert}
-<span class="metric-value">18</span>
-<span class="metric-label">isu terbuka · 10 kritis</span>
+<span class="metric-value">12</span>
+<span class="metric-label">isu terbuka · 5 kritis · 6 selesai</span>
 :::
 :::
 
 ::: {.callout-important}
 ## Status metodologi
 
-Dokumen ini **belum normatif**. Sepuluh isu kritis masih memengaruhi formula, satuan, urutan transformasi, identitas skenario, penggabungan wilayah, klasifikasi, dan kedudukan Risiko Aktual. Dashboard membedakan dengan jelas antara **formula yang direproduksi dari workbook**, **narasi laporan**, dan **ketentuan yang masih memerlukan keputusan**.
+Dokumen ini **belum normatif**. Enam isu telah diselesaikan, termasuk urutan transformasi RP dan domain minimum kapasitas. Lima isu kritis masih memengaruhi satuan, identitas skenario, penggabungan wilayah, klasifikasi, dan kedudukan Risiko Aktual. Dashboard membedakan dengan jelas antara **keputusan yang telah ditetapkan**, **implementasi workbook lama**, dan **ketentuan yang masih terbuka**.
 :::
 
 ## Struktur petunjuk teknis

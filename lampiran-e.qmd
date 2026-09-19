@@ -1,6 +1,6 @@
 ---
 title: "Lampiran E. Contoh Perhitungan"
-subtitle: "Reproduksi workbook — Kabupaten Aceh Selatan"
+subtitle: "Contoh metode normatif — Kabupaten Aceh Selatan"
 ---
 
 ## Identitas Skenario
@@ -12,7 +12,7 @@ subtitle: "Reproduksi workbook — Kabupaten Aceh Selatan"
 | Bahaya | baseline 2021 |
 | Kerentanan | versi 2025 |
 | IKD/kapasitas | 2025 |
-| Status | reproduksi implementasi workbook, bukan seri waktu 2021–2025 |
+| Status | contoh metode normatif; bukan seri waktu 2021–2025 |
 
 ## Contoh Kerentanan Banjir
 
@@ -27,29 +27,32 @@ $$V_{banjir}=0{,}4(0{,}999973)+0{,}25(1)+0{,}25(1)+0{,}1(0{,}631952)=0{,}963184$
 
 Saturasi komponen fisik dan ekonomi adalah sinyal audit satuan dan kalibrasi, bukan bukti bahwa nilai input telah valid.
 
-## Agregasi dan Keluaran
+## Agregasi, Transformasi, dan Keluaran
 
-| Variabel | Nilai workbook |
+| Variabel | Nilai metode normatif |
 |---|---:|
 | $HM_{raw}$ | 8,998000 |
 | $VM_{raw}$ | 9,171104 |
-| $RP_{raw}$ | 9,084140 |
-| $RP_{idx}$ | 0,753967 |
+| HM | 0,750419279362 |
+| VM | 0,757481146511 |
+| RP | 0,753941944778 |
 | IKD | 0,210000 |
 | C | 0,175000 |
-| RA | 0,788684 |
-| RR | 3,107147 |
+| RA | 0,788671100296 |
+| RR | 3,107098514956 |
 
-$$RP_{raw}=\sqrt{8{,}998\times9{,}171104}=9{,}084140$$
+$$HM=I(8{,}998)=0{,}750419279362$$
 
-$$RP_{idx}=I(9{,}084140;m=5{,}186100;s=1{,}997839)=0{,}753967$$
+$$VM=I(9{,}171104)=0{,}757481146511$$
+
+$$RP=\sqrt{0{,}750419279362\times0{,}757481146511}=0{,}753941944778$$
 
 $$C=\frac{1/3}{0{,}4}\times0{,}21=0{,}175000$$
 
-$$RA=\sqrt{0{,}753967(1-0{,}175000)}=0{,}788684$$
+$$RA=\sqrt{0{,}753941944778(1-0{,}175000)}=0{,}788671100296$$
 
-$$RR=\log_2(0{,}753967/0{,}175000)+1=3{,}107147$$
+$$RR=\log_2(0{,}753941944778/0{,}175000)+1=3{,}107098514956$$
 
-::: {.callout-warning}
-Kesesuaian angka membuktikan bahwa formula workbook dapat direproduksi. Hal itu tidak sekaligus mengesahkan satuan input, urutan metode, klasifikasi, atau status kebijakan keluaran.
+::: {.callout-note}
+IKD minimum 0,20 menghasilkan C minimum 0,166666666667 atau 0,17 setelah pembulatan. Dengan demikian `C=0` tidak mungkin pada input yang memenuhi domain.
 :::
