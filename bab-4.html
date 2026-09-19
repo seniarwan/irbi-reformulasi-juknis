@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bab IV. Tahapan Perhitungan – Petunjuk Teknis IRBI Reformulasi</title>
+<title>Bab IV. Metode Perhitungan IRBI – Petunjuk Teknis IRBI Reformulasi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73bf34e03dcf3ac45dac882941957d2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eec37d530ba024d7569d9c6f845c7a3e.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-bd9171332c43ac346f4fca0d9751d4c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0ec70c97685606d99bc84294166abbf8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,40 +72,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<meta name="mermaid-theme" content="neutral">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -131,12 +98,16 @@ window.Quarto = {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Beranda</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./register-isu.html"> 
+<span class="menu-text">Register Isu</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/seniarwan/irbi-reformulasi-juknis"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text">Repo</span></a>
+<span class="menu-text">Repositori</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -155,7 +126,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Bab</a></li><li class="breadcrumb-item"><a href="./bab-4.html">Bab IV. Tahapan Perhitungan</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Petunjuk Teknis — 8 Bab</a></li><li class="breadcrumb-item"><a href="./bab-4.html">Bab IV. Metode Perhitungan IRBI</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -170,13 +141,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Petunjuk Teknis Reformulasi IRBI Nasional</span></a>
+ <span class="menu-text">Petunjuk Teknis Nasional IRBI</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Bab</span></a>
+ <span class="menu-text">Petunjuk Teknis — 8 Bab</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -191,37 +162,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab II. Konsep dan Kerangka IRBI Reformulasi</span></a>
+ <span class="menu-text">Bab II. Kerangka Konseptual dan Ketentuan Umum</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab III. Data dan Indikator</span></a>
+ <span class="menu-text">Bab III. Data dan Penyiapan Input</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Bab IV. Tahapan Perhitungan</span></a>
+ <span class="menu-text">Bab IV. Metode Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab V. Klasifikasi dan Interpretasi Hasil</span></a>
+ <span class="menu-text">Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VI. Pengendalian Mutu dan Validasi</span></a>
+ <span class="menu-text">Bab VI. Pemanfaatan IRBI dalam Kebijakan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VII. Masa Transisi dan Implementasi</span></a>
+ <span class="menu-text">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -235,7 +206,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Lampiran</span></a>
+ <span class="menu-text">Lampiran Operasional</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -244,25 +215,66 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran A. Parameter Transformasi Fuzzy Sigmoid</span></a>
+ <span class="menu-text">Lampiran A. Diagram Alir Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-b.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran B. Bobot Kerentanan per Jenis Bahaya</span></a>
+ <span class="menu-text">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-c.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</span></a>
+ <span class="menu-text">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran D. Checklist Pengendalian Mutu</span></a>
+ <span class="menu-text">Lampiran D. Klasifikasi dan Matriks Interpretasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran E. Contoh Perhitungan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran F. Templat Perhitungan dan Struktur Basis Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran G. Checklist QA/QC dan Validasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-h.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran H. Standar Penyajian, Kartografi, dan Laporan</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Kendali Pengembangan</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./register-isu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Register Isu Metodologis</span></a>
   </div>
 </li>
       </ul>
@@ -277,19 +289,55 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#diagram-alir" id="toc-diagram-alir" class="nav-link active" data-scroll-target="#diagram-alir">4.1 Diagram Alir</a></li>
-  <li><a href="#ringkasan-delapan-langkah" id="toc-ringkasan-delapan-langkah" class="nav-link" data-scroll-target="#ringkasan-delapan-langkah">4.2 Ringkasan Delapan Langkah</a></li>
-  <li><a href="#catatan-metodologis" id="toc-catatan-metodologis" class="nav-link" data-scroll-target="#catatan-metodologis">4.3 Catatan Metodologis</a></li>
-  <li><a href="#kendali-mutu-langkah-perhitungan" id="toc-kendali-mutu-langkah-perhitungan" class="nav-link" data-scroll-target="#kendali-mutu-langkah-perhitungan">4.4 Kendali Mutu Langkah Perhitungan</a></li>
+  <li><a href="#tujuan-bab" id="toc-tujuan-bab" class="nav-link active" data-scroll-target="#tujuan-bab">Tujuan Bab</a></li>
+  <li><a href="#alur-perhitungan" id="toc-alur-perhitungan" class="nav-link" data-scroll-target="#alur-perhitungan">4.1 Alur Perhitungan</a></li>
+  <li><a href="#transformasi-dan-standardisasi-indeks" id="toc-transformasi-dan-standardisasi-indeks" class="nav-link" data-scroll-target="#transformasi-dan-standardisasi-indeks">4.2 Transformasi dan Standardisasi Indeks</a>
+  <ul class="collapse">
+  <li><a href="#tujuan-transformasi" id="toc-tujuan-transformasi" class="nav-link" data-scroll-target="#tujuan-transformasi">4.2.1 Tujuan Transformasi</a></li>
+  <li><a href="#fungsi-fuzzy-sigmoid" id="toc-fungsi-fuzzy-sigmoid" class="nav-link" data-scroll-target="#fungsi-fuzzy-sigmoid">4.2.2 Fungsi Fuzzy Sigmoid</a></li>
+  <li><a href="#kalibrasi-parameter" id="toc-kalibrasi-parameter" class="nav-link" data-scroll-target="#kalibrasi-parameter">4.2.3 Kalibrasi Parameter</a></li>
+  <li><a href="#contoh-transformasi" id="toc-contoh-transformasi" class="nav-link" data-scroll-target="#contoh-transformasi">4.2.4 Contoh Transformasi</a></li>
+  <li><a href="#aturan-domain-dan-galat" id="toc-aturan-domain-dan-galat" class="nav-link" data-scroll-target="#aturan-domain-dan-galat">4.2.5 Aturan Domain dan Galat</a></li>
+  <li><a href="#bahaya-tunggal" id="toc-bahaya-tunggal" class="nav-link" data-scroll-target="#bahaya-tunggal">4.3.1 Bahaya Tunggal</a></li>
+  <li><a href="#daftar-bahaya" id="toc-daftar-bahaya" class="nav-link" data-scroll-target="#daftar-bahaya">4.3.2 Daftar Bahaya</a></li>
+  <li><a href="#agregasi" id="toc-agregasi" class="nav-link" data-scroll-target="#agregasi">4.3.3 Agregasi</a></li>
+  <li><a href="#transformasi-multi-bahaya" id="toc-transformasi-multi-bahaya" class="nav-link" data-scroll-target="#transformasi-multi-bahaya">4.3.4 Transformasi Multi-Bahaya</a></li>
+  <li><a href="#keluaran-dan-pemeriksaan" id="toc-keluaran-dan-pemeriksaan" class="nav-link" data-scroll-target="#keluaran-dan-pemeriksaan">4.3.5 Keluaran dan Pemeriksaan</a></li>
+  <li><a href="#struktur-kerentanan" id="toc-struktur-kerentanan" class="nav-link" data-scroll-target="#struktur-kerentanan">4.4.1 Struktur Kerentanan</a></li>
+  <li><a href="#bobot-per-jenis-bahaya" id="toc-bobot-per-jenis-bahaya" class="nav-link" data-scroll-target="#bobot-per-jenis-bahaya">4.4.2 Bobot per Jenis Bahaya</a></li>
+  <li><a href="#kerentanan-per-bahaya" id="toc-kerentanan-per-bahaya" class="nav-link" data-scroll-target="#kerentanan-per-bahaya">4.4.3 Kerentanan per Bahaya</a></li>
+  <li><a href="#agregasi-multi-kerentanan" id="toc-agregasi-multi-kerentanan" class="nav-link" data-scroll-target="#agregasi-multi-kerentanan">4.4.4 Agregasi Multi-Kerentanan</a></li>
+  <li><a href="#keluaran-dan-pemeriksaan-1" id="toc-keluaran-dan-pemeriksaan-1" class="nav-link" data-scroll-target="#keluaran-dan-pemeriksaan-1">4.4.5 Keluaran dan Pemeriksaan</a></li>
+  <li><a href="#pengertian" id="toc-pengertian" class="nav-link" data-scroll-target="#pengertian">4.5.1 Pengertian</a></li>
+  <li><a href="#formula-dasar" id="toc-formula-dasar" class="nav-link" data-scroll-target="#formula-dasar">4.5.2 Formula Dasar</a></li>
+  <li><a href="#dua-urutan-yang-ditemukan" id="toc-dua-urutan-yang-ditemukan" class="nav-link" data-scroll-target="#dua-urutan-yang-ditemukan">4.5.3 Dua Urutan yang Ditemukan</a></li>
+  <li><a href="#contoh-reproduksi-workbook" id="toc-contoh-reproduksi-workbook" class="nav-link" data-scroll-target="#contoh-reproduksi-workbook">4.5.4 Contoh Reproduksi Workbook</a></li>
+  <li><a href="#klasifikasi" id="toc-klasifikasi" class="nav-link" data-scroll-target="#klasifikasi">4.5.5 Klasifikasi</a></li>
+  <li><a href="#input-dan-sumber-induk" id="toc-input-dan-sumber-induk" class="nav-link" data-scroll-target="#input-dan-sumber-induk">4.6.1 Input dan Sumber Induk</a></li>
+  <li><a href="#transformasi-linier-bertahap" id="toc-transformasi-linier-bertahap" class="nav-link" data-scroll-target="#transformasi-linier-bertahap">4.6.2 Transformasi Linier Bertahap</a></li>
+  <li><a href="#validasi-domain" id="toc-validasi-domain" class="nav-link" data-scroll-target="#validasi-domain">4.6.3 Validasi Domain</a></li>
+  <li><a href="#contoh" id="toc-contoh" class="nav-link" data-scroll-target="#contoh">4.6.4 Contoh</a></li>
+  <li><a href="#pengertian-1" id="toc-pengertian-1" class="nav-link" data-scroll-target="#pengertian-1">4.7.1 Pengertian</a></li>
+  <li><a href="#formula" id="toc-formula" class="nav-link" data-scroll-target="#formula">4.7.2 Formula</a></li>
+  <li><a href="#contoh-1" id="toc-contoh-1" class="nav-link" data-scroll-target="#contoh-1">4.7.3 Contoh</a></li>
+  <li><a href="#status-keluaran" id="toc-status-keluaran" class="nav-link" data-scroll-target="#status-keluaran">4.7.4 Status Keluaran</a></li>
+  <li><a href="#analisis-antarwaktu" id="toc-analisis-antarwaktu" class="nav-link" data-scroll-target="#analisis-antarwaktu">4.7.5 Analisis Antarwaktu</a></li>
+  <li><a href="#formula-1" id="toc-formula-1" class="nav-link" data-scroll-target="#formula-1">4.8.1 Formula</a></li>
+  <li><a href="#kondisi-khusus" id="toc-kondisi-khusus" class="nav-link" data-scroll-target="#kondisi-khusus">4.8.2 Kondisi Khusus</a></li>
+  <li><a href="#klasifikasi-1" id="toc-klasifikasi-1" class="nav-link" data-scroll-target="#klasifikasi-1">4.8.3 Klasifikasi</a></li>
+  <li><a href="#contoh-2" id="toc-contoh-2" class="nav-link" data-scroll-target="#contoh-2">4.8.4 Contoh</a></li>
+  <li><a href="#penggunaan" id="toc-penggunaan" class="nav-link" data-scroll-target="#penggunaan">4.8.5 Penggunaan</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Bab</a></li><li class="breadcrumb-item"><a href="./bab-4.html">Bab IV. Tahapan Perhitungan</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Petunjuk Teknis — 8 Bab</a></li><li class="breadcrumb-item"><a href="./bab-4.html">Bab IV. Metode Perhitungan IRBI</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bab IV. Tahapan Perhitungan</h1>
+<h1 class="title">Bab IV. Metode Perhitungan IRBI</h1>
+<p class="subtitle lead">Draf ilustratif v0.8 — substansi diselaraskan dengan naskah 8 bab</p>
 </div>
 
 
@@ -306,113 +354,395 @@ window.Quarto = {
 </header>
 
 
-<p>Delapan langkah berikut dihitung berurutan untuk setiap kabupaten/kota. Parameter lengkap ada di <a href="./lampiran-a.html">Lampiran A</a> dan <a href="./lampiran-b.html">Lampiran B</a>; contoh hitung penuh dengan angka riil ada di <a href="./lampiran-c.html">Lampiran C</a>.</p>
-<section id="diagram-alir" class="level2">
-<h2 class="anchored" data-anchor-id="diagram-alir">4.1 Diagram Alir</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-    A[Data Bahaya H&lt;br/&gt;KRB 2021] --&gt; D["Langkah 1-2: Transformasi fuzzy&lt;br/&gt;+ kombinasi kerentanan per bahaya"]
-    B[Data Kerentanan V&lt;br/&gt;Proyeksi 2025] --&gt; D
-    D --&gt; E["Langkah 3: Indeks multi bahaya&lt;br/&gt;dan multi kerentanan"]
-    A --&gt; E
-    E --&gt; F["Langkah 4: Risiko Potensial RP"]
-    G[Data Kapasitas C&lt;br/&gt;IKD 2025] --&gt; H["Langkah 5: Indeks Kapasitas"]
-    F --&gt; I["Langkah 6: Risiko Aktual RA"]
-    H --&gt; I
-    F --&gt; J["Langkah 7: Rasio Risiko RR"]
-    H --&gt; J
-    I --&gt; K["Langkah 8: Penyetaraan skala&lt;br/&gt;terhadap IRBI eksisting (masa transisi)"]
-</pre>
+<div class="status-strip">
+<p><strong>Status:</strong> draf kerja, belum normatif &nbsp;·&nbsp; <strong>Acuan:</strong> laporan 2026, workbook, dan register isu &nbsp;·&nbsp; <strong>Versi:</strong> 0.8</p>
 </div>
-<p></p></figure><p></p>
-</div>
-</div>
+<section id="tujuan-bab" class="level2">
+<h2 class="anchored" data-anchor-id="tujuan-bab">Tujuan Bab</h2>
+<p>Menetapkan urutan perhitungan yang dapat direproduksi mulai dari transformasi indikator sampai pembentukan RP, C, RA, dan RR.</p>
+</section>
+<section id="alur-perhitungan" class="level2">
+<h2 class="anchored" data-anchor-id="alur-perhitungan">4.1 Alur Perhitungan</h2>
+<p>Validasi data → transformasi indikator → agregasi bahaya dan kerentanan → Risiko Potensial → Kapasitas → Risiko Aktual → Rasio Risiko → QA/QC → publikasi.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/gambar_4_1_alur_metode.png" class="img-fluid figure-img"></p>
+<figcaption>Gambar 4.1. Tahapan metode dan perhitungan IRBI.</figcaption>
+</figure>
 </div>
 </section>
-<section id="ringkasan-delapan-langkah" class="level2">
-<h2 class="anchored" data-anchor-id="ringkasan-delapan-langkah">4.2 Ringkasan Delapan Langkah</h2>
+<section id="transformasi-dan-standardisasi-indeks" class="level2">
+<h2 class="anchored" data-anchor-id="transformasi-dan-standardisasi-indeks">4.2 Transformasi dan Standardisasi Indeks</h2>
+<section id="tujuan-transformasi" class="level3">
+<h3 class="anchored" data-anchor-id="tujuan-transformasi">4.2.1 Tujuan Transformasi</h3>
+<p>Transformasi menyetarakan indikator yang memiliki satuan berbeda ke skala 0-1 dan mempertahankan perubahan secara kontinu. Transformasi tidak memperbaiki kesalahan satuan atau data sumber; validasi input selalu dilakukan lebih dahulu.</p>
+</section>
+<section id="fungsi-fuzzy-sigmoid" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-fuzzy-sigmoid">4.2.2 Fungsi Fuzzy Sigmoid</h3>
+<p><code>I(x) = 1 / [1 + (x/m)^(-s)]</code></p>
+<p><code>x</code> adalah nilai indikator mentah, <code>m</code> adalah midpoint, dan <code>s</code> adalah spread. Untuk nilai positif dan parameter yang sah, hasil berada pada rentang 0-1. Perlakuan <code>x=0</code>, nilai negatif, data kosong, dan parameter tidak tersedia ditetapkan secara eksplisit pada prosedur validasi.</p>
+</section>
+<section id="kalibrasi-parameter" class="level3">
+<h3 class="anchored" data-anchor-id="kalibrasi-parameter">4.2.3 Kalibrasi Parameter</h3>
+<p>Parameter diturunkan dari batas bawah <code>x_L</code>, batas atas <code>x_U</code>, dan target indeks 0,333 serta 0,666. Simbol perantara pada Persamaan 2-3 dalam laporan belum konsisten dan harus diselesaikan melalui M-02. Sampai keputusan tersebut ditetapkan, parameter hasil kalibrasi digunakan sebagai tabel terkendali dan tidak dihitung ulang oleh pengguna.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>No</th>
-<th>Langkah</th>
-<th>Formula Inti</th>
-<th>Rujukan</th>
+<th>Komponen</th>
+<th>Jenis bahaya</th>
+<th style="text-align: right;">x_L</th>
+<th style="text-align: right;">x_U</th>
+<th style="text-align: right;">s</th>
+<th style="text-align: right;">m</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>Transformasi fuzzy sigmoid tiap sub-komponen kerentanan</td>
-<td><span class="math inline">\(I(x) = 1/(1+(x/m)^{-s})\)</span></td>
-<td>Lampiran A</td>
+<td>Penduduk terpapar</td>
+<td>Semua kecuali karhutla</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">1,998</td>
+<td style="text-align: right;">707,903</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>Kombinasi kerentanan per jenis bahaya</td>
-<td><span class="math inline">\(V_i = \sum w_j \cdot vf_j\)</span></td>
-<td>Lampiran B</td>
+<td>Kerugian fisik</td>
+<td>Semua kecuali kekeringan dan karhutla</td>
+<td style="text-align: right;">1,4</td>
+<td style="text-align: right;">2,1</td>
+<td style="text-align: right;">3,415</td>
+<td style="text-align: right;">1,716</td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td>Jumlah indeks bahaya (<span class="math inline">\(H_{multi}\)</span>) dan kerentanan (<span class="math inline">\(V_{multi}\)</span>) seluruh jenis bahaya</td>
-<td><span class="math inline">\(H_{multi} = \sum H_i\)</span> ; <span class="math inline">\(V_{multi} = \sum V_i\)</span></td>
-<td>—</td>
+<td>Kerugian ekonomi</td>
+<td>Seluruh bahaya</td>
+<td style="text-align: right;">0,15</td>
+<td style="text-align: right;">0,325</td>
+<td style="text-align: right;">1,791</td>
+<td style="text-align: right;">0,221</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>Risiko Potensial</td>
-<td><span class="math inline">\(H_M=I(H_{multi})\)</span>; <span class="math inline">\(V_M=I(V_{multi})\)</span>; <span class="math inline">\(RP=\sqrt{H_M \times V_M}\)</span></td>
-<td>Lampiran A (parameter Multi)</td>
+<td>Kerusakan lingkungan</td>
+<td>Banjir, banjir bandang, GEA</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">1,289</td>
+<td style="text-align: right;">120,001</td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>Indeks Kapasitas dari IKD</td>
-<td><span class="math inline">\(C\)</span> = fungsi linear tersegmen 3 ruas dari IKD</td>
-<td>Lampiran C</td>
+<td>Kerusakan lingkungan</td>
+<td>Karhutla, kekeringan, likuefaksi, LGA, longsor</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">185</td>
+<td style="text-align: right;">1,324</td>
+<td style="text-align: right;">109,845</td>
 </tr>
 <tr class="even">
-<td>6</td>
-<td>Risiko Aktual</td>
-<td><span class="math inline">\(RA = \sqrt{RP \times (1-C)}\)</span></td>
-<td>—</td>
+<td>Kerusakan lingkungan</td>
+<td>Tsunami</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">185</td>
+<td style="text-align: right;">1,142</td>
+<td style="text-align: right;">101,070</td>
 </tr>
 <tr class="odd">
-<td>7</td>
-<td>Rasio Risiko</td>
-<td><span class="math inline">\(RR = \log_2(RP/C) + 1\)</span></td>
-<td>—</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Penyetaraan skala ke IRBI eksisting (masa transisi)</td>
-<td><span class="math inline">\(f(x) = y_{min} + (x-x_{min}) \cdot \dfrac{y_{max}-y_{min}}{x_{max}-x_{min}}\)</span></td>
-<td>Bab VII</td>
+<td>Multi</td>
+<td>11 bahaya dalam workbook</td>
+<td style="text-align: right;">3,663</td>
+<td style="text-align: right;">7,326</td>
+<td style="text-align: right;">1,998</td>
+<td style="text-align: right;">5,186</td>
 </tr>
 </tbody>
 </table>
+<p>Angka pada tabel disimpan dengan presisi penuh dalam perangkat hitung. Pembulatan hanya dilakukan untuk penyajian.</p>
 </section>
-<section id="catatan-metodologis" class="level2">
-<h2 class="anchored" data-anchor-id="catatan-metodologis">4.3 Catatan Metodologis</h2>
-<p><span class="math inline">\(H_{multi}\)</span> dan <span class="math inline">\(V_{multi}\)</span> ditransformasi fuzzy sigmoid secara terpisah (Langkah 4) sebelum digabungkan lewat akar kuadrat — bukan dijumlah mentah lalu ditransformasi sekali di akhir seperti pada perkakas hitung pendamping. Urutan ini dikonfirmasi BNPB (2026); perbandingan angka ada di <a href="./lampiran-c.html">Lampiran C</a>.</p>
-<p>Indeks Kapasitas (Langkah 5) memetakan IKD 0–1 menjadi C 0–1 lewat tiga ruas linear (IKD ≤ 0,4; 0,4 &lt; IKD ≤ 0,8; IKD &gt; 0,8), menjaga kontinuitas pada titik sambung.</p>
-<p>Langkah 8 hanya dijalankan pada opsi implementasi Paralel atau Hibrida (<a href="./bab-7.html">Bab VII</a>); dilewati pada implementasi Penuh.</p>
+<section id="contoh-transformasi" class="level3">
+<h3 class="anchored" data-anchor-id="contoh-transformasi">4.2.4 Contoh Transformasi</h3>
+<p>Untuk penduduk terpapar banjir Kabupaten Aceh Selatan sebesar 136.976,831 jiwa, dengan <code>m=707,903</code> dan <code>s=1,998</code>, workbook menghasilkan indeks 0,999973.</p>
+<p>Contoh tersebut juga memperlihatkan pentingnya pemeriksaan satuan. Nilai kerugian fisik dan ekonomi V2025 menghasilkan indeks yang sangat dekat dengan 1. Kondisi ini dicatat sebagai sinyal pemeriksaan, bukan langsung dianggap sebagai nilai risiko yang benar.</p>
 </section>
-<section id="kendali-mutu-langkah-perhitungan" class="level2">
-<h2 class="anchored" data-anchor-id="kendali-mutu-langkah-perhitungan">4.4 Kendali Mutu Langkah Perhitungan</h2>
-<p>Setiap langkah diperiksa sebelum hasil dipakai — lihat <a href="./bab-6.html">Bab VI</a> dan checklist <a href="./lampiran-d.html">Lampiran D</a>. Kesalahan paling sering: satuan Kerugian Fisik dan Kerugian Ekonomi yang tidak konsisten dengan <a href="./lampiran-a.html">Lampiran A</a> (lihat <a href="./bab-3.html">Bab III.3.3</a>).</p>
+<section id="aturan-domain-dan-galat" class="level3">
+<h3 class="anchored" data-anchor-id="aturan-domain-dan-galat">4.2.5 Aturan Domain dan Galat</h3>
+<p>Nilai negatif, IKD di luar 0-1, parameter kosong, atau satuan yang tidak terkonfirmasi dihentikan sebelum perhitungan. Nol sah dipertahankan sebagai nol. Tidak berlaku dan tidak tersedia menggunakan status berbeda. Pesan galat disimpan dan dilaporkan; galat tidak diganti dengan teks kosong tanpa jejak. ## 4.3 Indeks Multi-Bahaya</p>
+</section>
+<section id="bahaya-tunggal" class="level3">
+<h3 class="anchored" data-anchor-id="bahaya-tunggal">4.3.1 Bahaya Tunggal</h3>
+<p>Setiap jenis bahaya dihitung dan disimpan terpisah pada skala 0-1. Nilai nol, tidak berlaku, dan tidak tersedia dibedakan melalui status data. Indeks bahaya tunggal harus dapat ditelusuri ke sumber dan versi KRB yang digunakan.</p>
+</section>
+<section id="daftar-bahaya" class="level3">
+<h3 class="anchored" data-anchor-id="daftar-bahaya">4.3.2 Daftar Bahaya</h3>
+<p>Implementasi workbook menggunakan 11 jenis bahaya. Tabel bobot dalam laporan menggabungkan tanah longsor dan likuefaksi sehingga menghasilkan 10 kelompok. Sebelum penetapan nasional, M-04 harus menghasilkan daftar final dan pemetaan setiap jenis bahaya ke parameter serta bobotnya.</p>
+</section>
+<section id="agregasi" class="level3">
+<h3 class="anchored" data-anchor-id="agregasi">4.3.3 Agregasi</h3>
+<p>Laporan menggunakan <code>I_multi = sum(I_i)</code>. Workbook menjumlahkan sebelas kolom bahaya pada setiap wilayah. Dengan daftar 11 bahaya, nilai agregat mentah berada pada rentang teoritis 0-11.</p>
+<p>Untuk Kabupaten Aceh Selatan, jumlah indeks bahaya tunggal dalam workbook adalah 8,998. Letusan gunungapi bernilai tidak tersedia pada sumber dan dikembalikan sebagai nol oleh formula workbook; template nasional harus memakai status eksplisit sebelum menentukan kontribusinya terhadap agregasi.</p>
+</section>
+<section id="transformasi-multi-bahaya" class="level3">
+<h3 class="anchored" data-anchor-id="transformasi-multi-bahaya">4.3.4 Transformasi Multi-Bahaya</h3>
+<p>Laporan mengarahkan nilai agregat bahaya ditransformasikan dengan parameter MULTI. Workbook tidak menyimpan hasil transformasi HM sebagai variabel tersendiri, melainkan menggunakan jumlah mentah pada tahap pembentukan <code>RP_raw</code>. Perbedaan ini dicatat sebagai bagian M-05 dan tidak diselesaikan secara sepihak dalam draf ini.</p>
+</section>
+<section id="keluaran-dan-pemeriksaan" class="level3">
+<h3 class="anchored" data-anchor-id="keluaran-dan-pemeriksaan">4.3.5 Keluaran dan Pemeriksaan</h3>
+<p>Keluaran minimum terdiri atas indeks bahaya tunggal, status keberlakuan setiap bahaya, jumlah bahaya yang diperhitungkan, agregat mentah, hasil transformasi jika ditetapkan, dan versi parameter. Jumlah komponen yang masuk agregasi harus dapat direkonsiliasi untuk setiap wilayah. ## 4.4 Indeks Kerentanan Multi-Bahaya</p>
+</section>
+<section id="struktur-kerentanan" class="level3">
+<h3 class="anchored" data-anchor-id="struktur-kerentanan">4.4.1 Struktur Kerentanan</h3>
+<p>Kerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Setiap komponen ditransformasikan dengan parameter yang sesuai sebelum dibobotkan.</p>
+</section>
+<section id="bobot-per-jenis-bahaya" class="level3">
+<h3 class="anchored" data-anchor-id="bobot-per-jenis-bahaya">4.4.2 Bobot per Jenis Bahaya</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Jenis bahaya</th>
+<th style="text-align: right;">Penduduk</th>
+<th style="text-align: right;">Fisik</th>
+<th style="text-align: right;">Ekonomi</th>
+<th style="text-align: right;">Lingkungan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gempabumi</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr class="even">
+<td>Tsunami</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="odd">
+<td>Banjir</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="even">
+<td>Banjir bandang</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="odd">
+<td>Tanah longsor</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="even">
+<td>Likuefaksi</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="odd">
+<td>Letusan gunungapi</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="even">
+<td>Cuaca ekstrem</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr class="odd">
+<td>Gelombang ekstrem dan abrasi</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="even">
+<td>Kebakaran hutan dan lahan</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">60%</td>
+</tr>
+<tr class="odd">
+<td>Kekeringan</td>
+<td style="text-align: right;">50%</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+</tbody>
+</table>
+<p>Tanda <code>-</code> berarti komponen tidak diperhitungkan. Jumlah bobot yang berlaku untuk setiap bahaya harus 100%.</p>
+</section>
+<section id="kerentanan-per-bahaya" class="level3">
+<h3 class="anchored" data-anchor-id="kerentanan-per-bahaya">4.4.3 Kerentanan per Bahaya</h3>
+<p><code>V_i = sum(w_j * vf_j)</code></p>
+<p>Untuk banjir di Kabupaten Aceh Selatan, indeks komponen V2025 dalam workbook adalah 0,999973 untuk penduduk, 1,000000 untuk fisik, 1,000000 untuk ekonomi, dan 0,631952 untuk lingkungan. Dengan bobot banjir, diperoleh:</p>
+<p><code>V_banjir = 0,4(0,999973) + 0,25(1) + 0,25(1) + 0,1(0,631952) = 0,963184</code></p>
+<p>Nilai tersebut merupakan contoh reproduksi workbook. Penggunaan operasional tetap menunggu konfirmasi satuan data fisik dan ekonomi.</p>
+</section>
+<section id="agregasi-multi-kerentanan" class="level3">
+<h3 class="anchored" data-anchor-id="agregasi-multi-kerentanan">4.4.4 Agregasi Multi-Kerentanan</h3>
+<p>Kerentanan seluruh bahaya dijumlahkan. Untuk Kabupaten Aceh Selatan, workbook menghasilkan agregat kerentanan 9,171104. Laporan mengarahkan transformasi agregat menggunakan parameter MULTI, sedangkan workbook meneruskannya sebagai nilai mentah ke pembentukan <code>RP_raw</code>. Perbedaan urutan ini diselesaikan melalui M-05.</p>
+</section>
+<section id="keluaran-dan-pemeriksaan-1" class="level3">
+<h3 class="anchored" data-anchor-id="keluaran-dan-pemeriksaan-1">4.4.5 Keluaran dan Pemeriksaan</h3>
+<p>Simpan indeks setiap komponen, bobot yang digunakan, indeks kerentanan per bahaya, status komponen yang tidak berlaku, agregat mentah, hasil transformasi jika ditetapkan, serta versi tabel parameter dan bobot. ## 4.5 Risiko Potensial</p>
+</section>
+<section id="pengertian" class="level3">
+<h3 class="anchored" data-anchor-id="pengertian">4.5.1 Pengertian</h3>
+<p>RP menggambarkan tekanan risiko struktural sebelum kapasitas diperhitungkan. RP digunakan bersama C, RA, dan RR serta tidak ditafsirkan sebagai ukuran kinerja kapasitas daerah.</p>
+</section>
+<section id="formula-dasar" class="level3">
+<h3 class="anchored" data-anchor-id="formula-dasar">4.5.2 Formula Dasar</h3>
+<p><code>RP_raw = (HM * VM)^(1/2)</code></p>
+<p>Laporan kemudian menyatakan RP ditransformasikan ke skala 0-1 dengan fungsi fuzzy dan parameter MULTI.</p>
+</section>
+<section id="dua-urutan-yang-ditemukan" class="level3">
+<h3 class="anchored" data-anchor-id="dua-urutan-yang-ditemukan">4.5.3 Dua Urutan yang Ditemukan</h3>
+<p><strong>Narasi laporan:</strong> agregasi bahaya dan kerentanan masing-masing ditransformasikan menjadi HM dan VM; keduanya digabung menjadi RP; hasil RP kembali diarahkan untuk ditransformasikan.</p>
+<p><strong>Implementasi workbook:</strong> jumlah bahaya dan jumlah kerentanan langsung digabungkan menjadi <code>RP_raw</code>, kemudian hanya <code>RP_raw</code> yang ditransformasikan menjadi <code>RP_idx</code>.</p>
+<p>Kedua urutan tidak boleh dianggap setara hanya karena contoh Aceh Selatan menghasilkan angka yang berdekatan. Urutan normatif, nama variabel, dan banyaknya transformasi harus ditetapkan melalui keputusan M-05.</p>
+</section>
+<section id="contoh-reproduksi-workbook" class="level3">
+<h3 class="anchored" data-anchor-id="contoh-reproduksi-workbook">4.5.4 Contoh Reproduksi Workbook</h3>
+<p>Untuk Kabupaten Aceh Selatan:</p>
+<p><code>HM_raw = 8,998</code><br> <code>VM_raw = 9,171104</code><br> <code>RP_raw = sqrt(8,998 * 9,171104) = 9,084140</code><br> <code>RP_idx = fuzzy(9,084140; m=5,186100; s=1,997839) = 0,753967</code></p>
+<p>Contoh ini diberi label <strong>implementasi workbook</strong>, bukan keputusan metode final.</p>
+</section>
+<section id="klasifikasi" class="level3">
+<h3 class="anchored" data-anchor-id="klasifikasi">4.5.5 Klasifikasi</h3>
+<p>Workbook menerapkan ambang 0,333 dan 0,666 pada RA, tetapi tidak menyediakan kelas RP tersendiri. Penggunaan ambang yang sama untuk RP memerlukan keputusan M-08 dan tidak diberlakukan otomatis dalam draf ini. ## 4.6 Indeks Kapasitas</p>
+</section>
+<section id="input-dan-sumber-induk" class="level3">
+<h3 class="anchored" data-anchor-id="input-dan-sumber-induk">4.6.1 Input dan Sumber Induk</h3>
+<p>Input adalah IKD kabupaten/kota yang telah disahkan untuk periode perhitungan. Hanya satu tabel induk IKD digunakan. Salinan nilai IKD atau C pada tabel lain harus direkonsiliasi atau dihilangkan sesuai M-16.</p>
+</section>
+<section id="transformasi-linier-bertahap" class="level3">
+<h3 class="anchored" data-anchor-id="transformasi-linier-bertahap">4.6.2 Transformasi Linier Bertahap</h3>
+<p>Jika <code>IKD &lt;= 0,4</code>:<br> <code>C = ((1/3)/0,4) * IKD</code></p>
+<p>Jika <code>0,4 &lt; IKD &lt;= 0,8</code>:<br> <code>C = 1/3 + ((1/3)/0,4) * (IKD - 0,4)</code></p>
+<p>Jika <code>0,8 &lt; IKD &lt;= 1</code>:<br> <code>C = 2/3 + ((1/3)/0,2) * (IKD - 0,8)</code></p>
+<p>Fungsi tersebut kontinu pada 0,4 dan 0,8 serta memetakan IKD 0, 0,4, 0,8, dan 1 masing-masing menjadi C 0, 1/3, 2/3, dan 1.</p>
+</section>
+<section id="validasi-domain" class="level3">
+<h3 class="anchored" data-anchor-id="validasi-domain">4.6.3 Validasi Domain</h3>
+<p>IKD kosong, negatif, atau lebih besar dari 1 tidak dihitung dan diberi status gagal validasi. Draf ini tidak menerapkan pemotongan otomatis ke rentang 0-1 karena tindakan tersebut dapat menyembunyikan kesalahan sumber.</p>
+</section>
+<section id="contoh" class="level3">
+<h3 class="anchored" data-anchor-id="contoh">4.6.4 Contoh</h3>
+<p>IKD Kabupaten Aceh Selatan adalah 0,21. Karena <code>IKD &lt;= 0,4</code>:</p>
+<p><code>C = ((1/3)/0,4) * 0,21 = 0,175</code></p>
+<p>Nilai disimpan dengan presisi penuh. Pembulatan hanya untuk penyajian. ## 4.7 Risiko Aktual</p>
+</section>
+<section id="pengertian-1" class="level3">
+<h3 class="anchored" data-anchor-id="pengertian-1">4.7.1 Pengertian</h3>
+<p>RA menggambarkan risiko yang tersisa setelah kapasitas memoderasi RP. Formula mempertahankan pengaruh RP sekaligus mengurangi nilai ketika C meningkat.</p>
+</section>
+<section id="formula" class="level3">
+<h3 class="anchored" data-anchor-id="formula">4.7.2 Formula</h3>
+<p><code>RA = (RP * (1 - C))^(1/2)</code></p>
+<p>Formula hanya dihitung apabila RP dan C sah serta berada pada domain yang ditetapkan.</p>
+</section>
+<section id="contoh-1" class="level3">
+<h3 class="anchored" data-anchor-id="contoh-1">4.7.3 Contoh</h3>
+<p>Untuk Kabupaten Aceh Selatan berdasarkan implementasi workbook:</p>
+<p><code>RP = 0,753967</code><br> <code>C = 0,175000</code><br> <code>RA = sqrt(0,753967 * (1 - 0,175)) = 0,788684</code></p>
+<p>Workbook mengklasifikasikan nilai tersebut sebagai <strong>Tinggi</strong> dengan batas <code>RA &gt; 0,666</code>. Ambang 0,333 dan 0,666 serta aturan pembulatannya masih memerlukan penetapan melalui M-08.</p>
+</section>
+<section id="status-keluaran" class="level3">
+<h3 class="anchored" data-anchor-id="status-keluaran">4.7.4 Status Keluaran</h3>
+<p>RA disajikan sebagai keluaran analitis. Penyebutan RA sebagai nilai utama IRBI atau pengganti IRBI eksisting hanya dilakukan setelah keputusan regulatif M-10. Policy smoothing IRBI eksisting dicatat sebagai konteks transisi dan tidak dicampurkan ke formula RA.</p>
+</section>
+<section id="analisis-antarwaktu" class="level3">
+<h3 class="anchored" data-anchor-id="analisis-antarwaktu">4.7.5 Analisis Antarwaktu</h3>
+<p>Perubahan RA dipisahkan menurut perubahan H, V, IKD, parameter, metode, kode wilayah, dan koreksi data. Perbandingan skenario V2021 dan V2025 dalam workbook tidak disebut tren tahunan karena kapasitas keduanya sama-sama memakai tahun 2025. ## 4.8 Rasio Risiko</p>
+</section>
+<section id="formula-1" class="level3">
+<h3 class="anchored" data-anchor-id="formula-1">4.8.1 Formula</h3>
+<p><code>RR = log2(RP/C) + 1</code></p>
+<p>RR = 1 menunjukkan RP sama dengan C. RR di atas 1 menunjukkan RP relatif lebih besar daripada C, sedangkan RR di bawah 1 menunjukkan C relatif lebih besar daripada RP.</p>
+</section>
+<section id="kondisi-khusus" class="level3">
+<h3 class="anchored" data-anchor-id="kondisi-khusus">4.8.2 Kondisi Khusus</h3>
+<p>Formula tidak terdefinisi untuk <code>C=0</code>. Nilai C yang sangat kecil dapat menghasilkan RR ekstrem. Konstanta <code>+1</code> tidak selalu menjamin RR non-negatif. Aturan minimum C, RP=0, nilai negatif, dan data kosong harus diputuskan melalui M-06, M-07, dan M-18.</p>
+</section>
+<section id="klasifikasi-1" class="level3">
+<h3 class="anchored" data-anchor-id="klasifikasi-1">4.8.3 Klasifikasi</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rentang RR</th>
+<th>Kategori</th>
+<th>Makna ringkas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;= 1,00</td>
+<td>Terkendali</td>
+<td>Kapasitas relatif mampu mengimbangi RP</td>
+</tr>
+<tr class="even">
+<td>&gt; 1,00 - &lt;= 1,50</td>
+<td>Ketimpangan Ringan</td>
+<td>Ketimpangan mulai muncul tetapi masih terbatas</td>
+</tr>
+<tr class="odd">
+<td>&gt; 1,50 - &lt;= 2,00</td>
+<td>Ketimpangan Sedang</td>
+<td>Tekanan risiko semakin nyata</td>
+</tr>
+<tr class="even">
+<td>&gt; 2,00 - &lt;= 3,00</td>
+<td>Ketimpangan Tinggi</td>
+<td>Kapasitas belum memadai</td>
+</tr>
+<tr class="odd">
+<td>&gt; 3,00</td>
+<td>Kritis</td>
+<td>RP jauh melampaui kapasitas</td>
+</tr>
+</tbody>
+</table>
+<p>Istilah <strong>Ketimpangan Ringan</strong> mengikuti laporan. Workbook memakai <strong>Ketimpangan Rendah</strong> untuk rentang yang sama; nomenklatur final diselesaikan melalui M-17.</p>
+</section>
+<section id="contoh-2" class="level3">
+<h3 class="anchored" data-anchor-id="contoh-2">4.8.4 Contoh</h3>
+<p>Untuk Kabupaten Aceh Selatan:</p>
+<p><code>RR = log2(0,753967 / 0,175) + 1 = 3,107147</code></p>
+<p>Nilai tersebut masuk kategori Kritis. Interpretasi ini menunjukkan ketimpangan relatif dan tidak menggantikan pembacaan RP, C, serta RA.</p>
+</section>
+<section id="penggunaan" class="level3">
+<h3 class="anchored" data-anchor-id="penggunaan">4.8.5 Penggunaan</h3>
+<p>RR digunakan untuk membantu mengurutkan kebutuhan analisis penguatan kapasitas dan pengurangan kerentanan. Keputusan program tetap mempertimbangkan komponen pembentuk, konteks wilayah, kelayakan intervensi, dan kajian risiko yang lebih rinci.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -925,13 +1255,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./bab-3.html" class="pagination-link" aria-label="Bab III. Data dan Indikator">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bab III. Data dan Indikator</span>
+      <a href="./bab-3.html" class="pagination-link" aria-label="Bab III. Data dan Penyiapan Input">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bab III. Data dan Penyiapan Input</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bab-5.html" class="pagination-link" aria-label="Bab V. Klasifikasi dan Interpretasi Hasil">
-        <span class="nav-page-text">Bab V. Klasifikasi dan Interpretasi Hasil</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./bab-5.html" class="pagination-link" aria-label="Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi">
+        <span class="nav-page-text">Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -945,7 +1275,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Disusun berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA)</p>
+<p>Versi dashboard 0.8 · 19 September 2026</p>
 </div>
   </div>
 </footer>

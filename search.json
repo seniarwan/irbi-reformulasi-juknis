@@ -2,393 +2,445 @@
   {
     "objectID": "bab-4.html",
     "href": "bab-4.html",
-    "title": "Bab IV. Tahapan Perhitungan",
+    "title": "Bab IV. Metode Perhitungan IRBI",
     "section": "",
-    "text": "Delapan langkah berikut dihitung berurutan untuk setiap kabupaten/kota. Parameter lengkap ada di Lampiran A dan Lampiran B; contoh hitung penuh dengan angka riil ada di Lampiran C.",
+    "text": "Status: draf kerja, belum normatif  ·  Acuan: laporan 2026, workbook, dan register isu  ·  Versi: 0.8",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab IV. Tahapan Perhitungan"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab IV. Metode Perhitungan IRBI"
     ]
   },
   {
-    "objectID": "bab-4.html#diagram-alir",
-    "href": "bab-4.html#diagram-alir",
-    "title": "Bab IV. Tahapan Perhitungan",
-    "section": "4.1 Diagram Alir",
-    "text": "4.1 Diagram Alir\n\n\n\n\n\nflowchart TD\n    A[Data Bahaya H&lt;br/&gt;KRB 2021] --&gt; D[\"Langkah 1-2: Transformasi fuzzy&lt;br/&gt;+ kombinasi kerentanan per bahaya\"]\n    B[Data Kerentanan V&lt;br/&gt;Proyeksi 2025] --&gt; D\n    D --&gt; E[\"Langkah 3: Indeks multi bahaya&lt;br/&gt;dan multi kerentanan\"]\n    A --&gt; E\n    E --&gt; F[\"Langkah 4: Risiko Potensial RP\"]\n    G[Data Kapasitas C&lt;br/&gt;IKD 2025] --&gt; H[\"Langkah 5: Indeks Kapasitas\"]\n    F --&gt; I[\"Langkah 6: Risiko Aktual RA\"]\n    H --&gt; I\n    F --&gt; J[\"Langkah 7: Rasio Risiko RR\"]\n    H --&gt; J\n    I --&gt; K[\"Langkah 8: Penyetaraan skala&lt;br/&gt;terhadap IRBI eksisting (masa transisi)\"]",
+    "objectID": "bab-4.html#tujuan-bab",
+    "href": "bab-4.html#tujuan-bab",
+    "title": "Bab IV. Metode Perhitungan IRBI",
+    "section": "Tujuan Bab",
+    "text": "Tujuan Bab\nMenetapkan urutan perhitungan yang dapat direproduksi mulai dari transformasi indikator sampai pembentukan RP, C, RA, dan RR.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab IV. Tahapan Perhitungan"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab IV. Metode Perhitungan IRBI"
     ]
   },
   {
-    "objectID": "bab-4.html#ringkasan-delapan-langkah",
-    "href": "bab-4.html#ringkasan-delapan-langkah",
-    "title": "Bab IV. Tahapan Perhitungan",
-    "section": "4.2 Ringkasan Delapan Langkah",
-    "text": "4.2 Ringkasan Delapan Langkah\n\n\n\n\n\n\n\n\n\nNo\nLangkah\nFormula Inti\nRujukan\n\n\n\n\n1\nTransformasi fuzzy sigmoid tiap sub-komponen kerentanan\n\\(I(x) = 1/(1+(x/m)^{-s})\\)\nLampiran A\n\n\n2\nKombinasi kerentanan per jenis bahaya\n\\(V_i = \\sum w_j \\cdot vf_j\\)\nLampiran B\n\n\n3\nJumlah indeks bahaya (\\(H_{multi}\\)) dan kerentanan (\\(V_{multi}\\)) seluruh jenis bahaya\n\\(H_{multi} = \\sum H_i\\) ; \\(V_{multi} = \\sum V_i\\)\n—\n\n\n4\nRisiko Potensial\n\\(H_M=I(H_{multi})\\); \\(V_M=I(V_{multi})\\); \\(RP=\\sqrt{H_M \\times V_M}\\)\nLampiran A (parameter Multi)\n\n\n5\nIndeks Kapasitas dari IKD\n\\(C\\) = fungsi linear tersegmen 3 ruas dari IKD\nLampiran C\n\n\n6\nRisiko Aktual\n\\(RA = \\sqrt{RP \\times (1-C)}\\)\n—\n\n\n7\nRasio Risiko\n\\(RR = \\log_2(RP/C) + 1\\)\n—\n\n\n8\nPenyetaraan skala ke IRBI eksisting (masa transisi)\n\\(f(x) = y_{min} + (x-x_{min}) \\cdot \\dfrac{y_{max}-y_{min}}{x_{max}-x_{min}}\\)\nBab VII",
+    "objectID": "bab-4.html#alur-perhitungan",
+    "href": "bab-4.html#alur-perhitungan",
+    "title": "Bab IV. Metode Perhitungan IRBI",
+    "section": "4.1 Alur Perhitungan",
+    "text": "4.1 Alur Perhitungan\nValidasi data → transformasi indikator → agregasi bahaya dan kerentanan → Risiko Potensial → Kapasitas → Risiko Aktual → Rasio Risiko → QA/QC → publikasi.\n\n\n\nGambar 4.1. Tahapan metode dan perhitungan IRBI.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab IV. Tahapan Perhitungan"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab IV. Metode Perhitungan IRBI"
     ]
   },
   {
-    "objectID": "bab-4.html#catatan-metodologis",
-    "href": "bab-4.html#catatan-metodologis",
-    "title": "Bab IV. Tahapan Perhitungan",
-    "section": "4.3 Catatan Metodologis",
-    "text": "4.3 Catatan Metodologis\n\\(H_{multi}\\) dan \\(V_{multi}\\) ditransformasi fuzzy sigmoid secara terpisah (Langkah 4) sebelum digabungkan lewat akar kuadrat — bukan dijumlah mentah lalu ditransformasi sekali di akhir seperti pada perkakas hitung pendamping. Urutan ini dikonfirmasi BNPB (2026); perbandingan angka ada di Lampiran C.\nIndeks Kapasitas (Langkah 5) memetakan IKD 0–1 menjadi C 0–1 lewat tiga ruas linear (IKD ≤ 0,4; 0,4 &lt; IKD ≤ 0,8; IKD &gt; 0,8), menjaga kontinuitas pada titik sambung.\nLangkah 8 hanya dijalankan pada opsi implementasi Paralel atau Hibrida (Bab VII); dilewati pada implementasi Penuh.",
+    "objectID": "bab-4.html#transformasi-dan-standardisasi-indeks",
+    "href": "bab-4.html#transformasi-dan-standardisasi-indeks",
+    "title": "Bab IV. Metode Perhitungan IRBI",
+    "section": "4.2 Transformasi dan Standardisasi Indeks",
+    "text": "4.2 Transformasi dan Standardisasi Indeks\n\n4.2.1 Tujuan Transformasi\nTransformasi menyetarakan indikator yang memiliki satuan berbeda ke skala 0-1 dan mempertahankan perubahan secara kontinu. Transformasi tidak memperbaiki kesalahan satuan atau data sumber; validasi input selalu dilakukan lebih dahulu.\n\n\n4.2.2 Fungsi Fuzzy Sigmoid\nI(x) = 1 / [1 + (x/m)^(-s)]\nx adalah nilai indikator mentah, m adalah midpoint, dan s adalah spread. Untuk nilai positif dan parameter yang sah, hasil berada pada rentang 0-1. Perlakuan x=0, nilai negatif, data kosong, dan parameter tidak tersedia ditetapkan secara eksplisit pada prosedur validasi.\n\n\n4.2.3 Kalibrasi Parameter\nParameter diturunkan dari batas bawah x_L, batas atas x_U, dan target indeks 0,333 serta 0,666. Simbol perantara pada Persamaan 2-3 dalam laporan belum konsisten dan harus diselesaikan melalui M-02. Sampai keputusan tersebut ditetapkan, parameter hasil kalibrasi digunakan sebagai tabel terkendali dan tidak dihitung ulang oleh pengguna.\n\n\n\n\n\n\n\n\n\n\n\nKomponen\nJenis bahaya\nx_L\nx_U\ns\nm\n\n\n\n\nPenduduk terpapar\nSemua kecuali karhutla\n500\n1.000\n1,998\n707,903\n\n\nKerugian fisik\nSemua kecuali kekeringan dan karhutla\n1,4\n2,1\n3,415\n1,716\n\n\nKerugian ekonomi\nSeluruh bahaya\n0,15\n0,325\n1,791\n0,221\n\n\nKerusakan lingkungan\nBanjir, banjir bandang, GEA\n70\n205\n1,289\n120,001\n\n\nKerusakan lingkungan\nKarhutla, kekeringan, likuefaksi, LGA, longsor\n65\n185\n1,324\n109,845\n\n\nKerusakan lingkungan\nTsunami\n55\n185\n1,142\n101,070\n\n\nMulti\n11 bahaya dalam workbook\n3,663\n7,326\n1,998\n5,186\n\n\n\nAngka pada tabel disimpan dengan presisi penuh dalam perangkat hitung. Pembulatan hanya dilakukan untuk penyajian.\n\n\n4.2.4 Contoh Transformasi\nUntuk penduduk terpapar banjir Kabupaten Aceh Selatan sebesar 136.976,831 jiwa, dengan m=707,903 dan s=1,998, workbook menghasilkan indeks 0,999973.\nContoh tersebut juga memperlihatkan pentingnya pemeriksaan satuan. Nilai kerugian fisik dan ekonomi V2025 menghasilkan indeks yang sangat dekat dengan 1. Kondisi ini dicatat sebagai sinyal pemeriksaan, bukan langsung dianggap sebagai nilai risiko yang benar.\n\n\n4.2.5 Aturan Domain dan Galat\nNilai negatif, IKD di luar 0-1, parameter kosong, atau satuan yang tidak terkonfirmasi dihentikan sebelum perhitungan. Nol sah dipertahankan sebagai nol. Tidak berlaku dan tidak tersedia menggunakan status berbeda. Pesan galat disimpan dan dilaporkan; galat tidak diganti dengan teks kosong tanpa jejak. ## 4.3 Indeks Multi-Bahaya\n\n\n4.3.1 Bahaya Tunggal\nSetiap jenis bahaya dihitung dan disimpan terpisah pada skala 0-1. Nilai nol, tidak berlaku, dan tidak tersedia dibedakan melalui status data. Indeks bahaya tunggal harus dapat ditelusuri ke sumber dan versi KRB yang digunakan.\n\n\n4.3.2 Daftar Bahaya\nImplementasi workbook menggunakan 11 jenis bahaya. Tabel bobot dalam laporan menggabungkan tanah longsor dan likuefaksi sehingga menghasilkan 10 kelompok. Sebelum penetapan nasional, M-04 harus menghasilkan daftar final dan pemetaan setiap jenis bahaya ke parameter serta bobotnya.\n\n\n4.3.3 Agregasi\nLaporan menggunakan I_multi = sum(I_i). Workbook menjumlahkan sebelas kolom bahaya pada setiap wilayah. Dengan daftar 11 bahaya, nilai agregat mentah berada pada rentang teoritis 0-11.\nUntuk Kabupaten Aceh Selatan, jumlah indeks bahaya tunggal dalam workbook adalah 8,998. Letusan gunungapi bernilai tidak tersedia pada sumber dan dikembalikan sebagai nol oleh formula workbook; template nasional harus memakai status eksplisit sebelum menentukan kontribusinya terhadap agregasi.\n\n\n4.3.4 Transformasi Multi-Bahaya\nLaporan mengarahkan nilai agregat bahaya ditransformasikan dengan parameter MULTI. Workbook tidak menyimpan hasil transformasi HM sebagai variabel tersendiri, melainkan menggunakan jumlah mentah pada tahap pembentukan RP_raw. Perbedaan ini dicatat sebagai bagian M-05 dan tidak diselesaikan secara sepihak dalam draf ini.\n\n\n4.3.5 Keluaran dan Pemeriksaan\nKeluaran minimum terdiri atas indeks bahaya tunggal, status keberlakuan setiap bahaya, jumlah bahaya yang diperhitungkan, agregat mentah, hasil transformasi jika ditetapkan, dan versi parameter. Jumlah komponen yang masuk agregasi harus dapat direkonsiliasi untuk setiap wilayah. ## 4.4 Indeks Kerentanan Multi-Bahaya\n\n\n4.4.1 Struktur Kerentanan\nKerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Setiap komponen ditransformasikan dengan parameter yang sesuai sebelum dibobotkan.\n\n\n4.4.2 Bobot per Jenis Bahaya\n\n\n\nJenis bahaya\nPenduduk\nFisik\nEkonomi\nLingkungan\n\n\n\n\nGempabumi\n40%\n30%\n30%\n-\n\n\nTsunami\n40%\n25%\n25%\n10%\n\n\nBanjir\n40%\n25%\n25%\n10%\n\n\nBanjir bandang\n40%\n25%\n25%\n10%\n\n\nTanah longsor\n40%\n25%\n25%\n10%\n\n\nLikuefaksi\n40%\n25%\n25%\n10%\n\n\nLetusan gunungapi\n40%\n25%\n25%\n10%\n\n\nCuaca ekstrem\n40%\n30%\n30%\n-\n\n\nGelombang ekstrem dan abrasi\n40%\n25%\n25%\n10%\n\n\nKebakaran hutan dan lahan\n40%\n-\n-\n60%\n\n\nKekeringan\n50%\n-\n40%\n10%\n\n\n\nTanda - berarti komponen tidak diperhitungkan. Jumlah bobot yang berlaku untuk setiap bahaya harus 100%.\n\n\n4.4.3 Kerentanan per Bahaya\nV_i = sum(w_j * vf_j)\nUntuk banjir di Kabupaten Aceh Selatan, indeks komponen V2025 dalam workbook adalah 0,999973 untuk penduduk, 1,000000 untuk fisik, 1,000000 untuk ekonomi, dan 0,631952 untuk lingkungan. Dengan bobot banjir, diperoleh:\nV_banjir = 0,4(0,999973) + 0,25(1) + 0,25(1) + 0,1(0,631952) = 0,963184\nNilai tersebut merupakan contoh reproduksi workbook. Penggunaan operasional tetap menunggu konfirmasi satuan data fisik dan ekonomi.\n\n\n4.4.4 Agregasi Multi-Kerentanan\nKerentanan seluruh bahaya dijumlahkan. Untuk Kabupaten Aceh Selatan, workbook menghasilkan agregat kerentanan 9,171104. Laporan mengarahkan transformasi agregat menggunakan parameter MULTI, sedangkan workbook meneruskannya sebagai nilai mentah ke pembentukan RP_raw. Perbedaan urutan ini diselesaikan melalui M-05.\n\n\n4.4.5 Keluaran dan Pemeriksaan\nSimpan indeks setiap komponen, bobot yang digunakan, indeks kerentanan per bahaya, status komponen yang tidak berlaku, agregat mentah, hasil transformasi jika ditetapkan, serta versi tabel parameter dan bobot. ## 4.5 Risiko Potensial\n\n\n4.5.1 Pengertian\nRP menggambarkan tekanan risiko struktural sebelum kapasitas diperhitungkan. RP digunakan bersama C, RA, dan RR serta tidak ditafsirkan sebagai ukuran kinerja kapasitas daerah.\n\n\n4.5.2 Formula Dasar\nRP_raw = (HM * VM)^(1/2)\nLaporan kemudian menyatakan RP ditransformasikan ke skala 0-1 dengan fungsi fuzzy dan parameter MULTI.\n\n\n4.5.3 Dua Urutan yang Ditemukan\nNarasi laporan: agregasi bahaya dan kerentanan masing-masing ditransformasikan menjadi HM dan VM; keduanya digabung menjadi RP; hasil RP kembali diarahkan untuk ditransformasikan.\nImplementasi workbook: jumlah bahaya dan jumlah kerentanan langsung digabungkan menjadi RP_raw, kemudian hanya RP_raw yang ditransformasikan menjadi RP_idx.\nKedua urutan tidak boleh dianggap setara hanya karena contoh Aceh Selatan menghasilkan angka yang berdekatan. Urutan normatif, nama variabel, dan banyaknya transformasi harus ditetapkan melalui keputusan M-05.\n\n\n4.5.4 Contoh Reproduksi Workbook\nUntuk Kabupaten Aceh Selatan:\nHM_raw = 8,998 VM_raw = 9,171104 RP_raw = sqrt(8,998 * 9,171104) = 9,084140 RP_idx = fuzzy(9,084140; m=5,186100; s=1,997839) = 0,753967\nContoh ini diberi label implementasi workbook, bukan keputusan metode final.\n\n\n4.5.5 Klasifikasi\nWorkbook menerapkan ambang 0,333 dan 0,666 pada RA, tetapi tidak menyediakan kelas RP tersendiri. Penggunaan ambang yang sama untuk RP memerlukan keputusan M-08 dan tidak diberlakukan otomatis dalam draf ini. ## 4.6 Indeks Kapasitas\n\n\n4.6.1 Input dan Sumber Induk\nInput adalah IKD kabupaten/kota yang telah disahkan untuk periode perhitungan. Hanya satu tabel induk IKD digunakan. Salinan nilai IKD atau C pada tabel lain harus direkonsiliasi atau dihilangkan sesuai M-16.\n\n\n4.6.2 Transformasi Linier Bertahap\nJika IKD &lt;= 0,4: C = ((1/3)/0,4) * IKD\nJika 0,4 &lt; IKD &lt;= 0,8: C = 1/3 + ((1/3)/0,4) * (IKD - 0,4)\nJika 0,8 &lt; IKD &lt;= 1: C = 2/3 + ((1/3)/0,2) * (IKD - 0,8)\nFungsi tersebut kontinu pada 0,4 dan 0,8 serta memetakan IKD 0, 0,4, 0,8, dan 1 masing-masing menjadi C 0, 1/3, 2/3, dan 1.\n\n\n4.6.3 Validasi Domain\nIKD kosong, negatif, atau lebih besar dari 1 tidak dihitung dan diberi status gagal validasi. Draf ini tidak menerapkan pemotongan otomatis ke rentang 0-1 karena tindakan tersebut dapat menyembunyikan kesalahan sumber.\n\n\n4.6.4 Contoh\nIKD Kabupaten Aceh Selatan adalah 0,21. Karena IKD &lt;= 0,4:\nC = ((1/3)/0,4) * 0,21 = 0,175\nNilai disimpan dengan presisi penuh. Pembulatan hanya untuk penyajian. ## 4.7 Risiko Aktual\n\n\n4.7.1 Pengertian\nRA menggambarkan risiko yang tersisa setelah kapasitas memoderasi RP. Formula mempertahankan pengaruh RP sekaligus mengurangi nilai ketika C meningkat.\n\n\n4.7.2 Formula\nRA = (RP * (1 - C))^(1/2)\nFormula hanya dihitung apabila RP dan C sah serta berada pada domain yang ditetapkan.\n\n\n4.7.3 Contoh\nUntuk Kabupaten Aceh Selatan berdasarkan implementasi workbook:\nRP = 0,753967 C = 0,175000 RA = sqrt(0,753967 * (1 - 0,175)) = 0,788684\nWorkbook mengklasifikasikan nilai tersebut sebagai Tinggi dengan batas RA &gt; 0,666. Ambang 0,333 dan 0,666 serta aturan pembulatannya masih memerlukan penetapan melalui M-08.\n\n\n4.7.4 Status Keluaran\nRA disajikan sebagai keluaran analitis. Penyebutan RA sebagai nilai utama IRBI atau pengganti IRBI eksisting hanya dilakukan setelah keputusan regulatif M-10. Policy smoothing IRBI eksisting dicatat sebagai konteks transisi dan tidak dicampurkan ke formula RA.\n\n\n4.7.5 Analisis Antarwaktu\nPerubahan RA dipisahkan menurut perubahan H, V, IKD, parameter, metode, kode wilayah, dan koreksi data. Perbandingan skenario V2021 dan V2025 dalam workbook tidak disebut tren tahunan karena kapasitas keduanya sama-sama memakai tahun 2025. ## 4.8 Rasio Risiko\n\n\n4.8.1 Formula\nRR = log2(RP/C) + 1\nRR = 1 menunjukkan RP sama dengan C. RR di atas 1 menunjukkan RP relatif lebih besar daripada C, sedangkan RR di bawah 1 menunjukkan C relatif lebih besar daripada RP.\n\n\n4.8.2 Kondisi Khusus\nFormula tidak terdefinisi untuk C=0. Nilai C yang sangat kecil dapat menghasilkan RR ekstrem. Konstanta +1 tidak selalu menjamin RR non-negatif. Aturan minimum C, RP=0, nilai negatif, dan data kosong harus diputuskan melalui M-06, M-07, dan M-18.\n\n\n4.8.3 Klasifikasi\n\n\n\n\n\n\n\n\nRentang RR\nKategori\nMakna ringkas\n\n\n\n\n&lt;= 1,00\nTerkendali\nKapasitas relatif mampu mengimbangi RP\n\n\n&gt; 1,00 - &lt;= 1,50\nKetimpangan Ringan\nKetimpangan mulai muncul tetapi masih terbatas\n\n\n&gt; 1,50 - &lt;= 2,00\nKetimpangan Sedang\nTekanan risiko semakin nyata\n\n\n&gt; 2,00 - &lt;= 3,00\nKetimpangan Tinggi\nKapasitas belum memadai\n\n\n&gt; 3,00\nKritis\nRP jauh melampaui kapasitas\n\n\n\nIstilah Ketimpangan Ringan mengikuti laporan. Workbook memakai Ketimpangan Rendah untuk rentang yang sama; nomenklatur final diselesaikan melalui M-17.\n\n\n4.8.4 Contoh\nUntuk Kabupaten Aceh Selatan:\nRR = log2(0,753967 / 0,175) + 1 = 3,107147\nNilai tersebut masuk kategori Kritis. Interpretasi ini menunjukkan ketimpangan relatif dan tidak menggantikan pembacaan RP, C, serta RA.\n\n\n4.8.5 Penggunaan\nRR digunakan untuk membantu mengurutkan kebutuhan analisis penguatan kapasitas dan pengurangan kerentanan. Keputusan program tetap mempertimbangkan komponen pembentuk, konteks wilayah, kelayakan intervensi, dan kajian risiko yang lebih rinci.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab IV. Tahapan Perhitungan"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab IV. Metode Perhitungan IRBI"
     ]
   },
   {
-    "objectID": "bab-4.html#kendali-mutu-langkah-perhitungan",
-    "href": "bab-4.html#kendali-mutu-langkah-perhitungan",
-    "title": "Bab IV. Tahapan Perhitungan",
-    "section": "4.4 Kendali Mutu Langkah Perhitungan",
-    "text": "4.4 Kendali Mutu Langkah Perhitungan\nSetiap langkah diperiksa sebelum hasil dipakai — lihat Bab VI dan checklist Lampiran D. Kesalahan paling sering: satuan Kerugian Fisik dan Kerugian Ekonomi yang tidak konsisten dengan Lampiran A (lihat Bab III.3.3).",
-    "crumbs": [
-      "Beranda",
-      "Bab",
-      "Bab IV. Tahapan Perhitungan"
-    ]
-  },
-  {
-    "objectID": "bab-7.html",
-    "href": "bab-7.html",
-    "title": "Bab VII. Masa Transisi dan Implementasi",
+    "objectID": "lampiran-a.html",
+    "href": "lampiran-a.html",
+    "title": "Lampiran A. Diagram Alir Perhitungan IRBI",
     "section": "",
-    "text": "BNPB menetapkan satu dari tiga opsi implementasi secara nasional; BPBD menjalankan opsi yang berlaku, bukan memilih sendiri.",
+    "text": "Figure 1: Alur perhitungan dari validasi data sampai publikasi, termasuk titik keputusan urutan transformasi.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab VII. Masa Transisi dan Implementasi"
+      "Lampiran Operasional",
+      "Lampiran A. Diagram Alir Perhitungan IRBI"
     ]
   },
   {
-    "objectID": "bab-7.html#tiga-opsi-implementasi",
-    "href": "bab-7.html#tiga-opsi-implementasi",
-    "title": "Bab VII. Masa Transisi dan Implementasi",
-    "section": "7.1 Tiga Opsi Implementasi",
-    "text": "7.1 Tiga Opsi Implementasi\n\n\n\n\n\n\n\n\nOpsi\nDeskripsi\nKapan Berlaku\n\n\n\n\nParalel\nIRBI reformulasi dipakai sebagai instrumen analitis pendamping; IRBI eksisting tetap indikator utama kebijakan dan Indikator Kinerja Utama (IKU) daerah\nJangka pendek — saat kesiapan data dan kelembagaan belum penuh\n\n\nHibrida\nSebagian komponen reformulasi (risiko aktual, rasio risiko) diintegrasikan ke kerangka IRBI eksisting tanpa mengganti struktur indeks resmi\nJangka menengah — saat nilai tambah reformulasi sudah ingin dimanfaatkan tanpa mengganti indeks resmi\n\n\nPenuh\nIRBI reformulasi ditetapkan sebagai standar nasional setelah fase uji implementasi dan penyesuaian regulasi\nJangka panjang — setelah kesiapan data, kapasitas kelembagaan, dan kerangka regulasi terpenuhi memadai\n\n\n\nPada opsi Paralel dan Hibrida, BPBD tetap menjalankan Langkah 8 (penyetaraan skala, Bab IV) agar hasil IRBI reformulasi tetap terbaca dalam sistem pelaporan kinerja berjalan. Opsi Penuh melewati langkah tersebut karena seluruh pelaporan sudah memakai skala reformulasi.",
+    "objectID": "lampiran-a.html#alur-operasional",
+    "href": "lampiran-a.html#alur-operasional",
+    "title": "Lampiran A. Diagram Alir Perhitungan IRBI",
+    "section": "Alur Operasional",
+    "text": "Alur Operasional\n\nValidasi sumber, satuan, periode, kode wilayah, dan status data.\nHitung dan simpan indeks bahaya tunggal serta komponen kerentanan per bahaya.\nAgregasikan H dan V sesuai daftar bahaya yang disahkan.\nBentuk RP menggunakan urutan transformasi yang ditetapkan; selama M-05 terbuka, hasil diberi label reproduksi workbook atau skenario laporan.\nTransformasikan satu sumber IKD menjadi C.\nHitung RA dan RR setelah memeriksa domain, termasuk kondisi C=0.\nSimpan hasil antara, jalankan QA/QC, validasi, persetujuan, dan publikasi.\n\n\n\n\n\n\n\nWarning\n\n\n\nUrutan transformasi RP belum boleh disederhanakan menjadi satu diagram normatif sampai M-05 diputuskan.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab VII. Masa Transisi dan Implementasi"
+      "Lampiran Operasional",
+      "Lampiran A. Diagram Alir Perhitungan IRBI"
     ]
   },
   {
-    "objectID": "bab-7.html#roadmap-implementasi-nasional",
-    "href": "bab-7.html#roadmap-implementasi-nasional",
-    "title": "Bab VII. Masa Transisi dan Implementasi",
-    "section": "7.2 Roadmap Implementasi Nasional",
-    "text": "7.2 Roadmap Implementasi Nasional\n\n\n\n\n\nflowchart LR\n    A[Jangka Pendek] --&gt; B[Jangka Menengah]\n    B --&gt; C[Jangka Panjang]\n\n\n\n\n\n\nJangka pendek — IRBI reformulasi diterapkan secara paralel dengan IRBI eksisting melalui uji implementasi terbatas. Fokus: sosialisasi metodologi ke BPBD, penyusunan pedoman teknis awal (dokumen ini), dan pengembangan sistem pendukung analisis.\nJangka menengah — perluasan uji implementasi ke lebih banyak wilayah, integrasi hasil reformulasi ke proses evaluasi kebijakan pengurangan risiko bencana. Fokus: penguatan kapasitas teknis BPBD, penyempurnaan sistem data, evaluasi berkala atas konsistensi dan keterpakaian hasil.\nJangka panjang — adopsi lebih luas melalui penetapan regulatif sebagai standar nasional, apabila seluruh prasyarat teknis dan kelembagaan terpenuhi. IRBI reformulasi berfungsi sebagai instrumen utama penilaian risiko bencana nasional untuk perencanaan, penganggaran, dan evaluasi kinerja.",
+    "objectID": "lampiran-f.html",
+    "href": "lampiran-f.html",
+    "title": "Lampiran F. Templat Perhitungan dan Struktur Basis Data",
+    "section": "",
+    "text": "Penggabungan antartabel memakai kode wilayah unik, bukan posisi baris.\nH, V, dan IKD memiliki tabel sumber terpisah dengan satu catatan versi yang jelas.\nNilai, status data, dan pesan validasi disimpan pada kolom berbeda.\nParameter, bobot, klasifikasi, dan formula memiliki nomor versi dan tanggal berlaku.\nHasil antara tidak dihapus setelah nilai akhir dihitung.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab VII. Masa Transisi dan Implementasi"
+      "Lampiran Operasional",
+      "Lampiran F. Templat Perhitungan dan Struktur Basis Data"
     ]
   },
   {
-    "objectID": "bab-7.html#kebutuhan-dukungan-bagi-bpbd",
-    "href": "bab-7.html#kebutuhan-dukungan-bagi-bpbd",
-    "title": "Bab VII. Masa Transisi dan Implementasi",
-    "section": "7.3 Kebutuhan Dukungan bagi BPBD",
-    "text": "7.3 Kebutuhan Dukungan bagi BPBD\n\nDukungan regulatif — kepastian hukum dan arah kebijakan transisi dari IRBI eksisting ke IRBI reformulasi, untuk menghindari interpretasi yang beragam antarwilayah.\nPedoman teknis nasional — dokumen ini, mencakup tahapan perhitungan, interpretasi hasil, dan keterkaitan indikator dengan kebutuhan kebijakan.\nPenguatan kapasitas sumber daya manusia — pelatihan dan pendampingan teknis bagi staf BPBD, mengingat kompleksitas metodologi reformulasi lebih tinggi dibandingkan IRBI eksisting.\nSistem informasi dan visualisasi nasional — memudahkan pemanfaatan hasil IRBI reformulasi oleh pengguna teknis maupun non-teknis di daerah.",
+    "objectID": "lampiran-f.html#prinsip-struktur",
+    "href": "lampiran-f.html#prinsip-struktur",
+    "title": "Lampiran F. Templat Perhitungan dan Struktur Basis Data",
+    "section": "",
+    "text": "Penggabungan antartabel memakai kode wilayah unik, bukan posisi baris.\nH, V, dan IKD memiliki tabel sumber terpisah dengan satu catatan versi yang jelas.\nNilai, status data, dan pesan validasi disimpan pada kolom berbeda.\nParameter, bobot, klasifikasi, dan formula memiliki nomor versi dan tanggal berlaku.\nHasil antara tidak dihapus setelah nilai akhir dihitung.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab VII. Masa Transisi dan Implementasi"
+      "Lampiran Operasional",
+      "Lampiran F. Templat Perhitungan dan Struktur Basis Data"
+    ]
+  },
+  {
+    "objectID": "lampiran-f.html#kelompok-kolom-minimum",
+    "href": "lampiran-f.html#kelompok-kolom-minimum",
+    "title": "Lampiran F. Templat Perhitungan dan Struktur Basis Data",
+    "section": "Kelompok Kolom Minimum",
+    "text": "Kelompok Kolom Minimum\n\n\n\nKelompok\nContoh kolom\n\n\n\n\nIdentitas\nkode_wilayah, nama_wilayah, versi_kode\n\n\nSkenario\nversi_h, versi_v, versi_ikd, versi_metode\n\n\nInput\nh_&lt;bahaya&gt;, v_penduduk_&lt;bahaya&gt;, ikd\n\n\nStatus\nstatus_h_&lt;bahaya&gt;, status_v_&lt;bahaya&gt;, status_validasi\n\n\nHasil antara\nhm_raw, vm_raw, rp_raw, rp_idx, c\n\n\nKeluaran\nra, rr, kelas yang disahkan, catatan",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran F. Templat Perhitungan dan Struktur Basis Data"
+    ]
+  },
+  {
+    "objectID": "lampiran-f.html#kontrol-penggabungan",
+    "href": "lampiran-f.html#kontrol-penggabungan",
+    "title": "Lampiran F. Templat Perhitungan dan Struktur Basis Data",
+    "section": "Kontrol Penggabungan",
+    "text": "Kontrol Penggabungan\n\nkode harus unik pada setiap tabel;\ncakupan kode harus direkonsiliasi sebelum join;\nbaris tanpa pasangan tidak boleh hilang diam-diam;\nnama wilayah dipakai untuk pemeriksaan, bukan kunci utama;\nhasil join mencatat jumlah cocok, hanya-kiri, dan hanya-kanan.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran F. Templat Perhitungan dan Struktur Basis Data"
+    ]
+  },
+  {
+    "objectID": "register-isu.html",
+    "href": "register-isu.html",
+    "title": "Register Isu Metodologis",
+    "section": "",
+    "text": "18isu terbuka\n\n\n10kritis\n\n\n7tinggi\n\n\n1sedang\nRegister ini memisahkan temuan telaah dari keputusan. Semua butir masih berstatus terbuka; formulasi draf tidak boleh dibaca sebagai penyelesaian sepihak. Unduh register CSV",
+    "crumbs": [
+      "Beranda",
+      "Kendali Pengembangan",
+      "Register Isu Metodologis"
+    ]
+  },
+  {
+    "objectID": "register-isu.html#daftar-isu",
+    "href": "register-isu.html#daftar-isu",
+    "title": "Register Isu Metodologis",
+    "section": "Daftar Isu",
+    "text": "Daftar Isu\n\n\nM-01KritisTerbuka\n\n\nPersamaan 11\nTemuan. Pembilang pada PDF tertulis y_max - y_max sehingga selalu nol.\nTindak lanjut. Validasi dengan tim metodologi; dugaan matematis y_max - y_min tidak boleh diberlakukan tanpa persetujuan.\n\n\n\n\nM-02KritisTerbuka\n\n\nPersamaan 2-3\nTemuan. Simbol A_L dan A_U dipakai tetapi bagian ‘dimana’ hanya mendefinisikan I_L dan I_U.\nTindak lanjut. Tambahkan definisi eksplisit dan uji ulang kalibrasi midpoint/spread.\n\n\n\n\nM-03KritisTerbuka\n\n\nPersamaan 4 dan data kosong\nTemuan. Notasi menunjukkan jumlah indeks tunggal; arti n dan penanganan bahaya tidak berlaku/missing belum operasional. Dalam workbook, sel kosong dapat diperlakukan seperti nol oleh IF(x=0,0,…) dan IFERROR yang menghasilkan teks kosong.\nTindak lanjut. Tetapkan daftar bahaya, cakupan n, kode status data, serta aturan terpisah untuk nol sah, tidak berlaku, tidak tersedia, dan gagal validasi.\n\n\n\n\nM-04TinggiTerbuka\n\n\nTaksonomi bahaya\nTemuan. Tabel parameter menyebut 10/11 jenis, sedangkan Tabel 2 menggabungkan Tanah Longsor/Likuefaksi.\nTindak lanjut. Tetapkan daftar nasional final dan pemetaan setiap bahaya ke parameter/bobot.\n\n\n\n\nM-05KritisTerbuka\n\n\nUrutan dan label variabel\nTemuan. HM/VM telah ditransformasi, kemudian RP_raw kembali ditransformasi dengan parameter MULTI; definisi nilai sebelum/sesudah transformasi perlu dipertegas. Label workbook seperti R=V* serta HV_MULTI belum cukup membedakan kerentanan, nilai mentah, dan indeks hasil transformasi.\nTindak lanjut. Tetapkan kamus variabel HM_raw, VM_raw, RP_raw, RP_idx, C, RA, dan RR; buat diagram alir serta contoh hitung uji.\n\n\n\n\nM-06KritisTerbuka\n\n\nRR saat C=0\nTemuan. RR = log2(RP/C)+1 tidak terdefinisi untuk C=0 dan sangat sensitif saat C mendekati nol. Workbook belum memiliki guard; data saat telaah belum memicu galat karena C minimum sekitar 0,1667.\nTindak lanjut. Tetapkan aturan minimum C/epsilon atau status khusus, beserta implikasi klasifikasi.\n\n\n\n\nM-07TinggiTerbuka\n\n\nRentang RR\nTemuan. Klaim bahwa konstanta memastikan nilai non-negatif tidak selalu benar ketika RP/C &lt; 0,5.\nTindak lanjut. Uji domain aktual; putuskan apakah RR dibatasi, dibiarkan, atau diberi aturan khusus.\n\n\n\n\nM-08KritisTerbuka\n\n\nKlasifikasi RP/C/RA\nTemuan. Batas kelas selain RR belum dinyatakan lengkap dalam bagian metode laporan. Workbook memakai 0,333 dan 0,666 untuk kalibrasi/kelas RA, sedangkan transformasi kapasitas memakai pecahan eksak 1/3 dan 2/3.\nTindak lanjut. Tetapkan tabel kelas nasional, presisi normatif, aturan nilai batas, pembulatan, warna, dan kasus uji di sekitar ambang.\n\n\n\n\nM-09TinggiTerbuka\n\n\nPenyetaraan\nTemuan. Nilai x_max kelas risiko tinggi ditetapkan asumtif, tetapi angka dan tata kelolanya belum normatif.\nTindak lanjut. Tetapkan nilai, dasar, versi, dan periode berlaku selama masa transisi.\n\n\n\n\nM-10KritisTerbuka\n\n\nStatus RA\nTemuan. Laporan menyebut RA sebagai IRBI Baru namun juga sebagai indikator komplementer; outline merekomendasikan RA sebagai keluaran utama.\nTindak lanjut. Diperlukan keputusan kebijakan/regulatif tentang indikator utama dan indikator diagnostik.\n\n\n\n\nM-11TinggiTerbuka\n\n\nData antarwaktu\nTemuan. H/V diperbarui berkala, IKD tahunan; perubahan RA dapat berasal dari versi data yang berbeda.\nTindak lanjut. Tetapkan baseline, cut-off, restatement, dan aturan seri waktu.\n\n\n\n\nM-12TinggiTerbuka\n\n\nLandasan hukum\nTemuan. Verifikasi awal menemukan OTK BNPB tahun 2025 dan perubahan Perpres BNPB yang belum tercermin lengkap pada laporan sumber.\nTindak lanjut. Unit hukum mengonfirmasi keberlakuan, pencabutan/penggantian, nomenklatur, serta dasar kewenangan sebelum penetapan Juknis.\n\n\n\n\nM-13KritisTerbuka\n\n\nIdentitas waktu dan skenario workbook\nTemuan. FUZZY_INDEX_V2021 menggunakan bahaya dan kerentanan versi 2021 tetapi kapasitas 2025; FUZZY_INDEX_V2025 mempertahankan bahaya 2021 dan kapasitas 2025 lalu mengganti kerentanan menjadi versi 2025. Perbandingan keduanya bukan seri waktu IRBI 2021-2025.\nTindak lanjut. Tetapkan tahun/versi setiap komponen, nama resmi skenario, aturan baseline, dan label keluaran yang tidak menimbulkan interpretasi sebagai tren tahunan.\n\n\n\n\nM-14KritisTerbuka\n\n\nSatuan dan skala input\nTemuan. Walaupun header kedua sumber memakai satuan yang sama, median rasio nilai V2025 terhadap HV2021 sekitar 1.283 kali untuk kerugian fisik, 1.480 kali untuk kerugian ekonomi, dan 0,018 kali untuk kerusakan lingkungan. Transformasi V2025 menjadi sangat jenuh pada kerugian fisik/ekonomi.\nTindak lanjut. Audit satuan, tahun harga, metode estimasi, resolusi spasial, dan agregasi; susun kamus data; lalu lakukan kalibrasi serta uji sensitivitas ulang sebelum parameter ditetapkan.\n\n\n\n\nM-15KritisTerbuka\n\n\nPenggabungan data wilayah\nTemuan. Sebagian referensi memakai pencarian berdasarkan ID, tetapi data kerentanan banyak dipanggil dengan referensi baris langsung. Urutan tiga tabel saat ini sama untuk 514 wilayah, namun penyortiran atau penambahan baris terpisah dapat memasangkan wilayah yang salah tanpa galat formula.\nTindak lanjut. Gunakan penggabungan berbasis kunci wilayah unik; validasi keunikan, kelengkapan, cakupan, tahun kode, dan rekonsiliasi nama sebelum perhitungan.\n\n\n\n\nM-16TinggiTerbuka\n\n\nSumber kapasitas ganda\nTemuan. IKD dan C tersedia pada RAW_IKD2025 serta disalin ke RAW_HV2021. Skenario V2021 dan V2025 mengambil kapasitas dari salinan yang berbeda meskipun nilainya saat ini identik.\nTindak lanjut. Tetapkan satu tabel induk IKD/kapasitas, hapus ketergantungan pada salinan, dan tambahkan kontrol rekonsiliasi versi.\n\n\n\n\nM-17SedangTerbuka\n\n\nNomenklatur kelas RR\nTemuan. Laporan menggunakan kategori Ketimpangan Ringan untuk RR &gt;1,00 sampai &lt;=1,50, sedangkan workbook menghasilkan KETIMPANGAN RENDAH pada rentang yang sama.\nTindak lanjut. Tetapkan nomenklatur resmi dan selaraskan Juknis, template hitung, tabel, peta, dashboard, serta metadata keluaran.\n\n\n\n\nM-18TinggiTerbuka\n\n\nValidasi domain input\nTemuan. Workbook belum menolak atau memberi status khusus untuk indikator negatif, IKD di luar 0-1, maupun hasil transformasi di luar domain yang ditetapkan. Data saat telaah tidak memicu kondisi tersebut.\nTindak lanjut. Tetapkan domain setiap variabel, aturan penolakan atau koreksi, pesan galat, dan kasus uji batas sebelum perhitungan nasional.",
+    "crumbs": [
+      "Beranda",
+      "Kendali Pengembangan",
+      "Register Isu Metodologis"
     ]
   },
   {
     "objectID": "lampiran-c.html",
     "href": "lampiran-c.html",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
+    "title": "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot",
     "section": "",
-    "text": "Contoh ini memakai data riil dari perkakas hitung pendamping CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx, diverifikasi ulang secara independen agar BPBD dapat mereplikasi hasil yang sama persis pada wilayahnya.",
+    "text": "Transformasi fuzzy sigmoid:\n\\[I(x)=\\frac{1}{1+\\left(\\frac{x}{m}\\right)^{-s}}\\]\nReproduksi Risiko Potensial pada workbook:\n\\[RP_{raw}=\\sqrt{HM_{raw}\\times VM_{raw}},\\qquad RP_{idx}=I(RP_{raw})\\]\nRisiko Aktual dan Rasio Risiko:\n\\[RA=\\sqrt{RP_{idx}(1-C)}\\]\n\\[RR=\\log_2\\left(\\frac{RP_{idx}}{C}\\right)+1\\]\n\n\n\n\n\n\nImportant\n\n\n\nPersamaan di atas mereproduksi workbook. Urutan RP normatif menunggu M-05; RR untuk C=0 menunggu M-06. Persamaan 11 untuk penyetaraan belum dapat diberlakukan karena M-01 dan M-09.",
     "crumbs": [
       "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
+      "Lampiran Operasional",
+      "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot"
     ]
   },
   {
-    "objectID": "lampiran-c.html#langkah-12-transformasi-dan-kombinasi-kerentanan-jenis-bahaya-banjir",
-    "href": "lampiran-c.html#langkah-12-transformasi-dan-kombinasi-kerentanan-jenis-bahaya-banjir",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
-    "section": "Langkah 1–2 — Transformasi dan kombinasi kerentanan, jenis bahaya Banjir",
-    "text": "Langkah 1–2 — Transformasi dan kombinasi kerentanan, jenis bahaya Banjir\n\n\n\nSub-komponen\nNilai Mentah\nIndeks (0–1)\n\n\n\n\nPenduduk terpapar\n136.977 jiwa\n0,999973\n\n\nKerugian fisik\n758.212 (Rp milyar)\n1,000000\n\n\nKerugian ekonomi\n1.088.992 (Rp milyar)\n1,000000\n\n\nKerusakan lingkungan\n182,5 Ha\n0,631952\n\n\n\n\\[\nV_{banjir} = 0{,}4(0{,}999973) + 0{,}25(1{,}000000) + 0{,}25(1{,}000000) + 0{,}1(0{,}631952) = 0{,}963184\n\\]\n\n\n\n\n\n\nCatatan kendali mutu\n\n\n\nKerugian fisik dan ekonomi di atas jauh melampaui ambang atas Lampiran A (2,1 dan 0,33 milyar), sehingga kedua indeksnya jenuh di 1,0 — indikasi satuan data proyeksi 2025 tidak konsisten dengan Rp milyar (lihat Bab III.3.3 dan Bab VI, poin 2).\n\n\nLangkah yang sama diulang untuk sepuluh jenis bahaya lain memakai parameter dan bobot pada Lampiran A dan B.",
+    "objectID": "lampiran-c.html#persamaan-inti",
+    "href": "lampiran-c.html#persamaan-inti",
+    "title": "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot",
+    "section": "",
+    "text": "Transformasi fuzzy sigmoid:\n\\[I(x)=\\frac{1}{1+\\left(\\frac{x}{m}\\right)^{-s}}\\]\nReproduksi Risiko Potensial pada workbook:\n\\[RP_{raw}=\\sqrt{HM_{raw}\\times VM_{raw}},\\qquad RP_{idx}=I(RP_{raw})\\]\nRisiko Aktual dan Rasio Risiko:\n\\[RA=\\sqrt{RP_{idx}(1-C)}\\]\n\\[RR=\\log_2\\left(\\frac{RP_{idx}}{C}\\right)+1\\]\n\n\n\n\n\n\nImportant\n\n\n\nPersamaan di atas mereproduksi workbook. Urutan RP normatif menunggu M-05; RR untuk C=0 menunggu M-06. Persamaan 11 untuk penyetaraan belum dapat diberlakukan karena M-01 dan M-09.",
     "crumbs": [
       "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
+      "Lampiran Operasional",
+      "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot"
     ]
   },
   {
-    "objectID": "lampiran-c.html#langkah-3-indeks-bahaya-h_i-dan-kerentanan-v_i-per-jenis-bahaya",
-    "href": "lampiran-c.html#langkah-3-indeks-bahaya-h_i-dan-kerentanan-v_i-per-jenis-bahaya",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
-    "section": "Langkah 3 — Indeks bahaya (\\(H_i\\)) dan kerentanan (\\(V_i\\)) per jenis bahaya",
-    "text": "Langkah 3 — Indeks bahaya (\\(H_i\\)) dan kerentanan (\\(V_i\\)) per jenis bahaya\n\n\n\nJenis Bahaya\n\\(H_i\\) (Bahaya)\n\\(V_i\\) (Kerentanan)\n\n\n\n\nBanjir\n1,000\n0,963184\n\n\nBanjir Bandang\n1,000\n0,924034\n\n\nCuaca Ekstrim\n1,000\n0,999996\n\n\nGelombang Ekstrim dan Abrasi\n1,000\n0,901730\n\n\nGempabumi\n1,000\n0,999997\n\n\nKebakaran Hutan dan Lahan\n0,666\n0,504960\n\n\nKekeringan\n0,666\n0,993965\n\n\nLikuefaksi\n0,666\n0,980678\n\n\nLetusan Gunungapi\ntidak berlaku\n0,000000\n\n\nTanah Longsor\n1,000\n0,996761\n\n\nTsunami\n1,000\n0,905799\n\n\nJumlah (\\(H_{multi}\\), \\(V_{multi}\\))\n8,998\n9,171",
+    "objectID": "lampiran-c.html#parameter-transformasi-yang-terekam",
+    "href": "lampiran-c.html#parameter-transformasi-yang-terekam",
+    "title": "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot",
+    "section": "Parameter Transformasi yang Terekam",
+    "text": "Parameter Transformasi yang Terekam\n\n\n\n\n\n\n\n\n\n\n\nKomponen\nCakupan\n\\(x_L\\)\n\\(x_U\\)\n\\(s\\)\n\\(m\\)\n\n\n\n\nPenduduk terpapar\nsemua kecuali karhutla\n500\n1.000\n1,998\n707,903\n\n\nKerugian fisik\nsemua kecuali kekeringan/karhutla\n1,4\n2,1\n3,415\n1,716\n\n\nKerugian ekonomi\nseluruh bahaya\n0,15\n0,325\n1,791\n0,221\n\n\nLingkungan\nbanjir, banjir bandang, GEA\n70\n205\n1,289\n120,001\n\n\nLingkungan\nkarhutla, kekeringan, likuefaksi, LGA, longsor\n65\n185\n1,324\n109,845\n\n\nLingkungan\ntsunami\n55\n185\n1,142\n101,070\n\n\nMulti\n11 bahaya workbook\n3,663\n7,326\n1,998\n5,186\n\n\n\nParameter disimpan dengan presisi penuh pada perangkat hitung. Simbol perantara kalibrasi pada Persamaan 2–3 perlu diselesaikan melalui M-02.",
     "crumbs": [
       "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
+      "Lampiran Operasional",
+      "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot"
     ]
   },
   {
-    "objectID": "lampiran-c.html#langkah-4-risiko-potensial",
-    "href": "lampiran-c.html#langkah-4-risiko-potensial",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
-    "section": "Langkah 4 — Risiko Potensial",
-    "text": "Langkah 4 — Risiko Potensial\n\\[\nH_M = I(H_{multi}) = \\frac{1}{1+\\left(\\dfrac{8{,}998}{5{,}186}\\right)^{-1{,}998}} = 0{,}7504\n\\]\n\\[\nV_M = I(V_{multi}) = \\frac{1}{1+\\left(\\dfrac{9{,}171}{5{,}186}\\right)^{-1{,}998}} = 0{,}7575\n\\]\n\\[\nRP = \\sqrt{H_M \\times V_M} = \\sqrt{0{,}7504 \\times 0{,}7575} = 0{,}7539\n\\]\n\\(H_{multi}\\) dan \\(V_{multi}\\) ditransformasi terpisah sebelum digabung, sesuai keputusan BNPB (2026) — bukan dijumlah mentah lalu ditransformasi sekali di akhir (hasil kedua urutan berdekatan untuk contoh ini: 0,7539 vs 0,7540, tetapi tidak identik secara umum karena fungsi sigmoid tidak linear).",
+    "objectID": "lampiran-c.html#bobot-kerentanan",
+    "href": "lampiran-c.html#bobot-kerentanan",
+    "title": "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot",
+    "section": "Bobot Kerentanan",
+    "text": "Bobot Kerentanan\n\n\n\n\n\n\n\n\n\n\nJenis bahaya\nPenduduk\nFisik\nEkonomi\nLingkungan\n\n\n\n\nGempabumi\n40%\n30%\n30%\n—\n\n\nTsunami; banjir; banjir bandang; longsor; likuefaksi; LGA; GEA\n40%\n25%\n25%\n10%\n\n\nCuaca ekstrem\n40%\n30%\n30%\n—\n\n\nKarhutla\n40%\n—\n—\n60%\n\n\nKekeringan\n50%\n—\n40%\n10%\n\n\n\nTanda — berarti komponen tidak diperhitungkan. Bobot yang berlaku pada setiap bahaya harus berjumlah 100%.",
     "crumbs": [
       "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
-    ]
-  },
-  {
-    "objectID": "lampiran-c.html#langkah-5-indeks-kapasitas",
-    "href": "lampiran-c.html#langkah-5-indeks-kapasitas",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
-    "section": "Langkah 5 — Indeks Kapasitas",
-    "text": "Langkah 5 — Indeks Kapasitas\nIKD Kabupaten Aceh Selatan = 0,21 (≤ 0,4):\n\\[\nC = \\frac{1/3}{0{,}4} \\times 0{,}21 = 0{,}175\n\\]",
-    "crumbs": [
-      "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
-    ]
-  },
-  {
-    "objectID": "lampiran-c.html#langkah-6-risiko-aktual",
-    "href": "lampiran-c.html#langkah-6-risiko-aktual",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
-    "section": "Langkah 6 — Risiko Aktual",
-    "text": "Langkah 6 — Risiko Aktual\n\\[\nRA = \\sqrt{RP \\times (1-C)} = \\sqrt{0{,}7539 \\times 0{,}825} = 0{,}7887\n\\]\nKelas: Tinggi (RA &gt; 0,666).",
-    "crumbs": [
-      "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
-    ]
-  },
-  {
-    "objectID": "lampiran-c.html#langkah-7-rasio-risiko",
-    "href": "lampiran-c.html#langkah-7-rasio-risiko",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
-    "section": "Langkah 7 — Rasio Risiko",
-    "text": "Langkah 7 — Rasio Risiko\n\\[\nRR = \\log_2\\left(\\frac{0{,}7539}{0{,}175}\\right) + 1 = 3{,}107\n\\]\nKelas: Kritis (RR &gt; 3,00).",
-    "crumbs": [
-      "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
-    ]
-  },
-  {
-    "objectID": "lampiran-c.html#langkah-8-penyetaraan-skala-bila-diperlukan-bab-vii",
-    "href": "lampiran-c.html#langkah-8-penyetaraan-skala-bila-diperlukan-bab-vii",
-    "title": "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan",
-    "section": "Langkah 8 — Penyetaraan skala (bila diperlukan, Bab VII)",
-    "text": "Langkah 8 — Penyetaraan skala (bila diperlukan, Bab VII)\n\\[\nf(x) = y_{min} + (x - x_{min}) \\left(\\frac{y_{max} - y_{min}}{x_{max} - x_{min}}\\right)\n\\]\n\n\n\n\n\n\nIsu terbuka\n\n\n\nBentuk \\((y_{max} - y_{min})\\) dikonfirmasi BNPB. Nilai \\(x_{max}\\) untuk kelas risiko tinggi belum dinyatakan angkanya secara resmi — BPBD menunggu angka tersebut sebelum menjalankan langkah ini.",
-    "crumbs": [
-      "Beranda",
-      "Lampiran",
-      "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
+      "Lampiran Operasional",
+      "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot"
     ]
   },
   {
     "objectID": "bab-2.html",
     "href": "bab-2.html",
-    "title": "Bab II. Konsep dan Kerangka IRBI Reformulasi",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
     "section": "",
-    "text": "IRBI reformulasi menegaskan kembali kapasitas sebagai variabel penentu risiko, bukan sekadar komponen pengurang dalam indeks komposit.",
+    "text": "Status: draf kerja, belum normatif  ·  Acuan: laporan 2026, workbook, dan register isu  ·  Versi: 0.8",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab II. Konsep dan Kerangka IRBI Reformulasi"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
+    ]
+  },
+  {
+    "objectID": "bab-2.html#tujuan-bab",
+    "href": "bab-2.html#tujuan-bab",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "Tujuan Bab",
+    "text": "Tujuan Bab\nMenjelaskan pemisahan Risiko Potensial, Kapasitas, Risiko Aktual, dan Rasio Risiko sebagai inti reformulasi serta batas penggunaannya dalam kebijakan.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
     ]
   },
   {
     "objectID": "bab-2.html#konsep-risiko-bencana",
     "href": "bab-2.html#konsep-risiko-bencana",
-    "title": "Bab II. Konsep dan Kerangka IRBI Reformulasi",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
     "section": "2.1 Konsep Risiko Bencana",
-    "text": "2.1 Konsep Risiko Bencana\nRisiko bencana adalah hasil interaksi antara bahaya (hazard), kerentanan (vulnerability), dan kapasitas (capacity). Kapasitas daerah dalam mengantisipasi, merespons, dan pulih dari dampak bencana menentukan seberapa besar tekanan bahaya dan kerentanan benar-benar terwujud menjadi risiko.",
+    "text": "2.1 Konsep Risiko Bencana\nRisiko bencana dipahami sebagai hasil interaksi bahaya, kerentanan, dan kapasitas. Bahaya menggambarkan potensi kejadian yang dapat menimbulkan kerugian. Kerentanan menggambarkan kondisi penduduk, aset, kegiatan ekonomi, dan lingkungan yang dapat terdampak. Kapasitas menggambarkan kemampuan relatif daerah untuk mengelola tekanan risiko tersebut.\nReformulasi IRBI memisahkan tekanan struktural yang dibentuk oleh bahaya dan kerentanan dari kemampuan daerah dalam mengelolanya. Pemisahan ini dimaksudkan agar perubahan kapasitas tidak tersembunyi di dalam satu indeks komposit dan agar penyebab perubahan hasil dapat ditelusuri.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab II. Konsep dan Kerangka IRBI Reformulasi"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
     ]
   },
   {
     "objectID": "bab-2.html#perbedaan-dengan-irbi-eksisting",
     "href": "bab-2.html#perbedaan-dengan-irbi-eksisting",
-    "title": "Bab II. Konsep dan Kerangka IRBI Reformulasi",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
     "section": "2.2 Perbedaan dengan IRBI Eksisting",
-    "text": "2.2 Perbedaan dengan IRBI Eksisting\n\n\n\n\n\n\n\n\nAspek\nIRBI Eksisting\nIRBI Reformulasi\n\n\n\n\nStruktur keluaran\nSatu indeks komposit tunggal\nTiga keluaran terpisah: risiko potensial, risiko aktual, rasio risiko\n\n\nBobot komponen\nBahaya 40%, kerentanan 30%, kapasitas 30%, digabung dalam satu formula\nKapasitas dihitung terpisah sebagai pembanding terhadap risiko potensial, bukan bobot gabungan\n\n\nSensitivitas terhadap kapasitas\nImplisit; peningkatan kapasitas tidak selalu tercermin proporsional pada nilai indeks\nEksplisit; risiko aktual dan rasio risiko dirancang untuk merepresentasikan kontribusi kapasitas\n\n\nFungsi evaluasi kinerja\nTerbatas untuk menafsirkan perubahan nilai sebagai dampak intervensi kebijakan\nRasio risiko berfungsi sebagai indikator ketimpangan risiko-kapasitas untuk evaluasi kinerja\n\n\n\nReformulasi ini tidak menggantikan IRBI eksisting secara langsung, melainkan melengkapinya sebagai instrumen analitis tambahan selama masa transisi (Bab VII).",
+    "text": "2.2 Perbedaan dengan IRBI Eksisting\n\n\n\n\n\n\n\n\nAspek\nIRBI eksisting\nKerangka reformulasi\n\n\n\n\nStruktur keluaran\nIndeks komposit tunggal\nRP, C, RA, dan RR disajikan terpisah\n\n\nPosisi kapasitas\nBagian dari pembobotan komposit\nVariabel tersendiri yang memoderasi RP dan menjadi pembanding dalam RR\n\n\nInterpretasi perubahan\nPerubahan komponen dapat saling menutupi\nPerubahan tekanan risiko dan kapasitas dapat dibaca terpisah\n\n\nStatus kebijakan\nDigunakan dalam sistem berjalan\nStatus penerapan menunggu keputusan regulatif dan masa transisi",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab II. Konsep dan Kerangka IRBI Reformulasi"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
     ]
   },
   {
-    "objectID": "bab-2.html#tiga-komponen-pembentuk",
-    "href": "bab-2.html#tiga-komponen-pembentuk",
-    "title": "Bab II. Konsep dan Kerangka IRBI Reformulasi",
-    "section": "2.3 Tiga Komponen Pembentuk",
-    "text": "2.3 Tiga Komponen Pembentuk\nStruktur indikator dikelompokkan ke dalam tiga komponen utama:\n\nBahaya (H) — sepuluh jenis bahaya utama (gempa bumi, tsunami, banjir, banjir bandang, tanah longsor/likuefaksi, letusan gunungapi, cuaca ekstrim, gelombang ekstrim dan abrasi, kebakaran lahan dan hutan, kekeringan).\nKerentanan (V) — empat komponen: penduduk terpapar, kerugian fisik, kerugian ekonomi, kerusakan lingkungan.\nKapasitas (C) — dihitung terpisah dari data Indeks Ketahanan Daerah (IKD), digunakan sebagai pembanding terhadap risiko potensial, bukan digabung ke dalam bobot komposit.\n\nIndikator bahaya dan kerentanan membentuk risiko potensial; indikator kapasitas digunakan secara terpisah sebagai pembanding untuk menghasilkan risiko aktual.",
+    "objectID": "bab-2.html#komponen-pembentuk",
+    "href": "bab-2.html#komponen-pembentuk",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "2.3 Komponen Pembentuk",
+    "text": "2.3 Komponen Pembentuk\nKomponen bahaya terdiri atas indeks bahaya tunggal untuk jenis bahaya yang ditetapkan secara nasional. Workbook menggunakan 11 kolom bahaya, yaitu banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi sehingga menyebut 10 jenis. Daftar nasional final harus diputuskan melalui M-04.\nKerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Kapasitas direpresentasikan melalui IKD yang ditransformasikan menjadi C pada skala 0-1.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab II. Konsep dan Kerangka IRBI Reformulasi"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
     ]
   },
   {
-    "objectID": "bab-2.html#tiga-keluaran-indeks-dan-hubungannya",
-    "href": "bab-2.html#tiga-keluaran-indeks-dan-hubungannya",
-    "title": "Bab II. Konsep dan Kerangka IRBI Reformulasi",
-    "section": "2.4 Tiga Keluaran Indeks dan Hubungannya",
-    "text": "2.4 Tiga Keluaran Indeks dan Hubungannya\n\n\n\n\n\nflowchart LR\n    H[Indeks Bahaya] --&gt; RP[Risiko Potensial]\n    V[Indeks Kerentanan] --&gt; RP\n    RP --&gt; RA[Risiko Aktual]\n    C[Indeks Kapasitas] --&gt; RA\n    RP --&gt; RR[Rasio Risiko]\n    C --&gt; RR\n\n\n\n\n\n\nRisiko potensial merepresentasikan tekanan bahaya dan kerentanan sebelum kapasitas diperhitungkan. Risiko aktual adalah risiko yang tersisa setelah kapasitas daerah diperhitungkan. Rasio risiko mengukur ketimpangan antara risiko potensial dan kapasitas, dipakai untuk menentukan prioritas penguatan kapasitas (tahapan lengkap di Bab IV).",
+    "objectID": "bab-2.html#risiko-potensial",
+    "href": "bab-2.html#risiko-potensial",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "2.4 Risiko Potensial",
+    "text": "2.4 Risiko Potensial\nRisiko Potensial (RP) menggambarkan tekanan risiko dari bahaya dan kerentanan sebelum kapasitas diperhitungkan. RP tidak boleh ditafsirkan sebagai ukuran keberhasilan atau kegagalan kapasitas daerah.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab II. Konsep dan Kerangka IRBI Reformulasi"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
     ]
   },
   {
-    "objectID": "bab-2.html#prinsip-dasar",
-    "href": "bab-2.html#prinsip-dasar",
-    "title": "Bab II. Konsep dan Kerangka IRBI Reformulasi",
-    "section": "2.5 Prinsip Dasar",
-    "text": "2.5 Prinsip Dasar\n\nKonsistensi kebijakan — menjaga kesinambungan klasifikasi risiko dan keterbandingan antarwilayah agar reformulasi tidak menimbulkan diskontinuitas perencanaan.\nTransparansi metodologis — setiap tahap perhitungan dan transformasi indeks dapat ditelusuri dan dipahami pengguna, termasuk BPBD yang menjalankan perhitungan.\nSensitivitas terhadap kapasitas — peningkatan kapasitas daerah tercermin secara proporsional dalam hasil indeks.\nKeterpakaian kebijakan — hasil reformulasi valid secara ilmiah sekaligus relevan dan mudah diinterpretasikan dalam pengambilan keputusan di daerah.",
+    "objectID": "bab-2.html#kapasitas",
+    "href": "bab-2.html#kapasitas",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "2.5 Kapasitas",
+    "text": "2.5 Kapasitas\nKapasitas (C) menggambarkan kemampuan relatif daerah dalam mengelola risiko. Nilainya diturunkan dari IKD melalui fungsi linier bertahap. Satu sumber induk IKD harus digunakan untuk mencegah perbedaan versi antartabel.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab II. Konsep dan Kerangka IRBI Reformulasi"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
+    ]
+  },
+  {
+    "objectID": "bab-2.html#risiko-aktual",
+    "href": "bab-2.html#risiko-aktual",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "2.6 Risiko Aktual",
+    "text": "2.6 Risiko Aktual\nRisiko Aktual (RA) menggambarkan risiko yang tersisa setelah RP dimoderasi oleh C. Laporan menyebut RA sebagai IRBI Baru sekaligus indikator komplementer. Sampai M-10 diputuskan, RA diperlakukan sebagai kandidat keluaran utama, bukan sebagai pengganti resmi IRBI eksisting.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
+    ]
+  },
+  {
+    "objectID": "bab-2.html#rasio-risiko",
+    "href": "bab-2.html#rasio-risiko",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "2.7 Rasio Risiko",
+    "text": "2.7 Rasio Risiko\nRasio Risiko (RR) mengukur ketimpangan relatif antara RP dan C. RR bersifat diagnostik dan digunakan bersama RP, C, dan RA. RR tidak boleh digunakan sendirian untuk menyimpulkan tingkat risiko wilayah.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
+    ]
+  },
+  {
+    "objectID": "bab-2.html#hubungan-antarindikator",
+    "href": "bab-2.html#hubungan-antarindikator",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "2.8 Hubungan Antarindikator",
+    "text": "2.8 Hubungan Antarindikator\nAlur konseptual yang dipertahankan adalah:\nData H -&gt; agregasi bahaya -&gt; RP Data V -&gt; transformasi dan pembobotan -&gt; RP IKD -&gt; C RP + C -&gt; RA dan RR\nUrutan transformasi pada bagian agregasi dan RP masih harus diputuskan melalui M-05 karena narasi laporan dan implementasi workbook tidak sepenuhnya sama.\n\n\n\nGambar 2.1. Arsitektur konseptual indikator IRBI: H dan V membentuk RP; C memoderasi RA dan dibandingkan dengan RP melalui RR.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
+    ]
+  },
+  {
+    "objectID": "bab-2.html#prinsip-penyelenggaraan",
+    "href": "bab-2.html#prinsip-penyelenggaraan",
+    "title": "Bab II. Kerangka Konseptual dan Ketentuan Umum",
+    "section": "2.9 Prinsip Penyelenggaraan",
+    "text": "2.9 Prinsip Penyelenggaraan\nPenyelenggaraan IRBI reformulasi mengikuti prinsip konsistensi definisi dan satuan, keterlacakan data, transparansi formula, reproduksibilitas, pengendalian versi, kehati-hatian interpretasi, serta pemisahan yang jelas antara hasil teknis dan keputusan kebijakan.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab II. Kerangka Konseptual dan Ketentuan Umum"
     ]
   },
   {
     "objectID": "bab-5.html",
     "href": "bab-5.html",
-    "title": "Bab V. Klasifikasi dan Interpretasi Hasil",
+    "title": "Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi",
     "section": "",
-    "text": "Setiap keluaran indeks (risiko potensial, risiko aktual, rasio risiko) dibaca menurut kelasnya sendiri, bukan disamakan dengan klasifikasi IRBI eksisting.",
+    "text": "Status: draf kerja, belum normatif  ·  Acuan: laporan 2026, workbook, dan register isu  ·  Versi: 0.8",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab V. Klasifikasi dan Interpretasi Hasil"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi"
     ]
   },
   {
-    "objectID": "bab-5.html#klasifikasi-risiko-potensial-dan-risiko-aktual",
-    "href": "bab-5.html#klasifikasi-risiko-potensial-dan-risiko-aktual",
-    "title": "Bab V. Klasifikasi dan Interpretasi Hasil",
-    "section": "5.1 Klasifikasi Risiko Potensial dan Risiko Aktual",
-    "text": "5.1 Klasifikasi Risiko Potensial dan Risiko Aktual\nRisiko potensial (RP) dan risiko aktual (RA) memakai batas kelas yang sama, mengikuti indeks target fuzzy sigmoid (0,333 dan 0,666):\n\n\n\nKelas\nRentang Indeks\n\n\n\n\nRendah\n≤ 0,333\n\n\nSedang\n&gt; 0,333 – ≤ 0,666\n\n\nTinggi\n&gt; 0,666\n\n\n\nRP menunjukkan tekanan risiko struktural sebelum kapasitas diperhitungkan; RA menunjukkan risiko yang tersisa setelah kapasitas diperhitungkan. Wilayah dengan RP tinggi namun RA sedang atau rendah menandakan kapasitas berperan efektif meredam risiko.",
+    "objectID": "bab-5.html#tujuan-bab",
+    "href": "bab-5.html#tujuan-bab",
+    "title": "Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi",
+    "section": "Tujuan Bab",
+    "text": "Tujuan Bab\nMenetapkan pemeriksaan mutu serta cara menyajikan dan menafsirkan hasil tanpa melampaui batas metode.\n\n\n\nGambar 5.1. Lima gerbang pengendalian mutu sebelum hasil IRBI dipublikasikan.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab V. Klasifikasi dan Interpretasi Hasil"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi"
     ]
   },
   {
-    "objectID": "bab-5.html#klasifikasi-rasio-risiko",
-    "href": "bab-5.html#klasifikasi-rasio-risiko",
-    "title": "Bab V. Klasifikasi dan Interpretasi Hasil",
-    "section": "5.2 Klasifikasi Rasio Risiko",
-    "text": "5.2 Klasifikasi Rasio Risiko\nTabel 5.1. Klasifikasi Nilai Rasio Risiko, Makna, dan Kebutuhan Program\n\n\n\n\n\n\n\n\n\nRR\nKategori\nMakna\nKebutuhan Program\n\n\n\n\n≤ 1,00\nTerkendali\nKapasitas relatif mampu mengimbangi atau melampaui risiko potensial yang dihadapi\nMempertahankan resiliensi dan memastikan pembangunan tidak menambah kerentanan baru\n\n\n&gt; 1,00 – ≤ 1,50\nKetimpangan Ringan\nRisiko mulai lebih besar dari kapasitas, namun ketimpangan masih terbatas\nPenguatan kapasitas dan pengurangan kerentanan secara selektif pada bagian sistem terlemah\n\n\n&gt; 1,50 – ≤ 2,00\nKetimpangan Sedang\nRisiko sekitar 1,4–2 kali kapasitas; tekanan risiko semakin nyata\nPengurangan kerentanan dan peningkatan kapasitas pada sebagian besar komponen sistem\n\n\n&gt; 2,00 – ≤ 3,00\nKetimpangan Tinggi\nRisiko sekitar 2–4 kali kapasitas; kapasitas belum memadai untuk mengelola risiko\nPenguatan kapasitas secara menyeluruh dan peningkatan intensitas intervensi pada komponen kritis\n\n\n&gt; 3,00\nKritis\nRisiko jauh melampaui kapasitas; sistem sangat rentan terhadap kegagalan\nIntervensi intensif dan komprehensif untuk menurunkan kerentanan dan meningkatkan kapasitas secara sistemik\n\n\n\nRasio risiko bersifat komplementer terhadap risiko aktual, bukan pengganti indeks risiko utama: dipakai untuk mengarahkan prioritas program, bukan untuk pelaporan kinerja tunggal.",
+    "objectID": "bab-5.html#pengendalian-mutu-dan-validasi",
+    "href": "bab-5.html#pengendalian-mutu-dan-validasi",
+    "title": "Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi",
+    "section": "5.1 Pengendalian Mutu dan Validasi",
+    "text": "5.1 Pengendalian Mutu dan Validasi\n\n5.1.1 Gate Data Input\nPerhitungan hanya dilanjutkan apabila seluruh sumber memiliki pemilik, tahun, versi, tanggal cut-off, satuan, tahun harga, kode wilayah, status validasi, dan checksum atau identitas berkas. Kunci wilayah harus unik dan penggabungan antartabel harus lolos rekonsiliasi cakupan.\n\n\n5.1.2 Pemeriksaan Satuan dan Saturasi\nDistribusi setiap indikator dibandingkan dengan parameter transformasinya. Proporsi nilai yang sangat dekat dengan 0 atau 1 dilaporkan. Saturasi massal memicu pemeriksaan satuan, metode estimasi, dan kalibrasi, bukan sekadar diterima sebagai hasil sah.\n\n\n5.1.3 Pemeriksaan Status Data\nNol sah, tidak berlaku, tidak tersedia, dan gagal validasi dihitung serta dilaporkan terpisah. Formula tidak boleh mengubah data kosong menjadi nol secara diam-diam atau menutup galat tak terduga dengan IFERROR.\n\n\n5.1.4 Pemeriksaan Parameter dan Bobot\nVersi parameter fuzzy dan tabel bobot dikunci. Setiap bobot per bahaya harus berjumlah 100%. Nilai spread dan midpoint dibandingkan dengan tabel induk. Perubahan parameter memerlukan keputusan, uji sensitivitas, dan catatan versi.\n\n\n5.1.5 Pemeriksaan Hasil Antara\nIndeks komponen, V per bahaya, agregat H, agregat V, RP_raw, RP_idx, IKD, C, RA, dan RR disimpan. Setiap tahap diuji terhadap contoh acuan dan diperiksa rentangnya. Penamaan variabel mengikuti kamus yang telah ditetapkan.\n\n\n5.1.6 Pemeriksaan Formula\nPola formula harus konsisten antarbaris. Penghitungan ulang independen dilakukan pada seluruh baris atau sampel berisiko tinggi yang ditetapkan. Hasil workbook 2026 telah direplikasi hingga galat pembulatan mesin, tetapi validitas angka tetap bergantung pada validitas input dan urutan metode.\n\n\n5.1.7 Pemeriksaan Antarwaktu dan Antarwilayah\nPerubahan dipisahkan menurut sumber data, metode, parameter, kapasitas, dan wilayah administrasi. Perbandingan hanya dilakukan jika identitas setiap komponen diketahui. Wilayah dengan cakupan bahaya berbeda tidak dibandingkan tanpa penjelasan.\n\n\n5.1.8 Publikasi dan Koreksi\nPublikasi memerlukan persetujuan teknis, data, hukum, dan pejabat berwenang. Koreksi mencatat temuan, dampak, nilai sebelum/sesudah, persetujuan, tanggal rilis ulang, dan daftar keluaran yang terdampak.\n\n\n5.1.9 Gate Isu Kritis\nMetode tidak ditetapkan secara nasional sebelum isu kritis yang memengaruhi formula, satuan, identitas skenario, penggabungan wilayah, klasifikasi, dan status RA diselesaikan atau diberi ketentuan transisi yang sah. ## 5.2 Penyajian dan Interpretasi Hasil\n\n\n5.2.1 Produk Wajib\nSetiap rilis menyajikan sekurang-kurangnya identitas wilayah, versi H, V, IKD, parameter dan metode, RP, C, RA, RR, kelas yang telah disahkan, status validasi, serta catatan perubahan. Hasil antara tersedia untuk audit meskipun tidak seluruhnya ditampilkan dalam publikasi utama.\n\n\n5.2.2 Pembulatan\nPerhitungan dan klasifikasi menggunakan presisi penuh. Pembulatan hanya dilakukan pada tabel, grafik, dan peta. Nilai yang tampak sama setelah pembulatan dapat memiliki kelas berbeda apabila klasifikasi dihitung dari nilai yang belum dibulatkan; keadaan ini dijelaskan pada metadata.\n\n\n5.2.3 Interpretasi Terpadu\n\n\n\n\n\n\n\n\nPola\nInterpretasi\nArah analisis\n\n\n\n\nRP tinggi, C tinggi, RA lebih rendah\nTekanan struktural tinggi tetapi kapasitas relatif meredam risiko\nPertahankan kapasitas dan kendalikan kerentanan baru\n\n\nRP tinggi, C rendah, RA dan RR tinggi\nTekanan struktural tidak diimbangi kapasitas\nTelusuri kapasitas terlemah dan kerentanan dominan\n\n\nRP rendah/sedang, C rendah, RR dapat tinggi\nTekanan belum tinggi tetapi kapasitas tertinggal\nPerkuat kapasitas tanpa melebihkan tingkat risiko saat ini\n\n\nRP berubah, C tetap\nPerubahan berasal dari bahaya, kerentanan, data, atau metode\nAudit versi H/V dan parameter\n\n\nRP tetap, C berubah\nPerubahan terutama berasal dari IKD\nTelusuri perubahan indikator kapasitas\n\n\n\nMatriks ini merupakan panduan interpretasi, bukan aturan otomatis penetapan program.\n\n\n5.2.4 Tabel, Grafik, dan Peta\nSeluruh produk mencantumkan judul, unit analisis, tahun/versi setiap komponen, sumber data, metode, tanggal cut-off, legenda, kelas, pembulatan, dan status validasi. Peta menggunakan batas administrasi serta proyeksi yang ditetapkan. Warna kelas harus konsisten dan dapat dibedakan oleh pengguna dengan gangguan persepsi warna.\n\n\n5.2.5 Batas Interpretasi\nIRBI adalah instrumen analitis tingkat nasional. Hasil tidak menggantikan kajian risiko rinci, pengetahuan lokal, analisis sektoral, atau proses penetapan kebijakan. RR tidak digunakan sebagai satu-satunya ukuran prioritas dan RA belum disebut sebagai IRBI utama sebelum M-10 diputuskan.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab V. Klasifikasi dan Interpretasi Hasil"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi"
     ]
   },
   {
-    "objectID": "bab-5.html#cara-membaca-hasil-untuk-perencanaan",
-    "href": "bab-5.html#cara-membaca-hasil-untuk-perencanaan",
-    "title": "Bab V. Klasifikasi dan Interpretasi Hasil",
-    "section": "5.3 Cara Membaca Hasil untuk Perencanaan",
-    "text": "5.3 Cara Membaca Hasil untuk Perencanaan\nBPBD membaca ketiga indeks bersama-sama, bukan salah satu saja:\n\nRP tinggi, RA rendah/sedang, RR terkendali — kapasitas daerah efektif meredam risiko struktural; contoh pola ini tampak pada DKI Jakarta dan Jawa Tengah dalam hasil perhitungan nasional. Arah kebijakan: pertahankan investasi kapasitas yang sudah berjalan.\nRP tinggi, RA tinggi, RR tinggi/kritis — kapasitas belum memadai mengimbangi tekanan risiko; pola ini dominan di wilayah Indonesia timur (Papua dan pemekarannya, Maluku, Maluku Utara), sebagian Sulawesi (Sulawesi Barat, Sulawesi Tengah), serta Nusa Tenggara Timur. Arah kebijakan: prioritas penguatan kapasitas kelembagaan, infrastruktur, dan sistem pendukung penanggulangan bencana.\nRP sedang/rendah — tekanan bahaya dan kerentanan struktural relatif terkendali terlepas dari nilai RR; fokus kebijakan pada menjaga agar pembangunan tidak menambah kerentanan baru.",
-    "crumbs": [
-      "Beranda",
-      "Bab",
-      "Bab V. Klasifikasi dan Interpretasi Hasil"
-    ]
-  },
-  {
-    "objectID": "bab-5.html#prioritas-intervensi-berdasarkan-rasio-risiko",
-    "href": "bab-5.html#prioritas-intervensi-berdasarkan-rasio-risiko",
-    "title": "Bab V. Klasifikasi dan Interpretasi Hasil",
-    "section": "5.4 Prioritas Intervensi Berdasarkan Rasio Risiko",
-    "text": "5.4 Prioritas Intervensi Berdasarkan Rasio Risiko\nBPBD memakai kelas rasio risiko (Tabel 5.1) untuk menyusun urutan prioritas penguatan kapasitas antarwilayah dalam yurisdiksinya: wilayah berkelas Kritis dan Ketimpangan Tinggi menjadi prioritas utama dokumen perencanaan (RPB, RPJMD) dan pengalokasian anggaran pengurangan risiko bencana, sebelum wilayah berkelas Ketimpangan Sedang, Ringan, dan Terkendali.",
-    "crumbs": [
-      "Beranda",
-      "Bab",
-      "Bab V. Klasifikasi dan Interpretasi Hasil"
-    ]
-  },
-  {
-    "objectID": "lampiran-d.html",
-    "href": "lampiran-d.html",
-    "title": "Lampiran D. Checklist Pengendalian Mutu",
+    "objectID": "bab-6.html",
+    "href": "bab-6.html",
+    "title": "Bab VI. Pemanfaatan IRBI dalam Kebijakan",
     "section": "",
-    "text": "Daftar periksa ini menjalankan lima pemeriksaan pada Bab VI untuk setiap siklus perhitungan IRBI reformulasi.\n\nTidak ada nilai kosong atau negatif pada data bahaya, kerentanan, dan kapasitas.\nIKD setiap wilayah berada pada rentang 0–1.\nKode wilayah unik; tidak ada duplikasi atau kode yang hilang.\nSatuan Kerugian Fisik dan Kerugian Ekonomi sudah Rp milyar, sesuai Lampiran A.\nTidak ada indeks yang jenuh di 0 atau 1 untuk lebih dari 10% wilayah dalam satu komponen — indikasi satuan salah.\n\\(H_{multi}\\), \\(V_{multi}\\), RP, C, RA, dan RR tersimpan sebagai hasil antara, bukan hanya nilai akhir.\nHasil hitung direplikasi ulang secara independen pada minimal satu wilayah sampel dan cocok dengan hasil sistem.\nVersi metode, tanggal cut-off data, dan sumber data dicantumkan pada setiap rilis.\nKoreksi data pasca-publikasi dicatat dengan jejak perubahan, tidak menimpa data lama secara langsung.\n\n\n\n\n Back to top",
+    "text": "Status: draf kerja, belum normatif  ·  Acuan: laporan 2026, workbook, dan register isu  ·  Versi: 0.8",
     "crumbs": [
       "Beranda",
-      "Lampiran",
-      "Lampiran D. Checklist Pengendalian Mutu"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VI. Pemanfaatan IRBI dalam Kebijakan"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Petunjuk Teknis Reformulasi IRBI Nasional",
-    "section": "",
-    "text": "Petunjuk teknis ini memandu BPBD provinsi dan kabupaten/kota menghitung, membaca, dan memanfaatkan Indeks Risiko Bencana Indonesia (IRBI) hasil reformulasi, berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA) dan perkakas hitung pendampingnya.",
+    "objectID": "bab-6.html#tujuan-bab",
+    "href": "bab-6.html#tujuan-bab",
+    "title": "Bab VI. Pemanfaatan IRBI dalam Kebijakan",
+    "section": "Tujuan Bab",
+    "text": "Tujuan Bab\nMenghubungkan keluaran IRBI dengan perencanaan, prioritas PRB, evaluasi, dan intervensi tanpa melampaui makna indikator.\n\n\n\nGambar 6.1. Pemanfaatan terpadu RP, C, RA, dan RR dalam keputusan pengurangan risiko bencana.",
     "crumbs": [
       "Beranda",
-      "Petunjuk Teknis Reformulasi IRBI Nasional"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VI. Pemanfaatan IRBI dalam Kebijakan"
     ]
   },
   {
-    "objectID": "index.html#ringkasan-bab",
-    "href": "index.html#ringkasan-bab",
-    "title": "Petunjuk Teknis Reformulasi IRBI Nasional",
-    "section": "Ringkasan Bab",
-    "text": "Ringkasan Bab\n\n\nBab I\n\nPendahuluan\nLatar belakang, maksud dan tujuan, dasar hukum, ruang lingkup, dan istilah.\n\n\n\nBab II\n\nKonsep dan Kerangka\nPemisahan risiko potensial, kapasitas, risiko aktual, dan rasio risiko.\n\n\n\nBab III\n\nData dan Indikator\nStruktur indikator, sumber data resmi, dan syarat kualitas data.\n\n\n\nBab IV\n\nTahapan Perhitungan\nAlur dan ringkasan delapan langkah perhitungan (rincian di Lampiran A–C).\n\n\n\nBab V\n\nKlasifikasi dan Interpretasi\nKelas risiko potensial/aktual/rasio risiko dan cara membacanya.\n\n\n\nBab VI\n\nPengendalian Mutu\nLima pemeriksaan wajib sebelum hasil dipakai untuk perencanaan.\n\n\n\nBab VII\n\nMasa Transisi\nTiga opsi implementasi dan roadmap nasional jangka pendek–panjang.\n\n\n\nBab VIII\n\nPenutup\nKesimpulan, ketentuan reviu, dan daftar pustaka.",
+    "objectID": "bab-6.html#penggunaan-bersama-empat-indikator",
+    "href": "bab-6.html#penggunaan-bersama-empat-indikator",
+    "title": "Bab VI. Pemanfaatan IRBI dalam Kebijakan",
+    "section": "6.1 Penggunaan Bersama Empat Indikator",
+    "text": "6.1 Penggunaan Bersama Empat Indikator\nRP digunakan untuk membaca tekanan struktural; C untuk membaca kemampuan relatif daerah; RA untuk membaca risiko setelah kapasitas; dan RR untuk membaca ketimpangan RP-C. Keputusan kebijakan menggunakan keempatnya bersama komponen pembentuk dan konteks wilayah.",
     "crumbs": [
       "Beranda",
-      "Petunjuk Teknis Reformulasi IRBI Nasional"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VI. Pemanfaatan IRBI dalam Kebijakan"
     ]
   },
   {
-    "objectID": "index.html#lampiran",
-    "href": "index.html#lampiran",
-    "title": "Petunjuk Teknis Reformulasi IRBI Nasional",
-    "section": "Lampiran",
-    "text": "Lampiran\n\n\nLampiran A\n\nParameter Transformasi Fuzzy Sigmoid\nTabel kalibrasi lengkap (batas bawah/atas, spread, midpoint).\n\n\n\nLampiran B\n\nBobot Kerentanan per Jenis Bahaya\nTabel bobot sub-komponen kerentanan untuk sepuluh jenis bahaya.\n\n\n\nLampiran C\n\nContoh Perhitungan Lengkap\nReproduksi penuh delapan langkah, Kabupaten Aceh Selatan, diverifikasi terhadap perkakas hitung.\n\n\n\nLampiran D\n\nChecklist Pengendalian Mutu\nDaftar periksa siap pakai untuk setiap siklus perhitungan.",
+    "objectID": "bab-6.html#perencanaan-dan-prioritas-prb",
+    "href": "bab-6.html#perencanaan-dan-prioritas-prb",
+    "title": "Bab VI. Pemanfaatan IRBI dalam Kebijakan",
+    "section": "6.2 Perencanaan dan Prioritas PRB",
+    "text": "6.2 Perencanaan dan Prioritas PRB\nWilayah dengan RA tinggi dan RR tinggi atau kritis menjadi kandidat pendalaman prioritas, bukan otomatis penerima peringkat program. Analisis dilanjutkan ke jenis bahaya, komponen kerentanan, indikator kapasitas, kelompok terdampak, dan kelayakan intervensi.",
     "crumbs": [
       "Beranda",
-      "Petunjuk Teknis Reformulasi IRBI Nasional"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VI. Pemanfaatan IRBI dalam Kebijakan"
     ]
   },
   {
-    "objectID": "index.html#sumber",
-    "href": "index.html#sumber",
-    "title": "Petunjuk Teknis Reformulasi IRBI Nasional",
-    "section": "Sumber",
-    "text": "Sumber\n\nBadan Nasional Penanggulangan Bencana. (2026). Laporan Reformulasi Indeks Risiko Bencana (IRBI) Tahun 2026. BNPB – Australian Government (SIAP SIAGA).\nPerkakas hitung pendamping CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx.\n\nDaftar pustaka lengkap ada di Bab VIII.",
+    "objectID": "bab-6.html#evaluasi-kinerja",
+    "href": "bab-6.html#evaluasi-kinerja",
+    "title": "Bab VI. Pemanfaatan IRBI dalam Kebijakan",
+    "section": "6.3 Evaluasi Kinerja",
+    "text": "6.3 Evaluasi Kinerja\nPerubahan RA atau RR tidak langsung diatribusikan pada kinerja pemerintah daerah. Evaluasi harus memisahkan perubahan IKD dari pembaruan data bahaya, kerentanan, parameter, metode, satuan, dan kode wilayah. Skenario workbook V2021 dan V2025 tidak digunakan sebagai bukti tren kinerja tahunan.",
     "crumbs": [
       "Beranda",
-      "Petunjuk Teknis Reformulasi IRBI Nasional"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VI. Pemanfaatan IRBI dalam Kebijakan"
+    ]
+  },
+  {
+    "objectID": "bab-6.html#tingkat-pemanfaatan",
+    "href": "bab-6.html#tingkat-pemanfaatan",
+    "title": "Bab VI. Pemanfaatan IRBI dalam Kebijakan",
+    "section": "6.4 Tingkat Pemanfaatan",
+    "text": "6.4 Tingkat Pemanfaatan\nPada tingkat nasional, hasil mendukung analisis kesenjangan dan prioritas lintas wilayah. Pada tingkat provinsi, hasil mendukung koordinasi serta pendalaman kabupaten/kota. Pada tingkat kabupaten/kota, hasil mendukung analisis situasi, penelusuran komponen dominan, dan penyusunan usulan tindak lanjut. Pembagian kewenangan final ditetapkan pada Bab VII.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VI. Pemanfaatan IRBI dalam Kebijakan"
+    ]
+  },
+  {
+    "objectID": "bab-6.html#batasan",
+    "href": "bab-6.html#batasan",
+    "title": "Bab VI. Pemanfaatan IRBI dalam Kebijakan",
+    "section": "6.5 Batasan",
+    "text": "6.5 Batasan\nHasil tidak digunakan untuk menyimpulkan sebab tunggal, menggantikan KRB rinci, atau menetapkan sanksi dan insentif tanpa dasar kebijakan tambahan. Setiap penggunaan menyebut versi, keterbatasan, dan status resmi indikator.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VI. Pemanfaatan IRBI dalam Kebijakan"
     ]
   },
   {
@@ -396,10 +448,10 @@
     "href": "bab-1.html",
     "title": "Bab I. Pendahuluan",
     "section": "",
-    "text": "Petunjuk teknis ini memandu BPBD provinsi dan kabupaten/kota menghitung, membaca, dan memanfaatkan Indeks Risiko Bencana Indonesia (IRBI) hasil reformulasi.",
+    "text": "Status: draf kerja, belum normatif  ·  Acuan: laporan 2026, workbook, dan register isu  ·  Versi: 0.8",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
       "Bab I. Pendahuluan"
     ]
   },
@@ -408,34 +460,46 @@
     "href": "bab-1.html#latar-belakang",
     "title": "Bab I. Pendahuluan",
     "section": "1.1 Latar Belakang",
-    "text": "1.1 Latar Belakang\nIRBI eksisting telah digunakan lebih dari satu dekade sebagai rujukan perencanaan dan evaluasi kebijakan pengurangan risiko bencana. Struktur indeks komposit yang digunakan bersifat agregat dan kurang sensitif terhadap perubahan kapasitas daerah: wilayah dengan bahaya tinggi tetapi kapasitas meningkat signifikan tidak selalu tercermin secara proporsional dalam nilai indeks.\nReformulasi IRBI memisahkan secara lebih jelas antara risiko potensial dan kapasitas, serta memperkenalkan risiko aktual dan rasio risiko sebagai indikator analitis pendukung. Petunjuk teknis ini menerjemahkan metodologi tersebut menjadi langkah kerja yang dapat dijalankan BPBD di lapangan.",
+    "text": "1.1 Latar Belakang\nIndonesia menghadapi risiko bencana yang tinggi dan kompleks karena kondisi geografis, geologis, hidrometeorologis, serta dinamika sosial ekonomi yang beragam. Untuk mendukung perencanaan pembangunan dan pengambilan keputusan pengurangan risiko bencana, Pemerintah mengembangkan Indeks Risiko Bencana Indonesia (IRBI) sebagai instrumen nasional untuk menggambarkan tingkat risiko bencana antarwilayah. Selama lebih dari satu dekade, IRBI telah digunakan sebagai rujukan perencanaan, evaluasi kebijakan, penetapan prioritas program, dan pada sejumlah pemerintah daerah sebagai indikator kinerja.\nPenggunaan tersebut menuntut agar IRBI dapat dibaca secara konsisten, dibandingkan antarwilayah dan antarwaktu, serta ditelusuri kembali ke data dan tahapan perhitungannya. Laporan Reformulasi IRBI Nasional mengidentifikasi bahwa pendekatan indeks komposit eksisting masih memiliki keterbatasan: kontribusi bahaya, kerentanan, dan terutama kapasitas belum terlihat secara eksplisit; kelas risiko yang luas membatasi ketajaman analisis; dan perubahan nilai indeks belum selalu dapat dikaitkan secara langsung dengan peningkatan kapasitas atau intervensi kebijakan.\nReformulasi IRBI dikembangkan untuk memperkuat fungsi analitis tersebut. Metode memisahkan Risiko Potensial (RP), Kapasitas (C), dan Risiko Aktual (RA), serta memperkenalkan Rasio Risiko (RR) sebagai indikator ketimpangan relatif antara risiko potensial dan kapasitas. Pemisahan ini dimaksudkan agar tekanan struktural akibat kombinasi bahaya dan kerentanan dapat dibedakan dari kemampuan daerah dalam mengelola risiko, tanpa memutus kontinuitas kebijakan secara tiba-tiba.\nHasil kajian nasional menunjukkan bahwa daerah dengan risiko potensial tinggi tidak selalu memiliki risiko aktual tinggi apabila didukung kapasitas yang memadai. Sebaliknya, kapasitas yang rendah dapat mempertahankan risiko aktual dan rasio risiko pada tingkat tinggi. Temuan tersebut memperkuat kebutuhan akan keluaran IRBI yang tidak hanya menyajikan satu nilai agregat, tetapi juga menyediakan indikator diagnostik untuk mengarahkan pengurangan kerentanan dan penguatan kapasitas secara lebih terukur.\nAgar metode dapat diterapkan secara seragam, direplikasi, diperiksa, dan dimanfaatkan dalam kebijakan, diperlukan petunjuk teknis nasional. Petunjuk teknis ini menerjemahkan laporan kajian menjadi tata cara operasional yang memuat standar data, transformasi, perhitungan, pengendalian mutu, penyajian, interpretasi, pemanfaatan, pemutakhiran, dan ketentuan transisi.\nDokumen ini merupakan draf kerja pengembangan petunjuk teknis. Penerapan metode sebagai standar nasional tetap mensyaratkan penyelesaian isu metodologis terbuka, validasi data dan formula, uji implementasi, penetapan klasifikasi, reviu hukum, serta keputusan mengenai kedudukan RA dan indikator pendamping dalam sistem IRBI nasional.",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
       "Bab I. Pendahuluan"
     ]
   },
   {
-    "objectID": "bab-1.html#maksud-dan-tujuan",
-    "href": "bab-1.html#maksud-dan-tujuan",
+    "objectID": "bab-1.html#maksud",
+    "href": "bab-1.html#maksud",
     "title": "Bab I. Pendahuluan",
-    "section": "1.2 Maksud dan Tujuan",
-    "text": "1.2 Maksud dan Tujuan\nMaksud: memberikan panduan teknis dan operasional bagi BPBD provinsi/kabupaten-kota dalam menghitung, mengklasifikasikan, dan menginterpretasikan IRBI hasil reformulasi menggunakan data resmi nasional.\nTujuan:\n\nMerumuskan langkah perhitungan risiko potensial dan risiko aktual secara terpisah dan tertelusur.\nMenyediakan prosedur perhitungan rasio risiko sebagai alat identifikasi ketimpangan antara risiko dan kapasitas daerah.\nMenjaga keterbandingan hasil dengan IRBI eksisting selama masa transisi kebijakan.\nMendukung BPBD dalam memanfaatkan hasil IRBI reformulasi untuk perencanaan dan penentuan prioritas intervensi.",
+    "section": "1.2 Maksud",
+    "text": "1.2 Maksud\nPetunjuk Teknis Nasional IRBI dimaksudkan sebagai acuan kerja yang seragam bagi penyelenggara dan pengguna dalam menyiapkan data, menghitung, memeriksa, menyajikan, menginterpretasikan, memanfaatkan, serta memutakhirkan IRBI berdasarkan metode reformulasi. Dokumen ini juga menjadi dasar pengendalian versi, pembagian tanggung jawab, dan audit proses agar hasil dapat ditelusuri dan direplikasi.",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
       "Bab I. Pendahuluan"
     ]
   },
   {
-    "objectID": "bab-1.html#dasar-hukum",
-    "href": "bab-1.html#dasar-hukum",
+    "objectID": "bab-1.html#tujuan",
+    "href": "bab-1.html#tujuan",
     "title": "Bab I. Pendahuluan",
-    "section": "1.3 Dasar Hukum",
-    "text": "1.3 Dasar Hukum\n\nUndang-Undang Nomor 24 Tahun 2007 tentang Penanggulangan Bencana.\nUndang-Undang Republik Indonesia Nomor 26 Tahun 2007 tentang Penataan Ruang.\nUndang-Undang Republik Indonesia Nomor 23 Tahun 2014 tentang Pemerintahan Daerah.\nUndang-Undang Nomor 59 Tahun 2024 tentang Rencana Pembangunan Jangka Panjang Nasional Tahun 2025–2045.\nPeraturan Pemerintah Nomor 2 Tahun 2018 tentang Standar Pelayanan Minimum.\nPeraturan Pemerintah Nomor 21 Tahun 2008 tentang Penyelenggaraan Penanggulangan Bencana.\nPeraturan Presiden Nomor 1 Tahun 2019 tentang Badan Nasional Penanggulangan Bencana.\nPeraturan Presiden Nomor 12 Tahun 2025 tentang Rencana Pembangunan Jangka Menengah Nasional Tahun 2025–2029.\nPeraturan Presiden Nomor 87 Tahun 2020 tentang Rencana Induk Penanggulangan Bencana Tahun 2020–2044.\nPeraturan Badan Nasional Penanggulangan Bencana Nomor 4 Tahun 2019 tentang Organisasi dan Tata Kerja Badan Nasional Penanggulangan Bencana.\nPeraturan Badan Nasional Penanggulangan Bencana Nomor 5 Tahun 2025 tentang Rencana Strategis Badan Nasional Penanggulangan Bencana.\nPeraturan Badan Nasional Penanggulangan Bencana Nomor 1 Tahun 2025 tentang Rencana Nasional Penanggulangan Bencana Tahun 2025–2029.\nPeraturan Kepala Badan Nasional Penanggulangan Bencana Nomor 2 Tahun 2012 tentang Pedoman Umum Pengkajian Risiko Bencana.\nPeraturan Menteri Dalam Negeri Nomor 101 Tahun 2018 tentang Standar Teknis Pelayanan Dasar pada Standar Pelayanan Minimal Sub Urusan Bencana Daerah Kabupaten/Kota.",
+    "section": "1.3 Tujuan",
+    "text": "1.3 Tujuan\nPetunjuk teknis ini bertujuan untuk:\n\nmenyeragamkan tata cara pengumpulan, pemeriksaan, dan pengelolaan data input IRBI;\nmenetapkan tahapan transformasi dan perhitungan HM, VM, RP, C, RA, dan RR yang transparan serta dapat direplikasi;\nmenjaga konsistensi terminologi, notasi, parameter, klasifikasi, pembulatan, dan penyajian hasil;\nmenjamin ketertelusuran sumber data, versi metode, hasil antara, keputusan koreksi, dan persetujuan pada setiap siklus penyusunan;\nmemberikan kaidah interpretasi yang menghubungkan hasil indeks dengan kebutuhan analisis dan prioritas pengurangan risiko bencana tanpa melampaui batas kemampuan indeks; dan\nmenyediakan kerangka transisi dan pemutakhiran agar perubahan metode tidak menimbulkan diskontinuitas yang tidak terkelola dalam perencanaan dan evaluasi kinerja.",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab I. Pendahuluan"
+    ]
+  },
+  {
+    "objectID": "bab-1.html#sasaran-pengguna",
+    "href": "bab-1.html#sasaran-pengguna",
+    "title": "Bab I. Pendahuluan",
+    "section": "1.4 Sasaran Pengguna",
+    "text": "1.4 Sasaran Pengguna\nPetunjuk teknis ini ditujukan kepada pihak berikut. Pembagian peran final mengikuti penetapan kelembagaan pada Bab VII.\n\n\n\n\n\n\n\nPengguna\nKebutuhan penggunaan\n\n\n\n\nBNPB\npemilik kebijakan/metode, koordinator penyusunan nasional, pengendali mutu, dan penerbit hasil sesuai kewenangan yang ditetapkan.\n\n\nTim teknis nasional IRBI\nmengelola data, parameter, perhitungan, dokumentasi, validasi, dan penyusunan keluaran nasional.\n\n\nKementerian/lembaga dan produsen data\nmenyediakan atau memverifikasi data sektoral, metadata, tahun referensi, dan batas penggunaan data sesuai kewenangannya.\n\n\nBPBD provinsi dan kabupaten/kota\nmemeriksa konteks wilayah, mengklarifikasi data, menelaah hasil, dan menggunakan keluaran IRBI dalam perencanaan penanggulangan bencana.\n\n\nPerangkat perencanaan pemerintah pusat dan daerah\nmenggunakan hasil yang telah disahkan untuk analisis situasi, penentuan prioritas, penganggaran, pemantauan, dan evaluasi.\n\n\nTim validasi, auditor, dan penelaah independen\nmemeriksa ketertelusuran data, konsistensi metode, reproduksibilitas perhitungan, dan kepatuhan terhadap prosedur.\n\n\nAkademisi, mitra pembangunan, dan publik\nmenggunakan hasil yang dipublikasikan untuk kajian dan komunikasi risiko dengan memperhatikan batasan interpretasi.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
       "Bab I. Pendahuluan"
     ]
   },
@@ -443,11 +507,23 @@
     "objectID": "bab-1.html#ruang-lingkup",
     "href": "bab-1.html#ruang-lingkup",
     "title": "Bab I. Pendahuluan",
-    "section": "1.4 Ruang Lingkup",
-    "text": "1.4 Ruang Lingkup\nPetunjuk teknis ini berlaku untuk perhitungan IRBI reformulasi pada skala provinsi dan kabupaten/kota di seluruh wilayah Indonesia, menggunakan data bahaya, kerentanan, dan kapasitas yang tersedia dalam kerangka data nasional resmi.\nIRBI reformulasi belum menggantikan IRBI eksisting. Selama masa transisi (lihat Bab VII), kedua indeks digunakan berdampingan sesuai opsi implementasi yang dipilih BNPB.",
+    "section": "1.5 Ruang Lingkup",
+    "text": "1.5 Ruang Lingkup\nPetunjuk teknis ini mengatur penyusunan IRBI pada skala dan unit analisis yang ditetapkan untuk setiap siklus nasional. Cakupan pengaturan meliputi:\n\ntata kelola data input, unit analisis, tahun referensi, metadata, dan validasi data;\ntransformasi serta standardisasi indeks berbasis fungsi fuzzy;\nperhitungan Indeks Multi Bahaya (HM) dan Indeks Kerentanan Multi Bahaya (VM);\nperhitungan Risiko Potensial (RP), Indeks Kapasitas (C), Risiko Aktual (RA), dan Rasio Risiko (RR);\npenyetaraan dan transisi dari IRBI eksisting;\npengendalian mutu, validasi, reproduksibilitas, dan koreksi kesalahan;\npenyajian, klasifikasi, interpretasi, dan pemanfaatan hasil; serta\npenyelenggaraan, pemutakhiran, pengelolaan versi, dokumentasi, dan publikasi IRBI.\n\nPetunjuk teknis ini tidak mencakup atau tidak dimaksudkan sebagai:\n\npenyusunan kajian risiko bencana rinci untuk satu jenis bahaya atau skala tapak;\npenggantian dokumen Kajian Risiko Bencana, rencana penanggulangan bencana, atau dokumen tata ruang yang diwajibkan oleh ketentuan lain;\npenetapan otomatis bahwa perubahan nilai IRBI merupakan dampak kausal suatu program tanpa analisis pendukung;\npengambilan keputusan proyek, izin, atau investasi hanya berdasarkan satu nilai indeks; dan\npemberlakuan RA sebagai indikator kinerja utama nasional sebelum terdapat keputusan kebijakan dan regulatif yang sah.\n\nKetentuan teknis rinci mengenai data, formula, klasifikasi, penyajian, kelembagaan, dan transisi diatur pada bab terkait dan lampiran yang merupakan satu kesatuan dengan petunjuk teknis ini.",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab I. Pendahuluan"
+    ]
+  },
+  {
+    "objectID": "bab-1.html#dasar-hukum-dan-kebijakan",
+    "href": "bab-1.html#dasar-hukum-dan-kebijakan",
+    "title": "Bab I. Pendahuluan",
+    "section": "1.6 Dasar Hukum dan Kebijakan",
+    "text": "1.6 Dasar Hukum dan Kebijakan\nPenyusunan petunjuk teknis ini memperhatikan peraturan perundang-undangan dan dokumen kebijakan berikut. Daftar ini merupakan hasil adaptasi laporan sumber dan verifikasi awal; unit hukum wajib mengonfirmasi keberlakuan, perubahan, hierarki, serta relevansinya sebelum dokumen ditetapkan.\n\n\n\n\n\n\n\n\nNo.\nPeraturan/dokumen kebijakan\nRelevansi terhadap Juknis IRBI\n\n\n\n\n1\nUndang-Undang Nomor 24 Tahun 2007 tentang Penanggulangan Bencana\nlandasan penyelenggaraan penanggulangan bencana secara terencana, terpadu, terkoordinasi, dan menyeluruh.\n\n\n2\nPeraturan Pemerintah Nomor 21 Tahun 2008 tentang Penyelenggaraan Penanggulangan Bencana\nkerangka penyelenggaraan penanggulangan bencana pada tahap prabencana, tanggap darurat, dan pascabencana.\n\n\n3\nUndang-Undang Nomor 26 Tahun 2007 tentang Penataan Ruang\nketerkaitan informasi risiko dengan penataan ruang dan pengendalian pemanfaatan ruang.\n\n\n4\nUndang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah beserta perubahannya\npembagian urusan dan tanggung jawab pemerintahan daerah, termasuk suburusan bencana.\n\n\n5\nPeraturan Pemerintah Nomor 2 Tahun 2018 tentang Standar Pelayanan Minimal\nketerkaitan informasi risiko dengan pemenuhan pelayanan dasar pemerintah daerah.\n\n\n6\nUndang-Undang Nomor 59 Tahun 2024 tentang Rencana Pembangunan Jangka Panjang Nasional Tahun 2025-2045\nkerangka pembangunan jangka panjang dan pengendalian serta evaluasi pembangunan nasional.\n\n\n7\nPeraturan Presiden Nomor 12 Tahun 2025 tentang Rencana Pembangunan Jangka Menengah Nasional Tahun 2025-2029\narah pembangunan nasional jangka menengah dan penggunaan informasi risiko dalam perencanaan.\n\n\n8\nPeraturan Presiden Nomor 87 Tahun 2020 tentang Rencana Induk Penanggulangan Bencana Tahun 2020-2044\npedoman nasional jangka panjang penyelenggaraan penanggulangan bencana.\n\n\n9\nPeraturan Presiden Nomor 1 Tahun 2019 tentang Badan Nasional Penanggulangan Bencana sebagaimana diubah dengan Peraturan Presiden Nomor 29 Tahun 2021\nkedudukan, tugas, dan fungsi BNPB.\n\n\n10\nPeraturan Badan Nasional Penanggulangan Bencana Nomor 1 Tahun 2025 tentang Rencana Nasional Penanggulangan Bencana Tahun 2025-2029\nkebijakan, strategi, dan rencana aksi nasional penanggulangan bencana periode 2025-2029.\n\n\n11\nPeraturan Badan Nasional Penanggulangan Bencana Nomor 5 Tahun 2025 tentang Rencana Strategis Badan Nasional Penanggulangan Bencana Tahun 2025-2029\nsasaran strategis, arah kebijakan, target kinerja, dan kerangka kelembagaan BNPB.\n\n\n12\nPeraturan Badan Nasional Penanggulangan Bencana Nomor 6 Tahun 2025 tentang Organisasi dan Tata Kerja Badan Nasional Penanggulangan Bencana\nacuan organisasi dan tata kerja BNPB terkini yang teridentifikasi pada verifikasi awal.\n\n\n13\nPeraturan Kepala Badan Nasional Penanggulangan Bencana Nomor 2 Tahun 2012 tentang Pedoman Umum Pengkajian Risiko Bencana\nacuan umum pengkajian risiko bencana; keberlakuan dan kesesuaiannya perlu dikonfirmasi pada reviu hukum final.\n\n\n14\nPeraturan Menteri Dalam Negeri Nomor 101 Tahun 2018 tentang Standar Teknis Pelayanan Dasar pada Standar Pelayanan Minimal Sub-Urusan Bencana Daerah Kabupaten/Kota\nketerkaitan informasi risiko dengan pelayanan informasi rawan bencana serta pelayanan dasar suburusan bencana.\n\n\n\n\nCatatan verifikasi awal: Laporan sumber masih mencantumkan Peraturan BNPB Nomor 4 Tahun 2019 tentang Organisasi dan Tata Kerja BNPB. JDIH BNPB telah memuat Peraturan BNPB Nomor 6 Tahun 2025 dengan judul yang sama. Hubungan pencabutan/penggantian dan implikasinya terhadap kewenangan penyelenggara IRBI harus dipastikan oleh unit hukum.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
       "Bab I. Pendahuluan"
     ]
   },
@@ -455,24 +531,163 @@
     "objectID": "bab-1.html#pengertian-dan-istilah",
     "href": "bab-1.html#pengertian-dan-istilah",
     "title": "Bab I. Pendahuluan",
-    "section": "1.5 Pengertian dan Istilah",
-    "text": "1.5 Pengertian dan Istilah\n\n\n\n\n\n\n\nIstilah\nDefinisi\n\n\n\n\nIRBI Eksisting\nIndeks komposit risiko bencana yang saat ini digunakan secara resmi: bobot bahaya 40%, kerentanan 30%, kapasitas 30%.\n\n\nIRBI Reformulasi\nKerangka penilaian risiko baru yang memisahkan risiko potensial, risiko aktual, dan rasio risiko.\n\n\nRisiko Potensial\nIndeks gabungan bahaya dan kerentanan, sebelum memperhitungkan kapasitas daerah.\n\n\nRisiko Aktual (IRBI Baru)\nRisiko yang tersisa setelah risiko potensial diperhitungkan bersama kapasitas daerah.\n\n\nRasio Risiko\nIndikator ketimpangan antara tingkat risiko dan kapasitas daerah.\n\n\nIndeks Multi Bahaya\nGabungan indeks dari seluruh jenis bahaya yang dikaji pada suatu wilayah.\n\n\nIndeks Kerentanan Multi Bahaya\nGabungan indeks kerentanan (penduduk terpapar, kerugian fisik, kerugian ekonomi, kerusakan lingkungan) per jenis bahaya.\n\n\nFuzzy Sigmoid (S-curve)\nFungsi transformasi nilai indikator mentah ke skala indeks 0–1.\n\n\nMidpoint (m)\nParameter kalibrasi fungsi fuzzy sigmoid yang menentukan titik tengah transformasi.\n\n\nSpread (s)\nParameter kalibrasi fungsi fuzzy sigmoid yang menentukan kecuraman kurva transformasi.",
+    "section": "1.7 Pengertian dan Istilah",
+    "text": "1.7 Pengertian dan Istilah\nDalam petunjuk teknis ini yang dimaksud dengan:\n\n\n\n\n\n\n\nIstilah\nPengertian operasional\n\n\n\n\nBahaya (H)\npotensi kejadian atau rangkaian kejadian yang dapat menimbulkan bencana; dalam metode digunakan sebagai data atau indeks per jenis bahaya.\n\n\nKerentanan (V)\nkondisi sosial, fisik, ekonomi, dan lingkungan yang meningkatkan kemungkinan terdampak bahaya; dalam metode dihitung per jenis bahaya.\n\n\nIndeks Multi Bahaya (HM)\nindeks hasil agregasi dan transformasi indeks bahaya tunggal yang mewakili tekanan berbagai bahaya pada unit analisis.\n\n\nIndeks Kerentanan Multi Bahaya (VM)\nindeks hasil perhitungan komponen kerentanan per bahaya, pembobotan, agregasi, dan transformasi pada unit analisis.\n\n\nRisiko Potensial (RP)\ntekanan risiko yang dibentuk oleh HM dan VM sebelum kapasitas daerah diperhitungkan.\n\n\nIndeks Ketahanan Daerah (IKD)\ninstrumen penilaian ketahanan daerah yang digunakan sebagai sumber atau proksi kapasitas dalam metode reformulasi.\n\n\nIndeks Kapasitas (C)\nnilai IKD yang ditransformasikan ke skala yang digunakan dalam perhitungan IRBI reformulasi.\n\n\nRisiko Aktual (RA)\nrisiko tersisa setelah RP dimoderasi oleh C; kedudukannya sebagai nilai utama IRBI masih memerlukan keputusan kebijakan dan regulatif.\n\n\nRasio Risiko (RR)\nindikator diagnostik yang membandingkan RP dan C untuk menunjukkan tingkat keseimbangan atau ketimpangan relatif di antara keduanya.\n\n\nIRBI eksisting\nIRBI yang telah digunakan sebelum penerapan metode reformulasi dan menjadi acuan kesinambungan serta kebutuhan transisi.\n\n\nIRBI reformulasi\nkerangka penilaian yang memisahkan RP, C, RA, dan RR berdasarkan metode dalam laporan sumber.\n\n\nPenyetaraan\nmekanisme analitis sementara untuk menjaga keterbandingan skala atau kelas antara IRBI eksisting dan hasil metode reformulasi selama masa transisi.\n\n\nUnit analisis\nwilayah administrasi atau unit lain yang ditetapkan pada spesifikasi data untuk satu siklus perhitungan dan digunakan secara konsisten pada seluruh input serta output.\n\n\nVersi metode\nidentitas terkendali atas formula, parameter, klasifikasi, aturan data, dan prosedur yang digunakan dalam satu siklus penyusunan IRBI.\n\n\nReproduksibilitas\nkemampuan pihak lain yang berwenang menghasilkan keluaran yang sama dengan input, versi metode, dan prosedur yang sama.\n\n\n\nApabila terdapat perbedaan penggunaan istilah antara bab, register terminologi dan keputusan metodologis dengan versi terbaru menjadi acuan kerja sampai terdapat penetapan resmi.",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
       "Bab I. Pendahuluan"
     ]
   },
   {
-    "objectID": "bab-6.html",
-    "href": "bab-6.html",
-    "title": "Bab VI. Pengendalian Mutu dan Validasi",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Petunjuk Teknis Nasional IRBI",
     "section": "",
-    "text": "BPBD menjalankan lima pemeriksaan berikut sebelum hasil dipakai untuk perencanaan. Format checklist lengkap ada di Lampiran D.\n\nGerbang data input — tidak ada nilai kosong, negatif, IKD di luar rentang 0–1, atau kode wilayah ganda sebelum perhitungan dimulai.\nPemeriksaan satuan dan saturasi — satuan Kerugian Fisik dan Kerugian Ekonomi diverifikasi terhadap Lampiran A; indeks yang jenuh di 0 atau 1 pada banyak wilayah menandakan kemungkinan satuan salah (Bab III.3.3).\nPemeriksaan hasil antara — \\(H_{multi}\\), \\(V_{multi}\\), RP, C, RA, dan RR disimpan dan diperiksa kewajaran rentangnya sebelum dipublikasikan, bukan hanya nilai akhir.\nPemeriksaan formula — hasil hitung direplikasi ulang secara independen pada sampel wilayah sebelum rilis, mengikuti contoh Lampiran C.\nPublikasi dan koreksi — setiap rilis mencantumkan versi, tanggal cut-off, dan sumber data; koreksi data setelah publikasi dicatat dan diberi tanda, tidak menimpa data lama tanpa jejak.\n\n\n\n\n Back to top",
+    "text": "DRAF ILUSTRATIF · VERSI 0.8\n\n\n\nDashboard ini menyatukan naskah delapan bab, perangkat operasional, contoh reproduksi workbook, ilustrasi metode, dan register keputusan yang masih terbuka.\nMulai dari Bab I Lihat isu kritis",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab VI. Pengendalian Mutu dan Validasi"
+      "Petunjuk Teknis Nasional IRBI"
+    ]
+  },
+  {
+    "objectID": "index.html#dari-metode-kajian-menjadi-prosedur-yang-dapat-dihitung-diperiksa-dan-diaudit",
+    "href": "index.html#dari-metode-kajian-menjadi-prosedur-yang-dapat-dihitung-diperiksa-dan-diaudit",
+    "title": "Petunjuk Teknis Nasional IRBI",
+    "section": "",
+    "text": "Dashboard ini menyatukan naskah delapan bab, perangkat operasional, contoh reproduksi workbook, ilustrasi metode, dan register keputusan yang masih terbuka.\nMulai dari Bab I Lihat isu kritis",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis Nasional IRBI"
+    ]
+  },
+  {
+    "objectID": "index.html#struktur-petunjuk-teknis",
+    "href": "index.html#struktur-petunjuk-teknis",
+    "title": "Petunjuk Teknis Nasional IRBI",
+    "section": "Struktur petunjuk teknis",
+    "text": "Struktur petunjuk teknis\n\n\nBab I\n\nPendahuluan\nKebutuhan, tujuan, pengguna, ruang lingkup, dasar hukum, dan istilah.\n\n\n\nBab II\n\nKerangka Konseptual\nPemisahan RP, C, RA, dan RR beserta batas penggunaannya.\n\n\n\nBab III\n\nData dan Input\nUnit analisis, metadata, satuan, status data, dan penggabungan wilayah.\n\n\n\nBab IV\n\nMetode Perhitungan\nTransformasi, agregasi, RP, C, RA, RR, dan titik keputusan metode.\n\n\n\nBab V\n\nMutu dan Interpretasi\nGerbang QA/QC, penyajian, klasifikasi, dan batas interpretasi.\n\n\n\nBab VI\n\nPemanfaatan Kebijakan\nPenggunaan terpadu indikator untuk analisis dan perencanaan PRB.\n\n\n\nBab VII\n\nPenyelenggaraan dan Transisi\nSiklus, peran, versi, pembaruan, dan pilihan transisi.\n\n\n\nBab VIII\n\nPenutup\nKetentuan penerapan, evaluasi, dan pengelolaan perubahan metode.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis Nasional IRBI"
+    ]
+  },
+  {
+    "objectID": "index.html#cara-menggunakan-ruang-kerja-ini",
+    "href": "index.html#cara-menggunakan-ruang-kerja-ini",
+    "title": "Petunjuk Teknis Nasional IRBI",
+    "section": "Cara menggunakan ruang kerja ini",
+    "text": "Cara menggunakan ruang kerja ini\n\n\n01\nPahami arsitektur Baca Bab I–II untuk membedakan indikator dan status kebijakannya.\n\n\n02\nSiapkan dan hitung Gunakan Bab III–IV bersama Lampiran A–F; jangan melewati gerbang data.\n\n\n03\nPeriksa sebelum memakai Gunakan Bab V–VII, Lampiran G–H, dan Register Isu sebelum publikasi.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis Nasional IRBI"
+    ]
+  },
+  {
+    "objectID": "index.html#dasar-penyusunan",
+    "href": "index.html#dasar-penyusunan",
+    "title": "Petunjuk Teknis Nasional IRBI",
+    "section": "Dasar penyusunan",
+    "text": "Dasar penyusunan\n\nLaporan Reformulasi Indeks Risiko Bencana (IRBI) Tahun 2026.\nWorkbook CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx sebagai sumber reproduksi implementasi, bukan pengganti keputusan metodologis.\nDraf Petunjuk Teknis Nasional IRBI struktur delapan bab, versi ilustratif 0.7.\nRegister isu metodologis sebagai kendali keputusan dan tindak lanjut.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis Nasional IRBI"
+    ]
+  },
+  {
+    "objectID": "lampiran-d.html",
+    "href": "lampiran-d.html",
+    "title": "Lampiran D. Klasifikasi dan Matriks Interpretasi",
+    "section": "",
+    "text": "Keluaran\nStatus dalam draf\n\n\n\n\nRP\nkelas nasional belum ditetapkan; workbook tidak menyediakan kelas RP tersendiri\n\n\nC\nbatas transformasi tersedia, tetapi nomenklatur kelas perlu ditetapkan\n\n\nRA\nworkbook memakai 0,333 dan 0,666; status normatif, presisi, dan nilai batas menunggu M-08\n\n\nRR\nrentang tersedia pada laporan; nomenklatur rentang kedua berbeda dengan workbook (M-17)",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran D. Klasifikasi dan Matriks Interpretasi"
+    ]
+  },
+  {
+    "objectID": "lampiran-d.html#status-klasifikasi",
+    "href": "lampiran-d.html#status-klasifikasi",
+    "title": "Lampiran D. Klasifikasi dan Matriks Interpretasi",
+    "section": "",
+    "text": "Keluaran\nStatus dalam draf\n\n\n\n\nRP\nkelas nasional belum ditetapkan; workbook tidak menyediakan kelas RP tersendiri\n\n\nC\nbatas transformasi tersedia, tetapi nomenklatur kelas perlu ditetapkan\n\n\nRA\nworkbook memakai 0,333 dan 0,666; status normatif, presisi, dan nilai batas menunggu M-08\n\n\nRR\nrentang tersedia pada laporan; nomenklatur rentang kedua berbeda dengan workbook (M-17)",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran D. Klasifikasi dan Matriks Interpretasi"
+    ]
+  },
+  {
+    "objectID": "lampiran-d.html#klasifikasi-rr-dari-laporan",
+    "href": "lampiran-d.html#klasifikasi-rr-dari-laporan",
+    "title": "Lampiran D. Klasifikasi dan Matriks Interpretasi",
+    "section": "Klasifikasi RR dari Laporan",
+    "text": "Klasifikasi RR dari Laporan\n\n\n\nRentang\nKategori laporan\n\n\n\n\n\\(RR \\le 1{,}00\\)\nTerkendali\n\n\n\\(1{,}00 &lt; RR \\le 1{,}50\\)\nKetimpangan Ringan\n\n\n\\(1{,}50 &lt; RR \\le 2{,}00\\)\nKetimpangan Sedang\n\n\n\\(2{,}00 &lt; RR \\le 3{,}00\\)\nKetimpangan Tinggi\n\n\n\\(RR &gt; 3{,}00\\)\nKritis\n\n\n\nWorkbook menggunakan istilah Ketimpangan Rendah pada rentang kedua. Publikasi final harus memakai satu nomenklatur yang disahkan.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran D. Klasifikasi dan Matriks Interpretasi"
+    ]
+  },
+  {
+    "objectID": "lampiran-d.html#matriks-interpretasi",
+    "href": "lampiran-d.html#matriks-interpretasi",
+    "title": "Lampiran D. Klasifikasi dan Matriks Interpretasi",
+    "section": "Matriks Interpretasi",
+    "text": "Matriks Interpretasi\n\n\n\n\n\n\n\n\nPola\nInterpretasi\nPendalaman\n\n\n\n\nRP tinggi, C tinggi, RA lebih rendah\ntekanan struktural tinggi, kapasitas relatif meredam\npertahankan kapasitas; kendalikan kerentanan baru\n\n\nRP tinggi, C rendah, RA/RR tinggi\ntekanan tidak diimbangi kapasitas\ntelusuri kapasitas lemah dan kerentanan dominan\n\n\nRP rendah/sedang, C rendah, RR dapat tinggi\nkapasitas tertinggal meski tekanan belum tinggi\nperkuat kapasitas tanpa melebihkan risiko saat ini\n\n\n\nMatriks adalah panduan analitis, bukan pemicu program otomatis.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran D. Klasifikasi dan Matriks Interpretasi"
+    ]
+  },
+  {
+    "objectID": "lampiran-e.html",
+    "href": "lampiran-e.html",
+    "title": "Lampiran E. Contoh Perhitungan",
+    "section": "",
+    "text": "Elemen\nNilai\n\n\n\n\nKabupaten/kota\nAceh Selatan\n\n\nID DAGRI\n1101\n\n\nBahaya\nbaseline 2021\n\n\nKerentanan\nversi 2025\n\n\nIKD/kapasitas\n2025\n\n\nStatus\nreproduksi implementasi workbook, bukan seri waktu 2021–2025",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran E. Contoh Perhitungan"
+    ]
+  },
+  {
+    "objectID": "lampiran-e.html#identitas-skenario",
+    "href": "lampiran-e.html#identitas-skenario",
+    "title": "Lampiran E. Contoh Perhitungan",
+    "section": "",
+    "text": "Elemen\nNilai\n\n\n\n\nKabupaten/kota\nAceh Selatan\n\n\nID DAGRI\n1101\n\n\nBahaya\nbaseline 2021\n\n\nKerentanan\nversi 2025\n\n\nIKD/kapasitas\n2025\n\n\nStatus\nreproduksi implementasi workbook, bukan seri waktu 2021–2025",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran E. Contoh Perhitungan"
+    ]
+  },
+  {
+    "objectID": "lampiran-e.html#contoh-kerentanan-banjir",
+    "href": "lampiran-e.html#contoh-kerentanan-banjir",
+    "title": "Lampiran E. Contoh Perhitungan",
+    "section": "Contoh Kerentanan Banjir",
+    "text": "Contoh Kerentanan Banjir\n\n\n\nKomponen\nNilai mentah\nIndeks fuzzy\n\n\n\n\nPenduduk terpapar\n136.976,831\n0,999973\n\n\nKerugian fisik\n758.212,439\n1,000000\n\n\nKerugian ekonomi\n1.088.991,583\n1,000000\n\n\nKerusakan lingkungan\n182,500\n0,631952\n\n\n\n\\[V_{banjir}=0{,}4(0{,}999973)+0{,}25(1)+0{,}25(1)+0{,}1(0{,}631952)=0{,}963184\\]\nSaturasi komponen fisik dan ekonomi adalah sinyal audit satuan dan kalibrasi, bukan bukti bahwa nilai input telah valid.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran E. Contoh Perhitungan"
+    ]
+  },
+  {
+    "objectID": "lampiran-e.html#agregasi-dan-keluaran",
+    "href": "lampiran-e.html#agregasi-dan-keluaran",
+    "title": "Lampiran E. Contoh Perhitungan",
+    "section": "Agregasi dan Keluaran",
+    "text": "Agregasi dan Keluaran\n\n\n\nVariabel\nNilai workbook\n\n\n\n\n\\(HM_{raw}\\)\n8,998000\n\n\n\\(VM_{raw}\\)\n9,171104\n\n\n\\(RP_{raw}\\)\n9,084140\n\n\n\\(RP_{idx}\\)\n0,753967\n\n\nIKD\n0,210000\n\n\nC\n0,175000\n\n\nRA\n0,788684\n\n\nRR\n3,107147\n\n\n\n\\[RP_{raw}=\\sqrt{8{,}998\\times9{,}171104}=9{,}084140\\]\n\\[RP_{idx}=I(9{,}084140;m=5{,}186100;s=1{,}997839)=0{,}753967\\]\n\\[C=\\frac{1/3}{0{,}4}\\times0{,}21=0{,}175000\\]\n\\[RA=\\sqrt{0{,}753967(1-0{,}175000)}=0{,}788684\\]\n\\[RR=\\log_2(0{,}753967/0{,}175000)+1=3{,}107147\\]\n\n\n\n\n\n\nWarning\n\n\n\nKesesuaian angka membuktikan bahwa formula workbook dapat direproduksi. Hal itu tidak sekaligus mengesahkan satuan input, urutan metode, klasifikasi, atau status kebijakan keluaran.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran E. Contoh Perhitungan"
     ]
   },
   {
@@ -480,10 +695,58 @@
     "href": "bab-8.html",
     "title": "Bab VIII. Penutup",
     "section": "",
-    "text": "Pemisahan risiko potensial, kapasitas, risiko aktual, dan rasio risiko memberi BPBD dasar yang lebih tajam untuk menentukan prioritas intervensi dibandingkan indeks komposit tunggal IRBI eksisting. Kapasitas daerah terbukti menjadi faktor pembeda utama tingkat risiko aktual antarwilayah — wilayah dengan risiko potensial tinggi tidak selalu berisiko aktual tinggi apabila kapasitasnya memadai, dan sebaliknya.\nPetunjuk teknis ini berlaku selama masa transisi kebijakan (Bab VII) dan akan direviu apabila: BNPB menerbitkan angka resmi untuk nilai x_max kelas risiko tinggi pada penyetaraan skala (Bab IV, Langkah 8); data baseline bahaya, kerentanan, atau kapasitas dimutakhirkan; atau opsi implementasi nasional berubah.",
+    "text": "Status: draf kerja, belum normatif  ·  Versi: 0.8",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VIII. Penutup"
+    ]
+  },
+  {
+    "objectID": "bab-8.html#ketentuan-penerapan",
+    "href": "bab-8.html#ketentuan-penerapan",
+    "title": "Bab VIII. Penutup",
+    "section": "8.1 Ketentuan Penerapan",
+    "text": "8.1 Ketentuan Penerapan\nPetunjuk teknis ini menjadi ruang kerja untuk menguji konsistensi substansi dan operasionalisasi metode reformulasi IRBI. Dokumen belum menjadi dasar penetapan nilai resmi, penggantian IRBI eksisting, indikator kinerja, alokasi program, atau sanksi dan insentif sebelum ditetapkan oleh otoritas yang berwenang.\nPenerapan uji mengikuti versi data, parameter, formula, klasifikasi, dan perangkat yang terkunci. Setiap hasil menyebut status simulasi, uji implementasi, atau resmi secara eksplisit.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VIII. Penutup"
+    ]
+  },
+  {
+    "objectID": "bab-8.html#evaluasi-petunjuk-teknis",
+    "href": "bab-8.html#evaluasi-petunjuk-teknis",
+    "title": "Bab VIII. Penutup",
+    "section": "8.2 Evaluasi Petunjuk Teknis",
+    "text": "8.2 Evaluasi Petunjuk Teknis\nEvaluasi dilakukan sekurang-kurangnya setelah uji implementasi, perubahan sumber data utama, perubahan formula/parameter, perubahan klasifikasi, temuan audit, atau perubahan kebijakan. Masukan dicatat dalam register perubahan dan register isu; perubahan substantif harus melalui reviu teknis, data, hukum, dan persetujuan pemilik metode.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VIII. Penutup"
+    ]
+  },
+  {
+    "objectID": "bab-8.html#pembaruan-metodologi",
+    "href": "bab-8.html#pembaruan-metodologi",
+    "title": "Bab VIII. Penutup",
+    "section": "8.3 Pembaruan Metodologi",
+    "text": "8.3 Pembaruan Metodologi\nPerubahan tidak dilakukan langsung pada versi yang telah dirilis. Setiap usulan mencantumkan alasan, dasar bukti, formula atau aturan lama dan baru, dampak pada seri hasil, hasil uji sensitivitas, keputusan, tanggal berlaku, dan strategi migrasi. Versi terdahulu beserta data dan hasil antaranya tetap diarsipkan agar dapat direproduksi.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VIII. Penutup"
+    ]
+  },
+  {
+    "objectID": "bab-8.html#agenda-penyelesaian",
+    "href": "bab-8.html#agenda-penyelesaian",
+    "title": "Bab VIII. Penutup",
+    "section": "8.4 Agenda Penyelesaian",
+    "text": "8.4 Agenda Penyelesaian\nPrioritas sebelum penetapan nasional adalah:\n\nmenyelesaikan sepuluh isu kritis pada Register Isu;\nmengesahkan kamus variabel, daftar bahaya, sumber data, satuan, dan identitas skenario;\nmenguji formula dan perangkat secara independen pada seluruh wilayah;\nmenetapkan klasifikasi, presisi, pembulatan, nomenklatur, dan warna;\nmemastikan dasar hukum, peran kelembagaan, serta kedudukan RA dan RR; dan\nmendokumentasikan hasil uji implementasi sebagai dasar keputusan transisi.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
       "Bab VIII. Penutup"
     ]
   },
@@ -492,95 +755,371 @@
     "href": "bab-8.html#daftar-pustaka",
     "title": "Bab VIII. Penutup",
     "section": "Daftar Pustaka",
-    "text": "Daftar Pustaka\n\nBadan Nasional Penanggulangan Bencana. (2019). Modul Teknis Kajian Risiko Bencana. Direktorat Pengurangan Risiko Bencana – BNPB.\nBadan Nasional Penanggulangan Bencana. (2021). Kajian Risiko Bencana Nasional Periode 2022–2026. Direktorat Pemetaan dan Evaluasi Risiko Bencana – BNPB.\nBadan Nasional Penanggulangan Bencana. (2024). Laporan Akhir: Proyeksi Indeks Risiko Bencana Indonesia 2025–2045. BNPB – Australian Government (SIAP SIAGA).\nBadan Nasional Penanggulangan Bencana. (2024). IRBI: Indeks Risiko Bencana Indonesia Tahun 2024. Direktorat Pemetaan dan Evaluasi Risiko Bencana – BNPB.\nBadan Nasional Penanggulangan Bencana. (2026). Laporan Reformulasi Indeks Risiko Bencana (IRBI) Tahun 2026. BNPB – Australian Government (SIAP SIAGA).\nHamann, B.; Chen, J. L. (1994). Data point selection for piecewise linear curve approximation. Computer Aided Geometric Design, 11(3), 289.\nZadeh, L. A. (1965). Fuzzy sets. Information and Control, 8(3), 338–353.",
+    "text": "Daftar Pustaka\n\nBadan Nasional Penanggulangan Bencana. (2019). Modul Teknis Kajian Risiko Bencana.\nBadan Nasional Penanggulangan Bencana. (2021). Kajian Risiko Bencana Nasional Periode 2022–2026.\nBadan Nasional Penanggulangan Bencana. (2024). Proyeksi Indeks Risiko Bencana Indonesia 2025–2045.\nBadan Nasional Penanggulangan Bencana. (2024). Indeks Risiko Bencana Indonesia Tahun 2024.\nBadan Nasional Penanggulangan Bencana. (2026). Laporan Reformulasi Indeks Risiko Bencana Tahun 2026.\nWorkbook pendamping CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx, ditelaah sebagai implementasi perhitungan.",
     "crumbs": [
       "Beranda",
-      "Bab",
+      "Petunjuk Teknis — 8 Bab",
       "Bab VIII. Penutup"
     ]
   },
   {
     "objectID": "lampiran-b.html",
     "href": "lampiran-b.html",
-    "title": "Lampiran B. Bobot Kerentanan per Jenis Bahaya",
+    "title": "Lampiran B. Data, Kamus Data, dan Daftar Bahaya",
     "section": "",
-    "text": "\\[\nV_i = w_1 \\cdot vf_1 + w_2 \\cdot vf_2 + w_3 \\cdot vf_3 + w_4 \\cdot vf_4\n\\]\nTabel B.1. Bobot Sub-Komponen Kerentanan per Jenis Bahaya\n\n\n\n\n\n\n\n\n\n\nJenis Bahaya\nPenduduk Terpapar\nKerugian Fisik\nKerugian Ekonomi\nKerusakan Lingkungan\n\n\n\n\nGempabumi\n40%\n30%\n30%\ntidak dipakai\n\n\nTsunami\n40%\n25%\n25%\n10%\n\n\nBanjir\n40%\n25%\n25%\n10%\n\n\nBanjir Bandang\n40%\n25%\n25%\n10%\n\n\nTanah Longsor / Likuefaksi\n40%\n25%\n25%\n10%\n\n\nLetusan Gunungapi\n40%\n25%\n25%\n10%\n\n\nCuaca Ekstrim\n40%\n30%\n30%\ntidak dipakai\n\n\nGelombang Ekstrim dan Abrasi\n40%\n25%\n25%\n10%\n\n\nKebakaran Lahan dan Hutan\n40%\ntidak dipakai\ntidak dipakai\n60%\n\n\nKekeringan\n50%\ntidak dipakai\n40%\n10%\n\n\n\n\n\n\n Back to top",
+    "text": "Elemen\nIsi minimum\n\n\n\n\nIdentitas\nnama variabel, kode, definisi, komponen, jenis bahaya\n\n\nNilai\ntipe data, satuan, skala, domain, presisi\n\n\nWaktu\ntahun referensi, tanggal cut-off, versi\n\n\nWilayah\nkode wilayah, versi kode, tingkat administrasi\n\n\nSumber\nprodusen, berkas/tabel, metode estimasi, status pengesahan\n\n\nMutu\nstatus validasi, aturan missing, checksum, catatan koreksi",
     "crumbs": [
       "Beranda",
-      "Lampiran",
-      "Lampiran B. Bobot Kerentanan per Jenis Bahaya"
+      "Lampiran Operasional",
+      "Lampiran B. Data, Kamus Data, dan Daftar Bahaya"
+    ]
+  },
+  {
+    "objectID": "lampiran-b.html#elemen-kamus-data-minimum",
+    "href": "lampiran-b.html#elemen-kamus-data-minimum",
+    "title": "Lampiran B. Data, Kamus Data, dan Daftar Bahaya",
+    "section": "",
+    "text": "Elemen\nIsi minimum\n\n\n\n\nIdentitas\nnama variabel, kode, definisi, komponen, jenis bahaya\n\n\nNilai\ntipe data, satuan, skala, domain, presisi\n\n\nWaktu\ntahun referensi, tanggal cut-off, versi\n\n\nWilayah\nkode wilayah, versi kode, tingkat administrasi\n\n\nSumber\nprodusen, berkas/tabel, metode estimasi, status pengesahan\n\n\nMutu\nstatus validasi, aturan missing, checksum, catatan koreksi",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran B. Data, Kamus Data, dan Daftar Bahaya"
+    ]
+  },
+  {
+    "objectID": "lampiran-b.html#status-nilai",
+    "href": "lampiran-b.html#status-nilai",
+    "title": "Lampiran B. Data, Kamus Data, dan Daftar Bahaya",
+    "section": "Status Nilai",
+    "text": "Status Nilai\n\n\n\n\n\n\n\n\nKode\nMakna\nPerlakuan\n\n\n\n\nVALID_ZERO\nnol sah\ndipertahankan sebagai nol\n\n\nNOT_APPLICABLE\nbahaya/komponen tidak berlaku\ntidak disamakan dengan nol tanpa aturan agregasi\n\n\nUNAVAILABLE\ndata belum tersedia\nmenghentikan atau memberi status keluaran tidak lengkap\n\n\nVALIDATION_FAIL\ndata gagal domain/satuan/kunci\ntidak dihitung sebelum diperbaiki",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran B. Data, Kamus Data, dan Daftar Bahaya"
+    ]
+  },
+  {
+    "objectID": "lampiran-b.html#daftar-bahaya-dalam-workbook",
+    "href": "lampiran-b.html#daftar-bahaya-dalam-workbook",
+    "title": "Lampiran B. Data, Kamus Data, dan Daftar Bahaya",
+    "section": "Daftar Bahaya dalam Workbook",
+    "text": "Daftar Bahaya dalam Workbook\nWorkbook memuat 11 kolom: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tabel laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi menjadi 10 kelompok. Daftar nasional dan pemetaan bobot final menunggu keputusan M-04.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran B. Data, Kamus Data, dan Daftar Bahaya"
     ]
   },
   {
     "objectID": "bab-3.html",
     "href": "bab-3.html",
-    "title": "Bab III. Data dan Indikator",
+    "title": "Bab III. Data dan Penyiapan Input",
     "section": "",
-    "text": "BPBD menyiapkan tiga kelompok data sebelum memulai perhitungan: bahaya, kerentanan, dan kapasitas.",
+    "text": "Status: draf kerja, belum normatif  ·  Acuan: laporan 2026, workbook, dan register isu  ·  Versi: 0.8",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab III. Data dan Indikator"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
     ]
   },
   {
-    "objectID": "bab-3.html#struktur-indikator-per-komponen",
-    "href": "bab-3.html#struktur-indikator-per-komponen",
-    "title": "Bab III. Data dan Indikator",
-    "section": "3.1 Struktur Indikator per Komponen",
-    "text": "3.1 Struktur Indikator per Komponen\n\n\n\nKomponen\nCakupan\nKeterangan\n\n\n\n\nBahaya (H)\n10 jenis bahaya: gempa bumi, tsunami, banjir, banjir bandang, tanah longsor/likuefaksi, letusan gunungapi, cuaca ekstrim, gelombang ekstrim dan abrasi, kebakaran lahan dan hutan, kekeringan\nSetiap jenis dihitung sebagai indeks bahaya tunggal sebelum digabung menjadi indeks multi bahaya (langkah di Bab IV)\n\n\nKerentanan (V)\n4 sub-komponen per jenis bahaya: penduduk terpapar (jiwa), kerugian fisik (Rp milyar), kerugian ekonomi (Rp milyar), kerusakan lingkungan (Ha)\nBobot tiap sub-komponen berbeda per jenis bahaya (Lampiran B)\n\n\nKapasitas (C)\nIndeks tunggal dari data Indeks Ketahanan Daerah (IKD)\nDihitung terpisah, dipakai sebagai pembanding terhadap risiko potensial",
+    "objectID": "bab-3.html#tujuan-bab",
+    "href": "bab-3.html#tujuan-bab",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "Tujuan Bab",
+    "text": "Tujuan Bab\nMenetapkan data minimum, format, metadata, unit analisis, validasi, dan ketertelusuran input.\n\n\n\nGambar 3.1. Alur penyiapan data dari sumber resmi sampai input siap hitung.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab III. Data dan Indikator"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
     ]
   },
   {
-    "objectID": "bab-3.html#sumber-data-dan-tahun-rujukan",
-    "href": "bab-3.html#sumber-data-dan-tahun-rujukan",
-    "title": "Bab III. Data dan Indikator",
-    "section": "3.2 Sumber Data dan Tahun Rujukan",
-    "text": "3.2 Sumber Data dan Tahun Rujukan\n\n\n\n\n\n\n\n\n\nKomponen\nSumber Data\nTahun\nKeterangan\n\n\n\n\nBahaya (H)\nData baseline hasil Kajian Risiko Bencana (KRB)\n2021\nData utama yang juga digunakan pada IRBI eksisting (BNPB, 2021)\n\n\nKerentanan (V)\nData hasil proyeksi IRBI\n2025\nBNPB, 2024\n\n\nKapasitas (C)\nData IKD Kabupaten/Kota\n2025\nData utama yang juga digunakan pada IRBI eksisting\n\n\n\nBPBD tidak perlu mengumpulkan data primer baru untuk perhitungan awal: ketiga sumber di atas adalah data resmi nasional yang sudah tersedia di BNPB.",
+    "objectID": "bab-3.html#unit-analisis",
+    "href": "bab-3.html#unit-analisis",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.1 Unit Analisis",
+    "text": "3.1 Unit Analisis\nUnit dasar perhitungan adalah kabupaten/kota. Setiap rekaman wajib memiliki satu kode wilayah nasional yang unik. Agregasi provinsi dan nasional hanya dilakukan setelah seluruh kabupaten/kota lolos pemeriksaan cakupan, kode wilayah, dan kelengkapan.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab III. Data dan Indikator"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
     ]
   },
   {
-    "objectID": "bab-3.html#persyaratan-kualitas-dan-periode-pemutakhiran",
-    "href": "bab-3.html#persyaratan-kualitas-dan-periode-pemutakhiran",
-    "title": "Bab III. Data dan Indikator",
-    "section": "3.3 Persyaratan Kualitas dan Periode Pemutakhiran",
-    "text": "3.3 Persyaratan Kualitas dan Periode Pemutakhiran\nKomponen bahaya bersifat relatif statis karena bersumber dari kajian risiko bencana yang hanya dimutakhirkan setiap 5 tahun. Komponen kerentanan dan kapasitas bersifat lebih dinamis dan perlu dipantau perubahannya lebih sering agar nilai risiko aktual dan rasio risiko tetap mencerminkan kondisi terkini.\nBPBD memastikan data yang dipakai konsisten dengan tahun rujukan resmi pada tabel 3.2 sebelum menjalankan tahap perhitungan; data di luar tahun rujukan tersebut tidak dipakai tanpa persetujuan BNPB.\nSatuan Kerugian Fisik dan Kerugian Ekonomi mengikuti definisi Lampiran A: Rp milyar, dengan ambang batas 1,4–2,1 milyar dan 0,15–0,33 milyar. BPBD memvalidasi bahwa data mentah kedua komponen tersebut sudah dalam satuan Rp milyar sebelum dimasukkan ke transformasi fuzzy sigmoid — nilai yang jauh melampaui ambang atas (indikasi satuan salah, misalnya Rp juta) menyebabkan indeks jenuh di 1,0 dan kehilangan daya beda antarwilayah.",
+    "objectID": "bab-3.html#komponen-data",
+    "href": "bab-3.html#komponen-data",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.2 Komponen Data",
+    "text": "3.2 Komponen Data\n\n\n\n\n\n\n\n\nKomponen\nIsi minimum\nSatuan/Skala\n\n\n\n\nBahaya\nIndeks bahaya tunggal per jenis bahaya\n0-1\n\n\nPenduduk terpapar\nJumlah penduduk terpapar per bahaya\njiwa\n\n\nKerugian fisik\nNilai kerugian fisik per bahaya\nRp miliar dan tahun harga yang ditetapkan\n\n\nKerugian ekonomi\nNilai kerugian ekonomi per bahaya\nRp miliar dan tahun harga yang ditetapkan\n\n\nKerusakan lingkungan\nLuas kerusakan per bahaya\nhektare\n\n\nKapasitas\nIKD kabupaten/kota\n0-1",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab III. Data dan Indikator"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
     ]
   },
   {
-    "objectID": "bab-3.html#satuan-dan-format-data",
-    "href": "bab-3.html#satuan-dan-format-data",
-    "title": "Bab III. Data dan Indikator",
-    "section": "3.4 Satuan dan Format Data",
-    "text": "3.4 Satuan dan Format Data\nSeluruh data disusun per kabupaten/kota menggunakan kode wilayah ID DAGRI, mengikuti format pada perkakas hitung pendamping: data bahaya dan kerentanan 2021 (sheet RAW_HV2021), proyeksi kerentanan 2025 (sheet RAW_V2025), dan kapasitas 2025 (sheet RAW_IKD2025). BPBD mengisi data pada format yang sama sebelum menjalankan langkah transformasi di Bab IV.",
+    "objectID": "bab-3.html#identitas-waktu-dan-skenario",
+    "href": "bab-3.html#identitas-waktu-dan-skenario",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.3 Identitas Waktu dan Skenario",
+    "text": "3.3 Identitas Waktu dan Skenario\nWorkbook memuat dua skenario. Skenario V2021 memakai bahaya dan kerentanan versi 2021 dengan kapasitas 2025. Skenario V2025 mempertahankan bahaya 2021 dan kapasitas 2025 serta mengganti kerentanan menjadi versi 2025. Karena itu, perbandingan kedua sheet adalah perbandingan versi kerentanan dengan bahaya dan kapasitas tetap, bukan seri waktu IRBI 2021-2025.\nSetiap keluaran wajib mencantumkan tahun atau versi H, V, IKD, parameter, kode wilayah, dan metode. Label tahun tunggal tidak boleh digunakan jika komponen berasal dari tahun yang berbeda.",
     "crumbs": [
       "Beranda",
-      "Bab",
-      "Bab III. Data dan Indikator"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
     ]
   },
   {
-    "objectID": "lampiran-a.html",
-    "href": "lampiran-a.html",
-    "title": "Lampiran A. Parameter Transformasi Fuzzy Sigmoid",
+    "objectID": "bab-3.html#sumber-data-resmi",
+    "href": "bab-3.html#sumber-data-resmi",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.4 Sumber Data Resmi",
+    "text": "3.4 Sumber Data Resmi\nDaftar sumber resmi, produsen data, tanggal cut-off, versi, dan status pengesahan ditetapkan oleh penyelenggara nasional. Naskah ini tidak menetapkan bahwa seluruh data yang ada dalam workbook telah berstatus resmi. Data di luar daftar yang disahkan tidak digunakan tanpa prosedur persetujuan dan pencatatan perubahan.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
+    ]
+  },
+  {
+    "objectID": "bab-3.html#konsistensi-satuan",
+    "href": "bab-3.html#konsistensi-satuan",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.5 Konsistensi Satuan",
+    "text": "3.5 Konsistensi Satuan\nNilai input harus dikonversi ke satuan baku sebelum transformasi fuzzy. Telaah workbook menunjukkan perbedaan skala yang material antara versi data: median rasio V2025 terhadap HV2021 sekitar 1.283 kali untuk kerugian fisik, 1.480 kali untuk kerugian ekonomi, dan 0,018 kali untuk kerusakan lingkungan. Perbedaan tersebut harus dijelaskan melalui metadata sumber, metode estimasi, tahun harga, resolusi spasial, dan prosedur agregasi.\nData tidak boleh diterima hanya karena menghasilkan formula tanpa galat. Nilai yang jauh melampaui ambang transformasi harus diperiksa karena dapat membuat indeks jenuh di sekitar 1 dan menghilangkan daya beda antarwilayah.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
+    ]
+  },
+  {
+    "objectID": "bab-3.html#kode-wilayah-dan-penggabungan-data",
+    "href": "bab-3.html#kode-wilayah-dan-penggabungan-data",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.6 Kode Wilayah dan Penggabungan Data",
+    "text": "3.6 Kode Wilayah dan Penggabungan Data\nSeluruh penggabungan menggunakan kode wilayah unik, bukan posisi baris. Sebelum perhitungan, sistem memeriksa keunikan kunci, kecocokan tahun kode, kelengkapan 514 wilayah atau cakupan resmi terbaru, perubahan nama, pemekaran, penggabungan, dan wilayah yang tidak memiliki pasangan data.\nReferensi baris langsung seperti RAW_V2025!H3 tidak digunakan dalam template nasional karena penyortiran satu sheet dapat memasangkan data dengan wilayah yang salah tanpa menghasilkan pesan galat.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
+    ]
+  },
+  {
+    "objectID": "bab-3.html#status-kelengkapan-data",
+    "href": "bab-3.html#status-kelengkapan-data",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.7 Status Kelengkapan Data",
+    "text": "3.7 Status Kelengkapan Data\nSetiap nilai mempunyai satu status: tersedia, nol sah, tidak berlaku, tidak tersedia, atau gagal validasi. Status tersebut tidak boleh saling dipertukarkan. Nilai kosong tidak otomatis diubah menjadi nol dan IFERROR tidak digunakan untuk menyembunyikan kegagalan yang tidak dipahami.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
+    ]
+  },
+  {
+    "objectID": "bab-3.html#validasi-input",
+    "href": "bab-3.html#validasi-input",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.8 Validasi Input",
+    "text": "3.8 Validasi Input\nValidasi minimum meliputi tipe data, satuan, domain, nilai negatif, duplikasi, kode wilayah, kelengkapan bahaya, outlier, metadata, dan kesesuaian tahun. IKD harus berada pada rentang 0-1. Setiap koreksi dicatat bersama nilai awal, alasan, pelaksana, tanggal, dan persetujuannya.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
+    ]
+  },
+  {
+    "objectID": "bab-3.html#pemutakhiran-dan-versi",
+    "href": "bab-3.html#pemutakhiran-dan-versi",
+    "title": "Bab III. Data dan Penyiapan Input",
+    "section": "3.9 Pemutakhiran dan Versi",
+    "text": "3.9 Pemutakhiran dan Versi\nBahaya, kerentanan, dan kapasitas dapat memiliki siklus pembaruan berbeda. Setiap rilis harus membedakan perubahan kondisi, perubahan sumber data, perubahan parameter, perubahan metode, dan perubahan batas administrasi. Restatement seri sebelumnya hanya dilakukan berdasarkan prosedur yang ditetapkan dan diumumkan.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab III. Data dan Penyiapan Input"
+    ]
+  },
+  {
+    "objectID": "bab-7.html",
+    "href": "bab-7.html",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
     "section": "",
-    "text": "\\[\nI(x) = \\frac{1}{1+\\left(\\dfrac{x}{m}\\right)^{-s}}\n\\]\ndengan \\(x\\) = nilai indikator mentah, \\(m\\) = midpoint, \\(s\\) = spread.\nTabel A.1. Parameter Kalibrasi per Komponen dan Jenis Bahaya\n\n\n\n\n\n\n\n\n\n\n\nKomponen\nJenis Bahaya\nBatas Bawah\nBatas Atas\nSpread (s)\nMidpoint (m)\n\n\n\n\nPenduduk Terpapar (jiwa)\nSemua jenis bahaya, kecuali Kebakaran Hutan dan Lahan\n500\n1.000\n1,998\n707,903\n\n\nKerugian Fisik (Rp milyar)\nSemua jenis bahaya, kecuali Kekeringan dan Kebakaran Hutan dan Lahan\n1,4\n2,1\n3,415\n1,716\n\n\nKerugian Ekonomi (Rp milyar)\nSemua jenis bahaya\n0,15\n0,33\n1,791\n0,221\n\n\nKerusakan Lingkungan (Ha)\nBanjir, Banjir Bandang, Gelombang Ekstrim dan Abrasi\n70\n205\n1,289\n120,001\n\n\nKerusakan Lingkungan (Ha)\nKebakaran Hutan dan Lahan, Kekeringan, Likuefaksi, Letusan Gunungapi, Tanah Longsor\n65\n185\n1,324\n109,845\n\n\nKerusakan Lingkungan (Ha)\nTsunami\n55\n185\n1,142\n101,070\n\n\nMulti (agregasi bahaya dan kerentanan)\nSeluruh jenis bahaya\n3,66\n7,33\n1,998\n5,186\n\n\n\n\n\n\n Back to top",
+    "text": "Status: draf kerja, belum normatif  ·  Fokus: tata kelola siklus, versi, publikasi, dan transisi",
     "crumbs": [
       "Beranda",
-      "Lampiran",
-      "Lampiran A. Parameter Transformasi Fuzzy Sigmoid"
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "bab-7.html#tujuan-bab",
+    "href": "bab-7.html#tujuan-bab",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
+    "section": "Tujuan Bab",
+    "text": "Tujuan Bab\nMenetapkan siklus penyelenggaraan, pengelolaan versi, pembaruan data, dokumentasi, publikasi, dan prasyarat pilihan transisi menuju penerapan nasional.\n\n\n\n\n\n\nFigure 1: Siklus penyelenggaraan dari penetapan spesifikasi hingga evaluasi dan pembaruan.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "bab-7.html#siklus-penyelenggaraan",
+    "href": "bab-7.html#siklus-penyelenggaraan",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
+    "section": "7.1 Siklus Penyelenggaraan",
+    "text": "7.1 Siklus Penyelenggaraan\nSatu siklus terdiri atas: penetapan spesifikasi; penerimaan dan verifikasi data; penguncian versi data dan metode; perhitungan; QA/QC independen; validasi; persetujuan; publikasi; koreksi; dan evaluasi. Setiap tahap menghasilkan catatan waktu, penanggung jawab, versi masukan, keputusan, dan keluaran.\n\n\n\n\n\n\n\n\nTahap\nKeluaran minimum\nGerbang keputusan\n\n\n\n\nSpesifikasi\nunit analisis, periode, sumber, parameter, klasifikasi\ndisetujui pemilik metode\n\n\nData\nberkas terkunci, metadata, checksum, rekonsiliasi kode\nlolos gerbang input\n\n\nPerhitungan\nhasil antara dan keluaran per wilayah\nhasil dapat direproduksi\n\n\nValidasi\ntemuan, koreksi, berita acara\nisu kritis tidak tersisa tanpa disposisi\n\n\nPublikasi\ntabel/peta, metadata, catatan metode, versi\ndisetujui pejabat berwenang\n\n\nEvaluasi\nmasukan pengguna dan daftar perubahan\ndasar siklus berikutnya",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "bab-7.html#pembagian-peran",
+    "href": "bab-7.html#pembagian-peran",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
+    "section": "7.2 Pembagian Peran",
+    "text": "7.2 Pembagian Peran\n\n\n\n\n\n\n\nAktor\nPeran yang perlu ditetapkan\n\n\n\n\nBNPB/pemilik metode\nmenetapkan metode, sumber, versi, klasifikasi, QA/QC, dan rilis nasional\n\n\nTim teknis nasional\nmengelola data, kode, perhitungan, pengujian, dokumentasi, dan reproduksi\n\n\nProdusen data/KL\nmenjamin definisi, satuan, periode, metadata, dan koreksi sumber\n\n\nBPBD provinsi\nmengoordinasikan klarifikasi lintas kabupaten/kota dan konteks kewilayahan\n\n\nBPBD kabupaten/kota\nmemeriksa identitas wilayah, menelaah kewajaran, dan memakai hasil yang disahkan\n\n\nValidator/unit hukum\nmemeriksa formula, data, kewenangan, dan status dokumen sebelum penetapan\n\n\n\nPembagian di atas merupakan rancangan fungsi. Nama unit dan kewenangan final harus mengikuti keputusan kelembagaan dan reviu hukum.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "bab-7.html#pemutakhiran-dan-pengelolaan-versi",
+    "href": "bab-7.html#pemutakhiran-dan-pengelolaan-versi",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
+    "section": "7.3 Pemutakhiran dan Pengelolaan Versi",
+    "text": "7.3 Pemutakhiran dan Pengelolaan Versi\nKeluaran tidak diberi satu label tahun apabila H, V, dan IKD berasal dari periode berbeda. Identitas minimum versi adalah H-versi, V-versi, IKD-versi, parameter-versi, metode-versi, kode-wilayah-versi, dan tanggal cut-off. Perubahan satu unsur menghasilkan versi keluaran baru dan tidak menimpa arsip lama.\nData dinamis dapat ditinjau lebih sering, tetapi pembaruan hanya dipublikasikan setelah lulus prosedur yang sama. Koreksi pascarilis menyebut nilai sebelum/sesudah, alasan, wilayah terdampak, waktu, dan persetujuan.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "bab-7.html#alternatif-transisi",
+    "href": "bab-7.html#alternatif-transisi",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
+    "section": "7.4 Alternatif Transisi",
+    "text": "7.4 Alternatif Transisi\n\n\n\n\n\n\n\n\nAlternatif\nPosisi reformulasi\nPrasyarat utama\n\n\n\n\nParalel\ninstrumen analitis pendamping\nformula dapat diuji tanpa mengubah pelaporan resmi\n\n\nHibrida\nindikator tertentu dipakai pada proses yang ditetapkan\nruang penggunaan, otoritas, dan hubungan dengan IRBI eksisting jelas\n\n\nPenuh\nmenjadi standar nasional\nisu kritis selesai; data, sistem, SDM, regulasi, dan komunikasi siap\n\n\n\nAlternatif ini adalah opsi kebijakan, bukan tahapan otomatis. Otoritas yang berwenang menetapkan pilihan, ruang berlaku, masa uji, kriteria evaluasi, dan keputusan lanjutannya.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "bab-7.html#penyetaraan-skala",
+    "href": "bab-7.html#penyetaraan-skala",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
+    "section": "7.5 Penyetaraan Skala",
+    "text": "7.5 Penyetaraan Skala\nPenyetaraan belum dapat dijalankan sebagai prosedur normatif. Persamaan 11 pada laporan memiliki pembilang yang secara literal menjadi nol; arah variabel dan nilai x_max kelas tinggi juga belum lengkap. Rumus dugaan matematis tidak boleh diberlakukan sebelum M-01 dan M-09 diselesaikan.\nJika kelak disahkan, nilai hasil penyetaraan harus diberi label nilai transisi, disimpan bersama nilai asli kedua metode, serta dilengkapi versi rumus, parameter, dan kelas.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "bab-7.html#kesiapan-implementasi-penuh",
+    "href": "bab-7.html#kesiapan-implementasi-penuh",
+    "title": "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi",
+    "section": "7.6 Kesiapan Implementasi Penuh",
+    "text": "7.6 Kesiapan Implementasi Penuh\nImplementasi penuh mensyaratkan penyelesaian seluruh isu kritis, kamus data dan satuan yang disahkan, penggabungan berbasis kunci wilayah, satu sumber induk kapasitas, perangkat hitung teruji, QA/QC independen, struktur kelembagaan, dasar hukum, mekanisme koreksi, dan strategi komunikasi publik.",
+    "crumbs": [
+      "Beranda",
+      "Petunjuk Teknis — 8 Bab",
+      "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+    ]
+  },
+  {
+    "objectID": "lampiran-h.html",
+    "href": "lampiran-h.html",
+    "title": "Lampiran H. Standar Penyajian, Kartografi, dan Laporan",
+    "section": "",
+    "text": "Setiap tabel, grafik, peta, atau dashboard memuat unit analisis; versi H, V, IKD, parameter, dan metode; tanggal cut-off; sumber; RP, C, RA, dan RR yang relevan; kelas yang telah disahkan; aturan pembulatan; status validasi; serta catatan perubahan.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran H. Standar Penyajian, Kartografi, dan Laporan"
+    ]
+  },
+  {
+    "objectID": "lampiran-h.html#elemen-wajib-setiap-produk",
+    "href": "lampiran-h.html#elemen-wajib-setiap-produk",
+    "title": "Lampiran H. Standar Penyajian, Kartografi, dan Laporan",
+    "section": "",
+    "text": "Setiap tabel, grafik, peta, atau dashboard memuat unit analisis; versi H, V, IKD, parameter, dan metode; tanggal cut-off; sumber; RP, C, RA, dan RR yang relevan; kelas yang telah disahkan; aturan pembulatan; status validasi; serta catatan perubahan.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran H. Standar Penyajian, Kartografi, dan Laporan"
+    ]
+  },
+  {
+    "objectID": "lampiran-h.html#prinsip-visual",
+    "href": "lampiran-h.html#prinsip-visual",
+    "title": "Lampiran H. Standar Penyajian, Kartografi, dan Laporan",
+    "section": "Prinsip Visual",
+    "text": "Prinsip Visual\n\nGunakan satu palet kelas yang konsisten dan ramah gangguan persepsi warna.\nJangan memakai warna kelas yang belum disahkan sebagai isyarat normatif.\nTampilkan nilai dan kelas secara terpisah; sediakan definisi pada legenda.\nBedakan data tidak tersedia dari nilai nol dengan pola atau simbol khusus.\nJangan memetakan RA sebagai “IRBI resmi” sebelum kedudukannya diputuskan.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran H. Standar Penyajian, Kartografi, dan Laporan"
+    ]
+  },
+  {
+    "objectID": "lampiran-h.html#struktur-laporan-hasil",
+    "href": "lampiran-h.html#struktur-laporan-hasil",
+    "title": "Lampiran H. Standar Penyajian, Kartografi, dan Laporan",
+    "section": "Struktur Laporan Hasil",
+    "text": "Struktur Laporan Hasil\n\nringkasan eksekutif dan status rilis;\ndata, periode, metode, dan perubahan versi;\nhasil RP, C, RA, dan RR;\npemeriksaan mutu dan keterbatasan;\ninterpretasi terpadu dan kebutuhan pendalaman;\nlampiran hasil antara, metadata, dan berita acara.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran H. Standar Penyajian, Kartografi, dan Laporan"
+    ]
+  },
+  {
+    "objectID": "lampiran-g.html",
+    "href": "lampiran-g.html",
+    "title": "Lampiran G. Checklist QA/QC dan Validasi",
+    "section": "",
+    "text": "Pemilik, periode, versi, satuan, tahun harga, cut-off, dan checksum setiap sumber tersedia.\nKode wilayah unik dan seluruh join telah direkonsiliasi.\nNol sah, tidak berlaku, tidak tersedia, dan gagal validasi dibedakan.\nTidak ada nilai negatif atau IKD di luar 0–1 yang lolos ke perhitungan.\nDistribusi input dan tingkat saturasi transformasi telah ditelaah.\nParameter dan bobot cocok dengan tabel induk versi yang digunakan.\nHM_raw, VM_raw, RP_raw, RP_idx, C, RA, dan RR tersimpan.\nKondisi C=0 ditangani sesuai keputusan metode yang berlaku.\nReproduksi independen cocok hingga toleransi numerik yang ditetapkan.\nKelas dihitung dari presisi penuh; pembulatan hanya untuk penyajian.\nIsu kritis tidak tersisa tanpa disposisi tertulis.\nRilis memuat metadata, status validasi, versi, dan catatan perubahan.\n\n\n\n\nLima gerbang pengendalian mutu sebelum publikasi.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran G. Checklist QA/QC dan Validasi"
+    ]
+  },
+  {
+    "objectID": "lampiran-g.html#checklist-minimum",
+    "href": "lampiran-g.html#checklist-minimum",
+    "title": "Lampiran G. Checklist QA/QC dan Validasi",
+    "section": "",
+    "text": "Pemilik, periode, versi, satuan, tahun harga, cut-off, dan checksum setiap sumber tersedia.\nKode wilayah unik dan seluruh join telah direkonsiliasi.\nNol sah, tidak berlaku, tidak tersedia, dan gagal validasi dibedakan.\nTidak ada nilai negatif atau IKD di luar 0–1 yang lolos ke perhitungan.\nDistribusi input dan tingkat saturasi transformasi telah ditelaah.\nParameter dan bobot cocok dengan tabel induk versi yang digunakan.\nHM_raw, VM_raw, RP_raw, RP_idx, C, RA, dan RR tersimpan.\nKondisi C=0 ditangani sesuai keputusan metode yang berlaku.\nReproduksi independen cocok hingga toleransi numerik yang ditetapkan.\nKelas dihitung dari presisi penuh; pembulatan hanya untuk penyajian.\nIsu kritis tidak tersisa tanpa disposisi tertulis.\nRilis memuat metadata, status validasi, versi, dan catatan perubahan.\n\n\n\n\nLima gerbang pengendalian mutu sebelum publikasi.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran G. Checklist QA/QC dan Validasi"
+    ]
+  },
+  {
+    "objectID": "lampiran-g.html#berita-acara-validasi",
+    "href": "lampiran-g.html#berita-acara-validasi",
+    "title": "Lampiran G. Checklist QA/QC dan Validasi",
+    "section": "Berita Acara Validasi",
+    "text": "Berita Acara Validasi\nBerita acara sekurang-kurangnya memuat identitas siklus, daftar masukan, versi metode, pemeriksaan yang dilakukan, temuan, koreksi, dampak, isu tersisa, keputusan, nama/peran validator, waktu, dan persetujuan.",
+    "crumbs": [
+      "Beranda",
+      "Lampiran Operasional",
+      "Lampiran G. Checklist QA/QC dan Validasi"
     ]
   }
 ]

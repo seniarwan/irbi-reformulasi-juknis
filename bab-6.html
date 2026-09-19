@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bab VI. Pengendalian Mutu dan Validasi – Petunjuk Teknis IRBI Reformulasi</title>
+<title>Bab VI. Pemanfaatan IRBI dalam Kebijakan – Petunjuk Teknis IRBI Reformulasi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73bf34e03dcf3ac45dac882941957d2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eec37d530ba024d7569d9c6f845c7a3e.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-bd9171332c43ac346f4fca0d9751d4c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0ec70c97685606d99bc84294166abbf8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +73,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -127,12 +98,16 @@ window.Quarto = {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Beranda</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./register-isu.html"> 
+<span class="menu-text">Register Isu</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/seniarwan/irbi-reformulasi-juknis"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text">Repo</span></a>
+<span class="menu-text">Repositori</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -151,7 +126,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Bab</a></li><li class="breadcrumb-item"><a href="./bab-6.html">Bab VI. Pengendalian Mutu dan Validasi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Petunjuk Teknis — 8 Bab</a></li><li class="breadcrumb-item"><a href="./bab-6.html">Bab VI. Pemanfaatan IRBI dalam Kebijakan</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -166,13 +141,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Petunjuk Teknis Reformulasi IRBI Nasional</span></a>
+ <span class="menu-text">Petunjuk Teknis Nasional IRBI</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Bab</span></a>
+ <span class="menu-text">Petunjuk Teknis — 8 Bab</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -187,37 +162,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab II. Konsep dan Kerangka IRBI Reformulasi</span></a>
+ <span class="menu-text">Bab II. Kerangka Konseptual dan Ketentuan Umum</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab III. Data dan Indikator</span></a>
+ <span class="menu-text">Bab III. Data dan Penyiapan Input</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab IV. Tahapan Perhitungan</span></a>
+ <span class="menu-text">Bab IV. Metode Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab V. Klasifikasi dan Interpretasi Hasil</span></a>
+ <span class="menu-text">Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-6.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Bab VI. Pengendalian Mutu dan Validasi</span></a>
+ <span class="menu-text">Bab VI. Pemanfaatan IRBI dalam Kebijakan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VII. Masa Transisi dan Implementasi</span></a>
+ <span class="menu-text">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -231,7 +206,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Lampiran</span></a>
+ <span class="menu-text">Lampiran Operasional</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -240,25 +215,66 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran A. Parameter Transformasi Fuzzy Sigmoid</span></a>
+ <span class="menu-text">Lampiran A. Diagram Alir Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-b.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran B. Bobot Kerentanan per Jenis Bahaya</span></a>
+ <span class="menu-text">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-c.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</span></a>
+ <span class="menu-text">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran D. Checklist Pengendalian Mutu</span></a>
+ <span class="menu-text">Lampiran D. Klasifikasi dan Matriks Interpretasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran E. Contoh Perhitungan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran F. Templat Perhitungan dan Struktur Basis Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran G. Checklist QA/QC dan Validasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-h.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran H. Standar Penyajian, Kartografi, dan Laporan</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Kendali Pengembangan</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./register-isu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Register Isu Metodologis</span></a>
   </div>
 </li>
       </ul>
@@ -268,15 +284,27 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tujuan-bab" id="toc-tujuan-bab" class="nav-link active" data-scroll-target="#tujuan-bab">Tujuan Bab</a></li>
+  <li><a href="#penggunaan-bersama-empat-indikator" id="toc-penggunaan-bersama-empat-indikator" class="nav-link" data-scroll-target="#penggunaan-bersama-empat-indikator">6.1 Penggunaan Bersama Empat Indikator</a></li>
+  <li><a href="#perencanaan-dan-prioritas-prb" id="toc-perencanaan-dan-prioritas-prb" class="nav-link" data-scroll-target="#perencanaan-dan-prioritas-prb">6.2 Perencanaan dan Prioritas PRB</a></li>
+  <li><a href="#evaluasi-kinerja" id="toc-evaluasi-kinerja" class="nav-link" data-scroll-target="#evaluasi-kinerja">6.3 Evaluasi Kinerja</a></li>
+  <li><a href="#tingkat-pemanfaatan" id="toc-tingkat-pemanfaatan" class="nav-link" data-scroll-target="#tingkat-pemanfaatan">6.4 Tingkat Pemanfaatan</a></li>
+  <li><a href="#batasan" id="toc-batasan" class="nav-link" data-scroll-target="#batasan">6.5 Batasan</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Bab</a></li><li class="breadcrumb-item"><a href="./bab-6.html">Bab VI. Pengendalian Mutu dan Validasi</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Petunjuk Teknis — 8 Bab</a></li><li class="breadcrumb-item"><a href="./bab-6.html">Bab VI. Pemanfaatan IRBI dalam Kebijakan</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bab VI. Pengendalian Mutu dan Validasi</h1>
+<h1 class="title">Bab VI. Pemanfaatan IRBI dalam Kebijakan</h1>
+<p class="subtitle lead">Draf ilustratif v0.8 — substansi diselaraskan dengan naskah 8 bab</p>
 </div>
 
 
@@ -293,16 +321,41 @@ window.Quarto = {
 </header>
 
 
-<p>BPBD menjalankan lima pemeriksaan berikut sebelum hasil dipakai untuk perencanaan. Format checklist lengkap ada di <a href="./lampiran-d.html">Lampiran D</a>.</p>
-<ol type="1">
-<li><strong>Gerbang data input</strong> — tidak ada nilai kosong, negatif, IKD di luar rentang 0–1, atau kode wilayah ganda sebelum perhitungan dimulai.</li>
-<li><strong>Pemeriksaan satuan dan saturasi</strong> — satuan Kerugian Fisik dan Kerugian Ekonomi diverifikasi terhadap <a href="./lampiran-a.html">Lampiran A</a>; indeks yang jenuh di 0 atau 1 pada banyak wilayah menandakan kemungkinan satuan salah (<a href="./bab-3.html">Bab III.3.3</a>).</li>
-<li><strong>Pemeriksaan hasil antara</strong> — <span class="math inline">\(H_{multi}\)</span>, <span class="math inline">\(V_{multi}\)</span>, RP, C, RA, dan RR disimpan dan diperiksa kewajaran rentangnya sebelum dipublikasikan, bukan hanya nilai akhir.</li>
-<li><strong>Pemeriksaan formula</strong> — hasil hitung direplikasi ulang secara independen pada sampel wilayah sebelum rilis, mengikuti contoh <a href="./lampiran-c.html">Lampiran C</a>.</li>
-<li><strong>Publikasi dan koreksi</strong> — setiap rilis mencantumkan versi, tanggal cut-off, dan sumber data; koreksi data setelah publikasi dicatat dan diberi tanda, tidak menimpa data lama tanpa jejak.</li>
-</ol>
+<div class="status-strip">
+<p><strong>Status:</strong> draf kerja, belum normatif &nbsp;·&nbsp; <strong>Acuan:</strong> laporan 2026, workbook, dan register isu &nbsp;·&nbsp; <strong>Versi:</strong> 0.8</p>
+</div>
+<section id="tujuan-bab" class="level2">
+<h2 class="anchored" data-anchor-id="tujuan-bab">Tujuan Bab</h2>
+<p>Menghubungkan keluaran IRBI dengan perencanaan, prioritas PRB, evaluasi, dan intervensi tanpa melampaui makna indikator.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/gambar_6_1_pemanfaatan_indikator.png" class="img-fluid figure-img"></p>
+<figcaption>Gambar 6.1. Pemanfaatan terpadu RP, C, RA, dan RR dalam keputusan pengurangan risiko bencana.</figcaption>
+</figure>
+</div>
+</section>
+<section id="penggunaan-bersama-empat-indikator" class="level2">
+<h2 class="anchored" data-anchor-id="penggunaan-bersama-empat-indikator">6.1 Penggunaan Bersama Empat Indikator</h2>
+<p>RP digunakan untuk membaca tekanan struktural; C untuk membaca kemampuan relatif daerah; RA untuk membaca risiko setelah kapasitas; dan RR untuk membaca ketimpangan RP-C. Keputusan kebijakan menggunakan keempatnya bersama komponen pembentuk dan konteks wilayah.</p>
+</section>
+<section id="perencanaan-dan-prioritas-prb" class="level2">
+<h2 class="anchored" data-anchor-id="perencanaan-dan-prioritas-prb">6.2 Perencanaan dan Prioritas PRB</h2>
+<p>Wilayah dengan RA tinggi dan RR tinggi atau kritis menjadi kandidat pendalaman prioritas, bukan otomatis penerima peringkat program. Analisis dilanjutkan ke jenis bahaya, komponen kerentanan, indikator kapasitas, kelompok terdampak, dan kelayakan intervensi.</p>
+</section>
+<section id="evaluasi-kinerja" class="level2">
+<h2 class="anchored" data-anchor-id="evaluasi-kinerja">6.3 Evaluasi Kinerja</h2>
+<p>Perubahan RA atau RR tidak langsung diatribusikan pada kinerja pemerintah daerah. Evaluasi harus memisahkan perubahan IKD dari pembaruan data bahaya, kerentanan, parameter, metode, satuan, dan kode wilayah. Skenario workbook V2021 dan V2025 tidak digunakan sebagai bukti tren kinerja tahunan.</p>
+</section>
+<section id="tingkat-pemanfaatan" class="level2">
+<h2 class="anchored" data-anchor-id="tingkat-pemanfaatan">6.4 Tingkat Pemanfaatan</h2>
+<p>Pada tingkat nasional, hasil mendukung analisis kesenjangan dan prioritas lintas wilayah. Pada tingkat provinsi, hasil mendukung koordinasi serta pendalaman kabupaten/kota. Pada tingkat kabupaten/kota, hasil mendukung analisis situasi, penelusuran komponen dominan, dan penyusunan usulan tindak lanjut. Pembagian kewenangan final ditetapkan pada Bab VII.</p>
+</section>
+<section id="batasan" class="level2">
+<h2 class="anchored" data-anchor-id="batasan">6.5 Batasan</h2>
+<p>Hasil tidak digunakan untuk menyimpulkan sebab tunggal, menggantikan KRB rinci, atau menetapkan sanksi dan insentif tanpa dasar kebijakan tambahan. Setiap penggunaan menyebut versi, keterbatasan, dan status resmi indikator.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -814,13 +867,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./bab-5.html" class="pagination-link" aria-label="Bab V. Klasifikasi dan Interpretasi Hasil">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bab V. Klasifikasi dan Interpretasi Hasil</span>
+      <a href="./bab-5.html" class="pagination-link" aria-label="Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bab-7.html" class="pagination-link" aria-label="Bab VII. Masa Transisi dan Implementasi">
-        <span class="nav-page-text">Bab VII. Masa Transisi dan Implementasi</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./bab-7.html" class="pagination-link" aria-label="Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi">
+        <span class="nav-page-text">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -834,7 +887,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Disusun berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA)</p>
+<p>Versi dashboard 0.8 · 19 September 2026</p>
 </div>
   </div>
 </footer>

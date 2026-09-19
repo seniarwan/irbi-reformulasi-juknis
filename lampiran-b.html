@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lampiran B. Bobot Kerentanan per Jenis Bahaya – Petunjuk Teknis IRBI Reformulasi</title>
+<title>Lampiran B. Data, Kamus Data, dan Daftar Bahaya – Petunjuk Teknis IRBI Reformulasi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73bf34e03dcf3ac45dac882941957d2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eec37d530ba024d7569d9c6f845c7a3e.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-bd9171332c43ac346f4fca0d9751d4c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0ec70c97685606d99bc84294166abbf8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +73,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -127,12 +98,16 @@ window.Quarto = {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Beranda</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./register-isu.html"> 
+<span class="menu-text">Register Isu</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/seniarwan/irbi-reformulasi-juknis"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text">Repo</span></a>
+<span class="menu-text">Repositori</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -151,7 +126,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran</a></li><li class="breadcrumb-item"><a href="./lampiran-b.html">Lampiran B. Bobot Kerentanan per Jenis Bahaya</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran Operasional</a></li><li class="breadcrumb-item"><a href="./lampiran-b.html">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -166,13 +141,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Petunjuk Teknis Reformulasi IRBI Nasional</span></a>
+ <span class="menu-text">Petunjuk Teknis Nasional IRBI</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Bab</span></a>
+ <span class="menu-text">Petunjuk Teknis — 8 Bab</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -187,37 +162,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab II. Konsep dan Kerangka IRBI Reformulasi</span></a>
+ <span class="menu-text">Bab II. Kerangka Konseptual dan Ketentuan Umum</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab III. Data dan Indikator</span></a>
+ <span class="menu-text">Bab III. Data dan Penyiapan Input</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab IV. Tahapan Perhitungan</span></a>
+ <span class="menu-text">Bab IV. Metode Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab V. Klasifikasi dan Interpretasi Hasil</span></a>
+ <span class="menu-text">Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VI. Pengendalian Mutu dan Validasi</span></a>
+ <span class="menu-text">Bab VI. Pemanfaatan IRBI dalam Kebijakan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VII. Masa Transisi dan Implementasi</span></a>
+ <span class="menu-text">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -231,7 +206,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Lampiran</span></a>
+ <span class="menu-text">Lampiran Operasional</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -240,25 +215,66 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran A. Parameter Transformasi Fuzzy Sigmoid</span></a>
+ <span class="menu-text">Lampiran A. Diagram Alir Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-b.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lampiran B. Bobot Kerentanan per Jenis Bahaya</span></a>
+ <span class="menu-text">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-c.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</span></a>
+ <span class="menu-text">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran D. Checklist Pengendalian Mutu</span></a>
+ <span class="menu-text">Lampiran D. Klasifikasi dan Matriks Interpretasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran E. Contoh Perhitungan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran F. Templat Perhitungan dan Struktur Basis Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran G. Checklist QA/QC dan Validasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-h.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran H. Standar Penyajian, Kartografi, dan Laporan</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Kendali Pengembangan</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./register-isu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Register Isu Metodologis</span></a>
   </div>
 </li>
       </ul>
@@ -268,15 +284,23 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#elemen-kamus-data-minimum" id="toc-elemen-kamus-data-minimum" class="nav-link active" data-scroll-target="#elemen-kamus-data-minimum">Elemen Kamus Data Minimum</a></li>
+  <li><a href="#status-nilai" id="toc-status-nilai" class="nav-link" data-scroll-target="#status-nilai">Status Nilai</a></li>
+  <li><a href="#daftar-bahaya-dalam-workbook" id="toc-daftar-bahaya-dalam-workbook" class="nav-link" data-scroll-target="#daftar-bahaya-dalam-workbook">Daftar Bahaya dalam Workbook</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran</a></li><li class="breadcrumb-item"><a href="./lampiran-b.html">Lampiran B. Bobot Kerentanan per Jenis Bahaya</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran Operasional</a></li><li class="breadcrumb-item"><a href="./lampiran-b.html">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lampiran B. Bobot Kerentanan per Jenis Bahaya</h1>
+<h1 class="title">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</h1>
 </div>
 
 
@@ -293,102 +317,88 @@ window.Quarto = {
 </header>
 
 
-<p><span class="math display">\[
-V_i = w_1 \cdot vf_1 + w_2 \cdot vf_2 + w_3 \cdot vf_3 + w_4 \cdot vf_4
-\]</span></p>
-<p><strong>Tabel B.1.</strong> Bobot Sub-Komponen Kerentanan per Jenis Bahaya</p>
-<table class="table-striped table-hover caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
+<section id="elemen-kamus-data-minimum" class="level2">
+<h2 class="anchored" data-anchor-id="elemen-kamus-data-minimum">Elemen Kamus Data Minimum</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Jenis Bahaya</th>
-<th>Penduduk Terpapar</th>
-<th>Kerugian Fisik</th>
-<th>Kerugian Ekonomi</th>
-<th>Kerusakan Lingkungan</th>
+<th>Elemen</th>
+<th>Isi minimum</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Gempabumi</td>
-<td>40%</td>
-<td>30%</td>
-<td>30%</td>
-<td>tidak dipakai</td>
+<td>Identitas</td>
+<td>nama variabel, kode, definisi, komponen, jenis bahaya</td>
 </tr>
 <tr class="even">
-<td>Tsunami</td>
-<td>40%</td>
-<td>25%</td>
-<td>25%</td>
-<td>10%</td>
+<td>Nilai</td>
+<td>tipe data, satuan, skala, domain, presisi</td>
 </tr>
 <tr class="odd">
-<td>Banjir</td>
-<td>40%</td>
-<td>25%</td>
-<td>25%</td>
-<td>10%</td>
+<td>Waktu</td>
+<td>tahun referensi, tanggal cut-off, versi</td>
 </tr>
 <tr class="even">
-<td>Banjir Bandang</td>
-<td>40%</td>
-<td>25%</td>
-<td>25%</td>
-<td>10%</td>
+<td>Wilayah</td>
+<td>kode wilayah, versi kode, tingkat administrasi</td>
 </tr>
 <tr class="odd">
-<td>Tanah Longsor / Likuefaksi</td>
-<td>40%</td>
-<td>25%</td>
-<td>25%</td>
-<td>10%</td>
+<td>Sumber</td>
+<td>produsen, berkas/tabel, metode estimasi, status pengesahan</td>
 </tr>
 <tr class="even">
-<td>Letusan Gunungapi</td>
-<td>40%</td>
-<td>25%</td>
-<td>25%</td>
-<td>10%</td>
-</tr>
-<tr class="odd">
-<td>Cuaca Ekstrim</td>
-<td>40%</td>
-<td>30%</td>
-<td>30%</td>
-<td>tidak dipakai</td>
-</tr>
-<tr class="even">
-<td>Gelombang Ekstrim dan Abrasi</td>
-<td>40%</td>
-<td>25%</td>
-<td>25%</td>
-<td>10%</td>
-</tr>
-<tr class="odd">
-<td>Kebakaran Lahan dan Hutan</td>
-<td>40%</td>
-<td>tidak dipakai</td>
-<td>tidak dipakai</td>
-<td>60%</td>
-</tr>
-<tr class="even">
-<td>Kekeringan</td>
-<td>50%</td>
-<td>tidak dipakai</td>
-<td>40%</td>
-<td>10%</td>
+<td>Mutu</td>
+<td>status validasi, aturan missing, checksum, catatan koreksi</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="status-nilai" class="level2">
+<h2 class="anchored" data-anchor-id="status-nilai">Status Nilai</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kode</th>
+<th>Makna</th>
+<th>Perlakuan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>VALID_ZERO</code></td>
+<td>nol sah</td>
+<td>dipertahankan sebagai nol</td>
+</tr>
+<tr class="even">
+<td><code>NOT_APPLICABLE</code></td>
+<td>bahaya/komponen tidak berlaku</td>
+<td>tidak disamakan dengan nol tanpa aturan agregasi</td>
+</tr>
+<tr class="odd">
+<td><code>UNAVAILABLE</code></td>
+<td>data belum tersedia</td>
+<td>menghentikan atau memberi status keluaran tidak lengkap</td>
+</tr>
+<tr class="even">
+<td><code>VALIDATION_FAIL</code></td>
+<td>data gagal domain/satuan/kunci</td>
+<td>tidak dihitung sebelum diperbaiki</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="daftar-bahaya-dalam-workbook" class="level2">
+<h2 class="anchored" data-anchor-id="daftar-bahaya-dalam-workbook">Daftar Bahaya dalam Workbook</h2>
+<p>Workbook memuat <strong>11 kolom</strong>: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tabel laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi menjadi <strong>10 kelompok</strong>. Daftar nasional dan pemetaan bobot final menunggu keputusan M-04.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -900,13 +910,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lampiran-a.html" class="pagination-link" aria-label="Lampiran A. Parameter Transformasi Fuzzy Sigmoid">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lampiran A. Parameter Transformasi Fuzzy Sigmoid</span>
+      <a href="./lampiran-a.html" class="pagination-link" aria-label="Lampiran A. Diagram Alir Perhitungan IRBI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lampiran A. Diagram Alir Perhitungan IRBI</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lampiran-c.html" class="pagination-link" aria-label="Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan">
-        <span class="nav-page-text">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lampiran-c.html" class="pagination-link" aria-label="Lampiran C. Persamaan, Parameter Transformasi, dan Bobot">
+        <span class="nav-page-text">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -920,7 +930,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Disusun berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA)</p>
+<p>Versi dashboard 0.8 · 19 September 2026</p>
 </div>
   </div>
 </footer>

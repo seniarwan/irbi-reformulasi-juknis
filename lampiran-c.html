@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan – Petunjuk Teknis IRBI Reformulasi</title>
+<title>Lampiran C. Persamaan, Parameter Transformasi, dan Bobot – Petunjuk Teknis IRBI Reformulasi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73bf34e03dcf3ac45dac882941957d2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eec37d530ba024d7569d9c6f845c7a3e.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-bd9171332c43ac346f4fca0d9751d4c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0ec70c97685606d99bc84294166abbf8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,12 +127,16 @@ window.Quarto = {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Beranda</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./register-isu.html"> 
+<span class="menu-text">Register Isu</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/seniarwan/irbi-reformulasi-juknis"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text">Repo</span></a>
+<span class="menu-text">Repositori</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -151,7 +155,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran</a></li><li class="breadcrumb-item"><a href="./lampiran-c.html">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran Operasional</a></li><li class="breadcrumb-item"><a href="./lampiran-c.html">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -166,13 +170,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Petunjuk Teknis Reformulasi IRBI Nasional</span></a>
+ <span class="menu-text">Petunjuk Teknis Nasional IRBI</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Bab</span></a>
+ <span class="menu-text">Petunjuk Teknis — 8 Bab</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -187,37 +191,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab II. Konsep dan Kerangka IRBI Reformulasi</span></a>
+ <span class="menu-text">Bab II. Kerangka Konseptual dan Ketentuan Umum</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab III. Data dan Indikator</span></a>
+ <span class="menu-text">Bab III. Data dan Penyiapan Input</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab IV. Tahapan Perhitungan</span></a>
+ <span class="menu-text">Bab IV. Metode Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab V. Klasifikasi dan Interpretasi Hasil</span></a>
+ <span class="menu-text">Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VI. Pengendalian Mutu dan Validasi</span></a>
+ <span class="menu-text">Bab VI. Pemanfaatan IRBI dalam Kebijakan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VII. Masa Transisi dan Implementasi</span></a>
+ <span class="menu-text">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -231,7 +235,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Lampiran</span></a>
+ <span class="menu-text">Lampiran Operasional</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -240,25 +244,66 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran A. Parameter Transformasi Fuzzy Sigmoid</span></a>
+ <span class="menu-text">Lampiran A. Diagram Alir Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-b.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran B. Bobot Kerentanan per Jenis Bahaya</span></a>
+ <span class="menu-text">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-c.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</span></a>
+ <span class="menu-text">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran D. Checklist Pengendalian Mutu</span></a>
+ <span class="menu-text">Lampiran D. Klasifikasi dan Matriks Interpretasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran E. Contoh Perhitungan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran F. Templat Perhitungan dan Struktur Basis Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran G. Checklist QA/QC dan Validasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-h.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran H. Standar Penyajian, Kartografi, dan Laporan</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Kendali Pengembangan</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./register-isu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Register Isu Metodologis</span></a>
   </div>
 </li>
       </ul>
@@ -273,22 +318,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#langkah-12-transformasi-dan-kombinasi-kerentanan-jenis-bahaya-banjir" id="toc-langkah-12-transformasi-dan-kombinasi-kerentanan-jenis-bahaya-banjir" class="nav-link active" data-scroll-target="#langkah-12-transformasi-dan-kombinasi-kerentanan-jenis-bahaya-banjir">Langkah 1–2 — Transformasi dan kombinasi kerentanan, jenis bahaya Banjir</a></li>
-  <li><a href="#langkah-3-indeks-bahaya-h_i-dan-kerentanan-v_i-per-jenis-bahaya" id="toc-langkah-3-indeks-bahaya-h_i-dan-kerentanan-v_i-per-jenis-bahaya" class="nav-link" data-scroll-target="#langkah-3-indeks-bahaya-h_i-dan-kerentanan-v_i-per-jenis-bahaya">Langkah 3 — Indeks bahaya (<span class="math inline">\(H_i\)</span>) dan kerentanan (<span class="math inline">\(V_i\)</span>) per jenis bahaya</a></li>
-  <li><a href="#langkah-4-risiko-potensial" id="toc-langkah-4-risiko-potensial" class="nav-link" data-scroll-target="#langkah-4-risiko-potensial">Langkah 4 — Risiko Potensial</a></li>
-  <li><a href="#langkah-5-indeks-kapasitas" id="toc-langkah-5-indeks-kapasitas" class="nav-link" data-scroll-target="#langkah-5-indeks-kapasitas">Langkah 5 — Indeks Kapasitas</a></li>
-  <li><a href="#langkah-6-risiko-aktual" id="toc-langkah-6-risiko-aktual" class="nav-link" data-scroll-target="#langkah-6-risiko-aktual">Langkah 6 — Risiko Aktual</a></li>
-  <li><a href="#langkah-7-rasio-risiko" id="toc-langkah-7-rasio-risiko" class="nav-link" data-scroll-target="#langkah-7-rasio-risiko">Langkah 7 — Rasio Risiko</a></li>
-  <li><a href="#langkah-8-penyetaraan-skala-bila-diperlukan-bab-vii" id="toc-langkah-8-penyetaraan-skala-bila-diperlukan-bab-vii" class="nav-link" data-scroll-target="#langkah-8-penyetaraan-skala-bila-diperlukan-bab-vii">Langkah 8 — Penyetaraan skala (bila diperlukan, Bab VII)</a></li>
+  <li><a href="#persamaan-inti" id="toc-persamaan-inti" class="nav-link active" data-scroll-target="#persamaan-inti">Persamaan Inti</a></li>
+  <li><a href="#parameter-transformasi-yang-terekam" id="toc-parameter-transformasi-yang-terekam" class="nav-link" data-scroll-target="#parameter-transformasi-yang-terekam">Parameter Transformasi yang Terekam</a></li>
+  <li><a href="#bobot-kerentanan" id="toc-bobot-kerentanan" class="nav-link" data-scroll-target="#bobot-kerentanan">Bobot Kerentanan</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran</a></li><li class="breadcrumb-item"><a href="./lampiran-c.html">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lampiran-a.html">Lampiran Operasional</a></li><li class="breadcrumb-item"><a href="./lampiran-c.html">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</h1>
+<h1 class="title">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</h1>
 </div>
 
 
@@ -305,184 +346,169 @@ window.Quarto = {
 </header>
 
 
-<p>Contoh ini memakai data riil dari perkakas hitung pendamping <em>CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx</em>, diverifikasi ulang secara independen agar BPBD dapat mereplikasi hasil yang sama persis pada wilayahnya.</p>
-<section id="langkah-12-transformasi-dan-kombinasi-kerentanan-jenis-bahaya-banjir" class="level2">
-<h2 class="anchored" data-anchor-id="langkah-12-transformasi-dan-kombinasi-kerentanan-jenis-bahaya-banjir">Langkah 1–2 — Transformasi dan kombinasi kerentanan, jenis bahaya Banjir</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Sub-komponen</th>
-<th>Nilai Mentah</th>
-<th>Indeks (0–1)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Penduduk terpapar</td>
-<td>136.977 jiwa</td>
-<td>0,999973</td>
-</tr>
-<tr class="even">
-<td>Kerugian fisik</td>
-<td>758.212 (Rp milyar)</td>
-<td>1,000000</td>
-</tr>
-<tr class="odd">
-<td>Kerugian ekonomi</td>
-<td>1.088.992 (Rp milyar)</td>
-<td>1,000000</td>
-</tr>
-<tr class="even">
-<td>Kerusakan lingkungan</td>
-<td>182,5 Ha</td>
-<td>0,631952</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[
-V_{banjir} = 0{,}4(0{,}999973) + 0{,}25(1{,}000000) + 0{,}25(1{,}000000) + 0{,}1(0{,}631952) = 0{,}963184
-\]</span></p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Catatan kendali mutu
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Kerugian fisik dan ekonomi di atas jauh melampaui ambang atas <a href="./lampiran-a.html">Lampiran A</a> (2,1 dan 0,33 milyar), sehingga kedua indeksnya jenuh di 1,0 — indikasi satuan data proyeksi 2025 tidak konsisten dengan Rp milyar (lihat <a href="./bab-3.html">Bab III.3.3</a> dan <a href="./bab-6.html">Bab VI</a>, poin 2).</p>
-</div>
-</div>
-<p>Langkah yang sama diulang untuk sepuluh jenis bahaya lain memakai parameter dan bobot pada Lampiran A dan B.</p>
-</section>
-<section id="langkah-3-indeks-bahaya-h_i-dan-kerentanan-v_i-per-jenis-bahaya" class="level2">
-<h2 class="anchored" data-anchor-id="langkah-3-indeks-bahaya-h_i-dan-kerentanan-v_i-per-jenis-bahaya">Langkah 3 — Indeks bahaya (<span class="math inline">\(H_i\)</span>) dan kerentanan (<span class="math inline">\(V_i\)</span>) per jenis bahaya</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Jenis Bahaya</th>
-<th><span class="math inline">\(H_i\)</span> (Bahaya)</th>
-<th><span class="math inline">\(V_i\)</span> (Kerentanan)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Banjir</td>
-<td>1,000</td>
-<td>0,963184</td>
-</tr>
-<tr class="even">
-<td>Banjir Bandang</td>
-<td>1,000</td>
-<td>0,924034</td>
-</tr>
-<tr class="odd">
-<td>Cuaca Ekstrim</td>
-<td>1,000</td>
-<td>0,999996</td>
-</tr>
-<tr class="even">
-<td>Gelombang Ekstrim dan Abrasi</td>
-<td>1,000</td>
-<td>0,901730</td>
-</tr>
-<tr class="odd">
-<td>Gempabumi</td>
-<td>1,000</td>
-<td>0,999997</td>
-</tr>
-<tr class="even">
-<td>Kebakaran Hutan dan Lahan</td>
-<td>0,666</td>
-<td>0,504960</td>
-</tr>
-<tr class="odd">
-<td>Kekeringan</td>
-<td>0,666</td>
-<td>0,993965</td>
-</tr>
-<tr class="even">
-<td>Likuefaksi</td>
-<td>0,666</td>
-<td>0,980678</td>
-</tr>
-<tr class="odd">
-<td>Letusan Gunungapi</td>
-<td>tidak berlaku</td>
-<td>0,000000</td>
-</tr>
-<tr class="even">
-<td>Tanah Longsor</td>
-<td>1,000</td>
-<td>0,996761</td>
-</tr>
-<tr class="odd">
-<td>Tsunami</td>
-<td>1,000</td>
-<td>0,905799</td>
-</tr>
-<tr class="even">
-<td><strong>Jumlah (<span class="math inline">\(H_{multi}\)</span>, <span class="math inline">\(V_{multi}\)</span>)</strong></td>
-<td><strong>8,998</strong></td>
-<td><strong>9,171</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="langkah-4-risiko-potensial" class="level2">
-<h2 class="anchored" data-anchor-id="langkah-4-risiko-potensial">Langkah 4 — Risiko Potensial</h2>
-<p><span class="math display">\[
-H_M = I(H_{multi}) = \frac{1}{1+\left(\dfrac{8{,}998}{5{,}186}\right)^{-1{,}998}} = 0{,}7504
-\]</span></p>
-<p><span class="math display">\[
-V_M = I(V_{multi}) = \frac{1}{1+\left(\dfrac{9{,}171}{5{,}186}\right)^{-1{,}998}} = 0{,}7575
-\]</span></p>
-<p><span class="math display">\[
-RP = \sqrt{H_M \times V_M} = \sqrt{0{,}7504 \times 0{,}7575} = 0{,}7539
-\]</span></p>
-<p><span class="math inline">\(H_{multi}\)</span> dan <span class="math inline">\(V_{multi}\)</span> ditransformasi terpisah sebelum digabung, sesuai keputusan BNPB (2026) — bukan dijumlah mentah lalu ditransformasi sekali di akhir (hasil kedua urutan berdekatan untuk contoh ini: 0,7539 vs 0,7540, tetapi tidak identik secara umum karena fungsi sigmoid tidak linear).</p>
-</section>
-<section id="langkah-5-indeks-kapasitas" class="level2">
-<h2 class="anchored" data-anchor-id="langkah-5-indeks-kapasitas">Langkah 5 — Indeks Kapasitas</h2>
-<p>IKD Kabupaten Aceh Selatan = 0,21 (≤ 0,4):</p>
-<p><span class="math display">\[
-C = \frac{1/3}{0{,}4} \times 0{,}21 = 0{,}175
-\]</span></p>
-</section>
-<section id="langkah-6-risiko-aktual" class="level2">
-<h2 class="anchored" data-anchor-id="langkah-6-risiko-aktual">Langkah 6 — Risiko Aktual</h2>
-<p><span class="math display">\[
-RA = \sqrt{RP \times (1-C)} = \sqrt{0{,}7539 \times 0{,}825} = 0{,}7887
-\]</span></p>
-<p>Kelas: <strong>Tinggi</strong> (RA &gt; 0,666).</p>
-</section>
-<section id="langkah-7-rasio-risiko" class="level2">
-<h2 class="anchored" data-anchor-id="langkah-7-rasio-risiko">Langkah 7 — Rasio Risiko</h2>
-<p><span class="math display">\[
-RR = \log_2\left(\frac{0{,}7539}{0{,}175}\right) + 1 = 3{,}107
-\]</span></p>
-<p>Kelas: <strong>Kritis</strong> (RR &gt; 3,00).</p>
-</section>
-<section id="langkah-8-penyetaraan-skala-bila-diperlukan-bab-vii" class="level2">
-<h2 class="anchored" data-anchor-id="langkah-8-penyetaraan-skala-bila-diperlukan-bab-vii">Langkah 8 — Penyetaraan skala (bila diperlukan, Bab VII)</h2>
-<p><span class="math display">\[
-f(x) = y_{min} + (x - x_{min}) \left(\frac{y_{max} - y_{min}}{x_{max} - x_{min}}\right)
-\]</span></p>
+<section id="persamaan-inti" class="level2">
+<h2 class="anchored" data-anchor-id="persamaan-inti">Persamaan Inti</h2>
+<p>Transformasi fuzzy sigmoid:</p>
+<p><span class="math display">\[I(x)=\frac{1}{1+\left(\frac{x}{m}\right)^{-s}}\]</span></p>
+<p>Reproduksi Risiko Potensial pada workbook:</p>
+<p><span class="math display">\[RP_{raw}=\sqrt{HM_{raw}\times VM_{raw}},\qquad RP_{idx}=I(RP_{raw})\]</span></p>
+<p>Risiko Aktual dan Rasio Risiko:</p>
+<p><span class="math display">\[RA=\sqrt{RP_{idx}(1-C)}\]</span></p>
+<p><span class="math display">\[RR=\log_2\left(\frac{RP_{idx}}{C}\right)+1\]</span></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Isu terbuka
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Bentuk <span class="math inline">\((y_{max} - y_{min})\)</span> dikonfirmasi BNPB. Nilai <span class="math inline">\(x_{max}\)</span> untuk kelas risiko tinggi belum dinyatakan angkanya secara resmi — BPBD menunggu angka tersebut sebelum menjalankan langkah ini.</p>
+<p>Persamaan di atas mereproduksi workbook. Urutan RP normatif menunggu M-05; RR untuk <code>C=0</code> menunggu M-06. Persamaan 11 untuk penyetaraan belum dapat diberlakukan karena M-01 dan M-09.</p>
 </div>
 </div>
+</section>
+<section id="parameter-transformasi-yang-terekam" class="level2">
+<h2 class="anchored" data-anchor-id="parameter-transformasi-yang-terekam">Parameter Transformasi yang Terekam</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Komponen</th>
+<th>Cakupan</th>
+<th style="text-align: right;"><span class="math inline">\(x_L\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_U\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(s\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(m\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Penduduk terpapar</td>
+<td>semua kecuali karhutla</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">1,998</td>
+<td style="text-align: right;">707,903</td>
+</tr>
+<tr class="even">
+<td>Kerugian fisik</td>
+<td>semua kecuali kekeringan/karhutla</td>
+<td style="text-align: right;">1,4</td>
+<td style="text-align: right;">2,1</td>
+<td style="text-align: right;">3,415</td>
+<td style="text-align: right;">1,716</td>
+</tr>
+<tr class="odd">
+<td>Kerugian ekonomi</td>
+<td>seluruh bahaya</td>
+<td style="text-align: right;">0,15</td>
+<td style="text-align: right;">0,325</td>
+<td style="text-align: right;">1,791</td>
+<td style="text-align: right;">0,221</td>
+</tr>
+<tr class="even">
+<td>Lingkungan</td>
+<td>banjir, banjir bandang, GEA</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">1,289</td>
+<td style="text-align: right;">120,001</td>
+</tr>
+<tr class="odd">
+<td>Lingkungan</td>
+<td>karhutla, kekeringan, likuefaksi, LGA, longsor</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">185</td>
+<td style="text-align: right;">1,324</td>
+<td style="text-align: right;">109,845</td>
+</tr>
+<tr class="even">
+<td>Lingkungan</td>
+<td>tsunami</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">185</td>
+<td style="text-align: right;">1,142</td>
+<td style="text-align: right;">101,070</td>
+</tr>
+<tr class="odd">
+<td>Multi</td>
+<td>11 bahaya workbook</td>
+<td style="text-align: right;">3,663</td>
+<td style="text-align: right;">7,326</td>
+<td style="text-align: right;">1,998</td>
+<td style="text-align: right;">5,186</td>
+</tr>
+</tbody>
+</table>
+<p>Parameter disimpan dengan presisi penuh pada perangkat hitung. Simbol perantara kalibrasi pada Persamaan 2–3 perlu diselesaikan melalui M-02.</p>
+</section>
+<section id="bobot-kerentanan" class="level2">
+<h2 class="anchored" data-anchor-id="bobot-kerentanan">Bobot Kerentanan</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Jenis bahaya</th>
+<th style="text-align: right;">Penduduk</th>
+<th style="text-align: right;">Fisik</th>
+<th style="text-align: right;">Ekonomi</th>
+<th style="text-align: right;">Lingkungan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gempabumi</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td>Tsunami; banjir; banjir bandang; longsor; likuefaksi; LGA; GEA</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="odd">
+<td>Cuaca ekstrem</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td>Karhutla</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">60%</td>
+</tr>
+<tr class="odd">
+<td>Kekeringan</td>
+<td style="text-align: right;">50%</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">40%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+</tbody>
+</table>
+<p>Tanda — berarti komponen tidak diperhitungkan. Bobot yang berlaku pada setiap bahaya harus berjumlah 100%.</p>
 
 
 </section>
@@ -997,13 +1023,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lampiran-b.html" class="pagination-link" aria-label="Lampiran B. Bobot Kerentanan per Jenis Bahaya">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lampiran B. Bobot Kerentanan per Jenis Bahaya</span>
+      <a href="./lampiran-b.html" class="pagination-link" aria-label="Lampiran B. Data, Kamus Data, dan Daftar Bahaya">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lampiran-d.html" class="pagination-link" aria-label="Lampiran D. Checklist Pengendalian Mutu">
-        <span class="nav-page-text">Lampiran D. Checklist Pengendalian Mutu</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lampiran-d.html" class="pagination-link" aria-label="Lampiran D. Klasifikasi dan Matriks Interpretasi">
+        <span class="nav-page-text">Lampiran D. Klasifikasi dan Matriks Interpretasi</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1017,7 +1043,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Disusun berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA)</p>
+<p>Versi dashboard 0.8 · 19 September 2026</p>
 </div>
   </div>
 </footer>

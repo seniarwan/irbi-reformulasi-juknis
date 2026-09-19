@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bab VII. Masa Transisi dan Implementasi – Petunjuk Teknis IRBI Reformulasi</title>
+<title>Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi – Petunjuk Teknis IRBI Reformulasi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73bf34e03dcf3ac45dac882941957d2f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eec37d530ba024d7569d9c6f845c7a3e.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-bd9171332c43ac346f4fca0d9751d4c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0ec70c97685606d99bc84294166abbf8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,10 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<meta name="mermaid-theme" content="neutral">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -102,12 +98,16 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Beranda</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./register-isu.html"> 
+<span class="menu-text">Register Isu</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/seniarwan/irbi-reformulasi-juknis"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text">Repo</span></a>
+<span class="menu-text">Repositori</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Bab</a></li><li class="breadcrumb-item"><a href="./bab-7.html">Bab VII. Masa Transisi dan Implementasi</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Petunjuk Teknis — 8 Bab</a></li><li class="breadcrumb-item"><a href="./bab-7.html">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -141,13 +141,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Petunjuk Teknis Reformulasi IRBI Nasional</span></a>
+ <span class="menu-text">Petunjuk Teknis Nasional IRBI</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Bab</span></a>
+ <span class="menu-text">Petunjuk Teknis — 8 Bab</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -162,37 +162,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab II. Konsep dan Kerangka IRBI Reformulasi</span></a>
+ <span class="menu-text">Bab II. Kerangka Konseptual dan Ketentuan Umum</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab III. Data dan Indikator</span></a>
+ <span class="menu-text">Bab III. Data dan Penyiapan Input</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab IV. Tahapan Perhitungan</span></a>
+ <span class="menu-text">Bab IV. Metode Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab V. Klasifikasi dan Interpretasi Hasil</span></a>
+ <span class="menu-text">Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bab VI. Pengendalian Mutu dan Validasi</span></a>
+ <span class="menu-text">Bab VI. Pemanfaatan IRBI dalam Kebijakan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bab-7.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Bab VII. Masa Transisi dan Implementasi</span></a>
+ <span class="menu-text">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -206,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Lampiran</span></a>
+ <span class="menu-text">Lampiran Operasional</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -215,25 +215,66 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran A. Parameter Transformasi Fuzzy Sigmoid</span></a>
+ <span class="menu-text">Lampiran A. Diagram Alir Perhitungan IRBI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-b.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran B. Bobot Kerentanan per Jenis Bahaya</span></a>
+ <span class="menu-text">Lampiran B. Data, Kamus Data, dan Daftar Bahaya</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-c.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan</span></a>
+ <span class="menu-text">Lampiran C. Persamaan, Parameter Transformasi, dan Bobot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lampiran-d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lampiran D. Checklist Pengendalian Mutu</span></a>
+ <span class="menu-text">Lampiran D. Klasifikasi dan Matriks Interpretasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran E. Contoh Perhitungan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran F. Templat Perhitungan dan Struktur Basis Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran G. Checklist QA/QC dan Validasi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lampiran-h.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lampiran H. Standar Penyajian, Kartografi, dan Laporan</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Kendali Pengembangan</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./register-isu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Register Isu Metodologis</span></a>
   </div>
 </li>
       </ul>
@@ -248,18 +289,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tiga-opsi-implementasi" id="toc-tiga-opsi-implementasi" class="nav-link active" data-scroll-target="#tiga-opsi-implementasi">7.1 Tiga Opsi Implementasi</a></li>
-  <li><a href="#roadmap-implementasi-nasional" id="toc-roadmap-implementasi-nasional" class="nav-link" data-scroll-target="#roadmap-implementasi-nasional">7.2 Roadmap Implementasi Nasional</a></li>
-  <li><a href="#kebutuhan-dukungan-bagi-bpbd" id="toc-kebutuhan-dukungan-bagi-bpbd" class="nav-link" data-scroll-target="#kebutuhan-dukungan-bagi-bpbd">7.3 Kebutuhan Dukungan bagi BPBD</a></li>
+  <li><a href="#tujuan-bab" id="toc-tujuan-bab" class="nav-link active" data-scroll-target="#tujuan-bab">Tujuan Bab</a></li>
+  <li><a href="#siklus-penyelenggaraan" id="toc-siklus-penyelenggaraan" class="nav-link" data-scroll-target="#siklus-penyelenggaraan">7.1 Siklus Penyelenggaraan</a></li>
+  <li><a href="#pembagian-peran" id="toc-pembagian-peran" class="nav-link" data-scroll-target="#pembagian-peran">7.2 Pembagian Peran</a></li>
+  <li><a href="#pemutakhiran-dan-pengelolaan-versi" id="toc-pemutakhiran-dan-pengelolaan-versi" class="nav-link" data-scroll-target="#pemutakhiran-dan-pengelolaan-versi">7.3 Pemutakhiran dan Pengelolaan Versi</a></li>
+  <li><a href="#alternatif-transisi" id="toc-alternatif-transisi" class="nav-link" data-scroll-target="#alternatif-transisi">7.4 Alternatif Transisi</a></li>
+  <li><a href="#penyetaraan-skala" id="toc-penyetaraan-skala" class="nav-link" data-scroll-target="#penyetaraan-skala">7.5 Penyetaraan Skala</a></li>
+  <li><a href="#kesiapan-implementasi-penuh" id="toc-kesiapan-implementasi-penuh" class="nav-link" data-scroll-target="#kesiapan-implementasi-penuh">7.6 Kesiapan Implementasi Penuh</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Bab</a></li><li class="breadcrumb-item"><a href="./bab-7.html">Bab VII. Masa Transisi dan Implementasi</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bab-1.html">Petunjuk Teknis — 8 Bab</a></li><li class="breadcrumb-item"><a href="./bab-7.html">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bab VII. Masa Transisi dan Implementasi</h1>
+<h1 class="title">Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi</h1>
+<p class="subtitle lead">Draf ilustratif v0.8 — pilihan transisi belum merupakan keputusan kebijakan</p>
 </div>
 
 
@@ -276,9 +322,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>BNPB menetapkan satu dari tiga opsi implementasi secara nasional; BPBD menjalankan opsi yang berlaku, bukan memilih sendiri.</p>
-<section id="tiga-opsi-implementasi" class="level2">
-<h2 class="anchored" data-anchor-id="tiga-opsi-implementasi">7.1 Tiga Opsi Implementasi</h2>
+<div class="status-strip">
+<p><strong>Status:</strong> draf kerja, belum normatif &nbsp;·&nbsp; <strong>Fokus:</strong> tata kelola siklus, versi, publikasi, dan transisi</p>
+</div>
+<section id="tujuan-bab" class="level2">
+<h2 class="anchored" data-anchor-id="tujuan-bab">Tujuan Bab</h2>
+<p>Menetapkan siklus penyelenggaraan, pengelolaan versi, pembaruan data, dokumentasi, publikasi, dan prasyarat pilihan transisi menuju penerapan nasional.</p>
+<div id="fig-siklus-penyelenggaraan" class="figure-panel quarto-float quarto-figure quarto-figure-center anchored" alt="Siklus penyelenggaraan dan pemutakhiran IRBI">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-siklus-penyelenggaraan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/figures/gambar_7_1_siklus_penyelenggaraan.png" class="figure-panel img-fluid figure-img" alt="Siklus penyelenggaraan dan pemutakhiran IRBI">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-siklus-penyelenggaraan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Siklus penyelenggaraan dari penetapan spesifikasi hingga evaluasi dan pembaruan.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="siklus-penyelenggaraan" class="level2">
+<h2 class="anchored" data-anchor-id="siklus-penyelenggaraan">7.1 Siklus Penyelenggaraan</h2>
+<p>Satu siklus terdiri atas: penetapan spesifikasi; penerimaan dan verifikasi data; penguncian versi data dan metode; perhitungan; QA/QC independen; validasi; persetujuan; publikasi; koreksi; dan evaluasi. Setiap tahap menghasilkan catatan waktu, penanggung jawab, versi masukan, keputusan, dan keluaran.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -287,59 +350,135 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Opsi</th>
-<th>Deskripsi</th>
-<th>Kapan Berlaku</th>
+<th>Tahap</th>
+<th>Keluaran minimum</th>
+<th>Gerbang keputusan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Spesifikasi</td>
+<td>unit analisis, periode, sumber, parameter, klasifikasi</td>
+<td>disetujui pemilik metode</td>
+</tr>
+<tr class="even">
+<td>Data</td>
+<td>berkas terkunci, metadata, checksum, rekonsiliasi kode</td>
+<td>lolos gerbang input</td>
+</tr>
+<tr class="odd">
+<td>Perhitungan</td>
+<td>hasil antara dan keluaran per wilayah</td>
+<td>hasil dapat direproduksi</td>
+</tr>
+<tr class="even">
+<td>Validasi</td>
+<td>temuan, koreksi, berita acara</td>
+<td>isu kritis tidak tersisa tanpa disposisi</td>
+</tr>
+<tr class="odd">
+<td>Publikasi</td>
+<td>tabel/peta, metadata, catatan metode, versi</td>
+<td>disetujui pejabat berwenang</td>
+</tr>
+<tr class="even">
+<td>Evaluasi</td>
+<td>masukan pengguna dan daftar perubahan</td>
+<td>dasar siklus berikutnya</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pembagian-peran" class="level2">
+<h2 class="anchored" data-anchor-id="pembagian-peran">7.2 Pembagian Peran</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aktor</th>
+<th>Peran yang perlu ditetapkan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BNPB/pemilik metode</td>
+<td>menetapkan metode, sumber, versi, klasifikasi, QA/QC, dan rilis nasional</td>
+</tr>
+<tr class="even">
+<td>Tim teknis nasional</td>
+<td>mengelola data, kode, perhitungan, pengujian, dokumentasi, dan reproduksi</td>
+</tr>
+<tr class="odd">
+<td>Produsen data/KL</td>
+<td>menjamin definisi, satuan, periode, metadata, dan koreksi sumber</td>
+</tr>
+<tr class="even">
+<td>BPBD provinsi</td>
+<td>mengoordinasikan klarifikasi lintas kabupaten/kota dan konteks kewilayahan</td>
+</tr>
+<tr class="odd">
+<td>BPBD kabupaten/kota</td>
+<td>memeriksa identitas wilayah, menelaah kewajaran, dan memakai hasil yang disahkan</td>
+</tr>
+<tr class="even">
+<td>Validator/unit hukum</td>
+<td>memeriksa formula, data, kewenangan, dan status dokumen sebelum penetapan</td>
+</tr>
+</tbody>
+</table>
+<p>Pembagian di atas merupakan rancangan fungsi. Nama unit dan kewenangan final harus mengikuti keputusan kelembagaan dan reviu hukum.</p>
+</section>
+<section id="pemutakhiran-dan-pengelolaan-versi" class="level2">
+<h2 class="anchored" data-anchor-id="pemutakhiran-dan-pengelolaan-versi">7.3 Pemutakhiran dan Pengelolaan Versi</h2>
+<p>Keluaran tidak diberi satu label tahun apabila H, V, dan IKD berasal dari periode berbeda. Identitas minimum versi adalah <code>H-versi</code>, <code>V-versi</code>, <code>IKD-versi</code>, <code>parameter-versi</code>, <code>metode-versi</code>, <code>kode-wilayah-versi</code>, dan tanggal cut-off. Perubahan satu unsur menghasilkan versi keluaran baru dan tidak menimpa arsip lama.</p>
+<p>Data dinamis dapat ditinjau lebih sering, tetapi pembaruan hanya dipublikasikan setelah lulus prosedur yang sama. Koreksi pascarilis menyebut nilai sebelum/sesudah, alasan, wilayah terdampak, waktu, dan persetujuan.</p>
+</section>
+<section id="alternatif-transisi" class="level2">
+<h2 class="anchored" data-anchor-id="alternatif-transisi">7.4 Alternatif Transisi</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Alternatif</th>
+<th>Posisi reformulasi</th>
+<th>Prasyarat utama</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Paralel</td>
-<td>IRBI reformulasi dipakai sebagai instrumen analitis pendamping; IRBI eksisting tetap indikator utama kebijakan dan Indikator Kinerja Utama (IKU) daerah</td>
-<td>Jangka pendek — saat kesiapan data dan kelembagaan belum penuh</td>
+<td>instrumen analitis pendamping</td>
+<td>formula dapat diuji tanpa mengubah pelaporan resmi</td>
 </tr>
 <tr class="even">
 <td>Hibrida</td>
-<td>Sebagian komponen reformulasi (risiko aktual, rasio risiko) diintegrasikan ke kerangka IRBI eksisting tanpa mengganti struktur indeks resmi</td>
-<td>Jangka menengah — saat nilai tambah reformulasi sudah ingin dimanfaatkan tanpa mengganti indeks resmi</td>
+<td>indikator tertentu dipakai pada proses yang ditetapkan</td>
+<td>ruang penggunaan, otoritas, dan hubungan dengan IRBI eksisting jelas</td>
 </tr>
 <tr class="odd">
 <td>Penuh</td>
-<td>IRBI reformulasi ditetapkan sebagai standar nasional setelah fase uji implementasi dan penyesuaian regulasi</td>
-<td>Jangka panjang — setelah kesiapan data, kapasitas kelembagaan, dan kerangka regulasi terpenuhi memadai</td>
+<td>menjadi standar nasional</td>
+<td>isu kritis selesai; data, sistem, SDM, regulasi, dan komunikasi siap</td>
 </tr>
 </tbody>
 </table>
-<p>Pada opsi Paralel dan Hibrida, BPBD tetap menjalankan Langkah 8 (penyetaraan skala, <a href="./bab-4.html">Bab IV</a>) agar hasil IRBI reformulasi tetap terbaca dalam sistem pelaporan kinerja berjalan. Opsi Penuh melewati langkah tersebut karena seluruh pelaporan sudah memakai skala reformulasi.</p>
+<p>Alternatif ini adalah <strong>opsi kebijakan</strong>, bukan tahapan otomatis. Otoritas yang berwenang menetapkan pilihan, ruang berlaku, masa uji, kriteria evaluasi, dan keputusan lanjutannya.</p>
 </section>
-<section id="roadmap-implementasi-nasional" class="level2">
-<h2 class="anchored" data-anchor-id="roadmap-implementasi-nasional">7.2 Roadmap Implementasi Nasional</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A[Jangka Pendek] --&gt; B[Jangka Menengah]
-    B --&gt; C[Jangka Panjang]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p><strong>Jangka pendek</strong> — IRBI reformulasi diterapkan secara paralel dengan IRBI eksisting melalui uji implementasi terbatas. Fokus: sosialisasi metodologi ke BPBD, penyusunan pedoman teknis awal (dokumen ini), dan pengembangan sistem pendukung analisis.</p>
-<p><strong>Jangka menengah</strong> — perluasan uji implementasi ke lebih banyak wilayah, integrasi hasil reformulasi ke proses evaluasi kebijakan pengurangan risiko bencana. Fokus: penguatan kapasitas teknis BPBD, penyempurnaan sistem data, evaluasi berkala atas konsistensi dan keterpakaian hasil.</p>
-<p><strong>Jangka panjang</strong> — adopsi lebih luas melalui penetapan regulatif sebagai standar nasional, apabila seluruh prasyarat teknis dan kelembagaan terpenuhi. IRBI reformulasi berfungsi sebagai instrumen utama penilaian risiko bencana nasional untuk perencanaan, penganggaran, dan evaluasi kinerja.</p>
+<section id="penyetaraan-skala" class="level2">
+<h2 class="anchored" data-anchor-id="penyetaraan-skala">7.5 Penyetaraan Skala</h2>
+<p>Penyetaraan belum dapat dijalankan sebagai prosedur normatif. Persamaan 11 pada laporan memiliki pembilang yang secara literal menjadi nol; arah variabel dan nilai <code>x_max</code> kelas tinggi juga belum lengkap. Rumus dugaan matematis tidak boleh diberlakukan sebelum <a href="./register-isu.html">M-01 dan M-09</a> diselesaikan.</p>
+<p>Jika kelak disahkan, nilai hasil penyetaraan harus diberi label <strong>nilai transisi</strong>, disimpan bersama nilai asli kedua metode, serta dilengkapi versi rumus, parameter, dan kelas.</p>
 </section>
-<section id="kebutuhan-dukungan-bagi-bpbd" class="level2">
-<h2 class="anchored" data-anchor-id="kebutuhan-dukungan-bagi-bpbd">7.3 Kebutuhan Dukungan bagi BPBD</h2>
-<ol type="1">
-<li><strong>Dukungan regulatif</strong> — kepastian hukum dan arah kebijakan transisi dari IRBI eksisting ke IRBI reformulasi, untuk menghindari interpretasi yang beragam antarwilayah.</li>
-<li><strong>Pedoman teknis nasional</strong> — dokumen ini, mencakup tahapan perhitungan, interpretasi hasil, dan keterkaitan indikator dengan kebutuhan kebijakan.</li>
-<li><strong>Penguatan kapasitas sumber daya manusia</strong> — pelatihan dan pendampingan teknis bagi staf BPBD, mengingat kompleksitas metodologi reformulasi lebih tinggi dibandingkan IRBI eksisting.</li>
-<li><strong>Sistem informasi dan visualisasi nasional</strong> — memudahkan pemanfaatan hasil IRBI reformulasi oleh pengguna teknis maupun non-teknis di daerah.</li>
-</ol>
+<section id="kesiapan-implementasi-penuh" class="level2">
+<h2 class="anchored" data-anchor-id="kesiapan-implementasi-penuh">7.6 Kesiapan Implementasi Penuh</h2>
+<p>Implementasi penuh mensyaratkan penyelesaian seluruh isu kritis, kamus data dan satuan yang disahkan, penggabungan berbasis kunci wilayah, satu sumber induk kapasitas, perangkat hitung teruji, QA/QC independen, struktur kelembagaan, dasar hukum, mekanisme koreksi, dan strategi komunikasi publik.</p>
 
 
 </section>
@@ -854,8 +993,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./bab-6.html" class="pagination-link" aria-label="Bab VI. Pengendalian Mutu dan Validasi">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bab VI. Pengendalian Mutu dan Validasi</span>
+      <a href="./bab-6.html" class="pagination-link" aria-label="Bab VI. Pemanfaatan IRBI dalam Kebijakan">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bab VI. Pemanfaatan IRBI dalam Kebijakan</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -874,7 +1013,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Disusun berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA)</p>
+<p>Versi dashboard 0.8 · 19 September 2026</p>
 </div>
   </div>
 </footer>
