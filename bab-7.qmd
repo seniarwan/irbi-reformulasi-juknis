@@ -1,0 +1,36 @@
+---
+title: "Bab VII. Masa Transisi dan Implementasi"
+---
+
+BNPB menetapkan satu dari tiga opsi implementasi secara nasional; BPBD menjalankan opsi yang berlaku, bukan memilih sendiri.
+
+## 7.1 Tiga Opsi Implementasi
+
+| Opsi | Deskripsi | Kapan Berlaku |
+| --- | --- | --- |
+| Paralel | IRBI reformulasi dipakai sebagai instrumen analitis pendamping; IRBI eksisting tetap indikator utama kebijakan dan Indikator Kinerja Utama (IKU) daerah | Jangka pendek — saat kesiapan data dan kelembagaan belum penuh |
+| Hibrida | Sebagian komponen reformulasi (risiko aktual, rasio risiko) diintegrasikan ke kerangka IRBI eksisting tanpa mengganti struktur indeks resmi | Jangka menengah — saat nilai tambah reformulasi sudah ingin dimanfaatkan tanpa mengganti indeks resmi |
+| Penuh | IRBI reformulasi ditetapkan sebagai standar nasional setelah fase uji implementasi dan penyesuaian regulasi | Jangka panjang — setelah kesiapan data, kapasitas kelembagaan, dan kerangka regulasi terpenuhi memadai |
+
+Pada opsi Paralel dan Hibrida, BPBD tetap menjalankan Langkah 8 (penyetaraan skala, [Bab IV](bab-4.qmd)) agar hasil IRBI reformulasi tetap terbaca dalam sistem pelaporan kinerja berjalan. Opsi Penuh melewati langkah tersebut karena seluruh pelaporan sudah memakai skala reformulasi.
+
+## 7.2 Roadmap Implementasi Nasional
+
+```{mermaid}
+flowchart LR
+    A[Jangka Pendek] --> B[Jangka Menengah]
+    B --> C[Jangka Panjang]
+```
+
+**Jangka pendek** — IRBI reformulasi diterapkan secara paralel dengan IRBI eksisting melalui uji implementasi terbatas. Fokus: sosialisasi metodologi ke BPBD, penyusunan pedoman teknis awal (dokumen ini), dan pengembangan sistem pendukung analisis.
+
+**Jangka menengah** — perluasan uji implementasi ke lebih banyak wilayah, integrasi hasil reformulasi ke proses evaluasi kebijakan pengurangan risiko bencana. Fokus: penguatan kapasitas teknis BPBD, penyempurnaan sistem data, evaluasi berkala atas konsistensi dan keterpakaian hasil.
+
+**Jangka panjang** — adopsi lebih luas melalui penetapan regulatif sebagai standar nasional, apabila seluruh prasyarat teknis dan kelembagaan terpenuhi. IRBI reformulasi berfungsi sebagai instrumen utama penilaian risiko bencana nasional untuk perencanaan, penganggaran, dan evaluasi kinerja.
+
+## 7.3 Kebutuhan Dukungan bagi BPBD
+
+1. **Dukungan regulatif** — kepastian hukum dan arah kebijakan transisi dari IRBI eksisting ke IRBI reformulasi, untuk menghindari interpretasi yang beragam antarwilayah.
+2. **Pedoman teknis nasional** — dokumen ini, mencakup tahapan perhitungan, interpretasi hasil, dan keterkaitan indikator dengan kebutuhan kebijakan.
+3. **Penguatan kapasitas sumber daya manusia** — pelatihan dan pendampingan teknis bagi staf BPBD, mengingat kompleksitas metodologi reformulasi lebih tinggi dibandingkan IRBI eksisting.
+4. **Sistem informasi dan visualisasi nasional** — memudahkan pemanfaatan hasil IRBI reformulasi oleh pengguna teknis maupun non-teknis di daerah.

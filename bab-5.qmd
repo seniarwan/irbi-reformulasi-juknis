@@ -1,0 +1,43 @@
+---
+title: "Bab V. Klasifikasi dan Interpretasi Hasil"
+---
+
+Setiap keluaran indeks (risiko potensial, risiko aktual, rasio risiko) dibaca menurut kelasnya sendiri, bukan disamakan dengan klasifikasi IRBI eksisting.
+
+## 5.1 Klasifikasi Risiko Potensial dan Risiko Aktual
+
+Risiko potensial (RP) dan risiko aktual (RA) memakai batas kelas yang sama, mengikuti indeks target fuzzy sigmoid (0,333 dan 0,666):
+
+| Kelas | Rentang Indeks |
+| --- | --- |
+| Rendah | ≤ 0,333 |
+| Sedang | > 0,333 – ≤ 0,666 |
+| Tinggi | > 0,666 |
+
+RP menunjukkan tekanan risiko struktural sebelum kapasitas diperhitungkan; RA menunjukkan risiko yang tersisa setelah kapasitas diperhitungkan. Wilayah dengan RP tinggi namun RA sedang atau rendah menandakan kapasitas berperan efektif meredam risiko.
+
+## 5.2 Klasifikasi Rasio Risiko
+
+**Tabel 5.1.** Klasifikasi Nilai Rasio Risiko, Makna, dan Kebutuhan Program
+
+| RR | Kategori | Makna | Kebutuhan Program |
+| --- | --- | --- | --- |
+| ≤ 1,00 | Terkendali | Kapasitas relatif mampu mengimbangi atau melampaui risiko potensial yang dihadapi | Mempertahankan resiliensi dan memastikan pembangunan tidak menambah kerentanan baru |
+| > 1,00 – ≤ 1,50 | Ketimpangan Ringan | Risiko mulai lebih besar dari kapasitas, namun ketimpangan masih terbatas | Penguatan kapasitas dan pengurangan kerentanan secara selektif pada bagian sistem terlemah |
+| > 1,50 – ≤ 2,00 | Ketimpangan Sedang | Risiko sekitar 1,4–2 kali kapasitas; tekanan risiko semakin nyata | Pengurangan kerentanan dan peningkatan kapasitas pada sebagian besar komponen sistem |
+| > 2,00 – ≤ 3,00 | Ketimpangan Tinggi | Risiko sekitar 2–4 kali kapasitas; kapasitas belum memadai untuk mengelola risiko | Penguatan kapasitas secara menyeluruh dan peningkatan intensitas intervensi pada komponen kritis |
+| > 3,00 | Kritis | Risiko jauh melampaui kapasitas; sistem sangat rentan terhadap kegagalan | Intervensi intensif dan komprehensif untuk menurunkan kerentanan dan meningkatkan kapasitas secara sistemik |
+
+Rasio risiko bersifat komplementer terhadap risiko aktual, bukan pengganti indeks risiko utama: dipakai untuk mengarahkan prioritas program, bukan untuk pelaporan kinerja tunggal.
+
+## 5.3 Cara Membaca Hasil untuk Perencanaan
+
+BPBD membaca ketiga indeks bersama-sama, bukan salah satu saja:
+
+1. **RP tinggi, RA rendah/sedang, RR terkendali** — kapasitas daerah efektif meredam risiko struktural; contoh pola ini tampak pada DKI Jakarta dan Jawa Tengah dalam hasil perhitungan nasional. Arah kebijakan: pertahankan investasi kapasitas yang sudah berjalan.
+2. **RP tinggi, RA tinggi, RR tinggi/kritis** — kapasitas belum memadai mengimbangi tekanan risiko; pola ini dominan di wilayah Indonesia timur (Papua dan pemekarannya, Maluku, Maluku Utara), sebagian Sulawesi (Sulawesi Barat, Sulawesi Tengah), serta Nusa Tenggara Timur. Arah kebijakan: prioritas penguatan kapasitas kelembagaan, infrastruktur, dan sistem pendukung penanggulangan bencana.
+3. **RP sedang/rendah** — tekanan bahaya dan kerentanan struktural relatif terkendali terlepas dari nilai RR; fokus kebijakan pada menjaga agar pembangunan tidak menambah kerentanan baru.
+
+## 5.4 Prioritas Intervensi Berdasarkan Rasio Risiko
+
+BPBD memakai kelas rasio risiko (Tabel 5.1) untuk menyusun urutan prioritas penguatan kapasitas antarwilayah dalam yurisdiksinya: wilayah berkelas Kritis dan Ketimpangan Tinggi menjadi prioritas utama dokumen perencanaan (RPB, RPJMD) dan pengalokasian anggaran pengurangan risiko bencana, sebelum wilayah berkelas Ketimpangan Sedang, Ringan, dan Terkendali.

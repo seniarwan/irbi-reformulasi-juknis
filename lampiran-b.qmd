@@ -1,0 +1,24 @@
+---
+title: "Lampiran B. Bobot Kerentanan per Jenis Bahaya"
+---
+
+$$
+V_i = w_1 \cdot vf_1 + w_2 \cdot vf_2 + w_3 \cdot vf_3 + w_4 \cdot vf_4
+$$
+
+**Tabel B.1.** Bobot Sub-Komponen Kerentanan per Jenis Bahaya
+
+| Jenis Bahaya | Penduduk Terpapar | Kerugian Fisik | Kerugian Ekonomi | Kerusakan Lingkungan |
+| --- | --- | --- | --- | --- |
+| Gempabumi | 40% | 30% | 30% | tidak dipakai |
+| Tsunami | 40% | 25% | 25% | 10% |
+| Banjir | 40% | 25% | 25% | 10% |
+| Banjir Bandang | 40% | 25% | 25% | 10% |
+| Tanah Longsor / Likuefaksi | 40% | 25% | 25% | 10% |
+| Letusan Gunungapi | 40% | 25% | 25% | 10% |
+| Cuaca Ekstrim | 40% | 30% | 30% | tidak dipakai |
+| Gelombang Ekstrim dan Abrasi | 40% | 25% | 25% | 10% |
+| Kebakaran Lahan dan Hutan | 40% | tidak dipakai | tidak dipakai | 60% |
+| Kekeringan | 50% | tidak dipakai | 40% | 10% |
+
+: {.striped .hover}

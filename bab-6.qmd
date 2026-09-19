@@ -1,0 +1,11 @@
+---
+title: "Bab VI. Pengendalian Mutu dan Validasi"
+---
+
+BPBD menjalankan lima pemeriksaan berikut sebelum hasil dipakai untuk perencanaan. Format checklist lengkap ada di [Lampiran D](lampiran-d.qmd).
+
+1. **Gerbang data input** — tidak ada nilai kosong, negatif, IKD di luar rentang 0–1, atau kode wilayah ganda sebelum perhitungan dimulai.
+2. **Pemeriksaan satuan dan saturasi** — satuan Kerugian Fisik dan Kerugian Ekonomi diverifikasi terhadap [Lampiran A](lampiran-a.qmd); indeks yang jenuh di 0 atau 1 pada banyak wilayah menandakan kemungkinan satuan salah ([Bab III.3.3](bab-3.qmd)).
+3. **Pemeriksaan hasil antara** — $H_{multi}$, $V_{multi}$, RP, C, RA, dan RR disimpan dan diperiksa kewajaran rentangnya sebelum dipublikasikan, bukan hanya nilai akhir.
+4. **Pemeriksaan formula** — hasil hitung direplikasi ulang secara independen pada sampel wilayah sebelum rilis, mengikuti contoh [Lampiran C](lampiran-c.qmd).
+5. **Publikasi dan koreksi** — setiap rilis mencantumkan versi, tanggal cut-off, dan sumber data; koreksi data setelah publikasi dicatat dan diberi tanda, tidak menimpa data lama tanpa jejak.

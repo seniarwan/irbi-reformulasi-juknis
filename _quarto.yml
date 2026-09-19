@@ -1,0 +1,64 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Petunjuk Teknis IRBI Reformulasi"
+  description: "Petunjuk Teknis Reformulasi Indeks Risiko Bencana (IRBI) Nasional — panduan operasional bagi BPBD provinsi/kabupaten-kota"
+  favicon: favicon.svg
+  page-navigation: true
+  back-to-top-navigation: true
+  reader-mode: true
+  page-footer:
+    left: "Petunjuk Teknis Reformulasi IRBI Nasional — draf kerja, belum normatif"
+    right: "Disusun berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA)"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Beranda"
+        href: index.qmd
+    right:
+      - icon: github
+        href: https://github.com/
+        text: "Repo"
+  sidebar:
+    style: docked
+    collapse-level: 1
+    contents:
+      - index.qmd
+      - section: "Bab"
+        contents:
+          - bab-1.qmd
+          - bab-2.qmd
+          - bab-3.qmd
+          - bab-4.qmd
+          - bab-5.qmd
+          - bab-6.qmd
+          - bab-7.qmd
+          - bab-8.qmd
+      - section: "Lampiran"
+        contents:
+          - lampiran-a.qmd
+          - lampiran-b.qmd
+          - lampiran-c.qmd
+          - lampiran-d.qmd
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+      dark: [darkly, styles.scss]
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    smooth-scroll: true
+    code-copy: false
+    link-external-icon: true
+    link-external-newwindow: true
+    mermaid:
+      theme: neutral
+
+execute:
+  freeze: auto

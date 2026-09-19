@@ -1,0 +1,35 @@
+---
+title: "Bab III. Data dan Indikator"
+---
+
+BPBD menyiapkan tiga kelompok data sebelum memulai perhitungan: bahaya, kerentanan, dan kapasitas.
+
+## 3.1 Struktur Indikator per Komponen
+
+| Komponen | Cakupan | Keterangan |
+| --- | --- | --- |
+| Bahaya (H) | 10 jenis bahaya: gempa bumi, tsunami, banjir, banjir bandang, tanah longsor/likuefaksi, letusan gunungapi, cuaca ekstrim, gelombang ekstrim dan abrasi, kebakaran lahan dan hutan, kekeringan | Setiap jenis dihitung sebagai indeks bahaya tunggal sebelum digabung menjadi indeks multi bahaya (langkah di [Bab IV](bab-4.qmd)) |
+| Kerentanan (V) | 4 sub-komponen per jenis bahaya: penduduk terpapar (jiwa), kerugian fisik (Rp milyar), kerugian ekonomi (Rp milyar), kerusakan lingkungan (Ha) | Bobot tiap sub-komponen berbeda per jenis bahaya ([Lampiran B](lampiran-b.qmd)) |
+| Kapasitas (C) | Indeks tunggal dari data Indeks Ketahanan Daerah (IKD) | Dihitung terpisah, dipakai sebagai pembanding terhadap risiko potensial |
+
+## 3.2 Sumber Data dan Tahun Rujukan
+
+| Komponen | Sumber Data | Tahun | Keterangan |
+| --- | --- | --- | --- |
+| Bahaya (H) | Data baseline hasil Kajian Risiko Bencana (KRB) | 2021 | Data utama yang juga digunakan pada IRBI eksisting (BNPB, 2021) |
+| Kerentanan (V) | Data hasil proyeksi IRBI | 2025 | BNPB, 2024 |
+| Kapasitas (C) | Data IKD Kabupaten/Kota | 2025 | Data utama yang juga digunakan pada IRBI eksisting |
+
+BPBD tidak perlu mengumpulkan data primer baru untuk perhitungan awal: ketiga sumber di atas adalah data resmi nasional yang sudah tersedia di BNPB.
+
+## 3.3 Persyaratan Kualitas dan Periode Pemutakhiran
+
+Komponen bahaya bersifat relatif statis karena bersumber dari kajian risiko bencana yang hanya dimutakhirkan setiap 5 tahun. Komponen kerentanan dan kapasitas bersifat lebih dinamis dan perlu dipantau perubahannya lebih sering agar nilai risiko aktual dan rasio risiko tetap mencerminkan kondisi terkini.
+
+BPBD memastikan data yang dipakai konsisten dengan tahun rujukan resmi pada tabel 3.2 sebelum menjalankan tahap perhitungan; data di luar tahun rujukan tersebut tidak dipakai tanpa persetujuan BNPB.
+
+Satuan Kerugian Fisik dan Kerugian Ekonomi mengikuti definisi [Lampiran A](lampiran-a.qmd): Rp milyar, dengan ambang batas 1,4–2,1 milyar dan 0,15–0,33 milyar. BPBD memvalidasi bahwa data mentah kedua komponen tersebut sudah dalam satuan Rp milyar sebelum dimasukkan ke transformasi fuzzy sigmoid — nilai yang jauh melampaui ambang atas (indikasi satuan salah, misalnya Rp juta) menyebabkan indeks jenuh di 1,0 dan kehilangan daya beda antarwilayah.
+
+## 3.4 Satuan dan Format Data
+
+Seluruh data disusun per kabupaten/kota menggunakan kode wilayah ID DAGRI, mengikuti format pada perkakas hitung pendamping: data bahaya dan kerentanan 2021 (sheet `RAW_HV2021`), proyeksi kerentanan 2025 (sheet `RAW_V2025`), dan kapasitas 2025 (sheet `RAW_IKD2025`). BPBD mengisi data pada format yang sama sebelum menjalankan langkah transformasi di [Bab IV](bab-4.qmd).

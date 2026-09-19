@@ -1,0 +1,15 @@
+---
+title: "Lampiran D. Checklist Pengendalian Mutu"
+---
+
+Daftar periksa ini menjalankan lima pemeriksaan pada [Bab VI](bab-6.qmd) untuk setiap siklus perhitungan IRBI reformulasi.
+
+- [ ] Tidak ada nilai kosong atau negatif pada data bahaya, kerentanan, dan kapasitas.
+- [ ] IKD setiap wilayah berada pada rentang 0–1.
+- [ ] Kode wilayah unik; tidak ada duplikasi atau kode yang hilang.
+- [ ] Satuan Kerugian Fisik dan Kerugian Ekonomi sudah Rp milyar, sesuai [Lampiran A](lampiran-a.qmd).
+- [ ] Tidak ada indeks yang jenuh di 0 atau 1 untuk lebih dari 10% wilayah dalam satu komponen — indikasi satuan salah.
+- [ ] $H_{multi}$, $V_{multi}$, RP, C, RA, dan RR tersimpan sebagai hasil antara, bukan hanya nilai akhir.
+- [ ] Hasil hitung direplikasi ulang secara independen pada minimal satu wilayah sampel dan cocok dengan hasil sistem.
+- [ ] Versi metode, tanggal cut-off data, dan sumber data dicantumkan pada setiap rilis.
+- [ ] Koreksi data pasca-publikasi dicatat dengan jejak perubahan, tidak menimpa data lama secara langsung.

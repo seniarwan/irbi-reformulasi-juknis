@@ -1,0 +1,17 @@
+---
+title: "Bab VIII. Penutup"
+---
+
+Pemisahan risiko potensial, kapasitas, risiko aktual, dan rasio risiko memberi BPBD dasar yang lebih tajam untuk menentukan prioritas intervensi dibandingkan indeks komposit tunggal IRBI eksisting. Kapasitas daerah terbukti menjadi faktor pembeda utama tingkat risiko aktual antarwilayah — wilayah dengan risiko potensial tinggi tidak selalu berisiko aktual tinggi apabila kapasitasnya memadai, dan sebaliknya.
+
+Petunjuk teknis ini berlaku selama masa transisi kebijakan ([Bab VII](bab-7.qmd)) dan akan direviu apabila: BNPB menerbitkan angka resmi untuk nilai *x_max* kelas risiko tinggi pada penyetaraan skala ([Bab IV](bab-4.qmd), Langkah 8); data baseline bahaya, kerentanan, atau kapasitas dimutakhirkan; atau opsi implementasi nasional berubah.
+
+## Daftar Pustaka {#daftar-pustaka}
+
+1. Badan Nasional Penanggulangan Bencana. (2019). *Modul Teknis Kajian Risiko Bencana*. Direktorat Pengurangan Risiko Bencana – BNPB.
+2. Badan Nasional Penanggulangan Bencana. (2021). *Kajian Risiko Bencana Nasional Periode 2022–2026*. Direktorat Pemetaan dan Evaluasi Risiko Bencana – BNPB.
+3. Badan Nasional Penanggulangan Bencana. (2024). *Laporan Akhir: Proyeksi Indeks Risiko Bencana Indonesia 2025–2045*. BNPB – Australian Government (SIAP SIAGA).
+4. Badan Nasional Penanggulangan Bencana. (2024). *IRBI: Indeks Risiko Bencana Indonesia Tahun 2024*. Direktorat Pemetaan dan Evaluasi Risiko Bencana – BNPB.
+5. Badan Nasional Penanggulangan Bencana. (2026). *Laporan Reformulasi Indeks Risiko Bencana (IRBI) Tahun 2026*. BNPB – Australian Government (SIAP SIAGA).
+6. Hamann, B.; Chen, J. L. (1994). Data point selection for piecewise linear curve approximation. *Computer Aided Geometric Design*, 11(3), 289.
+7. Zadeh, L. A. (1965). Fuzzy sets. *Information and Control*, 8(3), 338–353.

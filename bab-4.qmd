@@ -1,0 +1,47 @@
+---
+title: "Bab IV. Tahapan Perhitungan"
+---
+
+Delapan langkah berikut dihitung berurutan untuk setiap kabupaten/kota. Parameter lengkap ada di [Lampiran A](lampiran-a.qmd) dan [Lampiran B](lampiran-b.qmd); contoh hitung penuh dengan angka riil ada di [Lampiran C](lampiran-c.qmd).
+
+## 4.1 Diagram Alir
+
+```{mermaid}
+flowchart TD
+    A[Data Bahaya H<br/>KRB 2021] --> D["Langkah 1-2: Transformasi fuzzy<br/>+ kombinasi kerentanan per bahaya"]
+    B[Data Kerentanan V<br/>Proyeksi 2025] --> D
+    D --> E["Langkah 3: Indeks multi bahaya<br/>dan multi kerentanan"]
+    A --> E
+    E --> F["Langkah 4: Risiko Potensial RP"]
+    G[Data Kapasitas C<br/>IKD 2025] --> H["Langkah 5: Indeks Kapasitas"]
+    F --> I["Langkah 6: Risiko Aktual RA"]
+    H --> I
+    F --> J["Langkah 7: Rasio Risiko RR"]
+    H --> J
+    I --> K["Langkah 8: Penyetaraan skala<br/>terhadap IRBI eksisting (masa transisi)"]
+```
+
+## 4.2 Ringkasan Delapan Langkah
+
+| No | Langkah | Formula Inti | Rujukan |
+| --- | --- | --- | --- |
+| 1 | Transformasi fuzzy sigmoid tiap sub-komponen kerentanan | $I(x) = 1/(1+(x/m)^{-s})$ | Lampiran A |
+| 2 | Kombinasi kerentanan per jenis bahaya | $V_i = \sum w_j \cdot vf_j$ | Lampiran B |
+| 3 | Jumlah indeks bahaya ($H_{multi}$) dan kerentanan ($V_{multi}$) seluruh jenis bahaya | $H_{multi} = \sum H_i$ ; $V_{multi} = \sum V_i$ | — |
+| 4 | Risiko Potensial | $H_M=I(H_{multi})$; $V_M=I(V_{multi})$; $RP=\sqrt{H_M \times V_M}$ | Lampiran A (parameter Multi) |
+| 5 | Indeks Kapasitas dari IKD | $C$ = fungsi linear tersegmen 3 ruas dari IKD | Lampiran C |
+| 6 | Risiko Aktual | $RA = \sqrt{RP \times (1-C)}$ | — |
+| 7 | Rasio Risiko | $RR = \log_2(RP/C) + 1$ | — |
+| 8 | Penyetaraan skala ke IRBI eksisting (masa transisi) | $f(x) = y_{min} + (x-x_{min}) \cdot \dfrac{y_{max}-y_{min}}{x_{max}-x_{min}}$ | Bab VII |
+
+## 4.3 Catatan Metodologis
+
+$H_{multi}$ dan $V_{multi}$ ditransformasi fuzzy sigmoid secara terpisah (Langkah 4) sebelum digabungkan lewat akar kuadrat — bukan dijumlah mentah lalu ditransformasi sekali di akhir seperti pada perkakas hitung pendamping. Urutan ini dikonfirmasi BNPB (2026); perbandingan angka ada di [Lampiran C](lampiran-c.qmd).
+
+Indeks Kapasitas (Langkah 5) memetakan IKD 0–1 menjadi C 0–1 lewat tiga ruas linear (IKD ≤ 0,4; 0,4 < IKD ≤ 0,8; IKD > 0,8), menjaga kontinuitas pada titik sambung.
+
+Langkah 8 hanya dijalankan pada opsi implementasi Paralel atau Hibrida ([Bab VII](bab-7.qmd)); dilewati pada implementasi Penuh.
+
+## 4.4 Kendali Mutu Langkah Perhitungan
+
+Setiap langkah diperiksa sebelum hasil dipakai — lihat [Bab VI](bab-6.qmd) dan checklist [Lampiran D](lampiran-d.qmd). Kesalahan paling sering: satuan Kerugian Fisik dan Kerugian Ekonomi yang tidak konsisten dengan [Lampiran A](lampiran-a.qmd) (lihat [Bab III.3.3](bab-3.qmd)).
