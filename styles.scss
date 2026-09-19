@@ -1,8 +1,11 @@
 /*-- scss:defaults --*/
-$primary: #1f5c6b;
-$link-color: $primary;
+$primary: #0f5e68;
+$secondary: #d8902f;
+$link-color: #0b6974;
+$web-font-path: false;
+$font-family-sans-serif: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+$headings-font-weight: 650;
 
 /*-- scss:rules --*/
-.navbar-title {
-  font-weight: 600;
-}
+.navbar-title { font-weight: 700; letter-spacing: -0.01em; }
+.sidebar-title { color: $primary; }

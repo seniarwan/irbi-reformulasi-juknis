@@ -1,0 +1,55 @@
+---
+title: "Lampiran E. Contoh Perhitungan"
+subtitle: "Reproduksi workbook — Kabupaten Aceh Selatan"
+---
+
+## Identitas Skenario
+
+| Elemen | Nilai |
+|---|---|
+| Kabupaten/kota | Aceh Selatan |
+| ID DAGRI | 1101 |
+| Bahaya | baseline 2021 |
+| Kerentanan | versi 2025 |
+| IKD/kapasitas | 2025 |
+| Status | reproduksi implementasi workbook, bukan seri waktu 2021–2025 |
+
+## Contoh Kerentanan Banjir
+
+| Komponen | Nilai mentah | Indeks fuzzy |
+|---|---:|---:|
+| Penduduk terpapar | 136.976,831 | 0,999973 |
+| Kerugian fisik | 758.212,439 | 1,000000 |
+| Kerugian ekonomi | 1.088.991,583 | 1,000000 |
+| Kerusakan lingkungan | 182,500 | 0,631952 |
+
+$$V_{banjir}=0{,}4(0{,}999973)+0{,}25(1)+0{,}25(1)+0{,}1(0{,}631952)=0{,}963184$$
+
+Saturasi komponen fisik dan ekonomi adalah sinyal audit satuan dan kalibrasi, bukan bukti bahwa nilai input telah valid.
+
+## Agregasi dan Keluaran
+
+| Variabel | Nilai workbook |
+|---|---:|
+| $HM_{raw}$ | 8,998000 |
+| $VM_{raw}$ | 9,171104 |
+| $RP_{raw}$ | 9,084140 |
+| $RP_{idx}$ | 0,753967 |
+| IKD | 0,210000 |
+| C | 0,175000 |
+| RA | 0,788684 |
+| RR | 3,107147 |
+
+$$RP_{raw}=\sqrt{8{,}998\times9{,}171104}=9{,}084140$$
+
+$$RP_{idx}=I(9{,}084140;m=5{,}186100;s=1{,}997839)=0{,}753967$$
+
+$$C=\frac{1/3}{0{,}4}\times0{,}21=0{,}175000$$
+
+$$RA=\sqrt{0{,}753967(1-0{,}175000)}=0{,}788684$$
+
+$$RR=\log_2(0{,}753967/0{,}175000)+1=3{,}107147$$
+
+::: {.callout-warning}
+Kesesuaian angka membuktikan bahwa formula workbook dapat direproduksi. Hal itu tidak sekaligus mengesahkan satuan input, urutan metode, klasifikasi, atau status kebijakan keluaran.
+:::

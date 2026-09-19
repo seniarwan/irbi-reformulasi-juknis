@@ -1,0 +1,241 @@
+---
+title: "Register Isu Metodologis"
+subtitle: "Kendali keputusan sebelum penetapan nasional"
+page-layout: full
+---
+
+::: {.metric-grid}
+::: {.metric-card}
+<span class="metric-value">18</span><span class="metric-label">isu terbuka</span>
+:::
+::: {.metric-card .metric-critical}
+<span class="metric-value">10</span><span class="metric-label">kritis</span>
+:::
+::: {.metric-card .metric-high}
+<span class="metric-value">7</span><span class="metric-label">tinggi</span>
+:::
+::: {.metric-card}
+<span class="metric-value">1</span><span class="metric-label">sedang</span>
+:::
+:::
+
+Register ini memisahkan temuan telaah dari keputusan. Semua butir masih berstatus terbuka; formulasi draf tidak boleh dibaca sebagai penyelesaian sepihak. [Unduh register CSV](data/isu_terbuka.csv){.btn .btn-primary}
+
+## Daftar Isu
+
+
+::: {.issue-card .severity-kritis #m-01}
+::: {.issue-head}
+<span class="issue-id">M-01</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Persamaan 11
+
+**Temuan.** Pembilang pada PDF tertulis y_max - y_max sehingga selalu nol.
+
+**Tindak lanjut.** Validasi dengan tim metodologi; dugaan matematis y_max - y_min tidak boleh diberlakukan tanpa persetujuan.
+:::
+
+::: {.issue-card .severity-kritis #m-02}
+::: {.issue-head}
+<span class="issue-id">M-02</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Persamaan 2-3
+
+**Temuan.** Simbol A_L dan A_U dipakai tetapi bagian 'dimana' hanya mendefinisikan I_L dan I_U.
+
+**Tindak lanjut.** Tambahkan definisi eksplisit dan uji ulang kalibrasi midpoint/spread.
+:::
+
+::: {.issue-card .severity-kritis #m-03}
+::: {.issue-head}
+<span class="issue-id">M-03</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Persamaan 4 dan data kosong
+
+**Temuan.** Notasi menunjukkan jumlah indeks tunggal; arti n dan penanganan bahaya tidak berlaku/missing belum operasional. Dalam workbook, sel kosong dapat diperlakukan seperti nol oleh IF(x=0,0,...) dan IFERROR yang menghasilkan teks kosong.
+
+**Tindak lanjut.** Tetapkan daftar bahaya, cakupan n, kode status data, serta aturan terpisah untuk nol sah, tidak berlaku, tidak tersedia, dan gagal validasi.
+:::
+
+::: {.issue-card .severity-tinggi #m-04}
+::: {.issue-head}
+<span class="issue-id">M-04</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span>
+:::
+
+### Taksonomi bahaya
+
+**Temuan.** Tabel parameter menyebut 10/11 jenis, sedangkan Tabel 2 menggabungkan Tanah Longsor/Likuefaksi.
+
+**Tindak lanjut.** Tetapkan daftar nasional final dan pemetaan setiap bahaya ke parameter/bobot.
+:::
+
+::: {.issue-card .severity-kritis #m-05}
+::: {.issue-head}
+<span class="issue-id">M-05</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Urutan dan label variabel
+
+**Temuan.** HM/VM telah ditransformasi, kemudian RP_raw kembali ditransformasi dengan parameter MULTI; definisi nilai sebelum/sesudah transformasi perlu dipertegas. Label workbook seperti R=V* serta HV_MULTI belum cukup membedakan kerentanan, nilai mentah, dan indeks hasil transformasi.
+
+**Tindak lanjut.** Tetapkan kamus variabel HM_raw, VM_raw, RP_raw, RP_idx, C, RA, dan RR; buat diagram alir serta contoh hitung uji.
+:::
+
+::: {.issue-card .severity-kritis #m-06}
+::: {.issue-head}
+<span class="issue-id">M-06</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### RR saat C=0
+
+**Temuan.** RR = log2(RP/C)+1 tidak terdefinisi untuk C=0 dan sangat sensitif saat C mendekati nol. Workbook belum memiliki guard; data saat telaah belum memicu galat karena C minimum sekitar 0,1667.
+
+**Tindak lanjut.** Tetapkan aturan minimum C/epsilon atau status khusus, beserta implikasi klasifikasi.
+:::
+
+::: {.issue-card .severity-tinggi #m-07}
+::: {.issue-head}
+<span class="issue-id">M-07</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span>
+:::
+
+### Rentang RR
+
+**Temuan.** Klaim bahwa konstanta memastikan nilai non-negatif tidak selalu benar ketika RP/C < 0,5.
+
+**Tindak lanjut.** Uji domain aktual; putuskan apakah RR dibatasi, dibiarkan, atau diberi aturan khusus.
+:::
+
+::: {.issue-card .severity-kritis #m-08}
+::: {.issue-head}
+<span class="issue-id">M-08</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Klasifikasi RP/C/RA
+
+**Temuan.** Batas kelas selain RR belum dinyatakan lengkap dalam bagian metode laporan. Workbook memakai 0,333 dan 0,666 untuk kalibrasi/kelas RA, sedangkan transformasi kapasitas memakai pecahan eksak 1/3 dan 2/3.
+
+**Tindak lanjut.** Tetapkan tabel kelas nasional, presisi normatif, aturan nilai batas, pembulatan, warna, dan kasus uji di sekitar ambang.
+:::
+
+::: {.issue-card .severity-tinggi #m-09}
+::: {.issue-head}
+<span class="issue-id">M-09</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span>
+:::
+
+### Penyetaraan
+
+**Temuan.** Nilai x_max kelas risiko tinggi ditetapkan asumtif, tetapi angka dan tata kelolanya belum normatif.
+
+**Tindak lanjut.** Tetapkan nilai, dasar, versi, dan periode berlaku selama masa transisi.
+:::
+
+::: {.issue-card .severity-kritis #m-10}
+::: {.issue-head}
+<span class="issue-id">M-10</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Status RA
+
+**Temuan.** Laporan menyebut RA sebagai IRBI Baru namun juga sebagai indikator komplementer; outline merekomendasikan RA sebagai keluaran utama.
+
+**Tindak lanjut.** Diperlukan keputusan kebijakan/regulatif tentang indikator utama dan indikator diagnostik.
+:::
+
+::: {.issue-card .severity-tinggi #m-11}
+::: {.issue-head}
+<span class="issue-id">M-11</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span>
+:::
+
+### Data antarwaktu
+
+**Temuan.** H/V diperbarui berkala, IKD tahunan; perubahan RA dapat berasal dari versi data yang berbeda.
+
+**Tindak lanjut.** Tetapkan baseline, cut-off, restatement, dan aturan seri waktu.
+:::
+
+::: {.issue-card .severity-tinggi #m-12}
+::: {.issue-head}
+<span class="issue-id">M-12</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span>
+:::
+
+### Landasan hukum
+
+**Temuan.** Verifikasi awal menemukan OTK BNPB tahun 2025 dan perubahan Perpres BNPB yang belum tercermin lengkap pada laporan sumber.
+
+**Tindak lanjut.** Unit hukum mengonfirmasi keberlakuan, pencabutan/penggantian, nomenklatur, serta dasar kewenangan sebelum penetapan Juknis.
+:::
+
+::: {.issue-card .severity-kritis #m-13}
+::: {.issue-head}
+<span class="issue-id">M-13</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Identitas waktu dan skenario workbook
+
+**Temuan.** FUZZY_INDEX_V2021 menggunakan bahaya dan kerentanan versi 2021 tetapi kapasitas 2025; FUZZY_INDEX_V2025 mempertahankan bahaya 2021 dan kapasitas 2025 lalu mengganti kerentanan menjadi versi 2025. Perbandingan keduanya bukan seri waktu IRBI 2021-2025.
+
+**Tindak lanjut.** Tetapkan tahun/versi setiap komponen, nama resmi skenario, aturan baseline, dan label keluaran yang tidak menimbulkan interpretasi sebagai tren tahunan.
+:::
+
+::: {.issue-card .severity-kritis #m-14}
+::: {.issue-head}
+<span class="issue-id">M-14</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Satuan dan skala input
+
+**Temuan.** Walaupun header kedua sumber memakai satuan yang sama, median rasio nilai V2025 terhadap HV2021 sekitar 1.283 kali untuk kerugian fisik, 1.480 kali untuk kerugian ekonomi, dan 0,018 kali untuk kerusakan lingkungan. Transformasi V2025 menjadi sangat jenuh pada kerugian fisik/ekonomi.
+
+**Tindak lanjut.** Audit satuan, tahun harga, metode estimasi, resolusi spasial, dan agregasi; susun kamus data; lalu lakukan kalibrasi serta uji sensitivitas ulang sebelum parameter ditetapkan.
+:::
+
+::: {.issue-card .severity-kritis #m-15}
+::: {.issue-head}
+<span class="issue-id">M-15</span><span class="severity-badge kritis">Kritis</span><span class="status-badge">Terbuka</span>
+:::
+
+### Penggabungan data wilayah
+
+**Temuan.** Sebagian referensi memakai pencarian berdasarkan ID, tetapi data kerentanan banyak dipanggil dengan referensi baris langsung. Urutan tiga tabel saat ini sama untuk 514 wilayah, namun penyortiran atau penambahan baris terpisah dapat memasangkan wilayah yang salah tanpa galat formula.
+
+**Tindak lanjut.** Gunakan penggabungan berbasis kunci wilayah unik; validasi keunikan, kelengkapan, cakupan, tahun kode, dan rekonsiliasi nama sebelum perhitungan.
+:::
+
+::: {.issue-card .severity-tinggi #m-16}
+::: {.issue-head}
+<span class="issue-id">M-16</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span>
+:::
+
+### Sumber kapasitas ganda
+
+**Temuan.** IKD dan C tersedia pada RAW_IKD2025 serta disalin ke RAW_HV2021. Skenario V2021 dan V2025 mengambil kapasitas dari salinan yang berbeda meskipun nilainya saat ini identik.
+
+**Tindak lanjut.** Tetapkan satu tabel induk IKD/kapasitas, hapus ketergantungan pada salinan, dan tambahkan kontrol rekonsiliasi versi.
+:::
+
+::: {.issue-card .severity-sedang #m-17}
+::: {.issue-head}
+<span class="issue-id">M-17</span><span class="severity-badge sedang">Sedang</span><span class="status-badge">Terbuka</span>
+:::
+
+### Nomenklatur kelas RR
+
+**Temuan.** Laporan menggunakan kategori Ketimpangan Ringan untuk RR >1,00 sampai <=1,50, sedangkan workbook menghasilkan KETIMPANGAN RENDAH pada rentang yang sama.
+
+**Tindak lanjut.** Tetapkan nomenklatur resmi dan selaraskan Juknis, template hitung, tabel, peta, dashboard, serta metadata keluaran.
+:::
+
+::: {.issue-card .severity-tinggi #m-18}
+::: {.issue-head}
+<span class="issue-id">M-18</span><span class="severity-badge tinggi">Tinggi</span><span class="status-badge">Terbuka</span>
+:::
+
+### Validasi domain input
+
+**Temuan.** Workbook belum menolak atau memberi status khusus untuk indikator negatif, IKD di luar 0-1, maupun hasil transformasi di luar domain yang ditetapkan. Data saat telaah tidak memicu kondisi tersebut.
+
+**Tindak lanjut.** Tetapkan domain setiap variabel, aturan penolakan atau koreksi, pesan galat, dan kasus uji batas sebelum perhitungan nasional.
+:::

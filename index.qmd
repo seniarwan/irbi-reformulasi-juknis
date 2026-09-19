@@ -1,128 +1,127 @@
 ---
-title: "Petunjuk Teknis Reformulasi IRBI Nasional"
-subtitle: "Panduan operasional bagi BPBD provinsi/kabupaten-kota"
+title: "Petunjuk Teknis Nasional IRBI"
+subtitle: "Ruang kerja penyusunan metode reformulasi"
 date: 2026-09-19
+date-format: "D MMMM YYYY"
+page-layout: full
 ---
 
-Petunjuk teknis ini memandu BPBD provinsi dan kabupaten/kota menghitung, membaca, dan memanfaatkan Indeks Risiko Bencana Indonesia (IRBI) hasil reformulasi, berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA) dan perkakas hitung pendampingnya.
-
-::: {.callout-important}
-## Status dokumen
-
-Draf kerja — belum normatif. Dua butir metodologis pada Lampiran C masih menunggu angka resmi dari BNPB sebelum petunjuk teknis ini diterbitkan: nilai batas atas (*x_max*) kelas risiko tinggi pada penyetaraan skala (Bab VII).
+::: {.hero-panel}
+::: {.hero-kicker}
+DRAF ILUSTRATIF · VERSI 0.8
 :::
 
-## Ringkasan Bab
+## Dari metode kajian menjadi prosedur yang dapat dihitung, diperiksa, dan diaudit
+
+Dashboard ini menyatukan naskah delapan bab, perangkat operasional, contoh reproduksi workbook, ilustrasi metode, dan register keputusan yang masih terbuka.
+
+[Mulai dari Bab I](bab-1.qmd){.btn .btn-light .btn-lg} [Lihat isu kritis](register-isu.qmd){.btn .btn-outline-light .btn-lg}
+:::
+
+::: {.metric-grid}
+::: {.metric-card}
+<span class="metric-value">8</span>
+<span class="metric-label">bab utama</span>
+:::
+::: {.metric-card}
+<span class="metric-value">8</span>
+<span class="metric-label">lampiran operasional</span>
+:::
+::: {.metric-card}
+<span class="metric-value">6</span>
+<span class="metric-label">ilustrasi konsep dan alur</span>
+:::
+::: {.metric-card .metric-alert}
+<span class="metric-value">18</span>
+<span class="metric-label">isu terbuka · 10 kritis</span>
+:::
+:::
+
+::: {.callout-important}
+## Status metodologi
+
+Dokumen ini **belum normatif**. Sepuluh isu kritis masih memengaruhi formula, satuan, urutan transformasi, identitas skenario, penggabungan wilayah, klasifikasi, dan kedudukan Risiko Aktual. Dashboard membedakan dengan jelas antara **formula yang direproduksi dari workbook**, **narasi laporan**, dan **ketentuan yang masih memerlukan keputusan**.
+:::
+
+## Struktur petunjuk teknis
 
 ::: {.card-grid}
-
 ::: {.summary-card}
 <span class="card-num">Bab I</span>
 
-#### [Pendahuluan](bab-1.qmd)
-
-Latar belakang, maksud dan tujuan, dasar hukum, ruang lingkup, dan istilah.
+### [Pendahuluan](bab-1.qmd)
+Kebutuhan, tujuan, pengguna, ruang lingkup, dasar hukum, dan istilah.
 :::
-
 ::: {.summary-card}
 <span class="card-num">Bab II</span>
 
-#### [Konsep dan Kerangka](bab-2.qmd)
-
-Pemisahan risiko potensial, kapasitas, risiko aktual, dan rasio risiko.
+### [Kerangka Konseptual](bab-2.qmd)
+Pemisahan RP, C, RA, dan RR beserta batas penggunaannya.
 :::
-
 ::: {.summary-card}
 <span class="card-num">Bab III</span>
 
-#### [Data dan Indikator](bab-3.qmd)
-
-Struktur indikator, sumber data resmi, dan syarat kualitas data.
+### [Data dan Input](bab-3.qmd)
+Unit analisis, metadata, satuan, status data, dan penggabungan wilayah.
 :::
-
 ::: {.summary-card}
 <span class="card-num">Bab IV</span>
 
-#### [Tahapan Perhitungan](bab-4.qmd)
-
-Alur dan ringkasan delapan langkah perhitungan (rincian di Lampiran A–C).
+### [Metode Perhitungan](bab-4.qmd)
+Transformasi, agregasi, RP, C, RA, RR, dan titik keputusan metode.
 :::
-
 ::: {.summary-card}
 <span class="card-num">Bab V</span>
 
-#### [Klasifikasi dan Interpretasi](bab-5.qmd)
-
-Kelas risiko potensial/aktual/rasio risiko dan cara membacanya.
+### [Mutu dan Interpretasi](bab-5.qmd)
+Gerbang QA/QC, penyajian, klasifikasi, dan batas interpretasi.
 :::
-
 ::: {.summary-card}
 <span class="card-num">Bab VI</span>
 
-#### [Pengendalian Mutu](bab-6.qmd)
-
-Lima pemeriksaan wajib sebelum hasil dipakai untuk perencanaan.
+### [Pemanfaatan Kebijakan](bab-6.qmd)
+Penggunaan terpadu indikator untuk analisis dan perencanaan PRB.
 :::
-
 ::: {.summary-card}
 <span class="card-num">Bab VII</span>
 
-#### [Masa Transisi](bab-7.qmd)
-
-Tiga opsi implementasi dan roadmap nasional jangka pendek–panjang.
+### [Penyelenggaraan dan Transisi](bab-7.qmd)
+Siklus, peran, versi, pembaruan, dan pilihan transisi.
 :::
-
 ::: {.summary-card}
 <span class="card-num">Bab VIII</span>
 
-#### [Penutup](bab-8.qmd)
-
-Kesimpulan, ketentuan reviu, dan daftar pustaka.
+### [Penutup](bab-8.qmd)
+Ketentuan penerapan, evaluasi, dan pengelolaan perubahan metode.
+:::
 :::
 
+## Cara menggunakan ruang kerja ini
+
+::: {.process-grid}
+::: {.process-step}
+<span>01</span>
+
+**Pahami arsitektur**<br>
+Baca Bab I–II untuk membedakan indikator dan status kebijakannya.
+:::
+::: {.process-step}
+<span>02</span>
+
+**Siapkan dan hitung**<br>
+Gunakan Bab III–IV bersama Lampiran A–F; jangan melewati gerbang data.
+:::
+::: {.process-step}
+<span>03</span>
+
+**Periksa sebelum memakai**<br>
+Gunakan Bab V–VII, Lampiran G–H, dan Register Isu sebelum publikasi.
+:::
 :::
 
-## Lampiran
+## Dasar penyusunan
 
-::: {.card-grid}
-
-::: {.summary-card}
-<span class="card-num">Lampiran A</span>
-
-#### [Parameter Transformasi Fuzzy Sigmoid](lampiran-a.qmd)
-
-Tabel kalibrasi lengkap (batas bawah/atas, spread, midpoint).
-:::
-
-::: {.summary-card}
-<span class="card-num">Lampiran B</span>
-
-#### [Bobot Kerentanan per Jenis Bahaya](lampiran-b.qmd)
-
-Tabel bobot sub-komponen kerentanan untuk sepuluh jenis bahaya.
-:::
-
-::: {.summary-card}
-<span class="card-num">Lampiran C</span>
-
-#### [Contoh Perhitungan Lengkap](lampiran-c.qmd)
-
-Reproduksi penuh delapan langkah, Kabupaten Aceh Selatan, diverifikasi terhadap perkakas hitung.
-:::
-
-::: {.summary-card}
-<span class="card-num">Lampiran D</span>
-
-#### [Checklist Pengendalian Mutu](lampiran-d.qmd)
-
-Daftar periksa siap pakai untuk setiap siklus perhitungan.
-:::
-
-:::
-
-## Sumber
-
-- Badan Nasional Penanggulangan Bencana. (2026). *Laporan Reformulasi Indeks Risiko Bencana (IRBI) Tahun 2026*. BNPB – Australian Government (SIAP SIAGA).
-- Perkakas hitung pendamping *CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx*.
-
-Daftar pustaka lengkap ada di [Bab VIII](bab-8.qmd#daftar-pustaka).
+- *Laporan Reformulasi Indeks Risiko Bencana (IRBI) Tahun 2026*.
+- Workbook `CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx` sebagai sumber reproduksi implementasi, bukan pengganti keputusan metodologis.
+- Draf Petunjuk Teknis Nasional IRBI struktur delapan bab, versi ilustratif 0.7.
+- [Register isu metodologis](register-isu.qmd) sebagai kendali keputusan dan tindak lanjut.

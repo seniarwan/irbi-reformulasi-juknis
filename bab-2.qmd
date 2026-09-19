@@ -1,51 +1,76 @@
 ---
-title: "Bab II. Konsep dan Kerangka IRBI Reformulasi"
+title: "Bab II. Kerangka Konseptual dan Ketentuan Umum"
+subtitle: "Draf ilustratif v0.8 — substansi diselaraskan dengan naskah 8 bab"
 ---
 
-IRBI reformulasi menegaskan kembali kapasitas sebagai variabel penentu risiko, bukan sekadar komponen pengurang dalam indeks komposit.
+::: {.status-strip}
+**Status:** draf kerja, belum normatif &nbsp;·&nbsp; **Acuan:** laporan 2026, workbook, dan register isu &nbsp;·&nbsp; **Versi:** 0.8
+:::
+
+## Tujuan Bab
+
+
+Menjelaskan pemisahan Risiko Potensial, Kapasitas, Risiko Aktual, dan Rasio Risiko sebagai inti reformulasi serta batas penggunaannya dalam kebijakan.
 
 ## 2.1 Konsep Risiko Bencana
 
-Risiko bencana adalah hasil interaksi antara bahaya (*hazard*), kerentanan (*vulnerability*), dan kapasitas (*capacity*). Kapasitas daerah dalam mengantisipasi, merespons, dan pulih dari dampak bencana menentukan seberapa besar tekanan bahaya dan kerentanan benar-benar terwujud menjadi risiko.
+
+Risiko bencana dipahami sebagai hasil interaksi bahaya, kerentanan, dan kapasitas. Bahaya menggambarkan potensi kejadian yang dapat menimbulkan kerugian. Kerentanan menggambarkan kondisi penduduk, aset, kegiatan ekonomi, dan lingkungan yang dapat terdampak. Kapasitas menggambarkan kemampuan relatif daerah untuk mengelola tekanan risiko tersebut.
+
+Reformulasi IRBI memisahkan tekanan struktural yang dibentuk oleh bahaya dan kerentanan dari kemampuan daerah dalam mengelolanya. Pemisahan ini dimaksudkan agar perubahan kapasitas tidak tersembunyi di dalam satu indeks komposit dan agar penyebab perubahan hasil dapat ditelusuri.
 
 ## 2.2 Perbedaan dengan IRBI Eksisting
 
-| Aspek | IRBI Eksisting | IRBI Reformulasi |
-| --- | --- | --- |
-| Struktur keluaran | Satu indeks komposit tunggal | Tiga keluaran terpisah: risiko potensial, risiko aktual, rasio risiko |
-| Bobot komponen | Bahaya 40%, kerentanan 30%, kapasitas 30%, digabung dalam satu formula | Kapasitas dihitung terpisah sebagai pembanding terhadap risiko potensial, bukan bobot gabungan |
-| Sensitivitas terhadap kapasitas | Implisit; peningkatan kapasitas tidak selalu tercermin proporsional pada nilai indeks | Eksplisit; risiko aktual dan rasio risiko dirancang untuk merepresentasikan kontribusi kapasitas |
-| Fungsi evaluasi kinerja | Terbatas untuk menafsirkan perubahan nilai sebagai dampak intervensi kebijakan | Rasio risiko berfungsi sebagai indikator ketimpangan risiko-kapasitas untuk evaluasi kinerja |
 
-Reformulasi ini tidak menggantikan IRBI eksisting secara langsung, melainkan melengkapinya sebagai instrumen analitis tambahan selama masa transisi ([Bab VII](bab-7.qmd)).
+| Aspek | IRBI eksisting | Kerangka reformulasi |
+|---|---|---|
+| Struktur keluaran | Indeks komposit tunggal | RP, C, RA, dan RR disajikan terpisah |
+| Posisi kapasitas | Bagian dari pembobotan komposit | Variabel tersendiri yang memoderasi RP dan menjadi pembanding dalam RR |
+| Interpretasi perubahan | Perubahan komponen dapat saling menutupi | Perubahan tekanan risiko dan kapasitas dapat dibaca terpisah |
+| Status kebijakan | Digunakan dalam sistem berjalan | Status penerapan menunggu keputusan regulatif dan masa transisi |
 
-## 2.3 Tiga Komponen Pembentuk
+## 2.3 Komponen Pembentuk
 
-Struktur indikator dikelompokkan ke dalam tiga komponen utama:
 
-1. **Bahaya (H)** — sepuluh jenis bahaya utama (gempa bumi, tsunami, banjir, banjir bandang, tanah longsor/likuefaksi, letusan gunungapi, cuaca ekstrim, gelombang ekstrim dan abrasi, kebakaran lahan dan hutan, kekeringan).
-2. **Kerentanan (V)** — empat komponen: penduduk terpapar, kerugian fisik, kerugian ekonomi, kerusakan lingkungan.
-3. **Kapasitas (C)** — dihitung terpisah dari data Indeks Ketahanan Daerah (IKD), digunakan sebagai pembanding terhadap risiko potensial, bukan digabung ke dalam bobot komposit.
+Komponen bahaya terdiri atas indeks bahaya tunggal untuk jenis bahaya yang ditetapkan secara nasional. Workbook menggunakan 11 kolom bahaya, yaitu banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi sehingga menyebut 10 jenis. Daftar nasional final harus diputuskan melalui M-04.
 
-Indikator bahaya dan kerentanan membentuk risiko potensial; indikator kapasitas digunakan secara terpisah sebagai pembanding untuk menghasilkan risiko aktual.
+Kerentanan dibentuk dari penduduk terpapar, kerugian fisik, kerugian ekonomi, dan kerusakan lingkungan. Kapasitas direpresentasikan melalui IKD yang ditransformasikan menjadi C pada skala 0-1.
 
-## 2.4 Tiga Keluaran Indeks dan Hubungannya
+## 2.4 Risiko Potensial
 
-```{mermaid}
-flowchart LR
-    H[Indeks Bahaya] --> RP[Risiko Potensial]
-    V[Indeks Kerentanan] --> RP
-    RP --> RA[Risiko Aktual]
-    C[Indeks Kapasitas] --> RA
-    RP --> RR[Rasio Risiko]
-    C --> RR
-```
 
-Risiko potensial merepresentasikan tekanan bahaya dan kerentanan sebelum kapasitas diperhitungkan. Risiko aktual adalah risiko yang tersisa setelah kapasitas daerah diperhitungkan. Rasio risiko mengukur ketimpangan antara risiko potensial dan kapasitas, dipakai untuk menentukan prioritas penguatan kapasitas (tahapan lengkap di [Bab IV](bab-4.qmd)).
+Risiko Potensial (RP) menggambarkan tekanan risiko dari bahaya dan kerentanan sebelum kapasitas diperhitungkan. RP tidak boleh ditafsirkan sebagai ukuran keberhasilan atau kegagalan kapasitas daerah.
 
-## 2.5 Prinsip Dasar
+## 2.5 Kapasitas
 
-1. **Konsistensi kebijakan** — menjaga kesinambungan klasifikasi risiko dan keterbandingan antarwilayah agar reformulasi tidak menimbulkan diskontinuitas perencanaan.
-2. **Transparansi metodologis** — setiap tahap perhitungan dan transformasi indeks dapat ditelusuri dan dipahami pengguna, termasuk BPBD yang menjalankan perhitungan.
-3. **Sensitivitas terhadap kapasitas** — peningkatan kapasitas daerah tercermin secara proporsional dalam hasil indeks.
-4. **Keterpakaian kebijakan** — hasil reformulasi valid secara ilmiah sekaligus relevan dan mudah diinterpretasikan dalam pengambilan keputusan di daerah.
+
+Kapasitas (C) menggambarkan kemampuan relatif daerah dalam mengelola risiko. Nilainya diturunkan dari IKD melalui fungsi linier bertahap. Satu sumber induk IKD harus digunakan untuk mencegah perbedaan versi antartabel.
+
+## 2.6 Risiko Aktual
+
+
+Risiko Aktual (RA) menggambarkan risiko yang tersisa setelah RP dimoderasi oleh C. Laporan menyebut RA sebagai IRBI Baru sekaligus indikator komplementer. Sampai M-10 diputuskan, RA diperlakukan sebagai **kandidat keluaran utama**, bukan sebagai pengganti resmi IRBI eksisting.
+
+## 2.7 Rasio Risiko
+
+
+Rasio Risiko (RR) mengukur ketimpangan relatif antara RP dan C. RR bersifat diagnostik dan digunakan bersama RP, C, dan RA. RR tidak boleh digunakan sendirian untuk menyimpulkan tingkat risiko wilayah.
+
+## 2.8 Hubungan Antarindikator
+
+
+Alur konseptual yang dipertahankan adalah:
+
+`Data H -> agregasi bahaya -> RP`<br>
+`Data V -> transformasi dan pembobotan -> RP`<br>
+`IKD -> C`<br>
+`RP + C -> RA dan RR`
+
+Urutan transformasi pada bagian agregasi dan RP masih harus diputuskan melalui M-05 karena narasi laporan dan implementasi workbook tidak sepenuhnya sama.
+
+![Gambar 2.1. Arsitektur konseptual indikator IRBI: H dan V membentuk RP; C memoderasi RA dan dibandingkan dengan RP melalui RR.](assets/figures/gambar_2_1_arsitektur_irbi.png)
+
+## 2.9 Prinsip Penyelenggaraan
+
+
+Penyelenggaraan IRBI reformulasi mengikuti prinsip konsistensi definisi dan satuan, keterlacakan data, transparansi formula, reproduksibilitas, pengendalian versi, kehati-hatian interpretasi, serta pemisahan yang jelas antara hasil teknis dan keputusan kebijakan.

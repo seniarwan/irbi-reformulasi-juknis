@@ -1,33 +1,37 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - data/isu_terbuka.csv
 
 website:
   title: "Petunjuk Teknis IRBI Reformulasi"
-  description: "Petunjuk Teknis Reformulasi Indeks Risiko Bencana (IRBI) Nasional — panduan operasional bagi BPBD provinsi/kabupaten-kota"
+  description: "Draf kerja Petunjuk Teknis Nasional IRBI — metode, data, pengendalian mutu, dan implementasi"
   favicon: favicon.svg
   page-navigation: true
   back-to-top-navigation: true
   reader-mode: true
   page-footer:
     left: "Petunjuk Teknis Reformulasi IRBI Nasional — draf kerja, belum normatif"
-    right: "Disusun berdasarkan Laporan Reformulasi IRBI Nasional 2026 (BNPB–SIAP SIAGA)"
+    right: "Versi dashboard 0.8 · 19 September 2026"
   navbar:
     background: primary
     search: true
     left:
       - text: "Beranda"
         href: index.qmd
+      - text: "Register Isu"
+        href: register-isu.qmd
     right:
       - icon: github
-        href: https://github.com/
-        text: "Repo"
+        href: https://github.com/seniarwan/irbi-reformulasi-juknis
+        text: "Repositori"
   sidebar:
     style: docked
     collapse-level: 1
     contents:
       - index.qmd
-      - section: "Bab"
+      - section: "Petunjuk Teknis — 8 Bab"
         contents:
           - bab-1.qmd
           - bab-2.qmd
@@ -37,12 +41,19 @@ website:
           - bab-6.qmd
           - bab-7.qmd
           - bab-8.qmd
-      - section: "Lampiran"
+      - section: "Lampiran Operasional"
         contents:
           - lampiran-a.qmd
           - lampiran-b.qmd
           - lampiran-c.qmd
           - lampiran-d.qmd
+          - lampiran-e.qmd
+          - lampiran-f.qmd
+          - lampiran-g.qmd
+          - lampiran-h.qmd
+      - section: "Kendali Pengembangan"
+        contents:
+          - register-isu.qmd
 
 format:
   html:
@@ -57,6 +68,10 @@ format:
     code-copy: false
     link-external-icon: true
     link-external-newwindow: true
+    grid:
+      sidebar-width: 290px
+      body-width: 900px
+      margin-width: 250px
     mermaid:
       theme: neutral
 

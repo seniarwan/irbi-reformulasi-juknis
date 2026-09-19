@@ -1,43 +1,95 @@
 ---
-title: "Bab V. Klasifikasi dan Interpretasi Hasil"
+title: "Bab V. Pengendalian Mutu, Penyajian, dan Interpretasi"
+subtitle: "Draf ilustratif v0.8 — substansi diselaraskan dengan naskah 8 bab"
 ---
 
-Setiap keluaran indeks (risiko potensial, risiko aktual, rasio risiko) dibaca menurut kelasnya sendiri, bukan disamakan dengan klasifikasi IRBI eksisting.
+::: {.status-strip}
+**Status:** draf kerja, belum normatif &nbsp;·&nbsp; **Acuan:** laporan 2026, workbook, dan register isu &nbsp;·&nbsp; **Versi:** 0.8
+:::
 
-## 5.1 Klasifikasi Risiko Potensial dan Risiko Aktual
+## Tujuan Bab
 
-Risiko potensial (RP) dan risiko aktual (RA) memakai batas kelas yang sama, mengikuti indeks target fuzzy sigmoid (0,333 dan 0,666):
+Menetapkan pemeriksaan mutu serta cara menyajikan dan menafsirkan hasil tanpa melampaui batas metode.
 
-| Kelas | Rentang Indeks |
-| --- | --- |
-| Rendah | ≤ 0,333 |
-| Sedang | > 0,333 – ≤ 0,666 |
-| Tinggi | > 0,666 |
+![Gambar 5.1. Lima gerbang pengendalian mutu sebelum hasil IRBI dipublikasikan.](assets/figures/gambar_5_1_gerbang_qa.png)
 
-RP menunjukkan tekanan risiko struktural sebelum kapasitas diperhitungkan; RA menunjukkan risiko yang tersisa setelah kapasitas diperhitungkan. Wilayah dengan RP tinggi namun RA sedang atau rendah menandakan kapasitas berperan efektif meredam risiko.
+## 5.1 Pengendalian Mutu dan Validasi
 
-## 5.2 Klasifikasi Rasio Risiko
+### 5.1.1 Gate Data Input
 
-**Tabel 5.1.** Klasifikasi Nilai Rasio Risiko, Makna, dan Kebutuhan Program
 
-| RR | Kategori | Makna | Kebutuhan Program |
-| --- | --- | --- | --- |
-| ≤ 1,00 | Terkendali | Kapasitas relatif mampu mengimbangi atau melampaui risiko potensial yang dihadapi | Mempertahankan resiliensi dan memastikan pembangunan tidak menambah kerentanan baru |
-| > 1,00 – ≤ 1,50 | Ketimpangan Ringan | Risiko mulai lebih besar dari kapasitas, namun ketimpangan masih terbatas | Penguatan kapasitas dan pengurangan kerentanan secara selektif pada bagian sistem terlemah |
-| > 1,50 – ≤ 2,00 | Ketimpangan Sedang | Risiko sekitar 1,4–2 kali kapasitas; tekanan risiko semakin nyata | Pengurangan kerentanan dan peningkatan kapasitas pada sebagian besar komponen sistem |
-| > 2,00 – ≤ 3,00 | Ketimpangan Tinggi | Risiko sekitar 2–4 kali kapasitas; kapasitas belum memadai untuk mengelola risiko | Penguatan kapasitas secara menyeluruh dan peningkatan intensitas intervensi pada komponen kritis |
-| > 3,00 | Kritis | Risiko jauh melampaui kapasitas; sistem sangat rentan terhadap kegagalan | Intervensi intensif dan komprehensif untuk menurunkan kerentanan dan meningkatkan kapasitas secara sistemik |
+Perhitungan hanya dilanjutkan apabila seluruh sumber memiliki pemilik, tahun, versi, tanggal cut-off, satuan, tahun harga, kode wilayah, status validasi, dan checksum atau identitas berkas. Kunci wilayah harus unik dan penggabungan antartabel harus lolos rekonsiliasi cakupan.
 
-Rasio risiko bersifat komplementer terhadap risiko aktual, bukan pengganti indeks risiko utama: dipakai untuk mengarahkan prioritas program, bukan untuk pelaporan kinerja tunggal.
+### 5.1.2 Pemeriksaan Satuan dan Saturasi
 
-## 5.3 Cara Membaca Hasil untuk Perencanaan
 
-BPBD membaca ketiga indeks bersama-sama, bukan salah satu saja:
+Distribusi setiap indikator dibandingkan dengan parameter transformasinya. Proporsi nilai yang sangat dekat dengan 0 atau 1 dilaporkan. Saturasi massal memicu pemeriksaan satuan, metode estimasi, dan kalibrasi, bukan sekadar diterima sebagai hasil sah.
 
-1. **RP tinggi, RA rendah/sedang, RR terkendali** — kapasitas daerah efektif meredam risiko struktural; contoh pola ini tampak pada DKI Jakarta dan Jawa Tengah dalam hasil perhitungan nasional. Arah kebijakan: pertahankan investasi kapasitas yang sudah berjalan.
-2. **RP tinggi, RA tinggi, RR tinggi/kritis** — kapasitas belum memadai mengimbangi tekanan risiko; pola ini dominan di wilayah Indonesia timur (Papua dan pemekarannya, Maluku, Maluku Utara), sebagian Sulawesi (Sulawesi Barat, Sulawesi Tengah), serta Nusa Tenggara Timur. Arah kebijakan: prioritas penguatan kapasitas kelembagaan, infrastruktur, dan sistem pendukung penanggulangan bencana.
-3. **RP sedang/rendah** — tekanan bahaya dan kerentanan struktural relatif terkendali terlepas dari nilai RR; fokus kebijakan pada menjaga agar pembangunan tidak menambah kerentanan baru.
+### 5.1.3 Pemeriksaan Status Data
 
-## 5.4 Prioritas Intervensi Berdasarkan Rasio Risiko
 
-BPBD memakai kelas rasio risiko (Tabel 5.1) untuk menyusun urutan prioritas penguatan kapasitas antarwilayah dalam yurisdiksinya: wilayah berkelas Kritis dan Ketimpangan Tinggi menjadi prioritas utama dokumen perencanaan (RPB, RPJMD) dan pengalokasian anggaran pengurangan risiko bencana, sebelum wilayah berkelas Ketimpangan Sedang, Ringan, dan Terkendali.
+Nol sah, tidak berlaku, tidak tersedia, dan gagal validasi dihitung serta dilaporkan terpisah. Formula tidak boleh mengubah data kosong menjadi nol secara diam-diam atau menutup galat tak terduga dengan `IFERROR`.
+
+### 5.1.4 Pemeriksaan Parameter dan Bobot
+
+
+Versi parameter fuzzy dan tabel bobot dikunci. Setiap bobot per bahaya harus berjumlah 100%. Nilai spread dan midpoint dibandingkan dengan tabel induk. Perubahan parameter memerlukan keputusan, uji sensitivitas, dan catatan versi.
+
+### 5.1.5 Pemeriksaan Hasil Antara
+
+
+Indeks komponen, V per bahaya, agregat H, agregat V, `RP_raw`, `RP_idx`, IKD, C, RA, dan RR disimpan. Setiap tahap diuji terhadap contoh acuan dan diperiksa rentangnya. Penamaan variabel mengikuti kamus yang telah ditetapkan.
+
+### 5.1.6 Pemeriksaan Formula
+
+
+Pola formula harus konsisten antarbaris. Penghitungan ulang independen dilakukan pada seluruh baris atau sampel berisiko tinggi yang ditetapkan. Hasil workbook 2026 telah direplikasi hingga galat pembulatan mesin, tetapi validitas angka tetap bergantung pada validitas input dan urutan metode.
+
+### 5.1.7 Pemeriksaan Antarwaktu dan Antarwilayah
+
+
+Perubahan dipisahkan menurut sumber data, metode, parameter, kapasitas, dan wilayah administrasi. Perbandingan hanya dilakukan jika identitas setiap komponen diketahui. Wilayah dengan cakupan bahaya berbeda tidak dibandingkan tanpa penjelasan.
+
+### 5.1.8 Publikasi dan Koreksi
+
+
+Publikasi memerlukan persetujuan teknis, data, hukum, dan pejabat berwenang. Koreksi mencatat temuan, dampak, nilai sebelum/sesudah, persetujuan, tanggal rilis ulang, dan daftar keluaran yang terdampak.
+
+### 5.1.9 Gate Isu Kritis
+
+
+Metode tidak ditetapkan secara nasional sebelum isu kritis yang memengaruhi formula, satuan, identitas skenario, penggabungan wilayah, klasifikasi, dan status RA diselesaikan atau diberi ketentuan transisi yang sah.
+## 5.2 Penyajian dan Interpretasi Hasil
+
+### 5.2.1 Produk Wajib
+
+
+Setiap rilis menyajikan sekurang-kurangnya identitas wilayah, versi H, V, IKD, parameter dan metode, RP, C, RA, RR, kelas yang telah disahkan, status validasi, serta catatan perubahan. Hasil antara tersedia untuk audit meskipun tidak seluruhnya ditampilkan dalam publikasi utama.
+
+### 5.2.2 Pembulatan
+
+
+Perhitungan dan klasifikasi menggunakan presisi penuh. Pembulatan hanya dilakukan pada tabel, grafik, dan peta. Nilai yang tampak sama setelah pembulatan dapat memiliki kelas berbeda apabila klasifikasi dihitung dari nilai yang belum dibulatkan; keadaan ini dijelaskan pada metadata.
+
+### 5.2.3 Interpretasi Terpadu
+
+
+| Pola | Interpretasi | Arah analisis |
+|---|---|---|
+| RP tinggi, C tinggi, RA lebih rendah | Tekanan struktural tinggi tetapi kapasitas relatif meredam risiko | Pertahankan kapasitas dan kendalikan kerentanan baru |
+| RP tinggi, C rendah, RA dan RR tinggi | Tekanan struktural tidak diimbangi kapasitas | Telusuri kapasitas terlemah dan kerentanan dominan |
+| RP rendah/sedang, C rendah, RR dapat tinggi | Tekanan belum tinggi tetapi kapasitas tertinggal | Perkuat kapasitas tanpa melebihkan tingkat risiko saat ini |
+| RP berubah, C tetap | Perubahan berasal dari bahaya, kerentanan, data, atau metode | Audit versi H/V dan parameter |
+| RP tetap, C berubah | Perubahan terutama berasal dari IKD | Telusuri perubahan indikator kapasitas |
+
+Matriks ini merupakan panduan interpretasi, bukan aturan otomatis penetapan program.
+
+### 5.2.4 Tabel, Grafik, dan Peta
+
+
+Seluruh produk mencantumkan judul, unit analisis, tahun/versi setiap komponen, sumber data, metode, tanggal cut-off, legenda, kelas, pembulatan, dan status validasi. Peta menggunakan batas administrasi serta proyeksi yang ditetapkan. Warna kelas harus konsisten dan dapat dibedakan oleh pengguna dengan gangguan persepsi warna.
+
+### 5.2.5 Batas Interpretasi
+
+
+IRBI adalah instrumen analitis tingkat nasional. Hasil tidak menggantikan kajian risiko rinci, pengetahuan lokal, analisis sektoral, atau proses penetapan kebijakan. RR tidak digunakan sebagai satu-satunya ukuran prioritas dan RA belum disebut sebagai IRBI utama sebelum M-10 diputuskan.

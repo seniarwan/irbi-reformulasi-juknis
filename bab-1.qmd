@@ -1,60 +1,129 @@
 ---
 title: "Bab I. Pendahuluan"
+subtitle: "Draf ilustratif v0.8 — substansi diselaraskan dengan naskah 8 bab"
 ---
 
-Petunjuk teknis ini memandu BPBD provinsi dan kabupaten/kota menghitung, membaca, dan memanfaatkan Indeks Risiko Bencana Indonesia (IRBI) hasil reformulasi.
+::: {.status-strip}
+**Status:** draf kerja, belum normatif &nbsp;·&nbsp; **Acuan:** laporan 2026, workbook, dan register isu &nbsp;·&nbsp; **Versi:** 0.8
+:::
 
 ## 1.1 Latar Belakang
 
-IRBI eksisting telah digunakan lebih dari satu dekade sebagai rujukan perencanaan dan evaluasi kebijakan pengurangan risiko bencana. Struktur indeks komposit yang digunakan bersifat agregat dan kurang sensitif terhadap perubahan kapasitas daerah: wilayah dengan bahaya tinggi tetapi kapasitas meningkat signifikan tidak selalu tercermin secara proporsional dalam nilai indeks.
 
-Reformulasi IRBI memisahkan secara lebih jelas antara risiko potensial dan kapasitas, serta memperkenalkan risiko aktual dan rasio risiko sebagai indikator analitis pendukung. Petunjuk teknis ini menerjemahkan metodologi tersebut menjadi langkah kerja yang dapat dijalankan BPBD di lapangan.
+Indonesia menghadapi risiko bencana yang tinggi dan kompleks karena kondisi geografis, geologis, hidrometeorologis, serta dinamika sosial ekonomi yang beragam. Untuk mendukung perencanaan pembangunan dan pengambilan keputusan pengurangan risiko bencana, Pemerintah mengembangkan Indeks Risiko Bencana Indonesia (IRBI) sebagai instrumen nasional untuk menggambarkan tingkat risiko bencana antarwilayah. Selama lebih dari satu dekade, IRBI telah digunakan sebagai rujukan perencanaan, evaluasi kebijakan, penetapan prioritas program, dan pada sejumlah pemerintah daerah sebagai indikator kinerja.
 
-## 1.2 Maksud dan Tujuan
+Penggunaan tersebut menuntut agar IRBI dapat dibaca secara konsisten, dibandingkan antarwilayah dan antarwaktu, serta ditelusuri kembali ke data dan tahapan perhitungannya. Laporan Reformulasi IRBI Nasional mengidentifikasi bahwa pendekatan indeks komposit eksisting masih memiliki keterbatasan: kontribusi bahaya, kerentanan, dan terutama kapasitas belum terlihat secara eksplisit; kelas risiko yang luas membatasi ketajaman analisis; dan perubahan nilai indeks belum selalu dapat dikaitkan secara langsung dengan peningkatan kapasitas atau intervensi kebijakan.
 
-Maksud: memberikan panduan teknis dan operasional bagi BPBD provinsi/kabupaten-kota dalam menghitung, mengklasifikasikan, dan menginterpretasikan IRBI hasil reformulasi menggunakan data resmi nasional.
+Reformulasi IRBI dikembangkan untuk memperkuat fungsi analitis tersebut. Metode memisahkan Risiko Potensial (RP), Kapasitas (C), dan Risiko Aktual (RA), serta memperkenalkan Rasio Risiko (RR) sebagai indikator ketimpangan relatif antara risiko potensial dan kapasitas. Pemisahan ini dimaksudkan agar tekanan struktural akibat kombinasi bahaya dan kerentanan dapat dibedakan dari kemampuan daerah dalam mengelola risiko, tanpa memutus kontinuitas kebijakan secara tiba-tiba.
 
-Tujuan:
+Hasil kajian nasional menunjukkan bahwa daerah dengan risiko potensial tinggi tidak selalu memiliki risiko aktual tinggi apabila didukung kapasitas yang memadai. Sebaliknya, kapasitas yang rendah dapat mempertahankan risiko aktual dan rasio risiko pada tingkat tinggi. Temuan tersebut memperkuat kebutuhan akan keluaran IRBI yang tidak hanya menyajikan satu nilai agregat, tetapi juga menyediakan indikator diagnostik untuk mengarahkan pengurangan kerentanan dan penguatan kapasitas secara lebih terukur.
 
-1. Merumuskan langkah perhitungan risiko potensial dan risiko aktual secara terpisah dan tertelusur.
-2. Menyediakan prosedur perhitungan rasio risiko sebagai alat identifikasi ketimpangan antara risiko dan kapasitas daerah.
-3. Menjaga keterbandingan hasil dengan IRBI eksisting selama masa transisi kebijakan.
-4. Mendukung BPBD dalam memanfaatkan hasil IRBI reformulasi untuk perencanaan dan penentuan prioritas intervensi.
+Agar metode dapat diterapkan secara seragam, direplikasi, diperiksa, dan dimanfaatkan dalam kebijakan, diperlukan petunjuk teknis nasional. Petunjuk teknis ini menerjemahkan laporan kajian menjadi tata cara operasional yang memuat standar data, transformasi, perhitungan, pengendalian mutu, penyajian, interpretasi, pemanfaatan, pemutakhiran, dan ketentuan transisi.
 
-## 1.3 Dasar Hukum
+Dokumen ini merupakan draf kerja pengembangan petunjuk teknis. Penerapan metode sebagai standar nasional tetap mensyaratkan penyelesaian isu metodologis terbuka, validasi data dan formula, uji implementasi, penetapan klasifikasi, reviu hukum, serta keputusan mengenai kedudukan RA dan indikator pendamping dalam sistem IRBI nasional.
 
-1. Undang-Undang Nomor 24 Tahun 2007 tentang Penanggulangan Bencana.
-2. Undang-Undang Republik Indonesia Nomor 26 Tahun 2007 tentang Penataan Ruang.
-3. Undang-Undang Republik Indonesia Nomor 23 Tahun 2014 tentang Pemerintahan Daerah.
-4. Undang-Undang Nomor 59 Tahun 2024 tentang Rencana Pembangunan Jangka Panjang Nasional Tahun 2025–2045.
-5. Peraturan Pemerintah Nomor 2 Tahun 2018 tentang Standar Pelayanan Minimum.
-6. Peraturan Pemerintah Nomor 21 Tahun 2008 tentang Penyelenggaraan Penanggulangan Bencana.
-7. Peraturan Presiden Nomor 1 Tahun 2019 tentang Badan Nasional Penanggulangan Bencana.
-8. Peraturan Presiden Nomor 12 Tahun 2025 tentang Rencana Pembangunan Jangka Menengah Nasional Tahun 2025–2029.
-9. Peraturan Presiden Nomor 87 Tahun 2020 tentang Rencana Induk Penanggulangan Bencana Tahun 2020–2044.
-10. Peraturan Badan Nasional Penanggulangan Bencana Nomor 4 Tahun 2019 tentang Organisasi dan Tata Kerja Badan Nasional Penanggulangan Bencana.
-11. Peraturan Badan Nasional Penanggulangan Bencana Nomor 5 Tahun 2025 tentang Rencana Strategis Badan Nasional Penanggulangan Bencana.
-12. Peraturan Badan Nasional Penanggulangan Bencana Nomor 1 Tahun 2025 tentang Rencana Nasional Penanggulangan Bencana Tahun 2025–2029.
-13. Peraturan Kepala Badan Nasional Penanggulangan Bencana Nomor 2 Tahun 2012 tentang Pedoman Umum Pengkajian Risiko Bencana.
-14. Peraturan Menteri Dalam Negeri Nomor 101 Tahun 2018 tentang Standar Teknis Pelayanan Dasar pada Standar Pelayanan Minimal Sub Urusan Bencana Daerah Kabupaten/Kota.
 
-## 1.4 Ruang Lingkup
+## 1.2 Maksud
 
-Petunjuk teknis ini berlaku untuk perhitungan IRBI reformulasi pada skala provinsi dan kabupaten/kota di seluruh wilayah Indonesia, menggunakan data bahaya, kerentanan, dan kapasitas yang tersedia dalam kerangka data nasional resmi.
 
-IRBI reformulasi belum menggantikan IRBI eksisting. Selama masa transisi (lihat [Bab VII](bab-7.qmd)), kedua indeks digunakan berdampingan sesuai opsi implementasi yang dipilih BNPB.
+Petunjuk Teknis Nasional IRBI dimaksudkan sebagai acuan kerja yang seragam bagi penyelenggara dan pengguna dalam menyiapkan data, menghitung, memeriksa, menyajikan, menginterpretasikan, memanfaatkan, serta memutakhirkan IRBI berdasarkan metode reformulasi. Dokumen ini juga menjadi dasar pengendalian versi, pembagian tanggung jawab, dan audit proses agar hasil dapat ditelusuri dan direplikasi.
 
-## 1.5 Pengertian dan Istilah
+## 1.3 Tujuan
 
-| Istilah | Definisi |
-| --- | --- |
-| IRBI Eksisting | Indeks komposit risiko bencana yang saat ini digunakan secara resmi: bobot bahaya 40%, kerentanan 30%, kapasitas 30%. |
-| IRBI Reformulasi | Kerangka penilaian risiko baru yang memisahkan risiko potensial, risiko aktual, dan rasio risiko. |
-| Risiko Potensial | Indeks gabungan bahaya dan kerentanan, sebelum memperhitungkan kapasitas daerah. |
-| Risiko Aktual (IRBI Baru) | Risiko yang tersisa setelah risiko potensial diperhitungkan bersama kapasitas daerah. |
-| Rasio Risiko | Indikator ketimpangan antara tingkat risiko dan kapasitas daerah. |
-| Indeks Multi Bahaya | Gabungan indeks dari seluruh jenis bahaya yang dikaji pada suatu wilayah. |
-| Indeks Kerentanan Multi Bahaya | Gabungan indeks kerentanan (penduduk terpapar, kerugian fisik, kerugian ekonomi, kerusakan lingkungan) per jenis bahaya. |
-| Fuzzy Sigmoid (S-curve) | Fungsi transformasi nilai indikator mentah ke skala indeks 0–1. |
-| Midpoint (m) | Parameter kalibrasi fungsi fuzzy sigmoid yang menentukan titik tengah transformasi. |
-| Spread (s) | Parameter kalibrasi fungsi fuzzy sigmoid yang menentukan kecuraman kurva transformasi. |
+
+Petunjuk teknis ini bertujuan untuk:
+
+1. menyeragamkan tata cara pengumpulan, pemeriksaan, dan pengelolaan data input IRBI;
+2. menetapkan tahapan transformasi dan perhitungan HM, VM, RP, C, RA, dan RR yang transparan serta dapat direplikasi;
+3. menjaga konsistensi terminologi, notasi, parameter, klasifikasi, pembulatan, dan penyajian hasil;
+4. menjamin ketertelusuran sumber data, versi metode, hasil antara, keputusan koreksi, dan persetujuan pada setiap siklus penyusunan;
+5. memberikan kaidah interpretasi yang menghubungkan hasil indeks dengan kebutuhan analisis dan prioritas pengurangan risiko bencana tanpa melampaui batas kemampuan indeks; dan
+6. menyediakan kerangka transisi dan pemutakhiran agar perubahan metode tidak menimbulkan diskontinuitas yang tidak terkelola dalam perencanaan dan evaluasi kinerja.
+
+## 1.4 Sasaran Pengguna
+
+
+Petunjuk teknis ini ditujukan kepada pihak berikut. Pembagian peran final mengikuti penetapan kelembagaan pada Bab VII.
+
+| Pengguna | Kebutuhan penggunaan |
+|---|---|
+| BNPB | pemilik kebijakan/metode, koordinator penyusunan nasional, pengendali mutu, dan penerbit hasil sesuai kewenangan yang ditetapkan. |
+| Tim teknis nasional IRBI | mengelola data, parameter, perhitungan, dokumentasi, validasi, dan penyusunan keluaran nasional. |
+| Kementerian/lembaga dan produsen data | menyediakan atau memverifikasi data sektoral, metadata, tahun referensi, dan batas penggunaan data sesuai kewenangannya. |
+| BPBD provinsi dan kabupaten/kota | memeriksa konteks wilayah, mengklarifikasi data, menelaah hasil, dan menggunakan keluaran IRBI dalam perencanaan penanggulangan bencana. |
+| Perangkat perencanaan pemerintah pusat dan daerah | menggunakan hasil yang telah disahkan untuk analisis situasi, penentuan prioritas, penganggaran, pemantauan, dan evaluasi. |
+| Tim validasi, auditor, dan penelaah independen | memeriksa ketertelusuran data, konsistensi metode, reproduksibilitas perhitungan, dan kepatuhan terhadap prosedur. |
+| Akademisi, mitra pembangunan, dan publik | menggunakan hasil yang dipublikasikan untuk kajian dan komunikasi risiko dengan memperhatikan batasan interpretasi. |
+
+## 1.5 Ruang Lingkup
+
+
+Petunjuk teknis ini mengatur penyusunan IRBI pada skala dan unit analisis yang ditetapkan untuk setiap siklus nasional. Cakupan pengaturan meliputi:
+
+1. tata kelola data input, unit analisis, tahun referensi, metadata, dan validasi data;
+2. transformasi serta standardisasi indeks berbasis fungsi fuzzy;
+3. perhitungan Indeks Multi Bahaya (HM) dan Indeks Kerentanan Multi Bahaya (VM);
+4. perhitungan Risiko Potensial (RP), Indeks Kapasitas (C), Risiko Aktual (RA), dan Rasio Risiko (RR);
+5. penyetaraan dan transisi dari IRBI eksisting;
+6. pengendalian mutu, validasi, reproduksibilitas, dan koreksi kesalahan;
+7. penyajian, klasifikasi, interpretasi, dan pemanfaatan hasil; serta
+8. penyelenggaraan, pemutakhiran, pengelolaan versi, dokumentasi, dan publikasi IRBI.
+
+Petunjuk teknis ini tidak mencakup atau tidak dimaksudkan sebagai:
+
+1. penyusunan kajian risiko bencana rinci untuk satu jenis bahaya atau skala tapak;
+2. penggantian dokumen Kajian Risiko Bencana, rencana penanggulangan bencana, atau dokumen tata ruang yang diwajibkan oleh ketentuan lain;
+3. penetapan otomatis bahwa perubahan nilai IRBI merupakan dampak kausal suatu program tanpa analisis pendukung;
+4. pengambilan keputusan proyek, izin, atau investasi hanya berdasarkan satu nilai indeks; dan
+5. pemberlakuan RA sebagai indikator kinerja utama nasional sebelum terdapat keputusan kebijakan dan regulatif yang sah.
+
+Ketentuan teknis rinci mengenai data, formula, klasifikasi, penyajian, kelembagaan, dan transisi diatur pada bab terkait dan lampiran yang merupakan satu kesatuan dengan petunjuk teknis ini.
+
+## 1.6 Dasar Hukum dan Kebijakan
+
+
+Penyusunan petunjuk teknis ini memperhatikan peraturan perundang-undangan dan dokumen kebijakan berikut. Daftar ini merupakan hasil adaptasi laporan sumber dan verifikasi awal; unit hukum wajib mengonfirmasi keberlakuan, perubahan, hierarki, serta relevansinya sebelum dokumen ditetapkan.
+
+| No. | Peraturan/dokumen kebijakan | Relevansi terhadap Juknis IRBI |
+|---:|---|---|
+| 1 | Undang-Undang Nomor 24 Tahun 2007 tentang Penanggulangan Bencana | landasan penyelenggaraan penanggulangan bencana secara terencana, terpadu, terkoordinasi, dan menyeluruh. |
+| 2 | Peraturan Pemerintah Nomor 21 Tahun 2008 tentang Penyelenggaraan Penanggulangan Bencana | kerangka penyelenggaraan penanggulangan bencana pada tahap prabencana, tanggap darurat, dan pascabencana. |
+| 3 | Undang-Undang Nomor 26 Tahun 2007 tentang Penataan Ruang | keterkaitan informasi risiko dengan penataan ruang dan pengendalian pemanfaatan ruang. |
+| 4 | Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah beserta perubahannya | pembagian urusan dan tanggung jawab pemerintahan daerah, termasuk suburusan bencana. |
+| 5 | Peraturan Pemerintah Nomor 2 Tahun 2018 tentang Standar Pelayanan Minimal | keterkaitan informasi risiko dengan pemenuhan pelayanan dasar pemerintah daerah. |
+| 6 | Undang-Undang Nomor 59 Tahun 2024 tentang Rencana Pembangunan Jangka Panjang Nasional Tahun 2025-2045 | kerangka pembangunan jangka panjang dan pengendalian serta evaluasi pembangunan nasional. |
+| 7 | Peraturan Presiden Nomor 12 Tahun 2025 tentang Rencana Pembangunan Jangka Menengah Nasional Tahun 2025-2029 | arah pembangunan nasional jangka menengah dan penggunaan informasi risiko dalam perencanaan. |
+| 8 | Peraturan Presiden Nomor 87 Tahun 2020 tentang Rencana Induk Penanggulangan Bencana Tahun 2020-2044 | pedoman nasional jangka panjang penyelenggaraan penanggulangan bencana. |
+| 9 | Peraturan Presiden Nomor 1 Tahun 2019 tentang Badan Nasional Penanggulangan Bencana sebagaimana diubah dengan Peraturan Presiden Nomor 29 Tahun 2021 | kedudukan, tugas, dan fungsi BNPB. |
+| 10 | Peraturan Badan Nasional Penanggulangan Bencana Nomor 1 Tahun 2025 tentang Rencana Nasional Penanggulangan Bencana Tahun 2025-2029 | kebijakan, strategi, dan rencana aksi nasional penanggulangan bencana periode 2025-2029. |
+| 11 | Peraturan Badan Nasional Penanggulangan Bencana Nomor 5 Tahun 2025 tentang Rencana Strategis Badan Nasional Penanggulangan Bencana Tahun 2025-2029 | sasaran strategis, arah kebijakan, target kinerja, dan kerangka kelembagaan BNPB. |
+| 12 | Peraturan Badan Nasional Penanggulangan Bencana Nomor 6 Tahun 2025 tentang Organisasi dan Tata Kerja Badan Nasional Penanggulangan Bencana | acuan organisasi dan tata kerja BNPB terkini yang teridentifikasi pada verifikasi awal. |
+| 13 | Peraturan Kepala Badan Nasional Penanggulangan Bencana Nomor 2 Tahun 2012 tentang Pedoman Umum Pengkajian Risiko Bencana | acuan umum pengkajian risiko bencana; keberlakuan dan kesesuaiannya perlu dikonfirmasi pada reviu hukum final. |
+| 14 | Peraturan Menteri Dalam Negeri Nomor 101 Tahun 2018 tentang Standar Teknis Pelayanan Dasar pada Standar Pelayanan Minimal Sub-Urusan Bencana Daerah Kabupaten/Kota | keterkaitan informasi risiko dengan pelayanan informasi rawan bencana serta pelayanan dasar suburusan bencana. |
+
+> **Catatan verifikasi awal:** Laporan sumber masih mencantumkan Peraturan BNPB Nomor 4 Tahun 2019 tentang Organisasi dan Tata Kerja BNPB. JDIH BNPB telah memuat Peraturan BNPB Nomor 6 Tahun 2025 dengan judul yang sama. Hubungan pencabutan/penggantian dan implikasinya terhadap kewenangan penyelenggara IRBI harus dipastikan oleh unit hukum.
+
+## 1.7 Pengertian dan Istilah
+
+
+Dalam petunjuk teknis ini yang dimaksud dengan:
+
+| Istilah | Pengertian operasional |
+|---|---|
+| Bahaya (H) | potensi kejadian atau rangkaian kejadian yang dapat menimbulkan bencana; dalam metode digunakan sebagai data atau indeks per jenis bahaya. |
+| Kerentanan (V) | kondisi sosial, fisik, ekonomi, dan lingkungan yang meningkatkan kemungkinan terdampak bahaya; dalam metode dihitung per jenis bahaya. |
+| Indeks Multi Bahaya (HM) | indeks hasil agregasi dan transformasi indeks bahaya tunggal yang mewakili tekanan berbagai bahaya pada unit analisis. |
+| Indeks Kerentanan Multi Bahaya (VM) | indeks hasil perhitungan komponen kerentanan per bahaya, pembobotan, agregasi, dan transformasi pada unit analisis. |
+| Risiko Potensial (RP) | tekanan risiko yang dibentuk oleh HM dan VM sebelum kapasitas daerah diperhitungkan. |
+| Indeks Ketahanan Daerah (IKD) | instrumen penilaian ketahanan daerah yang digunakan sebagai sumber atau proksi kapasitas dalam metode reformulasi. |
+| Indeks Kapasitas (C) | nilai IKD yang ditransformasikan ke skala yang digunakan dalam perhitungan IRBI reformulasi. |
+| Risiko Aktual (RA) | risiko tersisa setelah RP dimoderasi oleh C; kedudukannya sebagai nilai utama IRBI masih memerlukan keputusan kebijakan dan regulatif. |
+| Rasio Risiko (RR) | indikator diagnostik yang membandingkan RP dan C untuk menunjukkan tingkat keseimbangan atau ketimpangan relatif di antara keduanya. |
+| IRBI eksisting | IRBI yang telah digunakan sebelum penerapan metode reformulasi dan menjadi acuan kesinambungan serta kebutuhan transisi. |
+| IRBI reformulasi | kerangka penilaian yang memisahkan RP, C, RA, dan RR berdasarkan metode dalam laporan sumber. |
+| Penyetaraan | mekanisme analitis sementara untuk menjaga keterbandingan skala atau kelas antara IRBI eksisting dan hasil metode reformulasi selama masa transisi. |
+| Unit analisis | wilayah administrasi atau unit lain yang ditetapkan pada spesifikasi data untuk satu siklus perhitungan dan digunakan secara konsisten pada seluruh input serta output. |
+| Versi metode | identitas terkendali atas formula, parameter, klasifikasi, aturan data, dan prosedur yang digunakan dalam satu siklus penyusunan IRBI. |
+| Reproduksibilitas | kemampuan pihak lain yang berwenang menghasilkan keluaran yang sama dengan input, versi metode, dan prosedur yang sama. |
+
+Apabila terdapat perbedaan penggunaan istilah antara bab, register terminologi dan keputusan metodologis dengan versi terbaru menjadi acuan kerja sampai terdapat penetapan resmi.

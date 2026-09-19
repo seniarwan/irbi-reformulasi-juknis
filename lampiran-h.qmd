@@ -1,0 +1,24 @@
+---
+title: "Lampiran H. Standar Penyajian, Kartografi, dan Laporan"
+---
+
+## Elemen Wajib Setiap Produk
+
+Setiap tabel, grafik, peta, atau dashboard memuat unit analisis; versi H, V, IKD, parameter, dan metode; tanggal cut-off; sumber; RP, C, RA, dan RR yang relevan; kelas yang telah disahkan; aturan pembulatan; status validasi; serta catatan perubahan.
+
+## Prinsip Visual
+
+- Gunakan satu palet kelas yang konsisten dan ramah gangguan persepsi warna.
+- Jangan memakai warna kelas yang belum disahkan sebagai isyarat normatif.
+- Tampilkan nilai dan kelas secara terpisah; sediakan definisi pada legenda.
+- Bedakan data tidak tersedia dari nilai nol dengan pola atau simbol khusus.
+- Jangan memetakan RA sebagai “IRBI resmi” sebelum kedudukannya diputuskan.
+
+## Struktur Laporan Hasil
+
+1. ringkasan eksekutif dan status rilis;
+2. data, periode, metode, dan perubahan versi;
+3. hasil RP, C, RA, dan RR;
+4. pemeriksaan mutu dan keterbatasan;
+5. interpretasi terpadu dan kebutuhan pendalaman;
+6. lampiran hasil antara, metadata, dan berita acara.

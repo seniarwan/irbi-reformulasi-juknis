@@ -1,15 +1,34 @@
 ---
-title: "Lampiran D. Checklist Pengendalian Mutu"
+title: "Lampiran D. Klasifikasi dan Matriks Interpretasi"
 ---
 
-Daftar periksa ini menjalankan lima pemeriksaan pada [Bab VI](bab-6.qmd) untuk setiap siklus perhitungan IRBI reformulasi.
+## Status Klasifikasi
 
-- [ ] Tidak ada nilai kosong atau negatif pada data bahaya, kerentanan, dan kapasitas.
-- [ ] IKD setiap wilayah berada pada rentang 0–1.
-- [ ] Kode wilayah unik; tidak ada duplikasi atau kode yang hilang.
-- [ ] Satuan Kerugian Fisik dan Kerugian Ekonomi sudah Rp milyar, sesuai [Lampiran A](lampiran-a.qmd).
-- [ ] Tidak ada indeks yang jenuh di 0 atau 1 untuk lebih dari 10% wilayah dalam satu komponen — indikasi satuan salah.
-- [ ] $H_{multi}$, $V_{multi}$, RP, C, RA, dan RR tersimpan sebagai hasil antara, bukan hanya nilai akhir.
-- [ ] Hasil hitung direplikasi ulang secara independen pada minimal satu wilayah sampel dan cocok dengan hasil sistem.
-- [ ] Versi metode, tanggal cut-off data, dan sumber data dicantumkan pada setiap rilis.
-- [ ] Koreksi data pasca-publikasi dicatat dengan jejak perubahan, tidak menimpa data lama secara langsung.
+| Keluaran | Status dalam draf |
+|---|---|
+| RP | kelas nasional belum ditetapkan; workbook tidak menyediakan kelas RP tersendiri |
+| C | batas transformasi tersedia, tetapi nomenklatur kelas perlu ditetapkan |
+| RA | workbook memakai 0,333 dan 0,666; status normatif, presisi, dan nilai batas menunggu M-08 |
+| RR | rentang tersedia pada laporan; nomenklatur rentang kedua berbeda dengan workbook (M-17) |
+
+## Klasifikasi RR dari Laporan
+
+| Rentang | Kategori laporan |
+|---|---|
+| $RR \le 1{,}00$ | Terkendali |
+| $1{,}00 < RR \le 1{,}50$ | Ketimpangan Ringan |
+| $1{,}50 < RR \le 2{,}00$ | Ketimpangan Sedang |
+| $2{,}00 < RR \le 3{,}00$ | Ketimpangan Tinggi |
+| $RR > 3{,}00$ | Kritis |
+
+Workbook menggunakan istilah **Ketimpangan Rendah** pada rentang kedua. Publikasi final harus memakai satu nomenklatur yang disahkan.
+
+## Matriks Interpretasi
+
+| Pola | Interpretasi | Pendalaman |
+|---|---|---|
+| RP tinggi, C tinggi, RA lebih rendah | tekanan struktural tinggi, kapasitas relatif meredam | pertahankan kapasitas; kendalikan kerentanan baru |
+| RP tinggi, C rendah, RA/RR tinggi | tekanan tidak diimbangi kapasitas | telusuri kapasitas lemah dan kerentanan dominan |
+| RP rendah/sedang, C rendah, RR dapat tinggi | kapasitas tertinggal meski tekanan belum tinggi | perkuat kapasitas tanpa melebihkan risiko saat ini |
+
+Matriks adalah panduan analitis, bukan pemicu program otomatis.

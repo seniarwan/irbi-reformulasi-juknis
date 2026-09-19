@@ -1,36 +1,66 @@
 ---
-title: "Bab VII. Masa Transisi dan Implementasi"
+title: "Bab VII. Penyelenggaraan, Pemutakhiran, dan Transisi"
+subtitle: "Draf ilustratif v0.8 — pilihan transisi belum merupakan keputusan kebijakan"
 ---
 
-BNPB menetapkan satu dari tiga opsi implementasi secara nasional; BPBD menjalankan opsi yang berlaku, bukan memilih sendiri.
+::: {.status-strip}
+**Status:** draf kerja, belum normatif &nbsp;·&nbsp; **Fokus:** tata kelola siklus, versi, publikasi, dan transisi
+:::
 
-## 7.1 Tiga Opsi Implementasi
+## Tujuan Bab
 
-| Opsi | Deskripsi | Kapan Berlaku |
-| --- | --- | --- |
-| Paralel | IRBI reformulasi dipakai sebagai instrumen analitis pendamping; IRBI eksisting tetap indikator utama kebijakan dan Indikator Kinerja Utama (IKU) daerah | Jangka pendek — saat kesiapan data dan kelembagaan belum penuh |
-| Hibrida | Sebagian komponen reformulasi (risiko aktual, rasio risiko) diintegrasikan ke kerangka IRBI eksisting tanpa mengganti struktur indeks resmi | Jangka menengah — saat nilai tambah reformulasi sudah ingin dimanfaatkan tanpa mengganti indeks resmi |
-| Penuh | IRBI reformulasi ditetapkan sebagai standar nasional setelah fase uji implementasi dan penyesuaian regulasi | Jangka panjang — setelah kesiapan data, kapasitas kelembagaan, dan kerangka regulasi terpenuhi memadai |
+Menetapkan siklus penyelenggaraan, pengelolaan versi, pembaruan data, dokumentasi, publikasi, dan prasyarat pilihan transisi menuju penerapan nasional.
 
-Pada opsi Paralel dan Hibrida, BPBD tetap menjalankan Langkah 8 (penyetaraan skala, [Bab IV](bab-4.qmd)) agar hasil IRBI reformulasi tetap terbaca dalam sistem pelaporan kinerja berjalan. Opsi Penuh melewati langkah tersebut karena seluruh pelaporan sudah memakai skala reformulasi.
+![Siklus penyelenggaraan dari penetapan spesifikasi hingga evaluasi dan pembaruan.](assets/figures/gambar_7_1_siklus_penyelenggaraan.png){#fig-siklus-penyelenggaraan fig-alt="Siklus penyelenggaraan dan pemutakhiran IRBI" .figure-panel}
 
-## 7.2 Roadmap Implementasi Nasional
+## 7.1 Siklus Penyelenggaraan
 
-```{mermaid}
-flowchart LR
-    A[Jangka Pendek] --> B[Jangka Menengah]
-    B --> C[Jangka Panjang]
-```
+Satu siklus terdiri atas: penetapan spesifikasi; penerimaan dan verifikasi data; penguncian versi data dan metode; perhitungan; QA/QC independen; validasi; persetujuan; publikasi; koreksi; dan evaluasi. Setiap tahap menghasilkan catatan waktu, penanggung jawab, versi masukan, keputusan, dan keluaran.
 
-**Jangka pendek** — IRBI reformulasi diterapkan secara paralel dengan IRBI eksisting melalui uji implementasi terbatas. Fokus: sosialisasi metodologi ke BPBD, penyusunan pedoman teknis awal (dokumen ini), dan pengembangan sistem pendukung analisis.
+| Tahap | Keluaran minimum | Gerbang keputusan |
+|---|---|---|
+| Spesifikasi | unit analisis, periode, sumber, parameter, klasifikasi | disetujui pemilik metode |
+| Data | berkas terkunci, metadata, checksum, rekonsiliasi kode | lolos gerbang input |
+| Perhitungan | hasil antara dan keluaran per wilayah | hasil dapat direproduksi |
+| Validasi | temuan, koreksi, berita acara | isu kritis tidak tersisa tanpa disposisi |
+| Publikasi | tabel/peta, metadata, catatan metode, versi | disetujui pejabat berwenang |
+| Evaluasi | masukan pengguna dan daftar perubahan | dasar siklus berikutnya |
 
-**Jangka menengah** — perluasan uji implementasi ke lebih banyak wilayah, integrasi hasil reformulasi ke proses evaluasi kebijakan pengurangan risiko bencana. Fokus: penguatan kapasitas teknis BPBD, penyempurnaan sistem data, evaluasi berkala atas konsistensi dan keterpakaian hasil.
+## 7.2 Pembagian Peran
 
-**Jangka panjang** — adopsi lebih luas melalui penetapan regulatif sebagai standar nasional, apabila seluruh prasyarat teknis dan kelembagaan terpenuhi. IRBI reformulasi berfungsi sebagai instrumen utama penilaian risiko bencana nasional untuk perencanaan, penganggaran, dan evaluasi kinerja.
+| Aktor | Peran yang perlu ditetapkan |
+|---|---|
+| BNPB/pemilik metode | menetapkan metode, sumber, versi, klasifikasi, QA/QC, dan rilis nasional |
+| Tim teknis nasional | mengelola data, kode, perhitungan, pengujian, dokumentasi, dan reproduksi |
+| Produsen data/KL | menjamin definisi, satuan, periode, metadata, dan koreksi sumber |
+| BPBD provinsi | mengoordinasikan klarifikasi lintas kabupaten/kota dan konteks kewilayahan |
+| BPBD kabupaten/kota | memeriksa identitas wilayah, menelaah kewajaran, dan memakai hasil yang disahkan |
+| Validator/unit hukum | memeriksa formula, data, kewenangan, dan status dokumen sebelum penetapan |
 
-## 7.3 Kebutuhan Dukungan bagi BPBD
+Pembagian di atas merupakan rancangan fungsi. Nama unit dan kewenangan final harus mengikuti keputusan kelembagaan dan reviu hukum.
 
-1. **Dukungan regulatif** — kepastian hukum dan arah kebijakan transisi dari IRBI eksisting ke IRBI reformulasi, untuk menghindari interpretasi yang beragam antarwilayah.
-2. **Pedoman teknis nasional** — dokumen ini, mencakup tahapan perhitungan, interpretasi hasil, dan keterkaitan indikator dengan kebutuhan kebijakan.
-3. **Penguatan kapasitas sumber daya manusia** — pelatihan dan pendampingan teknis bagi staf BPBD, mengingat kompleksitas metodologi reformulasi lebih tinggi dibandingkan IRBI eksisting.
-4. **Sistem informasi dan visualisasi nasional** — memudahkan pemanfaatan hasil IRBI reformulasi oleh pengguna teknis maupun non-teknis di daerah.
+## 7.3 Pemutakhiran dan Pengelolaan Versi
+
+Keluaran tidak diberi satu label tahun apabila H, V, dan IKD berasal dari periode berbeda. Identitas minimum versi adalah `H-versi`, `V-versi`, `IKD-versi`, `parameter-versi`, `metode-versi`, `kode-wilayah-versi`, dan tanggal cut-off. Perubahan satu unsur menghasilkan versi keluaran baru dan tidak menimpa arsip lama.
+
+Data dinamis dapat ditinjau lebih sering, tetapi pembaruan hanya dipublikasikan setelah lulus prosedur yang sama. Koreksi pascarilis menyebut nilai sebelum/sesudah, alasan, wilayah terdampak, waktu, dan persetujuan.
+
+## 7.4 Alternatif Transisi
+
+| Alternatif | Posisi reformulasi | Prasyarat utama |
+|---|---|---|
+| Paralel | instrumen analitis pendamping | formula dapat diuji tanpa mengubah pelaporan resmi |
+| Hibrida | indikator tertentu dipakai pada proses yang ditetapkan | ruang penggunaan, otoritas, dan hubungan dengan IRBI eksisting jelas |
+| Penuh | menjadi standar nasional | isu kritis selesai; data, sistem, SDM, regulasi, dan komunikasi siap |
+
+Alternatif ini adalah **opsi kebijakan**, bukan tahapan otomatis. Otoritas yang berwenang menetapkan pilihan, ruang berlaku, masa uji, kriteria evaluasi, dan keputusan lanjutannya.
+
+## 7.5 Penyetaraan Skala
+
+Penyetaraan belum dapat dijalankan sebagai prosedur normatif. Persamaan 11 pada laporan memiliki pembilang yang secara literal menjadi nol; arah variabel dan nilai `x_max` kelas tinggi juga belum lengkap. Rumus dugaan matematis tidak boleh diberlakukan sebelum [M-01 dan M-09](register-isu.qmd) diselesaikan.
+
+Jika kelak disahkan, nilai hasil penyetaraan harus diberi label **nilai transisi**, disimpan bersama nilai asli kedua metode, serta dilengkapi versi rumus, parameter, dan kelas.
+
+## 7.6 Kesiapan Implementasi Penuh
+
+Implementasi penuh mensyaratkan penyelesaian seluruh isu kritis, kamus data dan satuan yang disahkan, penggabungan berbasis kunci wilayah, satu sumber induk kapasitas, perangkat hitung teruji, QA/QC independen, struktur kelembagaan, dasar hukum, mekanisme koreksi, dan strategi komunikasi publik.

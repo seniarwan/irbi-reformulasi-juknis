@@ -1,6 +1,6 @@
 # Petunjuk Teknis Reformulasi IRBI Nasional — Situs Quarto
 
-Situs dokumentasi multi-halaman untuk "Petunjuk Teknis Reformulasi Indeks Risiko Bencana (IRBI) Nasional", dibangun dengan [Quarto](https://quarto.org). Berisi 8 BAB metodologi perhitungan dan 4 Lampiran (parameter, bobot, contoh perhitungan lengkap, checklist mutu). Tidak memuat visualisasi data nasional per-provinsi — situs ini murni dokumentasi metodologi juknis.
+Situs dokumentasi multi-halaman untuk "Petunjuk Teknis Reformulasi Indeks Risiko Bencana (IRBI) Nasional", dibangun dengan [Quarto](https://quarto.org). Versi dashboard 0.8 berisi delapan bab, delapan lampiran operasional, enam ilustrasi konsep/alur, dan register berisi 18 isu metodologis terbuka. Situs ini merupakan ruang kerja penyusunan juknis dan belum menyajikan dashboard hasil IRBI nasional per wilayah.
 
 ## Struktur proyek
 
@@ -8,8 +8,11 @@ Situs dokumentasi multi-halaman untuk "Petunjuk Teknis Reformulasi Indeks Risiko
 _quarto.yml              # konfigurasi situs (sidebar, tema, format)
 index.qmd                # halaman depan dengan kartu ringkasan
 bab-1.qmd … bab-8.qmd    # delapan bab juknis
-lampiran-a.qmd … lampiran-d.qmd
-styles.scss / styles.css # tema dan gaya kartu ringkasan
+lampiran-a.qmd … lampiran-h.qmd
+register-isu.qmd        # register keputusan metodologis
+data/isu_terbuka.csv    # sumber register yang dapat diunduh
+assets/figures/         # enam ilustrasi konsep dan alur
+styles.scss / styles.css # tema, kartu, metrik, dan register isu
 favicon.svg
 .github/workflows/publish.yml  # auto-publish ke GitHub Pages
 ```
@@ -69,9 +72,6 @@ Perintah ini akan merender situs dan mem-push hasilnya ke branch `gh-pages` di r
 
 ## Catatan isi
 
-Dokumen ini mencantumkan dua isu terbuka yang belum final secara resmi (lihat kotak peringatan di `index.qmd`, Bab III.3.3, Bab VI, dan Lampiran C):
+Dokumen ini berstatus **draf kerja, belum normatif**. Register mencatat 18 isu terbuka: 10 kritis, 7 tinggi, dan 1 sedang. Isu kritis antara lain Persamaan 11, definisi parameter kalibrasi, status data kosong, urutan transformasi RP, kondisi `C=0`, klasifikasi, kedudukan RA, identitas skenario, satuan input, dan penggabungan data wilayah.
 
-1. Satuan Kerugian Fisik/Ekonomi pada data proyeksi 2025 tampak tidak konsisten dengan ambang Lampiran A.
-2. Nilai $x_{max}$ untuk penyetaraan skala kelas risiko tinggi (Bab VII / Lampiran C Langkah 8) belum dinyatakan angkanya secara resmi oleh BNPB.
-
-Perbarui bagian-bagian ini bila BNPB sudah menerbitkan angka/keputusan final.
+Formula pada contoh Aceh Selatan diberi label **reproduksi workbook**. Kecocokan numerik dengan workbook tidak diperlakukan sebagai pengesahan satuan input, urutan metode, klasifikasi, atau status kebijakan keluaran.

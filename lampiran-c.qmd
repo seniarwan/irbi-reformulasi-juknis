@@ -1,95 +1,49 @@
 ---
-title: "Lampiran C. Contoh Perhitungan Lengkap — Kabupaten Aceh Selatan"
+title: "Lampiran C. Persamaan, Parameter Transformasi, dan Bobot"
 ---
 
-Contoh ini memakai data riil dari perkakas hitung pendamping *CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx*, diverifikasi ulang secara independen agar BPBD dapat mereplikasi hasil yang sama persis pada wilayahnya.
+## Persamaan Inti
 
-## Langkah 1–2 — Transformasi dan kombinasi kerentanan, jenis bahaya Banjir
+Transformasi fuzzy sigmoid:
 
-| Sub-komponen | Nilai Mentah | Indeks (0–1) |
-| --- | --- | --- |
-| Penduduk terpapar | 136.977 jiwa | 0,999973 |
-| Kerugian fisik | 758.212 (Rp milyar) | 1,000000 |
-| Kerugian ekonomi | 1.088.992 (Rp milyar) | 1,000000 |
-| Kerusakan lingkungan | 182,5 Ha | 0,631952 |
+$$I(x)=\frac{1}{1+\left(\frac{x}{m}\right)^{-s}}$$
 
-$$
-V_{banjir} = 0{,}4(0{,}999973) + 0{,}25(1{,}000000) + 0{,}25(1{,}000000) + 0{,}1(0{,}631952) = 0{,}963184
-$$
+Reproduksi Risiko Potensial pada workbook:
 
-::: {.callout-warning}
-## Catatan kendali mutu
+$$RP_{raw}=\sqrt{HM_{raw}\times VM_{raw}},\qquad RP_{idx}=I(RP_{raw})$$
 
-Kerugian fisik dan ekonomi di atas jauh melampaui ambang atas [Lampiran A](lampiran-a.qmd) (2,1 dan 0,33 milyar), sehingga kedua indeksnya jenuh di 1,0 — indikasi satuan data proyeksi 2025 tidak konsisten dengan Rp milyar (lihat [Bab III.3.3](bab-3.qmd) dan [Bab VI](bab-6.qmd), poin 2).
-:::
+Risiko Aktual dan Rasio Risiko:
 
-Langkah yang sama diulang untuk sepuluh jenis bahaya lain memakai parameter dan bobot pada Lampiran A dan B.
+$$RA=\sqrt{RP_{idx}(1-C)}$$
 
-## Langkah 3 — Indeks bahaya ($H_i$) dan kerentanan ($V_i$) per jenis bahaya
-
-| Jenis Bahaya | $H_i$ (Bahaya) | $V_i$ (Kerentanan) |
-| --- | --- | --- |
-| Banjir | 1,000 | 0,963184 |
-| Banjir Bandang | 1,000 | 0,924034 |
-| Cuaca Ekstrim | 1,000 | 0,999996 |
-| Gelombang Ekstrim dan Abrasi | 1,000 | 0,901730 |
-| Gempabumi | 1,000 | 0,999997 |
-| Kebakaran Hutan dan Lahan | 0,666 | 0,504960 |
-| Kekeringan | 0,666 | 0,993965 |
-| Likuefaksi | 0,666 | 0,980678 |
-| Letusan Gunungapi | tidak berlaku | 0,000000 |
-| Tanah Longsor | 1,000 | 0,996761 |
-| Tsunami | 1,000 | 0,905799 |
-| **Jumlah ($H_{multi}$, $V_{multi}$)** | **8,998** | **9,171** |
-
-## Langkah 4 — Risiko Potensial
-
-$$
-H_M = I(H_{multi}) = \frac{1}{1+\left(\dfrac{8{,}998}{5{,}186}\right)^{-1{,}998}} = 0{,}7504
-$$
-
-$$
-V_M = I(V_{multi}) = \frac{1}{1+\left(\dfrac{9{,}171}{5{,}186}\right)^{-1{,}998}} = 0{,}7575
-$$
-
-$$
-RP = \sqrt{H_M \times V_M} = \sqrt{0{,}7504 \times 0{,}7575} = 0{,}7539
-$$
-
-$H_{multi}$ dan $V_{multi}$ ditransformasi terpisah sebelum digabung, sesuai keputusan BNPB (2026) — bukan dijumlah mentah lalu ditransformasi sekali di akhir (hasil kedua urutan berdekatan untuk contoh ini: 0,7539 vs 0,7540, tetapi tidak identik secara umum karena fungsi sigmoid tidak linear).
-
-## Langkah 5 — Indeks Kapasitas
-
-IKD Kabupaten Aceh Selatan = 0,21 (≤ 0,4):
-
-$$
-C = \frac{1/3}{0{,}4} \times 0{,}21 = 0{,}175
-$$
-
-## Langkah 6 — Risiko Aktual
-
-$$
-RA = \sqrt{RP \times (1-C)} = \sqrt{0{,}7539 \times 0{,}825} = 0{,}7887
-$$
-
-Kelas: **Tinggi** (RA > 0,666).
-
-## Langkah 7 — Rasio Risiko
-
-$$
-RR = \log_2\left(\frac{0{,}7539}{0{,}175}\right) + 1 = 3{,}107
-$$
-
-Kelas: **Kritis** (RR > 3,00).
-
-## Langkah 8 — Penyetaraan skala (bila diperlukan, Bab VII)
-
-$$
-f(x) = y_{min} + (x - x_{min}) \left(\frac{y_{max} - y_{min}}{x_{max} - x_{min}}\right)
-$$
+$$RR=\log_2\left(\frac{RP_{idx}}{C}\right)+1$$
 
 ::: {.callout-important}
-## Isu terbuka
-
-Bentuk $(y_{max} - y_{min})$ dikonfirmasi BNPB. Nilai $x_{max}$ untuk kelas risiko tinggi belum dinyatakan angkanya secara resmi — BPBD menunggu angka tersebut sebelum menjalankan langkah ini.
+Persamaan di atas mereproduksi workbook. Urutan RP normatif menunggu M-05; RR untuk `C=0` menunggu M-06. Persamaan 11 untuk penyetaraan belum dapat diberlakukan karena M-01 dan M-09.
 :::
+
+## Parameter Transformasi yang Terekam
+
+| Komponen | Cakupan | $x_L$ | $x_U$ | $s$ | $m$ |
+|---|---|---:|---:|---:|---:|
+| Penduduk terpapar | semua kecuali karhutla | 500 | 1.000 | 1,998 | 707,903 |
+| Kerugian fisik | semua kecuali kekeringan/karhutla | 1,4 | 2,1 | 3,415 | 1,716 |
+| Kerugian ekonomi | seluruh bahaya | 0,15 | 0,325 | 1,791 | 0,221 |
+| Lingkungan | banjir, banjir bandang, GEA | 70 | 205 | 1,289 | 120,001 |
+| Lingkungan | karhutla, kekeringan, likuefaksi, LGA, longsor | 65 | 185 | 1,324 | 109,845 |
+| Lingkungan | tsunami | 55 | 185 | 1,142 | 101,070 |
+| Multi | 11 bahaya workbook | 3,663 | 7,326 | 1,998 | 5,186 |
+
+Parameter disimpan dengan presisi penuh pada perangkat hitung. Simbol perantara kalibrasi pada Persamaan 2–3 perlu diselesaikan melalui M-02.
+
+## Bobot Kerentanan
+
+| Jenis bahaya | Penduduk | Fisik | Ekonomi | Lingkungan |
+|---|---:|---:|---:|---:|
+| Gempabumi | 40% | 30% | 30% | — |
+| Tsunami; banjir; banjir bandang; longsor; likuefaksi; LGA; GEA | 40% | 25% | 25% | 10% |
+| Cuaca ekstrem | 40% | 30% | 30% | — |
+| Karhutla | 40% | — | — | 60% |
+| Kekeringan | 50% | — | 40% | 10% |
+
+Tanda — berarti komponen tidak diperhitungkan. Bobot yang berlaku pada setiap bahaya harus berjumlah 100%.

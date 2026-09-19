@@ -1,0 +1,30 @@
+---
+title: "Lampiran F. Templat Perhitungan dan Struktur Basis Data"
+---
+
+## Prinsip Struktur
+
+1. Penggabungan antartabel memakai **kode wilayah unik**, bukan posisi baris.
+2. H, V, dan IKD memiliki tabel sumber terpisah dengan satu catatan versi yang jelas.
+3. Nilai, status data, dan pesan validasi disimpan pada kolom berbeda.
+4. Parameter, bobot, klasifikasi, dan formula memiliki nomor versi dan tanggal berlaku.
+5. Hasil antara tidak dihapus setelah nilai akhir dihitung.
+
+## Kelompok Kolom Minimum
+
+| Kelompok | Contoh kolom |
+|---|---|
+| Identitas | `kode_wilayah`, `nama_wilayah`, `versi_kode` |
+| Skenario | `versi_h`, `versi_v`, `versi_ikd`, `versi_metode` |
+| Input | `h_<bahaya>`, `v_penduduk_<bahaya>`, `ikd` |
+| Status | `status_h_<bahaya>`, `status_v_<bahaya>`, `status_validasi` |
+| Hasil antara | `hm_raw`, `vm_raw`, `rp_raw`, `rp_idx`, `c` |
+| Keluaran | `ra`, `rr`, kelas yang disahkan, catatan |
+
+## Kontrol Penggabungan
+
+- kode harus unik pada setiap tabel;
+- cakupan kode harus direkonsiliasi sebelum join;
+- baris tanpa pasangan tidak boleh hilang diam-diam;
+- nama wilayah dipakai untuk pemeriksaan, bukan kunci utama;
+- hasil join mencatat jumlah cocok, hanya-kiri, dan hanya-kanan.

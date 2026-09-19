@@ -1,17 +1,42 @@
 ---
 title: "Bab VIII. Penutup"
+subtitle: "Ketentuan penerapan, evaluasi, dan pembaruan"
 ---
 
-Pemisahan risiko potensial, kapasitas, risiko aktual, dan rasio risiko memberi BPBD dasar yang lebih tajam untuk menentukan prioritas intervensi dibandingkan indeks komposit tunggal IRBI eksisting. Kapasitas daerah terbukti menjadi faktor pembeda utama tingkat risiko aktual antarwilayah — wilayah dengan risiko potensial tinggi tidak selalu berisiko aktual tinggi apabila kapasitasnya memadai, dan sebaliknya.
+::: {.status-strip}
+**Status:** draf kerja, belum normatif &nbsp;·&nbsp; **Versi:** 0.8
+:::
 
-Petunjuk teknis ini berlaku selama masa transisi kebijakan ([Bab VII](bab-7.qmd)) dan akan direviu apabila: BNPB menerbitkan angka resmi untuk nilai *x_max* kelas risiko tinggi pada penyetaraan skala ([Bab IV](bab-4.qmd), Langkah 8); data baseline bahaya, kerentanan, atau kapasitas dimutakhirkan; atau opsi implementasi nasional berubah.
+## 8.1 Ketentuan Penerapan
+
+Petunjuk teknis ini menjadi ruang kerja untuk menguji konsistensi substansi dan operasionalisasi metode reformulasi IRBI. Dokumen belum menjadi dasar penetapan nilai resmi, penggantian IRBI eksisting, indikator kinerja, alokasi program, atau sanksi dan insentif sebelum ditetapkan oleh otoritas yang berwenang.
+
+Penerapan uji mengikuti versi data, parameter, formula, klasifikasi, dan perangkat yang terkunci. Setiap hasil menyebut status **simulasi**, **uji implementasi**, atau **resmi** secara eksplisit.
+
+## 8.2 Evaluasi Petunjuk Teknis
+
+Evaluasi dilakukan sekurang-kurangnya setelah uji implementasi, perubahan sumber data utama, perubahan formula/parameter, perubahan klasifikasi, temuan audit, atau perubahan kebijakan. Masukan dicatat dalam register perubahan dan register isu; perubahan substantif harus melalui reviu teknis, data, hukum, dan persetujuan pemilik metode.
+
+## 8.3 Pembaruan Metodologi
+
+Perubahan tidak dilakukan langsung pada versi yang telah dirilis. Setiap usulan mencantumkan alasan, dasar bukti, formula atau aturan lama dan baru, dampak pada seri hasil, hasil uji sensitivitas, keputusan, tanggal berlaku, dan strategi migrasi. Versi terdahulu beserta data dan hasil antaranya tetap diarsipkan agar dapat direproduksi.
+
+## 8.4 Agenda Penyelesaian
+
+Prioritas sebelum penetapan nasional adalah:
+
+1. menyelesaikan sepuluh isu kritis pada [Register Isu](register-isu.qmd);
+2. mengesahkan kamus variabel, daftar bahaya, sumber data, satuan, dan identitas skenario;
+3. menguji formula dan perangkat secara independen pada seluruh wilayah;
+4. menetapkan klasifikasi, presisi, pembulatan, nomenklatur, dan warna;
+5. memastikan dasar hukum, peran kelembagaan, serta kedudukan RA dan RR; dan
+6. mendokumentasikan hasil uji implementasi sebagai dasar keputusan transisi.
 
 ## Daftar Pustaka {#daftar-pustaka}
 
-1. Badan Nasional Penanggulangan Bencana. (2019). *Modul Teknis Kajian Risiko Bencana*. Direktorat Pengurangan Risiko Bencana – BNPB.
-2. Badan Nasional Penanggulangan Bencana. (2021). *Kajian Risiko Bencana Nasional Periode 2022–2026*. Direktorat Pemetaan dan Evaluasi Risiko Bencana – BNPB.
-3. Badan Nasional Penanggulangan Bencana. (2024). *Laporan Akhir: Proyeksi Indeks Risiko Bencana Indonesia 2025–2045*. BNPB – Australian Government (SIAP SIAGA).
-4. Badan Nasional Penanggulangan Bencana. (2024). *IRBI: Indeks Risiko Bencana Indonesia Tahun 2024*. Direktorat Pemetaan dan Evaluasi Risiko Bencana – BNPB.
-5. Badan Nasional Penanggulangan Bencana. (2026). *Laporan Reformulasi Indeks Risiko Bencana (IRBI) Tahun 2026*. BNPB – Australian Government (SIAP SIAGA).
-6. Hamann, B.; Chen, J. L. (1994). Data point selection for piecewise linear curve approximation. *Computer Aided Geometric Design*, 11(3), 289.
-7. Zadeh, L. A. (1965). Fuzzy sets. *Information and Control*, 8(3), 338–353.
+1. Badan Nasional Penanggulangan Bencana. (2019). *Modul Teknis Kajian Risiko Bencana*.
+2. Badan Nasional Penanggulangan Bencana. (2021). *Kajian Risiko Bencana Nasional Periode 2022–2026*.
+3. Badan Nasional Penanggulangan Bencana. (2024). *Proyeksi Indeks Risiko Bencana Indonesia 2025–2045*.
+4. Badan Nasional Penanggulangan Bencana. (2024). *Indeks Risiko Bencana Indonesia Tahun 2024*.
+5. Badan Nasional Penanggulangan Bencana. (2026). *Laporan Reformulasi Indeks Risiko Bencana Tahun 2026*.
+6. Workbook pendamping `CARA_HITUNG_IRBI_REFORMULASI_2026.xlsx`, ditelaah sebagai implementasi perhitungan.

@@ -1,24 +1,27 @@
 ---
-title: "Lampiran B. Bobot Kerentanan per Jenis Bahaya"
+title: "Lampiran B. Data, Kamus Data, dan Daftar Bahaya"
 ---
 
-$$
-V_i = w_1 \cdot vf_1 + w_2 \cdot vf_2 + w_3 \cdot vf_3 + w_4 \cdot vf_4
-$$
+## Elemen Kamus Data Minimum
 
-**Tabel B.1.** Bobot Sub-Komponen Kerentanan per Jenis Bahaya
+| Elemen | Isi minimum |
+|---|---|
+| Identitas | nama variabel, kode, definisi, komponen, jenis bahaya |
+| Nilai | tipe data, satuan, skala, domain, presisi |
+| Waktu | tahun referensi, tanggal cut-off, versi |
+| Wilayah | kode wilayah, versi kode, tingkat administrasi |
+| Sumber | produsen, berkas/tabel, metode estimasi, status pengesahan |
+| Mutu | status validasi, aturan missing, checksum, catatan koreksi |
 
-| Jenis Bahaya | Penduduk Terpapar | Kerugian Fisik | Kerugian Ekonomi | Kerusakan Lingkungan |
-| --- | --- | --- | --- | --- |
-| Gempabumi | 40% | 30% | 30% | tidak dipakai |
-| Tsunami | 40% | 25% | 25% | 10% |
-| Banjir | 40% | 25% | 25% | 10% |
-| Banjir Bandang | 40% | 25% | 25% | 10% |
-| Tanah Longsor / Likuefaksi | 40% | 25% | 25% | 10% |
-| Letusan Gunungapi | 40% | 25% | 25% | 10% |
-| Cuaca Ekstrim | 40% | 30% | 30% | tidak dipakai |
-| Gelombang Ekstrim dan Abrasi | 40% | 25% | 25% | 10% |
-| Kebakaran Lahan dan Hutan | 40% | tidak dipakai | tidak dipakai | 60% |
-| Kekeringan | 50% | tidak dipakai | 40% | 10% |
+## Status Nilai
 
-: {.striped .hover}
+| Kode | Makna | Perlakuan |
+|---|---|---|
+| `VALID_ZERO` | nol sah | dipertahankan sebagai nol |
+| `NOT_APPLICABLE` | bahaya/komponen tidak berlaku | tidak disamakan dengan nol tanpa aturan agregasi |
+| `UNAVAILABLE` | data belum tersedia | menghentikan atau memberi status keluaran tidak lengkap |
+| `VALIDATION_FAIL` | data gagal domain/satuan/kunci | tidak dihitung sebelum diperbaiki |
+
+## Daftar Bahaya dalam Workbook
+
+Workbook memuat **11 kolom**: banjir, banjir bandang, cuaca ekstrem, gelombang ekstrem dan abrasi, gempabumi, kebakaran hutan dan lahan, kekeringan, likuefaksi, letusan gunungapi, tanah longsor, dan tsunami. Tabel laporan pada bagian lain menggabungkan tanah longsor dan likuefaksi menjadi **10 kelompok**. Daftar nasional dan pemetaan bobot final menunggu keputusan M-04.
