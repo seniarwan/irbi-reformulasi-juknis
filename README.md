@@ -1,6 +1,6 @@
 # Petunjuk Teknis Reformulasi IRBI Nasional — Situs Quarto
 
-Situs dokumentasi multi-halaman untuk "Petunjuk Teknis Reformulasi Indeks Risiko Bencana (IRBI) Nasional", dibangun dengan [Quarto](https://quarto.org). Versi dashboard 0.8 berisi delapan bab, delapan lampiran operasional, enam ilustrasi konsep/alur, dan register berisi 18 isu metodologis: 12 terbuka dan 6 selesai. Situs ini merupakan ruang kerja penyusunan juknis dan belum menyajikan dashboard hasil IRBI nasional per wilayah.
+Situs dokumentasi multi-halaman untuk "Petunjuk Teknis Reformulasi Indeks Risiko Bencana (IRBI) Nasional", dibangun dengan [Quarto](https://quarto.org). Versi dashboard 0.8 berisi delapan bab, delapan lampiran operasional, tujuh ilustrasi konsep/alur, dan register berisi 18 isu metodologis: 12 terbuka dan 6 selesai. Situs ini merupakan ruang kerja penyusunan juknis dan belum menyajikan dashboard hasil IRBI nasional per wilayah.
 
 ## Struktur proyek
 
@@ -11,7 +11,7 @@ bab-1.qmd … bab-8.qmd    # delapan bab juknis
 lampiran-a.qmd … lampiran-h.qmd
 register-isu.qmd        # register keputusan metodologis
 data/isu_terbuka.csv    # sumber register yang dapat diunduh
-assets/figures/         # enam ilustrasi konsep dan alur
+assets/figures/         # tujuh ilustrasi konsep dan alur
 styles.scss / styles.css # tema, kartu, metrik, dan register isu
 favicon.svg
 .github/workflows/publish.yml  # auto-publish ke GitHub Pages
